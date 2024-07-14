@@ -1,0 +1,2 @@
+PATH="$HOME/shims:$PATH"
+PATH="$HOME/.local/bin:$PATH"
