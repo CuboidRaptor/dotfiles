@@ -163,12 +163,14 @@
             "org.gnome.Terminal.desktop"
         ],
         "value": [
+            "org.prismlauncher.PrismLauncher.desktop:flatpak",
             "nemo.desktop",
             "org.gnome.Terminal.desktop",
             "org.wezfurlong.wezterm.desktop",
             "github-desktop.desktop",
             "cinnamon-settings.desktop",
             "mintinstall.desktop",
+            "com.github.tchx84.Flatseal.desktop:flatpak",
             "discord.desktop",
             "Alacritty.desktop",
             "sublime_text.desktop",
