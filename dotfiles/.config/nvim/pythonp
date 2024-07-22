@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# stupid ahhh python shim with a pause so I can use it in neovim
+
+python3 "$@"
+read -n1 -r -p "Press any key to continue..."
