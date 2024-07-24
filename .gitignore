@@ -1,3 +1,4 @@
 # logs go bye bye
 *.log
+**/logs/
 **/*Cache*/
