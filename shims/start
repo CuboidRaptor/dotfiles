@@ -1,0 +1,4 @@
+#! /usr/bin/bash
+# equiavalent to DOS start for async running programs (in kde konsole)
+
+konsole -e "$@"
