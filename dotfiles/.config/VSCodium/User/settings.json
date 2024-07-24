@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Tomorrow Night Blue",
+    "files.exclude": {
+        "**/.directory": true
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "editor.fontFamily": "'Cascadia Code NF','Cascadia Code PL','monospace', monospace",
+    "editor.fontLigatures": true
+}

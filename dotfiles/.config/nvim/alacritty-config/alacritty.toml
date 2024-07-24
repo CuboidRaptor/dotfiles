@@ -4,5 +4,5 @@ dimensions = { lines = 35, columns = 130 }
 
 [font]
 
-normal = { family = "CaskaydiaMono Nerd Font Mono", style = "Regular" }
+normal = { family = "Cascadia Mono NF", style = "Regular" }
 size = 11
