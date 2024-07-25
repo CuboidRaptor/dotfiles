@@ -5,5 +5,12 @@
     },
     "C_Cpp.intelliSenseEngine": "disabled",
     "editor.fontFamily": "'Cascadia Code NF','Cascadia Code PL','monospace', monospace",
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.tokenColorCustomizations": {
+        
+    },
+    "statusBar.fontFamily": "'Cascadia Code NF','Cascadia Code PL','monospace', monospace"
 }

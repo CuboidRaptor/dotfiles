@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
-touch peepee && rm peepee
+if [ -z "$1" ]
+then
+    touch peepee && rm peepee
+else
+    touch "$1"
+fi
