@@ -8,7 +8,7 @@
     ],
     "enableReactDevtools": false,
     "frameless": false,
-    "transparent": true,
+    "transparent": false,
     "winCtrlQ": false,
     "disableMinSize": false,
     "winNativeTitleBar": false,
@@ -566,6 +566,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1722003263744
+        "settingsSyncVersion": 1722010369546
     }
 }
