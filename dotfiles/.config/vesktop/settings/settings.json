@@ -3,10 +3,12 @@
     "autoUpdateNotification": true,
     "useQuickCss": true,
     "themeLinks": [],
-    "enabledThemes": [],
+    "enabledThemes": [
+        "thefunny.theme.css"
+    ],
     "enableReactDevtools": false,
     "frameless": false,
-    "transparent": false,
+    "transparent": true,
     "winCtrlQ": false,
     "disableMinSize": false,
     "winNativeTitleBar": false,
@@ -171,7 +173,7 @@
             "enabled": false
         },
         "FixYoutubeEmbeds": {
-            "enabled": false
+            "enabled": true
         },
         "ForceOwnerCrown": {
             "enabled": true
@@ -180,7 +182,7 @@
             "enabled": false
         },
         "FriendsSince": {
-            "enabled": false
+            "enabled": true
         },
         "GameActivityToggle": {
             "enabled": false
@@ -204,14 +206,18 @@
             "enabled": false
         },
         "ImageZoom": {
-            "enabled": true
+            "enabled": true,
+            "size": 100,
+            "zoom": 2,
+            "nearestNeighbour": false,
+            "square": false,
+            "saveZoomValues": true
         },
         "ImplicitRelationships": {
             "enabled": false
         },
         "InvisibleChat": {
-            "enabled": false,
-            "savedPasswords": "password, Password"
+            "enabled": false
         },
         "KeepCurrentChannel": {
             "enabled": false
@@ -560,6 +566,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1721670235270
+        "settingsSyncVersion": 1722003263744
     }
 }
