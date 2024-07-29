@@ -12,5 +12,6 @@
     "editor.tokenColorCustomizations": {
         
     },
-    "statusBar.fontFamily": "'Cascadia Code NF','Cascadia Code PL','monospace', monospace"
+    "statusBar.fontFamily": "'Cascadia Code NF','Cascadia Code PL','monospace', monospace",
+    "clangd.path": "/home/jason/.config/VSCodium/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd"
 }
