@@ -3,6 +3,8 @@
 if [ -z "$1" ]
 then
     touch peepee && rm peepee
+    echo "Directory bumped!"
 else
     touch "$1"
+    echo "File bumped!"
 fi
