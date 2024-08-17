@@ -104,3 +104,4 @@ fi
 if [ -f ~/.bash_path ]; then
 . ~/.bash_path
 fi
+. "$HOME/.cargo/env"
