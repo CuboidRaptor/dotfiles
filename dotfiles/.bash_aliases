@@ -2,6 +2,9 @@
 alias dnf="dnf5"
 alias sdnf="sudo dnf5"
 alias sdi="sudo dnf5 install"
+alias dse="dnf5 search"
+
+alias nano="micro"
 
 # this stuff bugs out a lot so i don't use it but it's there for funnies
 alias b='sudo "$BASH" -c "$(history -p !!)"'

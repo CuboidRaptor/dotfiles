@@ -3,7 +3,7 @@
 	"light_theme": "Default.sublime-theme",
 	"theme": "auto",
 	"color_scheme": "Mariana.sublime-color-scheme",
-	"font_face": "CaskaydiaMono Nerd Font Mono",
+	"font_face": "Cascadia Code NF",
 	"font_size": 10,
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
