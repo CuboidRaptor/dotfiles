@@ -4,7 +4,10 @@ alias sdnf="sudo dnf5"
 alias sdi="sudo dnf5 install"
 alias dse="dnf5 search"
 
+# better alternatives
+# (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
+alias ls="exa"
 
 # this stuff bugs out a lot so i don't use it but it's there for funnies
 alias b='sudo "$BASH" -c "$(history -p !!)"'

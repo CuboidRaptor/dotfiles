@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+magick "$1" ${1%.*}.png

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if pgrep "^oneko$" ; then
+    echo "oneko running, killing..."
+    pkill -15 "^oneko$"
+else
+    echo "oneko not running, starting..."
+    oneko &
+fi
