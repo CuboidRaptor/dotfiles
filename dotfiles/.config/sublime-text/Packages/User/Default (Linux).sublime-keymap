@@ -1,0 +1,7 @@
+[
+    {
+        "key": "down",
+        "command": "noop",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    }
+]

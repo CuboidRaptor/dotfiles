@@ -7,4 +7,6 @@
 	"font_size": 10,
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
+	"auto_match_enabled": false,
+	"auto_close_tags": false
 }

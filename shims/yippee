@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# get sudo perms
+if [ "$EUID" != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
+# echo!
+echo -e "\033[1m\033[7mStarting system updates...\033[0m"
+
+# flatpaks
+flatpak -y uninstall --unused
+flatpak -y upgrade
+
+# cargo/rust packages
+cargo install-update -a
+
+# system dnf
+sudo dnf -y makecache
+sudo dnf -y offline-upgrade download
+sudo dnf -y offline-upgrade reboot

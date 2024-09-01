@@ -5,6 +5,11 @@ alias sdi="sudo dnf5 install"
 alias sdr="sudo dnf5 remove"
 alias dse="dnf5 search"
 
+# chillllll htop
+alias htop="htop -d 30"
+
+alias ccopy="xclip -sel clip"
+
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
