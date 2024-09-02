@@ -1,7 +1,14 @@
 [
-    {
-        "key": "down",
-        "command": "noop",
-        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    { "keys": ["f5"], "command": "build" },
+    { 
+        "keys": ["ctrl+\\"],
+        "command": "chain",
+        "args": {
+            "commands": [
+                ["terminus_cancel_build"],
+                ["toggle_terminus_panel"],
+                ["toggle_terminus_panel"]
+            ]
+        }
     }
 ]

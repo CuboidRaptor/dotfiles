@@ -1,0 +1,12 @@
+{
+    "target": "terminus_exec",
+    "cancel": "terminus_cancel_build",
+    "cmd": [
+        "python3", "-u", "$file"
+    ],
+    "working_dir": "$folder",
+    "selector": "source.python",
+    "auto_close": false,
+    "focus": true,
+    "env": {"PYTHONIOENCODING": "utf-8"}
+}

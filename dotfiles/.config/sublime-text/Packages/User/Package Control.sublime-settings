@@ -5,7 +5,14 @@
 	],
 	"installed_packages":
 	[
+		"AutoPEP8",
 		"Catppuccin color schemes",
+		"LSP",
+		"LSP-json",
+		"LSP-pyright",
+		"LSP-ruff",
+		"MarkdownPreview",
 		"Package Control",
+		"Terminus",
 	],
 }
