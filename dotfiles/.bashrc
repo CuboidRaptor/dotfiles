@@ -105,3 +105,5 @@ if [ -f ~/.bash_path ]; then
 . ~/.bash_path
 fi
 . "$HOME/.cargo/env"
+
+export "MICRO_TRUECOLOR=1"

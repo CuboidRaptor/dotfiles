@@ -2,3 +2,7 @@
 *.log
 **/logs/
 **/*Cache*/
+**/*history*
+**/*history*/
+**/*History*
+**/*History*/

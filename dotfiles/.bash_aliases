@@ -14,6 +14,7 @@ alias ccopy="xclip -sel clip"
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
 alias ls="exa"
+export EDITOR=micro
 
 # this stuff bugs out a lot so i don't use it but it's there for funnies
 alias b='sudo "$BASH" -c "$(history -p !!)"'
