@@ -260,13 +260,6 @@ user_pref("browser.download.useDownloadDir", false);
 // 2 = strict
 user_pref("security.cert_pinning.enforcement_level", 2);
 
-// PREF: set DoH provider
-user_pref("network.trr.uri", "https://freedns.controld.com/x-hagezi-tif");
-
-// PREF: enforce DNS-over-HTTPS (DoH)
-user_pref("network.trr.mode", 2);
-user_pref("network.trr.max-fails", 5);
-
 // PREF_CUSTOM: keep browser open when last tab closed
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 
