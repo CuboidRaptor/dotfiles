@@ -9,5 +9,8 @@ PgDn::Send {End} ; aaand pgdown becomes end
 +PgUp::Send +{Home}
 +PgDn::Send +{End}
 
+^PgUp::Send ^{Home}
+^PgDn::Send ^{End}
+
 Home::Send, {PgUp} ; and the reverse of the above code
 End::Send, {PgDn}
