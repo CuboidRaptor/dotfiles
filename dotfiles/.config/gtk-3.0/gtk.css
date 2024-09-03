@@ -4,9 +4,3 @@
      padding: 10px 10px 10px 10px;
      -VteTerminal-inner-border: 10px 10px 10px 10px;
  }
-
-/*.nemo-places-sidebar .view { */ 
-.nemo-window .sidebar .view {
-  background-color: #555666;
-  color: @theme_bg_color;
-}

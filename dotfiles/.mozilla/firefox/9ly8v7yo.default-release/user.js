@@ -275,6 +275,12 @@ user_pref("image.mem.surfacecache.max_size_kb", 500000);
 // PREF_CUSTOM: Compact toolbar at top
 user_pref("browser.uidensity", 1);
 
+// PREF_CUSTOM: Force subpixel-AA
+user_pref("gfx.webrender.quality.force-subpixel-aa-where-possible", true);
+
+// PREF_CUSTOM: Allow 105% default zoom
+user_pref("toolkit.zoomManager.zoomValues", ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5");
+
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
 ****************************************************************************/
