@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # change $HOME to $FAKEHOME to test
-FAKEHOME="$HOME/fake_home"
-HOMETARGET=$FAKEHOME
+FAKEHOME="$HOME"
+HOMETARGET="$FAKEHOME"
 
 slink () {
     mkdir -p $(dirname "$HOMETARGET/$1")
