@@ -2,8 +2,6 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
-		"LSP",
-		"LSP-pyright",
 	],
 	"installed_packages":
 	[
