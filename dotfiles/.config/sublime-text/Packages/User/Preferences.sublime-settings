@@ -13,6 +13,8 @@
 	"mini_auto_complete": true,
 	"ignored_packages":
 	[
+		"LSP",
+		"LSP-pyright",
 		"Vintage",
 	],
 	"index_files": false,
