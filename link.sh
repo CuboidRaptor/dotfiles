@@ -3,8 +3,11 @@
 read -r -p "This script will probably overwrite a bunch of stuff randomly, possibly causing damage. Continue? [y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
-        # need sudo
-        sudo true
+        # get sudo perms
+        if [ "$EUID" != 0 ]; then
+            sudo "$0" "$@"
+            exit $?
+        fi
 
         # change $HOME to $FAKEHOME to test
         FAKEHOME="$HOME"
