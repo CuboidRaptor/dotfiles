@@ -16,28 +16,28 @@ $character"""
 palette = "custom1"
 
 [palettes.custom1]
-teal = "#94e2d5"
-mauve = "#cba6f7"
-red = "#f38ba8"
-green = "#a6e3a1"
-surface2 = "#585b70"
-yellow = "#f9e2af"
+blue = "#9ccfd8"
+purple = "#c4a7e7"
+red = "#eb6f92"
+green = "#31748f"
+gray = "#6e6a86"
+yellow = "#f6c177"
 
 [directory]
-style = "teal"
+style = "blue"
 
 [character]
-success_symbol = "[❯](mauve)"
+success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
 format = "[$branch]($style)"
-style = "surface2"
+style = "gray"
 
 [git_status]
 format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "teal"
+style = "blue"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -48,7 +48,7 @@ stashed = "≡"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "surface2"
+style = "gray"
 
 [cmd_duration]
 format = "[$duration]($style) "
@@ -56,7 +56,7 @@ style = "yellow"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "surface2"
+style = "gray"
 
 [sudo]
 format = "$symbol "

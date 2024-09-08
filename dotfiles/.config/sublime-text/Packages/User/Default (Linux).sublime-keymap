@@ -5,5 +5,10 @@
         "command": "focus_group",
         "args": {"group":0},
         "context": [{"key": "terminus_view"}]
-    }
+    },
+    {
+        "keys": ["ctrl+f"],
+        "command": "show_panel",
+        "args": {"panel": "replace", "reverse": false}
+    },
 ]
