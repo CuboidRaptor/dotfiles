@@ -8,6 +8,8 @@
 		"AutoPEP8",
 		"Catppuccin color schemes",
 		"LSP",
+		"LSP-clangd",
+		"LSP-jdtls",
 		"LSP-json",
 		"LSP-pyright",
 		"LSP-ruff",

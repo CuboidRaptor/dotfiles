@@ -18,5 +18,9 @@
     "code-runner.saveFileBeforeRun": true,
     "code-runner.preserveFocus": false,
     "workbench.sideBar.location": "right",
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ]
 }
