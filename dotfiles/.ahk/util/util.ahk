@@ -14,11 +14,11 @@ RAlt::Send {F5} ; right alt presses f5 because I use a 65% and 2 keypresses is 2
 PgUp::Send {Home} ; pgup becomes home
 PgDn::Send {End} ; aaand pgdown becomes end
 
-+PgUp::Send +{Home}
-+PgDn::Send +{End}
++PgUp::Send {Blind}{PgUp up}{SHIFT up}+{Home}
++PgDn::Send {Blind}{PgDn up}{SHIFT up}+{End}
 
-^PgUp::Send ^{Home}
-^PgDn::Send ^{End}
+^PgUp::Send {Blind}{PgUp up}{CTRL up}^{Home}
+^PgDn::Send {Blind}{PgDn up}{CTRL up}^{End}
 
-Home::Send, {PgUp} ; and the reverse of the above code
-End::Send, {PgDn}
+Home::Send {PgUp} ; and the reverse of the above code
+End::Send {PgDn}
