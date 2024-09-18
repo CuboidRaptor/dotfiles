@@ -5,7 +5,7 @@
         "shell_cmd": "g++ \"${file}\" -o \"/var/tmp/.${file_name}.bin\" && \"/var/tmp/.${file_name}.bin\" ; rm -f \"/var/tmp/.${file_name}.bin\""
     },
     "windows": {
-        "shell_cmd": "g++ \"${file}\" -o \"%TEMP%/.${file_name}.exe\" && \"%TEMP%/.${file_name}.exe\" & del /f /q \"%TEMP%/.${file_name}.exe\""
+        "shell_cmd": "g++ \"${file}\" -o \"%TEMP%\\.${file_name}.exe\" && \"%TEMP%\\.${file_name}.exe\" & del /f /q \"%TEMP%\\.${file_name}.exe\""
     },
     "working_dir": "$file_path",
     "selector": "source.c++",

@@ -1,9 +1,21 @@
 {
     "target": "terminus_exec",
     "cancel": "terminus_cancel_build",
-    "cmd": [
-        "python3", "-u", "$file"
-    ],
+    "linux": {
+        "cmd": [
+            "python3", "-u", "$file"
+        ]
+    },
+    "windows": {
+        "cmd": [
+            "python", "-u", "$file"
+        ]
+    },
+    "osx": {
+        "cmd": [
+            "python3", "-u", "$file"
+        ]
+    },
     "working_dir": "$file_path",
     "selector": "source.python",
     "auto_close": false,
