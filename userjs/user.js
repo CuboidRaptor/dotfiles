@@ -271,7 +271,7 @@ user_pref("browser.cache.memory.capacity", 65535);
 user_pref("browser.sessionhistory.max_entries", 15);
 user_pref("browser.cache.disk.enable", false);
 user_pref("image.mem.surfacecache.max_size_kb", 500000);
-user_pref("browser.sessionhistory.max_total_viewers", 1);
+user_pref("browser.sessionhistory.max_total_viewers", 2);
 
 // PREF_CUSTOM: Compact toolbar at top
 user_pref("browser.uidensity", 1);
