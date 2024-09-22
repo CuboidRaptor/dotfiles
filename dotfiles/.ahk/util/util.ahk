@@ -10,11 +10,13 @@ RAlt::Send, {F5} ; right alt presses f5 because I use a 65% and 2 keypresses is 
 +Enter::
 IfWinActive, Firefox
 {
-    Send, {Enter}
+    Send, {Blind}{SHIFT up}{Enter}
 }
 else
 {
-    Send, +{Enter}
+    ; could potentially trigger the keyup/blind bug but fixing it would cuz some weirdass behaviour
+    ; so uh don't do that
+    Send, {Blind}+{Enter}
 }
 return
 
