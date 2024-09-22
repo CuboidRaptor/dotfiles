@@ -6,6 +6,18 @@
 Capslock::Send {Esc} ; capslock becomes esc because I don't use it anyways
 RAlt::Send {F5} ; right alt presses f5 because I use a 65% and 2 keypresses is 2 too many
 
+; shift enter kills me because I keep misinputting it and this fixes it (I guess)
++Enter::
+IfWinActive, Firefox
+{
+    Send, {Enter}
+}
+else
+{
+    Send, +{Enter}
+}
+return
+
 ; ---------------------------------
 ;             RK68 part
 ; ---------------------------------

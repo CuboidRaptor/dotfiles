@@ -8,6 +8,7 @@ alias dse="dnf5 search"
 # chillllll htop
 alias htop="htop -d 30"
 
+# copy stdin to clipboard
 alias ccopy="xclip -sel clip"
 
 # better alternatives
@@ -15,6 +16,7 @@ alias ccopy="xclip -sel clip"
 alias nano="micro"
 export EDITOR=micro
 alias ls="exa -a"
+alias cat="bat"
 
 # this stuff bugs out a lot so i don't use it but it's there for funnies
 alias b='sudo "$BASH" -c "$(history -p !!)"'
