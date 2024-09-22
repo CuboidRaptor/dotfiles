@@ -271,6 +271,7 @@ user_pref("browser.cache.memory.capacity", 65535);
 user_pref("browser.sessionhistory.max_entries", 15);
 user_pref("browser.cache.disk.enable", false);
 user_pref("image.mem.surfacecache.max_size_kb", 500000);
+user_pref("browser.sessionhistory.max_total_viewers", 1);
 
 // PREF_CUSTOM: Compact toolbar at top
 user_pref("browser.uidensity", 1);
@@ -283,6 +284,7 @@ user_pref("toolkit.zoomManager.zoomValues", ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33
 
 // PREF_CUSTOM: My nvidia hardware is ass so av1 explodes it slightly
 user_pref("media.av1.enabled", false)
+
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
