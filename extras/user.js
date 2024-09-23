@@ -241,10 +241,6 @@ user_pref("permissions.default.geo", 0);
 // PREF: enable container tabs
 user_pref("privacy.userContext.enabled", true);
 
-// PREF: show weather on New Tab page
-user_pref("browser.newtabpage.activity-stream.showWeather", true);
-user_pref("browser.newtabpage.activity-stream.system.showWeather", true);
-
 // PREF: enable HTTPS-Only Mode
 // Warn me before loading sites that don't support HTTPS
 // in both Normal and Private Browsing windows.

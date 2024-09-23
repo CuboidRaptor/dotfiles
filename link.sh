@@ -9,13 +9,12 @@ case "$response" in
             exit $?
         fi
 
-        # change $HOME to $FAKEHOME to test
-        FAKEHOME="$HOME"
+        # change $HOMETARGET to test
         HOMETARGET="$HOME"
 
         read -p "Mozilla Firefox profile path? (including ending slash): " mpath
-        ln -sf $(readlink -f "./userjs/user.js") "${mpath}user.js"
-        echo "Done Linking Firefox user.js!"
+        ln -sf $(readlink -f "./extras/user.js") "${mpath}user.js"
+        echo "Done linking Firefox user.js!"
 
         slink () {
             mkdir -p $(dirname "$HOMETARGET/$1")
@@ -33,9 +32,11 @@ case "$response" in
         slink ".bash_aliases"
         slink ".bash_path"
         slink ".bash_starship"
+        slink ".gitconfig"
         slink ".ahk"
         slink ".idlerc"
         slink ".wezterm.lua"
+
         slink ".config/dolphinrc"
         slink ".config/starship.toml"
         slink ".config/gtk-3.0/gtk.css"
@@ -46,11 +47,18 @@ case "$response" in
         slink ".config/sublime-text/Packages/User"
         slink ".config/VSCodium/User"
 
-        echo "Done SLinking!"
+        slink ".local/share/color-schemes"
+        slink ".local/share/konsole"
+        slink ".local/share/SpeedCrunch/color-schemes"
+
+        echo "Done symlinking!"
 
         # copy shims to root folder so they can be used
-        sudo cp -r shims /shims
-        echo "Done Copying Shims!"
+        sudo cp -r ./shims /shims
+        echo "Done copying Shims!"
+
+        sudo cp ./extras/touch.desktop /usr/share/kio/servicemenus/touch.desktop
+        echo "Done copying touch.desktop!"
 
         echo "(Vencord settings have not been linked as vesktop doesn't like symlinks idk y)"
         ;;
