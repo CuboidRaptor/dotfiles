@@ -279,7 +279,11 @@ user_pref("gfx.webrender.quality.force-subpixel-aa-where-possible", true);
 user_pref("toolkit.zoomManager.zoomValues", ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5");
 
 // PREF_CUSTOM: My nvidia hardware is ass so av1 explodes it slightly
-user_pref("media.av1.enabled", false)
+user_pref("media.av1.enabled", false);
+
+// PREF_CUSTOM: lemme see the full url bruh
+user_pref("browser.urlbar.trimHttps", false);
+user_pref("browser.urlbal.trimURLs", false);
 
 
 /****************************************************************************
