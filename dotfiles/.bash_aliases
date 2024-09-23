@@ -1,9 +1,9 @@
 # dnf aliases, I'm lazy, also like dnf5
 alias dnf="dnf5"
-alias sdnf="sudo dnf5"
 alias sdi="sudo dnf5 install"
 alias sdr="sudo dnf5 remove"
 alias dse="dnf5 search"
+alias dli="sudo dnf5 list --installed"
 
 # chillllll htop
 alias htop="htop -d 30"
