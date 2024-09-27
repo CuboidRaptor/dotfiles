@@ -8,6 +8,7 @@ CursorShape=1
 [General]
 Name=Default
 Parent=FALLBACK/
+TerminalColumns=110
 TerminalMargin=10
 
 [Terminal Features]

@@ -4,36 +4,19 @@ local config = wezterm.config_builder()
 -- actually use regular bash cuh
 config.default_prog = { "bash" }
 
-local set_environment_variables = {
-  PATH = wezterm.home_dir .. '/.cargo/bin:' .. os.getenv('PATH')
-}
-
-config.initial_rows = 25
-config.initial_cols = 90
+config.initial_rows = 35
+config.initial_cols = 140
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
+local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
 config.default_cursor_style = "BlinkingBar"
-config.colors = {
-    foreground = "#69b8f5",
-    background = "#2a113d",
-    cursor_border = "#69b8f5",
-    selection_fg = "#69acf5",
-    selection_bg = "#b930a5"
-}
-config.window_frame = {
-    font = wezterm.font { family = "Kollektif", weight = "Medium" },
-    font_size = 12.0,
-    active_titlebar_bg = "#220e31",
-    inactive_titlebar_bg = "#220e31"
-}
-config.window_background_gradient = {
-    colors = { "#2a113d", "#311875" },
-    orientation = { Linear = { angle = -45.0 } }
-}
+
+config.colors = theme.colors();
+config.window_frame = theme.window_frame();
 
 config.font = wezterm.font_with_fallback {
-    "CaskaydiaMono Nerd Font Mono",
+    "Cascadia Code NF",
     "Consolas",
     "DengXian"
 }
