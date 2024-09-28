@@ -34,3 +34,9 @@ display-inlay-hints = true
 # Use system clipboard
 p = "paste_clipboard_before"
 y = "yank_main_selection_to_clipboard"
+
+# fix ge to go to end of last line
+g = { e = ["goto_last_line", "goto_line_end"] }
+
+# a works goofily at end of line
+a = ["move_char_right", "insert_mode"]

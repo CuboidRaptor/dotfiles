@@ -8,13 +8,11 @@ require("config.lazy")
 require("mini.surround").setup()
 
 -- nord colourscheme
-require("catppuccin").setup({
-    flavour = "macchiato",
-    dim_inactive = {
-        enabled = true
-    }
+require("rose-pine").setup({
+    variant="main",
+    dark_variant="main"
 })
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "rose-pine"
 
 -- vim explode and annoys me with swap file messages
 vim.cmd("set shortmess+=A")
