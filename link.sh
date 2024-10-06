@@ -38,7 +38,9 @@ case "$response" in
         slink ".wezterm.lua"
 
         slink ".config/dolphinrc"
+        slink ".config/konsolerc"
         slink ".config/starship.toml"
+        slink ".config/helix"
         slink ".config/gtk-3.0/gtk.css"
         slink ".config/micro"
         slink ".config/nvim"
