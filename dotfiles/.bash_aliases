@@ -5,6 +5,8 @@ alias sdr="sudo dnf5 remove"
 alias dse="dnf5 search"
 alias dli="dnf5 list --installed"
 
+alias lasty="history | grep 'yippee$'"
+
 # chillllll htop
 alias htop="htop -d 30"
 
