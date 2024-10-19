@@ -5,7 +5,8 @@ alias sdr="sudo dnf5 remove"
 alias dse="dnf5 search"
 alias dli="dnf5 list --installed"
 
-alias lasty="history | grep 'yippee$'"
+# you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
+alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never"
 
 # chillllll htop
 alias htop="htop -d 30"
