@@ -6,19 +6,20 @@
 Capslock::Send, {Esc} ; capslock becomes esc because I don't use it anyways
 RAlt::Send, {F5} ; right alt presses f5 because I use a 65% and 2 keypresses is 2 too many
 
+; commented as AHK's bugginess and lag gives me great pain
 ; shift enter kills me because I keep misinputting it and this fixes it (I guess)
-+Enter::
-IfWinActive, Firefox
-{
-    Send, {Blind}{SHIFT up}{Enter}
-}
-else
-{
+; +Enter::
+; IfWinActive, Firefox
+; {
+;     Send, {Blind}{SHIFT up}{Enter}
+; }
+; else
+; {
     ; could potentially trigger the keyup/blind bug but fixing it would cuz some weirdass behaviour
     ; so uh don't do that
-    Send, {Blind}+{Enter}
-}
-return
+;     Send, {Blind}+{Enter}
+; }
+; return
 
 ; ---------------------------------
 ;             RK68 part
