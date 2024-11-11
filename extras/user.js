@@ -285,6 +285,7 @@ user_pref("media.av1.enabled", false);
 user_pref("browser.urlbar.trimHttps", false);
 user_pref("browser.urlbal.trimURLs", false);
 
+// PREF_CUSTOM: this breaks stuff when it's true (desmos, google docs, google maps, etc.)
 user_pref("gfx.canvas.accelerated", false);
 
 /****************************************************************************
