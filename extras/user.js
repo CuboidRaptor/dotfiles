@@ -285,6 +285,7 @@ user_pref("media.av1.enabled", false);
 user_pref("browser.urlbar.trimHttps", false);
 user_pref("browser.urlbal.trimURLs", false);
 
+user_pref("gfx.canvas.accelerated", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
