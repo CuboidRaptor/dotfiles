@@ -35,5 +35,8 @@ PgDn::Send, {End} ; aaand pgdown becomes end
 ^PgUp::Send, {Blind}{PgUp up}{CTRL up}^{Home}
 ^PgDn::Send, {Blind}{PgDn up}{CTRL up}^{End}
 
+^+PgUp::Send, {Blind}{PgUp up}{CTRL up}{SHIFT up}^+{Home}
+^+PgDn::Send, {Blind}{PgDn up}{CTRL up}{SHIFT up}^+{End}
+
 Home::Send, {PgUp} ; and the reverse of the above code
 End::Send, {PgDn}
