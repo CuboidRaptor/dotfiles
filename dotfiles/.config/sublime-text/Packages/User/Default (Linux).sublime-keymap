@@ -14,4 +14,6 @@
         "command": "show_panel",
         "args": {"panel": "replace", "reverse": false}
     },
+    { "keys": ["ctrl+tab"], "command": "next_view" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
 ]
