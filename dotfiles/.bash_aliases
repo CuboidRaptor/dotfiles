@@ -27,11 +27,4 @@ alias b='sudo "$BASH" -c "$(history -p !!)"'
 # must have docker built to 'hollywood_docker' from mcrmonkey's fork of hollywood's Dockerfile
 alias hack="docker run -it 'hollywood_docker'"
 
-# by u/ASCIInerd73
-..() {
-    if [ -z "$1" ]; then
-        cd ..
-    else
-        cd `awk "BEGIN {while (c++<$1) printf \"../\"}"`
-    fi
-}
+alias imgstrip="mogrify -strip"

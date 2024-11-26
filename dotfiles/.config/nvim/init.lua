@@ -7,7 +7,7 @@ require("config.lazy")
 -- mini surround
 require("mini.surround").setup()
 
--- nord colourscheme
+-- rose pine colorscheme
 require("rose-pine").setup({
     variant="main",
     dark_variant="main"
