@@ -17,7 +17,7 @@ alias ccopy="xclip -sel clip"
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
-export EDITOR=micro
+export EDITOR="nvim"
 alias ls="exa -a"
 alias cat="bat"
 
@@ -28,3 +28,4 @@ alias b='sudo "$BASH" -c "$(history -p !!)"'
 alias hack="docker run -it 'hollywood_docker'"
 
 alias imgstrip="mogrify -strip"
+

@@ -7,10 +7,9 @@
 	"font_size": 10,
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
-	"auto_complete": true,
+	"auto_complete": false,
 	"auto_match_enabled": false,
 	"auto_close_tags": false,
-	"mini_auto_complete": true,
 	"ignored_packages":
 	[
 		"Vintage",

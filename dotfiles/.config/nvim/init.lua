@@ -28,3 +28,9 @@ vim.g["python_indent"] = {
 }
 
 vim.cmd([[set timeoutlen=420]])
+
+-- me like mouse
+vim.opt.mouse = 'a'
+
+-- keep this many lines above and below when scrolling
+vim.opt.scrolloff = 3
