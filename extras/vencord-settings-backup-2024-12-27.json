@@ -5,7 +5,8 @@
         "useQuickCss": true,
         "themeLinks": [],
         "enabledThemes": [
-            "mocha.theme.css"
+            "mocha.theme.css",
+            "rose-pine.theme.css"
         ],
         "enableReactDevtools": false,
         "frameless": false,
@@ -76,7 +77,7 @@
                 "enabled": false
             },
             "BetterGifAltText": {
-                "enabled": false
+                "enabled": true
             },
             "BetterGifPicker": {
                 "enabled": false
@@ -94,7 +95,10 @@
                 "enabled": false
             },
             "BetterSettings": {
-                "enabled": true
+                "enabled": true,
+                "disableFade": true,
+                "eagerLoad": true,
+                "organizeMenu": true
             },
             "BetterUploadButton": {
                 "enabled": false
@@ -130,7 +134,9 @@
                 "enabled": false
             },
             "CrashHandler": {
-                "enabled": true
+                "enabled": true,
+                "attemptToPreventCrashes": true,
+                "attemptToNavigateToHome": false
             },
             "CtrlEnterSend": {
                 "enabled": false
@@ -232,7 +238,9 @@
                 "enabled": false
             },
             "MemberCount": {
-                "enabled": true
+                "enabled": true,
+                "memberList": true,
+                "toolTip": true
             },
             "MentionAvatars": {
                 "enabled": false
@@ -298,7 +306,10 @@
                 "enabled": false
             },
             "NoReplyMention": {
-                "enabled": true
+                "enabled": true,
+                "userList": "1234567890123445,1234567890123445",
+                "shouldPingListed": true,
+                "inverseShiftReply": false
             },
             "NoScreensharePreview": {
                 "enabled": false
@@ -363,9 +374,6 @@
             "PreviewMessage": {
                 "enabled": false
             },
-            "PronounDB": {
-                "enabled": false
-            },
             "QuickMention": {
                 "enabled": false
             },
@@ -397,9 +405,6 @@
                 "enabled": false
             },
             "RoleColorEverywhere": {
-                "enabled": false
-            },
-            "SearchReply": {
                 "enabled": false
             },
             "SecretRingToneEnabler": {
@@ -535,7 +540,7 @@
                 "enabled": true
             },
             "WebScreenShareFixes": {
-                "enabled": true
+                "enabled": false
             },
             "WhoReacted": {
                 "enabled": false
@@ -560,6 +565,21 @@
             },
             "SupportHelper": {
                 "enabled": true
+            },
+            "FullSearchContext": {
+                "enabled": false
+            },
+            "UserMessagesPronouns": {
+                "enabled": false
+            },
+            "DynamicImageModalAPI": {
+                "enabled": false
+            },
+            "AccountPanelServerProfile": {
+                "enabled": false
+            },
+            "FixImagesQuality": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -572,7 +592,7 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1725164938545
+            "settingsSyncVersion": 1730925533812
         }
     },
     "quickCss": ""
