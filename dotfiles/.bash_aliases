@@ -1,9 +1,8 @@
-# dnf aliases, I'm lazy, also like dnf5
-alias dnf="dnf5"
-alias sdi="sudo dnf5 install"
-alias sdr="sudo dnf5 remove"
-alias dse="dnf5 search"
-alias dli="dnf5 list --installed"
+# dnf aliases, I'm lazy
+alias sdi="sudo dnf install"
+alias sdr="sudo dnf remove"
+alias dse="dnf search"
+alias dli="dnf list --installed"
 
 # you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
 alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
@@ -20,6 +19,7 @@ alias nano="micro"
 export EDITOR="nvim"
 alias ls="exa -a"
 alias cat="bat"
+alias vim="nvim"
 
 # this stuff bugs out a lot so i don't use it but it's there for funnies
 alias b='sudo "$BASH" -c "$(history -p !!)"'
@@ -27,5 +27,5 @@ alias b='sudo "$BASH" -c "$(history -p !!)"'
 # must have docker built to 'hollywood_docker' from mcrmonkey's fork of hollywood's Dockerfile
 alias hack="docker run -it 'hollywood_docker'"
 
+# strip metadata from image
 alias imgstrip="mogrify -strip"
-
