@@ -13,6 +13,9 @@ alias htop="htop -d 30"
 # copy stdin to clipboard
 alias ccopy="xclip -sel clip"
 
+# neofetch!
+alias neofetch="fastfetch -c neofetch"
+
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"

@@ -260,7 +260,7 @@ user_pref("security.cert_pinning.enforcement_level", 2);
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 
 // PREF_CUSTOM: Windows 11 themed scrollbars
-user_pref("widget.non-native-theme.scrollbar.style", 5);
+// user_pref("widget.non-native-theme.scrollbar.style", 5);
 
 // PREF_CUSTOM: Memory/disk optimizations
 user_pref("browser.cache.memory.capacity", 65535);
@@ -287,6 +287,9 @@ user_pref("browser.urlbal.trimURLs", false);
 
 // PREF_CUSTOM: this breaks stuff when it's true (desmos, google docs, google maps, etc.)
 user_pref("gfx.canvas.accelerated", false);
+
+// PREF_CUSTOM: sideloading extensions go brrrrr
+user_pref("xpinstall.signatures.required", false);
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
