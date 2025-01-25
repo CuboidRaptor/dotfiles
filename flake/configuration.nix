@@ -160,10 +160,6 @@
             home = "pageup";
             end = "pagedown";
           };
-          control = {
-            up = "macro(up up up)";
-            down = "macro(down down down)";
-          };
           shift = {
             capslock = "capslock";
           };
