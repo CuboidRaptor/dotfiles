@@ -11,10 +11,12 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  # flakes!
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # sudo nix-shell -p refind efibootmgr sbsigntool and then refind-install for rEFInd.
 
   networking.hostName = "dregsdesk10"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
@@ -38,7 +40,7 @@
 
   # Enable magic sysrq key
   boot.kernel.sysctl = {
-    "kernel.sysrq" = 438;
+    "kernel.sysrq" = 246;
   };
 
   # Configure keymap in X11
@@ -51,7 +53,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -86,7 +88,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # sublime text 4 and some other packages need it
+  # sublime text 4/gh desktop and some other packages need it
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
   ];
@@ -104,6 +106,9 @@
     flameshot
     vlc
     thunderbird-bin
+    lutris
+    prismlauncher
+    owmods-gui
 
     eza
     starship
@@ -149,6 +154,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
