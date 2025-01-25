@@ -15,6 +15,9 @@
         };
         graphics = {
             enable = true;
+            enable32Bit = true;
         };
     };
+    environment.systemPackages = with pkgs; [ vulkan-tools ];
+    environment.variables = { WEBKIT_DISABLE_DMABUF_RENDERER = 1; };
 }

@@ -119,6 +119,7 @@
     jdk8
     jdk17
     jdk21
+    python313
 
     eza
     starship
@@ -137,7 +138,7 @@
     cascadia-code
   ];
 
-  environment.sessionVariables = {
+  environment.variables = {
     JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
     JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
     JAVA_21_HOME = "${pkgs.jdk21}/lib/openjdk";
@@ -160,6 +161,9 @@
           control = {
             up = "macro(up up up)";
             down = "macro(down down down)";
+          };
+          shift = {
+            capslock = "capslock";
           };
         };
       };
