@@ -80,10 +80,6 @@
       "wheel"
       "keyd"
     ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
   # Install firefox.
@@ -100,6 +96,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    jdk8
+    jdk17
+    jdk21
+    python313Full
+    nodejs_23
+
     github-desktop
     sublime4
     gparted
@@ -116,10 +118,9 @@
     kdePackages.kwalletmanager
     wineWowPackages.stable
     winetricks
-    jdk8
-    jdk17
-    jdk21
-    python313
+    vscodium-fhs
+    vivaldi
+    kdePackages.kate
 
     eza
     starship
@@ -132,6 +133,7 @@
     git
     imagemagick
     hollywood
+    http-server
   ];
 
   fonts.packages = with pkgs; [
