@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-sudo nixos-rebuild switch --flake .#default
+git add .
+sudo nixos-rebuild switch --flake .#default "$@"

@@ -5,11 +5,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-    imports =
-        [ # Include the results of the hardware scan.
-            ./hardware-configuration.nix
-            inputs.home-manager.nixosModules.default
-        ];
+    imports = [
+        ./hardware-configuration.nix
+        ./nvidia.nix
+        inputs.home-manager.nixosModules.default
+    ];
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -110,23 +110,16 @@
         xclip
         htop
         neovim
+        micro
+        git
+        imagemagick
+        hollywood
+        keyd
     ];
 
     fonts.packages = with pkgs; [
         cascadia-code
     ];
-
-    hardware.graphics = {
-        enable = true;
-    };
-    services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = true;
-        open = false;
-        nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
