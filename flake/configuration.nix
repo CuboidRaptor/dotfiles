@@ -75,7 +75,11 @@
   users.users.jason = {
     isNormalUser = true;
     description = "Jason Fan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "keyd"
+    ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -109,6 +113,12 @@
     lutris
     prismlauncher
     owmods-gui
+    kdePackages.kwalletmanager
+    wineWowPackages.stable
+    winetricks
+    jdk8
+    jdk17
+    jdk21
 
     eza
     starship
@@ -121,12 +131,40 @@
     git
     imagemagick
     hollywood
-    keyd
   ];
 
   fonts.packages = with pkgs; [
     cascadia-code
   ];
+
+  environment.sessionVariables = {
+    JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
+    JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
+    JAVA_21_HOME = "${pkgs.jdk21}/lib/openjdk";
+  };
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "overload(control, esc)";
+            rightalt = "f5";
+            pageup = "home";
+            pagedown = "end";
+            home = "pageup";
+            end = "pagedown";
+          };
+          control = {
+            up = "macro(up up up)";
+            down = "macro(down down down)";
+          };
+        };
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
