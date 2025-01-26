@@ -22,6 +22,27 @@
   networking.hostName = "dregsdesk10"; # Define your hostname.
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
+  # Enable magic sysrq key
+  boot.kernel.sysctl = {
+    "kernel.sysrq" = 246;
+    "vm.swappiness" = 180; # zram optimisations from arch/pop! wiki
+    "vm.watermark_boost_factor" = 0;
+    "vm.watermark_scale_factor" = 125;
+    "vm.page-cluster" = 0;
+  };
+
+  # zram + swapfile!!
+  zramSwap = {
+    enable = true;
+    memoryPercent = 60;
+  };
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 4 * 1024;
+    }
+  ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -38,11 +59,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-
-  # Enable magic sysrq key
-  boot.kernel.sysctl = {
-    "kernel.sysrq" = 246;
-  };
 
   # Enable CUPS to print documents. Also find printers.
   services.printing = {
@@ -61,18 +77,6 @@ BrowseProtocols all
     enable = true;
     nssmdns4 = true;
   };
-
-  # zmra + swapfile!!!
-  zramSwap = {
-    enable = true;
-    memoryPercent = 60;
-  };
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 4 * 1024;
-    }
-  ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
