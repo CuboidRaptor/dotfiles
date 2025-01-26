@@ -67,12 +67,12 @@
     enable = true;
     browsing = true;
     browsedConf = ''
-BrowseDNSSDSubTypes _cups,_print
-BrowseLocalProtocols all
-BrowseRemoteProtocols all
-CreateIPPPrinterQueues All
+      BrowseDNSSDSubTypes _cups,_print
+      BrowseLocalProtocols all
+      BrowseRemoteProtocols all
+      CreateIPPPrinterQueues All
 
-BrowseProtocols all
+      BrowseProtocols all
     '';
   };
   services.avahi = {
