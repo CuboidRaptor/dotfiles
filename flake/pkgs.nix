@@ -29,10 +29,6 @@
     flameshot
     vlc
     thunderbird-bin
-    lutris
-    prismlauncher
-    mindustry
-    owmods-gui
     kdePackages.kwalletmanager
     wineWowPackages.stable
     winetricks
@@ -61,6 +57,12 @@
     imagemagick
     hollywood
     http-server
+
+    lutris
+    prismlauncher
+    mindustry
+    owmods-gui
+    ckan
   ];
 
   fonts.packages = with pkgs; [

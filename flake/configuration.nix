@@ -20,10 +20,16 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.hostName = "dregsdesk10"; # Define your hostname.
-  networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
-  networking.nameservers = [ "9.9.9.9" "1.1.1.1" ];
+  networking = {
+    networkmanager.enable = true;
+    hostName = "dregsdesk10"; # Define your hostname.
+    wireless.enable = false; # Enables wireless support via wpa_supplicant.
+    nameservers = [
+      "9.9.9.9"
+      "1.1.1.1"
+    ];
+    networkmanager.dns = "none";
+  };
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl88xxau-aircrack
   ];
