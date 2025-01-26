@@ -23,6 +23,7 @@
   networking.networkmanager.enable = true;
   networking.hostName = "dregsdesk10"; # Define your hostname.
   networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
+  networking.nameservers = [ "9.9.9.9" "1.1.1.1" ];
   boot.extraModulePackages = with config.boot.kernelPackages; [
     rtl88xxau-aircrack
   ];
@@ -47,6 +48,11 @@
       size = 4 * 1024;
     }
   ];
+
+  # earlyoom config
+  services.earlyoom = {
+    enable = true;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Toronto";

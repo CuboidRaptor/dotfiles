@@ -31,6 +31,7 @@
     thunderbird-bin
     lutris
     prismlauncher
+    mindustry
     owmods-gui
     kdePackages.kwalletmanager
     wineWowPackages.stable
