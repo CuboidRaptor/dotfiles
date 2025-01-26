@@ -19,8 +19,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable networking
+  networking.networkmanager.enable = true;
   networking.hostName = "dregsdesk10"; # Define your hostname.
-  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = false; # Enables wireless support via wpa_supplicant.
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    rtl88xxau-aircrack
+  ];
 
   # Enable magic sysrq key
   boot.kernel.sysctl = {
@@ -42,9 +47,6 @@
       size = 4 * 1024;
     }
   ];
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Toronto";
