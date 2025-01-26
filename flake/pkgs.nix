@@ -47,6 +47,7 @@
     vivaldi-ffmpeg-codecs
     kdePackages.kate
     remmina
+    pavucontrol
 
     eza
     starship
