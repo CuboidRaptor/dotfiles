@@ -49,8 +49,23 @@
     variant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Enable CUPS to print documents. Also find printers.
+  services.printing = {
+    enable = true;
+    browsing = true;
+    browsedConf = ''
+BrowseDNSSDSubTypes _cups,_print
+BrowseLocalProtocols all
+BrowseRemoteProtocols all
+CreateIPPPrinterQueues All
+
+BrowseProtocols all
+    '';
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -100,7 +115,7 @@
     jdk17
     jdk21
     python313Full
-    nodejs_23
+    nodejs_22
 
     github-desktop
     sublime4
@@ -121,6 +136,7 @@
     vscodium-fhs
     vivaldi
     kdePackages.kate
+    kdePackages.discover 
 
     eza
     starship
