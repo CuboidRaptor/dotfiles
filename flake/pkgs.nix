@@ -45,6 +45,7 @@
     ))
     vivaldi-ffmpeg-codecs
     kdePackages.kate
+    remmina
 
     eza
     starship
