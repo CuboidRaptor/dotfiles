@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./pkgs.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -43,12 +44,6 @@
     "kernel.sysrq" = 246;
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Enable CUPS to print documents. Also find printers.
   services.printing = {
     enable = true;
@@ -66,6 +61,18 @@ BrowseProtocols all
     enable = true;
     nssmdns4 = true;
   };
+
+  # zmra + swapfile!!!
+  zramSwap = {
+    enable = true;
+    memoryPercent = 60;
+  };
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 4 * 1024;
+    }
+  ];
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -95,71 +102,6 @@ BrowseProtocols all
       "wheel"
       "keyd"
     ];
-  };
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # sublime text 4/gh desktop and some other packages need it
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
-  ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    jdk8
-    jdk17
-    jdk21
-    python313Full
-    nodejs_22
-
-    github-desktop
-    sublime4
-    gparted
-    firefox-devedition-bin
-    vesktop
-    speedcrunch
-    anki-bin
-    flameshot
-    vlc
-    thunderbird-bin
-    lutris
-    prismlauncher
-    owmods-gui
-    kdePackages.kwalletmanager
-    wineWowPackages.stable
-    winetricks
-    vscodium-fhs
-    vivaldi
-    kdePackages.kate
-    kdePackages.discover 
-
-    eza
-    starship
-    bat
-    fastfetch
-    xclip
-    htop
-    neovim
-    micro
-    git
-    imagemagick
-    hollywood
-    http-server
-  ];
-
-  fonts.packages = with pkgs; [
-    cascadia-code
-  ];
-
-  environment.variables = {
-    JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
-    JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
-    JAVA_21_HOME = "${pkgs.jdk21}/lib/openjdk";
   };
 
   services.keyd = {
