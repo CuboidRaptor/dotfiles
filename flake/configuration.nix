@@ -56,14 +56,14 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 4 * 1024;
+      size = 8 * 1024;
     }
   ];
 
   # earlyoom config
   services.earlyoom = {
     enable = true;
-    freeSwapThreshold = 30;
+    freeSwapThreshold = 25;
   };
 
   # Set your time zone.
