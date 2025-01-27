@@ -34,6 +34,7 @@
     rtl88xxau-aircrack
   ];
 
+  # noatime
   fileSystems."/".options = [ "noatime" ];
   fileSystems."/home".options = [ "noatime" ];
 

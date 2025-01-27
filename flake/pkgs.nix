@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
 {
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  
+  # Install/enable option programs.
+  programs = {
+    firefox.enable = true;
+    steam.enable = true;
+  };
 
   # sublime text 4/gh desktop and some other packages need it
   nixpkgs.config.permittedInsecurePackages = [
