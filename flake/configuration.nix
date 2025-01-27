@@ -64,6 +64,7 @@
   services.earlyoom = {
     enable = true;
     freeSwapThreshold = 25;
+    enableNotifications = true;
   };
 
   # Set your time zone.
