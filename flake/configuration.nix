@@ -34,6 +34,9 @@
     rtl88xxau-aircrack
   ];
 
+  fileSystems."/".options = [ "noatime" ];
+  fileSystems."/home".options = [ "noatime" ];
+
   # Enable magic sysrq key
   boot.kernel.sysctl = {
     "kernel.sysrq" = 246;

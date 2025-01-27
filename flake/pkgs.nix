@@ -19,6 +19,7 @@
     python313Full
     nodejs_22
 
+    xmousepasteblock
     github-desktop
     sublime4
     gparted
