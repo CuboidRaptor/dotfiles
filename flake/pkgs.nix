@@ -48,7 +48,6 @@
     parsec-bin
 
     eza
-    starship
     bat
     fastfetch
     xclip

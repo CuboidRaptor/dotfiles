@@ -127,6 +127,12 @@
     ];
   };
 
+  # starship config
+  programs.starship = {
+    enable = true;
+    settings = pkgs.lib.importTOML ./starship.toml;
+  };
+
   services.keyd = {
     enable = true;
     keyboards = {

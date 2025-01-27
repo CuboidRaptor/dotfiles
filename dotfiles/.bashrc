@@ -95,14 +95,9 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# starship!
-if [ -f ~/.bash_starship ]; then
-    source ~/.bash_starship
-fi
-
 # bash pre-exec
 if [ -f ~/.bash_path ]; then
-    source ~/.bash_path
+  . ~/.bash_path
 fi
 
 # Micro editor truecolor, I guess
