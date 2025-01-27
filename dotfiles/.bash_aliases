@@ -1,18 +1,15 @@
-# dnf aliases, I'm lazy
-alias sdi="sudo dnf install"
-alias sdr="sudo dnf remove"
-alias dse="dnf search"
-alias dli="dnf list --installed"
-alias dlim="dnf repoquery --userinstalled"
+# last time system was upgraded
+# you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
+export HISTTIMEFORMAT="%y/%m/%d %T "
+alias lasty="history | grep -E '([0-9]{2}:?){3} nixos-rebuild switch --upgrade$' --color=never | tail -n 3"
+
+# upgrade nixos, I guess
+alias yippee="sudo nixos-rebuild switch --upgrade"
 
 # I use this a lot
 alias lg="lazygit"
 
 alias lsg="ls -l | grep"
-
-# last time system was upgraded
-export HISTTIMEFORMAT="%y/%m/%d %T "
-alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
 
 # chillllll htop
 alias htop="htop -d 30"

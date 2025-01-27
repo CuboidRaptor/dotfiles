@@ -40,6 +40,7 @@
   # Enable magic sysrq key
   boot.kernel.sysctl = {
     "kernel.sysrq" = 246;
+
     "vm.swappiness" = 180; # zram optimisations from arch/pop! wiki
     "vm.watermark_boost_factor" = 0;
     "vm.watermark_scale_factor" = 125;
@@ -61,6 +62,7 @@
   # earlyoom config
   services.earlyoom = {
     enable = true;
+    freeSwapThreshold = 30;
   };
 
   # Set your time zone.
