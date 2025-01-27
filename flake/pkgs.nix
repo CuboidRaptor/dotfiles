@@ -45,6 +45,7 @@
     kdePackages.kate
     remmina
     pavucontrol
+    parsec-bin
 
     eza
     starship
