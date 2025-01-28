@@ -1,10 +1,9 @@
-# last time system was upgraded
+# upgrade nixos, I guess
+alias yippee="sudo nh os boot --upgrade && sudo systemctl reboot"
+
 # you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
 export HISTTIMEFORMAT="%y/%m/%d %T "
-alias lasty="history | grep -E '([0-9]{2}:?){3} nixos-rebuild switch --upgrade$' --color=never | tail -n 3"
-
-# upgrade nixos, I guess
-alias yippee="sudo nixos-rebuild switch --upgrade"
+alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
 
 # I use this a lot
 alias lg="lazygit"
