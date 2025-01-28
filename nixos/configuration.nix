@@ -9,8 +9,6 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./pkgs.nix
-    #./extconfig/nixvim.nix
-    #./extconfig/nvim.nix
   ];
 
   # flakes!
@@ -136,12 +134,6 @@
       "wheel"
       "keyd"
     ];
-  };
-
-  # starship config
-  programs.starship = {
-    enable = true;
-    settings = pkgs.lib.importTOML ./extconfig/starship.toml;
   };
 
   services.keyd = {

@@ -14,6 +14,7 @@
       vimAlias = true;
       viAlias = true;
     };
+    starship.enable = true;
   };
 
   # sublime text 4/gh desktop and some other packages need it
@@ -62,7 +63,7 @@
     fastfetch
     xclip
     htop
-    #neovim (installed through nvim.nix)
+    ##neovim # (installed through nvim.nix)
     micro
     git
     imagemagick

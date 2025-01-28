@@ -1,5 +1,5 @@
 # upgrade nixos, I guess
-alias yippee="sudo nh os boot --upgrade && sudo systemctl reboot"
+alias yippee="nh os boot --upgrade && sudo systemctl reboot"
 
 # you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
 export HISTTIMEFORMAT="%y/%m/%d %T "
