@@ -61,7 +61,6 @@
     eza
     bat
     fastfetch
-    xclip
     htop
     ##neovim # (installed through nvim.nix)
     micro
