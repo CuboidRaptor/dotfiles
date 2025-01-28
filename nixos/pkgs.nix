@@ -8,6 +8,12 @@
   programs = {
     firefox.enable = true;
     steam.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      vimAlias = true;
+      viAlias = true;
+    };
   };
 
   # sublime text 4/gh desktop and some other packages need it
@@ -60,7 +66,7 @@
     fastfetch
     xclip
     htop
-    neovim
+    #neovim (installed through nvim.nix)
     micro
     git
     imagemagick

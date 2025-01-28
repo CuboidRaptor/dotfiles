@@ -9,7 +9,8 @@
     ./hardware-configuration.nix
     ./nvidia.nix
     ./pkgs.nix
-    inputs.home-manager.nixosModules.default
+    #./extconfig/nixvim.nix
+    #./extconfig/nvim.nix
   ];
 
   # flakes!
@@ -72,7 +73,7 @@
     enable = true;
   };
   environment.variables = {
-    FLAKE = "/home/jason/dotfiles/nixos/flake.nix";
+    FLAKE = "path:///home/jason/dotfiles/nixos/";
   };
 
   # Set your time zone.

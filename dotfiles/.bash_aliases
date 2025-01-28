@@ -19,7 +19,6 @@ alias neofetch="fastfetch -c neofetch"
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
-export EDITOR="nvim"
 alias ls="eza -a"
 alias cat="bat"
 alias vim="nvim"
