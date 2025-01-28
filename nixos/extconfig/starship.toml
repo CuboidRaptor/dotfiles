@@ -26,7 +26,7 @@ vimcmd_symbol = "[❮](green)"
 "Games" = "󰊴"
 "Archive" = ""
 "dotfiles" = ""
-".config" = "."
+".config" = "."
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
