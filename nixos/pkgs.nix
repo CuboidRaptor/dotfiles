@@ -21,10 +21,10 @@
     jdk21
     python313Full
     nodejs_22
+    sublime4
 
     xmousepasteblock
     github-desktop
-    sublime4
     gparted
     firefox-devedition-bin
     vesktop

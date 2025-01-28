@@ -67,6 +67,12 @@
     enableNotifications = true;
   };
 
+  # nix helper installation/config!
+  programs.nh = {
+    enable = true;
+    flake = ./.;
+  };
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
