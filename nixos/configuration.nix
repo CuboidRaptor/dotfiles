@@ -70,7 +70,9 @@
   # nix helper installation/config!
   programs.nh = {
     enable = true;
-    flake = ./.;
+  };
+  environment.variables = {
+    FLAKE = "/home/jason/dotfiles/nixos/flake.nix";
   };
 
   # Set your time zone.

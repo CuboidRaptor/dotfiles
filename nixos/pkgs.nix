@@ -20,8 +20,13 @@
     jdk17
     jdk21
     python313Full
-    nodejs_22
+    nodejs_23
+    nodejs_18
     sublime4
+
+    ruff-lsp # cursed
+    #jdt-language-server
+    #python313Packages.python-lsp-jsonrpc
 
     xmousepasteblock
     github-desktop
