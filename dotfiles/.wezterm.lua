@@ -46,13 +46,6 @@ config.mouse_bindings = {
 	},
 }
 
-wezterm.on("gui-startup", function(cmd)
-	local _, _, window = wezterm.mux.spawn_window(cmd or {})
-  	window:gui_window():focus()
-  	window:gui_window():focus()
-  	window:gui_window():focus()
-end)
-
 -- Open new wezterms in existing instances if possible
 prefer_to_spawn_tabs = true
 
