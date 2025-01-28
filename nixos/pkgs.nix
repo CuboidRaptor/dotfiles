@@ -30,10 +30,6 @@
     nodejs_18
     sublime4
 
-    ruff-lsp # cursed
-    #jdt-language-server
-    #python313Packages.python-lsp-jsonrpc
-
     xmousepasteblock
     github-desktop
     gparted
