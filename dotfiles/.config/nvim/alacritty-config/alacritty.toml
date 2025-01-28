@@ -1,8 +1,0 @@
-[window]
-
-dimensions = { lines = 35, columns = 130 }
-
-[font]
-
-normal = { family = "Cascadia Mono NF", style = "Regular" }
-size = 11

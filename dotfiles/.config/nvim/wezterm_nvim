@@ -11,4 +11,5 @@ DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
 ARGS="$@"
 [ -z "$ARGS" ] || ARGS=" ${ARGS}"
 
-alacritty --title "NeoVim - Powered by Alacritty" --config-file "$DIR/alacritty-config/alacritty.toml" -e nvim${ARGS}
+# alacritty --title "NeoVim - Powered by Alacritty" --config-file "$DIR/alacritty-config/alacritty.toml" -e nvim${ARGS}
+wezterm start --new-tab nvim${ARGS} &

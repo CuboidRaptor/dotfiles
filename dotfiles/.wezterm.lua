@@ -4,13 +4,12 @@ local config = wezterm.config_builder()
 -- actually use regular bash cuh
 config.default_prog = { "bash" }
 
-config.initial_rows = 35
-config.initial_cols = 140
+config.initial_rows = 32
+config.initial_cols = 128
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
 local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
-config.default_cursor_style = "BlinkingBar"
 
 config.colors = theme.colors();
 config.window_frame = theme.window_frame();
@@ -23,10 +22,10 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 11
 
 config.window_padding = {
-    left = "20px",
-    right = "20px",
-    top = "20px",
-    bottom = "20px",
+    left = "15px",
+    right = "15px",
+    top = "15px",
+    bottom = "15px",
 }
 
 -- copy/paste with mouse go brrrrrr
@@ -46,22 +45,15 @@ config.mouse_bindings = {
 		end),
 	},
 }
-config.keys = {
-    {
-        key = "v",
-        mods = "CTRL",
-        action = act.PasteFrom "Clipboard"
-    },
-    {
-        key = "w",
-        mods = "CTRL",
-        action = wezterm.action.CloseCurrentTab { confirm = false }
-    },
-    {
-        key = "t",
-        mods = "CTRL",
-        action = act.SpawnTab { DomainName = "unix" }
-    }
-}
+
+wezterm.on("gui-startup", function(cmd)
+	local _, _, window = wezterm.mux.spawn_window(cmd or {})
+  	window:gui_window():focus()
+  	window:gui_window():focus()
+  	window:gui_window():focus()
+end)
+
+-- Open new wezterms in existing instances if possible
+prefer_to_spawn_tabs = true
 
 return config

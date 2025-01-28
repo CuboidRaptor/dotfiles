@@ -15,17 +15,7 @@ require("rose-pine").setup({
 vim.cmd.colorscheme "rose-pine"
 
 -- vim explode and annoys me with swap file messages
-vim.cmd("set shortmess+=A")
-
--- python auto-indent settings
-vim.g["python_indent"] = { 
-    disable_parentheses_indenting = false,
-    closed_paren_align_last_line = false,
-    searchpair_timeout = 150,
-    continue = "shiftwidth()",
-    open_paren = "shiftwidth()",
-    nested_paren = "shiftwidth()"
-}
+-- vim.cmd("set shortmess+=A")
 
 vim.cmd([[set timeoutlen=420]])
 
@@ -34,3 +24,6 @@ vim.opt.mouse = 'a'
 
 -- keep this many lines above and below when scrolling
 vim.opt.scrolloff = 3
+
+-- don't autoformat files
+vim.g.autoformat = false

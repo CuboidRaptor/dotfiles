@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=System;TerminalEmulator;Utility;
+Comment[en_CA]=Wez's Terminal Emulator
+Comment=Wez's Terminal Emulator
+Exec=wezterm start --cwd .
+GenericName[en_CA]=
+GenericName=
+Icon=org.wezfurlong.wezterm
+Keywords=shell;prompt;command;commandline;cmd;
+MimeType=
+Name[en_CA]=WezTerm
+Name=WezTerm
+Path=
+StartupNotify=true
+StartupWMClass=org.wezfurlong.wezterm
+Terminal=false
+TerminalOptions=
+TryExec=wezterm
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
