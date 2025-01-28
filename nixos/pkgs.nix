@@ -57,6 +57,7 @@
     remmina
     pavucontrol
     parsec-bin
+    wezterm
 
     eza
     bat
