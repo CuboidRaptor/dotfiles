@@ -82,5 +82,5 @@ vim.keymap.set("i", "<Home>", "<Esc>_i", {remap=true, desc="Go home, after inden
 vim.keymap.set("v", "<Home>", "_", {remap=true, desc="Go home, after indents"})
 
 -- language-specific
-vim.keymap.set("n", "<F5>", ":w<Enter>:exec '!konsole -e $HOME/.config/nvim/pythonp ' shellescape(@%, 1) '&'<Enter>", {remap=true, desc="Run Python"})
-vim.keymap.set("i", "<F5>", "<Esc>:w<Enter>:exec '!konsole -e $HOME/.config/nvim/pythonp ' shellescape(@%, 1) '&'<Enter>a", {remap=true, desc="Run Python"})
+vim.keymap.set("n", "<F5>", ":w<Enter>:RunCode<Enter>", {remap=true, desc="Run Code"})
+vim.keymap.set("i", "<F5>", "<Esc>:w<Enter>:RunCode<Enter>a", {remap=true, desc="Run Code"})

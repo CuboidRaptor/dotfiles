@@ -46,6 +46,10 @@ config.mouse_bindings = {
 	},
 }
 
+config.keys = {
+	{ key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication }
+}
+
 -- Open new wezterms in existing instances if possible
 prefer_to_spawn_tabs = true
 

@@ -4,7 +4,7 @@ require("config.lazy")
 -- line cursor in normal mode
 -- vim.opt.guicursor = "a:ver95"
 
--- mini surround
+-- automatically set indentation size
 require("guess-indent").setup()
 
 -- rose pine colorscheme
