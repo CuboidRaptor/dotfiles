@@ -45,6 +45,18 @@ vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4 -- default tab width for new files
 
+-- code runner plugin!
+require("code_runner").setup({
+    filetype = {
+        java = {
+            "cd $dir &&",
+            "javac $fileName &&",
+            "java $fileNameWithoutExt",
+            "rm $fileNameWithoutExt"
+        }
+    }
+})
+
 -- rose pine colorscheme
 require("rose-pine").setup({
   variant = "main",
