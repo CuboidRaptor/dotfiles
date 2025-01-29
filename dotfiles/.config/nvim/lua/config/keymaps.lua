@@ -77,10 +77,10 @@ vim.keymap.set("i", "<C-a>", "<Esc>gg_vG$", {remap=true, desc="Select All"})
 vim.keymap.set("v", leader_1 .. "c", function() return comment() end, {remap=true, desc="Block Comment", expr=true})
 vim.keymap.set("v", leader_1 .. "u", function() return uncomment() end, {remap=true, desc="Block Uncomment", expr=true})
 
-vim.keymap.set("n", "<Home>", "_", {remap=true, desc="Go home, after indents"})
-vim.keymap.set("i", "<Home>", "<Esc>_i", {remap=true, desc="Go home, after indents"})
-vim.keymap.set("v", "<Home>", "_", {remap=true, desc="Go home, after indents"})
+vim.keymap.set("n", "<Home>", "^", {remap=true, desc="Go home, after indents"})
+vim.keymap.set("i", "<Home>", "<Esc>^i", {remap=true, desc="Go home, after indents"})
+vim.keymap.set("v", "<Home>", "^", {remap=true, desc="Go home, after indents"})
 
 -- language-specific
-vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR><C-w><C-k>", {remap=true, desc="Run Code"})
-vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR><C-w><C-k>a", {remap=true, desc="Run Code"})
+vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>", {remap=true, desc="Run Code"})
+vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>a", {remap=true, desc="Run Code"})
