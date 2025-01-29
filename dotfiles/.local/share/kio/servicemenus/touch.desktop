@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Service
+MimeType=application/octet-stream;inode/directory
+Actions=touchFileOrDir
+
+[Desktop Action touchFileOrDir]
+Name=Touch
+Icon=auth-fingerprint-symbolic
+Exec=touch %u

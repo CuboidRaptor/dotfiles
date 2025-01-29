@@ -67,10 +67,11 @@ vim.keymap.set("v", "x", "\"_x", {remap=false, desc="Delete"})
 vim.keymap.set("n", "<C-a>", "gg_vG$", {remap=true, desc="Select All"})
 vim.keymap.set("i", "<C-a>", "<Esc>gg_vG$", {remap=true, desc="Select All"})
 
-vim.keymap.set("i", ")", function() return bracket(")") end, {remap=true, expr=true}) -- auto go into parentheses/bracket/braces
-vim.keymap.set("i", "]", function() return bracket("]") end, {remap=true, expr=true})
-vim.keymap.set("i", "}", function() return bracket("}") end, {remap=true, expr=true})
--- vim.keymap.set("i", "\"", function() return bracket("\"") end, {remap=true, expr=true})
+-- these are disabled because of semicolon concerns and I just generally don't like them
+--vim.keymap.set("i", ")", function() return bracket(")") end, {remap=true, expr=true}) -- auto go into parentheses/bracket/braces
+--vim.keymap.set("i", "]", function() return bracket("]") end, {remap=true, expr=true})
+--vim.keymap.set("i", "}", function() return bracket("}") end, {remap=true, expr=true})
+--vim.keymap.set("i", "\"", function() return bracket("\"") end, {remap=true, expr=true})
 -- ^ this one screws up python """
 
 vim.keymap.set("v", leader_1 .. "c", function() return comment() end, {remap=true, desc="Block Comment", expr=true})
@@ -83,9 +84,3 @@ vim.keymap.set("v", "<Home>", "_", {remap=true, desc="Go home, after indents"})
 -- language-specific
 vim.keymap.set("n", "<F5>", ":w<Enter>:exec '!konsole -e $HOME/.config/nvim/pythonp ' shellescape(@%, 1) '&'<Enter>", {remap=true, desc="Run Python"})
 vim.keymap.set("i", "<F5>", "<Esc>:w<Enter>:exec '!konsole -e $HOME/.config/nvim/pythonp ' shellescape(@%, 1) '&'<Enter>a", {remap=true, desc="Run Python"})
-
-vim.keymap.set("n", "<F9>", ":tabp<Enter>", {remap=true, desc="Previous Tab"})
-vim.keymap.set("i", "<F9>", "<Esc>:tabp<Enter>a", {remap=true, desc="Previous Tab"})
-
-vim.keymap.set("n", "<F10>", ":tabn<Enter>", {remap=true, desc="Next Tab"})
-vim.keymap.set("i", "<F10>", "<Esc>:tabn<Enter>a", {remap=true, desc="Next Tab"})

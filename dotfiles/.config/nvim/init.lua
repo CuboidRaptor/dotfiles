@@ -5,7 +5,7 @@ require("config.lazy")
 -- vim.opt.guicursor = "a:ver95"
 
 -- mini surround
-require("mini.surround").setup()
+require("guess-indent").setup()
 
 -- rose pine colorscheme
 require("rose-pine").setup({
@@ -15,9 +15,12 @@ require("rose-pine").setup({
 vim.cmd.colorscheme "rose-pine"
 
 -- vim explode and annoys me with swap file messages
--- vim.cmd("set shortmess+=A")
+vim.cmd("set shortmess+=A")
 
 vim.cmd([[set timeoutlen=420]])
+
+vim.opt.smarttab = true
+vim.opt.expandtab = true
 
 -- me like mouse
 vim.opt.mouse = 'a'
