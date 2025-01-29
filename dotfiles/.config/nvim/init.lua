@@ -1,11 +1,20 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- line cursor in normal mode
--- vim.opt.guicursor = "a:ver95"
-
 -- automatically set indentation size
 require("guess-indent").setup()
+
+-- code runner plugin!
+require("code_runner").setup({
+    filetype = {
+        java = {
+            "cd $dir &&",
+            "javac $fileName &&",
+            "java $fileNameWithoutExt",
+            "rm $fileNameWithoutExt"
+        }
+    }
+})
 
 -- rose pine colorscheme
 require("rose-pine").setup({

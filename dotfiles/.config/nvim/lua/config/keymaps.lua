@@ -83,4 +83,4 @@ vim.keymap.set("v", "<Home>", "^", {remap=true, desc="Go home, after indents"})
 
 -- language-specific
 vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>", {remap=true, desc="Run Code"})
-vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>a", {remap=true, desc="Run Code"})
+vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR><C-w><C-k>a<C-w><C-j>", {remap=true, desc="Run Code"})
