@@ -74,6 +74,12 @@
     FLAKE = "path:///home/jason/dotfiles/nixos/";
   };
 
+  system.activationScripts.script.text = ''
+    #!/usr/bin/env bash
+    rm -rf /shims
+    cp -r /home/jason/dotfiles/nixos/shims /shims # copy shims to system
+  '';
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
