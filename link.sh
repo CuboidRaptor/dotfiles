@@ -34,7 +34,6 @@ case "$response" in
         slink ".bash_starship"
         slink ".gitconfig"
         slink ".ahk"
-        slink ".idlerc"
         slink ".wezterm.lua"
 
         slink ".config/dolphinrc"
@@ -52,6 +51,8 @@ case "$response" in
         slink ".local/share/color-schemes"
         slink ".local/share/konsole"
         slink ".local/share/SpeedCrunch/color-schemes"
+
+        slink ".idlerc/config-main.cfg"
 
         echo "Done symlinking!"
 
