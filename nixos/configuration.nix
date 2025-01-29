@@ -143,7 +143,7 @@
         ids = [ "*" ];
         settings = {
           main = {
-            capslock = "overload(control, esc)";
+            capslock = "esc";
             rightalt = "f5";
             pageup = "home";
             pagedown = "end";

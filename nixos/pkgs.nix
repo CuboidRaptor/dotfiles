@@ -69,6 +69,7 @@
     imagemagick
     hollywood
     http-server
+    xclip
 
     lutris
     prismlauncher
