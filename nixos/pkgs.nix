@@ -37,10 +37,10 @@
     firefox-devedition-bin
     vesktop
     speedcrunch
-    anki-bin
+    anki
     flameshot
     vlc
-    thunderbird-bin
+    thunderbird
     kdePackages.kwalletmanager
     wineWowPackages.stable
     winetricks
@@ -58,6 +58,7 @@
     pavucontrol
     parsec-bin
     wezterm
+    librewolf
 
     eza
     bat
