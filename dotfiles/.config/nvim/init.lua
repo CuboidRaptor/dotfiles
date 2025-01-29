@@ -52,7 +52,7 @@ require("code_runner").setup({
             "cd $dir &&",
             "javac $fileName &&",
             "java $fileNameWithoutExt",
-            "rm $fileNameWithoutExt"
+            "rm $fileNameWithoutExt.class"
         }
     }
 })

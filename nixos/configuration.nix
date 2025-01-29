@@ -142,6 +142,8 @@
     ];
   };
 
+  # keyd config! also, autoset numlock
+  services.displayManager.sddm.autoNumlock = true;
   services.keyd = {
     enable = true;
     keyboards = {
@@ -150,14 +152,37 @@
         settings = {
           main = {
             capslock = "esc";
-            rightalt = "f5";
+            rightalt = "overload(alt, f5)";
             pageup = "home";
             pagedown = "end";
             home = "pageup";
             end = "pagedown";
+            esc = "layer(nump)";
           };
           shift = {
             capslock = "capslock";
+          };
+          nump = {
+            comma = "kp0";
+            dot = "kpdot";
+            slash = "^";
+            k = "kp1";
+            l = "kp2";
+            semicolon = "kp3";
+            i = "kp4";
+            o = "kp5";
+            p = "kp6";
+            "8" = "kp7";
+            "9" = "kp8";
+            "0" = "kp9";
+            rightshift = "kpplus";
+            apostrophe = "kpminus";
+            leftbrace = "kpasterisk";
+            minus = "kpslash";
+            m = "kpleftparen";
+            j = "kprightparen";
+            u = "macro(a n s)";
+            "7" = "numlock";
           };
         };
       };
