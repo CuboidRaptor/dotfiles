@@ -16,7 +16,7 @@ local function comment() -- block commenting code -- language-specific
         jstring = tostring(js) .. "j"
     end
     
-    return "<Esc>:'<<Enter>0<C-v>" .. jstring .. "I##<Esc>"
+    return "<Esc>:'<<CR>0<C-v>" .. jstring .. "I##<Esc>"
 end
 
 local function uncomment() -- uncomment
@@ -32,7 +32,7 @@ local function uncomment() -- uncomment
         jstring = tostring(js) .. "j"
     end
     
-    return "<Esc>:'<<Enter>0<C-v>l" .. jstring .. ":s/##/<Enter>"
+    return "<Esc>:'<<CR>0<C-v>l" .. jstring .. ":s/##/<CR>"
 end
 
 local function bracket(str) -- auto go in to parentheses -- language-specific
@@ -82,5 +82,5 @@ vim.keymap.set("i", "<Home>", "<Esc>_i", {remap=true, desc="Go home, after inden
 vim.keymap.set("v", "<Home>", "_", {remap=true, desc="Go home, after indents"})
 
 -- language-specific
-vim.keymap.set("n", "<F5>", ":w<Enter>:RunCode<Enter>", {remap=true, desc="Run Code"})
-vim.keymap.set("i", "<F5>", "<Esc>:w<Enter>:RunCode<Enter>a", {remap=true, desc="Run Code"})
+vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>", {remap=true, desc="Run Code"})
+vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>a", {remap=true, desc="Run Code"})
