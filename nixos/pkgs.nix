@@ -26,11 +26,11 @@
     jdk8
     jdk17
     jdk21
-    python313Full
-    nodejs_23
-    nodejs_18
+    python3Full
+    nodejs
     sublime4
 
+    gcc
     xmousepasteblock
     github-desktop
     gparted
