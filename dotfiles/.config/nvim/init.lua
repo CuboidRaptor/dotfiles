@@ -39,3 +39,6 @@ vim.opt.scrolloff = 3
 
 -- don't autoformat files
 vim.g.autoformat = false
+
+-- don't sync to system clipbaord unless I do explicitly with "+
+vim.opt.clipboard = ""
