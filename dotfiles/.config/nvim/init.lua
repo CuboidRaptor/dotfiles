@@ -18,6 +18,7 @@ vim.cmd([[set timeoutlen=420]])
 
 vim.opt.smarttab = true
 vim.opt.expandtab = true
+vim.opt.shiftwidth = 4 -- default tab width for new files
 
 -- me like mouse
 vim.opt.mouse = 'a'
