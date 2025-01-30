@@ -35,30 +35,6 @@ local function uncomment() -- uncomment
     return "<Esc>:'<<CR>0<C-v>l" .. jstring .. ":s/##/<CR>"
 end
 
-local function bracket(str) -- auto go in to parentheses -- language-specific
-    bracket_map = {
-        [")"] = "(",
-        ["]"] = "[",
-        ["}"] = "{",
-        ["\""] = "\"" -- not using this one because of python """ gets messed up but I mean you could
-    }
-    _line, cursorpos = unpack(vim.api.nvim_win_get_cursor(0))
-    
-    if (cursorpos <= 0)
-    then
-        return str
-    end
-    
-    before_cursor = vim.api.nvim_get_current_line():sub(cursorpos, cursorpos)
-    
-    if (before_cursor ~= bracket_map[str])
-    then
-        return str
-    else
-        return str .. "<Left>"
-    end
-end
-
 leader_1 = "," -- leader key go brrrr
 
 vim.keymap.set("n", "x", "\"_x", {remap=false, desc="Delete"}) -- the x key no longer goes to any register
@@ -67,13 +43,6 @@ vim.keymap.set("v", "x", "\"_x", {remap=false, desc="Delete"})
 vim.keymap.set("n", "<C-a>", "gg_vG$", {remap=true, desc="Select All"})
 vim.keymap.set("i", "<C-a>", "<Esc>gg_vG$", {remap=true, desc="Select All"})
 
--- these are disabled because of semicolon concerns and I just generally don't like them
---vim.keymap.set("i", ")", function() return bracket(")") end, {remap=true, expr=true}) -- auto go into parentheses/bracket/braces
---vim.keymap.set("i", "]", function() return bracket("]") end, {remap=true, expr=true})
---vim.keymap.set("i", "}", function() return bracket("}") end, {remap=true, expr=true})
---vim.keymap.set("i", "\"", function() return bracket("\"") end, {remap=true, expr=true})
--- ^ this one screws up python """
-
 vim.keymap.set("v", leader_1 .. "c", function() return comment() end, {remap=true, desc="Block Comment", expr=true})
 vim.keymap.set("v", leader_1 .. "u", function() return uncomment() end, {remap=true, desc="Block Uncomment", expr=true})
 
@@ -81,6 +50,9 @@ vim.keymap.set("n", "<Home>", "^", {remap=true, desc="Go home, after indents"})
 vim.keymap.set("i", "<Home>", "<Esc>^i", {remap=true, desc="Go home, after indents"})
 vim.keymap.set("v", "<Home>", "^", {remap=true, desc="Go home, after indents"})
 
--- language-specific
-vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>", {remap=true, desc="Run Code"})
-vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR><C-w><C-k>a<C-w><C-j>", {remap=true, desc="Run Code"})
+-- code runner!
+vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>i", {remap=true, desc="Run Code"})
+vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>i", {remap=true, desc="Run Code"})
+
+-- allow Esc in terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {remap=true, desc="Escape in Terminal Mode"})
