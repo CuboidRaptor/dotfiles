@@ -1,7 +1,7 @@
 # upgrade nixos, I guess
 alias yippee="nh os boot --upgrade && sudo systemctl reboot"
 
-# you need to export HISTTIMEFORMAT="%y/%m/%d %T " for this to work
+# last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
 alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
 

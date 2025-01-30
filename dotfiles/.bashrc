@@ -105,3 +105,5 @@ export "MICRO_TRUECOLOR=1"
 
 # activate starship prompt!
 eval "$(starship init bash)"
+
+export FLAKE="path:///home/jason/dotfiles/nixos/"
