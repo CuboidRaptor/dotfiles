@@ -67,6 +67,13 @@
     enableNotifications = true;
   };
 
+  # nix-ld because I'm lazy and it works
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+    ];
+  };
+
   # nix helper installation/config!
   programs.nh = {
     enable = true;

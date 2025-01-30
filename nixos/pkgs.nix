@@ -26,11 +26,11 @@
     jdk8
     jdk17
     jdk21
+    sublime4
+    gcc
     python3Full
     nodejs
-    sublime4
 
-    gcc
     xmousepasteblock
     github-desktop
     gparted
@@ -53,13 +53,18 @@
         }
     ))
     vivaldi-ffmpeg-codecs
-    kdePackages.kate
     remmina
     pavucontrol
     parsec-bin
     wezterm
     librewolf
+    fzf
+    ripgrep
+    fd
 
+    zip
+    unzip
+    curl
     eza
     bat
     fastfetch
