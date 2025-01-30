@@ -23,9 +23,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    jdk8
-    jdk17
-    jdk21
+    jdk
     sublime4
     gcc
     python3Full
@@ -78,7 +76,13 @@
     xclip
 
     lutris
-    prismlauncher
+    (prismlauncher.override {
+      jdks = [
+        jdk8
+        jdk17
+        jdk21
+      ];
+    })
     mindustry
     owmods-gui
     ckan
