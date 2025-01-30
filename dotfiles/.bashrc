@@ -106,5 +106,3 @@ if [ -f ~/.bash_path ]; then
 fi
 
 export "MICRO_TRUECOLOR=1"
-
-export HISTTIMEFORMAT="%y/%m/%d %T "
