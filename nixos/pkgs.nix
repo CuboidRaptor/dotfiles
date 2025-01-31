@@ -59,6 +59,7 @@
     fzf
     ripgrep
     fd
+    dl-librescore
 
     zip
     unzip
