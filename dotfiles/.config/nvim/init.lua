@@ -4,6 +4,12 @@ require("config.lazy")
 -- automatically set indentation size
 require("guess-indent").setup()
 
+require("colorizer").setup({
+    "html",
+    "css",
+    "javascript"
+})
+
 -- rose pine colorscheme
 require("rose-pine").setup({
     variant="main",
