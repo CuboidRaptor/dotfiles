@@ -28,6 +28,9 @@
     gcc
     python3Full
     nodejs
+    clang-tools
+    clang
+    nixd
 
     xmousepasteblock
     github-desktop
