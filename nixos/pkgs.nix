@@ -32,6 +32,7 @@
     clang
     nixd
 
+    ranger
     xmousepasteblock
     github-desktop
     gparted
