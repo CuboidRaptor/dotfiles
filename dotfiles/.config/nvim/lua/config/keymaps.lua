@@ -17,3 +17,7 @@ vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>i", { remap=true, desc="Run 
 vim.keymap.set("t", "<F5>", "<Esc><C-w><C-k>:w<CR>:RunCode<CR>i", { remap=true, desc="Run Code" })
     -- allow reruns directly from terminal
 
+vim.keymap.set("i", leader_1 .. "h", "#!/usr/bin/env ", { remap=true, desc="Env Shebang" })
+vim.keymap.set("n", leader_1 .. "h", "a#!/usr/bin/env ", { remap=true, desc="Env Shebang and Insert" })
+
+vim.keymap.set("n", leader_1 .. "s", ":SudaWrite", { remap=true, desc="Save with Sudo" })
