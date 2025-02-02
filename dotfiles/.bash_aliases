@@ -1,5 +1,5 @@
 # upgrade nixos, I guess
-alias yippee="nh os boot --upgrade && sudo systemctl reboot"
+alias yippee="nh os boot --update && sudo systemctl reboot"
 
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
