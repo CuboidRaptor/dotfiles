@@ -1,9 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- automatically set indentation size
-require("guess-indent").setup()
-
 require("colorizer").setup({
     "html",
     "css",
@@ -34,12 +31,4 @@ vim.opt.scrolloff = 3
 vim.g.autoformat = false
 
 -- don't sync to system clipboard unless I do explicitly with "+
-vim.opt.clipboard = ""
-
--- don't auto comment because it's annoying
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.formatoptions:remove({ 'r', 'o' })
-    end,
-})
+vim.cmd("set clipboard=")
