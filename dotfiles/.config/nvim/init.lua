@@ -20,8 +20,6 @@ vim.cmd.colorscheme "rose-pine"
 -- vim explodes and annoys me with swap file messages
 vim.cmd("set shortmess+=A")
 
-vim.cmd([[set timeoutlen=420]])
-
 vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4 -- default tab width for new files
@@ -37,3 +35,11 @@ vim.g.autoformat = false
 
 -- don't sync to system clipboard unless I do explicitly with "+
 vim.opt.clipboard = ""
+
+-- don't auto comment because it's annoying
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.formatoptions:remove({ 'r', 'o' })
+    end,
+})
