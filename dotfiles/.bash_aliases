@@ -22,11 +22,26 @@ alias ls="eza -a"
 alias cat="bat"
 alias vim="nvim"
 
-# this stuff bugs out a lot so i don't use it but it's there for funnies
-alias b='sudo "$BASH" -c "$(history -p !!)"'
-
 # must have docker built to 'hollywood_docker' from mcrmonkey's fork of hollywood's Dockerfile
 alias hack="docker run -it 'hollywood_docker'"
 
 # strip metadata from image
 alias imgstrip="mogrify -strip"
+
+# Auto cd into last lf
+alias lf='cd "$(command lf -print-last-dir "$@")"'
+
+# Create file or directory with parents
+function create {
+    case $1 in 
+        */) # directory path
+            echo Creating directory...
+            mkdir -p "$1"
+            ;;
+
+        *) # filepath
+            echo Creating file...
+            mkdir -p "$(dirname "$1")" && touch "$1"
+            ;;
+    esac
+}

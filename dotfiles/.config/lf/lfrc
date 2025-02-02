@@ -1,0 +1,29 @@
+# Edit config and reload automatically
+cmd edit-config ${{
+    $EDITOR ~/.config/lf/lfrc
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+map C edit-config
+
+# Draw box!
+set drawbox
+
+# hidden files
+set hidden
+set preview
+set icons
+
+# set single pane
+set nopreview
+set ratios 1
+set info size:time
+
+# follow symlinks
+cmd follow-link %{{
+  lf -remote "send $id select \"$(readlink -- "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+
+map gl follow-link
+
+map a push %mkdir<space>
