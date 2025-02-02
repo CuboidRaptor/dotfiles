@@ -35,13 +35,14 @@ alias lf='cd "$(command lf -print-last-dir "$@")"'
 function create {
     case $1 in 
         */) # directory path
-            echo Creating directory...
             mkdir -p "$1"
+            echo Created directory
             ;;
 
         *) # filepath
-            echo Creating file...
             mkdir -p "$(dirname "$1")" && touch "$1"
+            echo Created file
             ;;
     esac
 }
+export -f create
