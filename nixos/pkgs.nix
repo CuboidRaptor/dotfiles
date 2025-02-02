@@ -33,6 +33,7 @@
     nixd
 
     ranger
+    lf
     xmousepasteblock
     github-desktop
     gparted

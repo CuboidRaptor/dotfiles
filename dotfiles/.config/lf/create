@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case $1 in 
+    */) # directory path
+        echo Creating directory...
+        mkdir -p "$@"
+        ;;
+
+    *) # filepath
+        echo No
+        ;;
+esac

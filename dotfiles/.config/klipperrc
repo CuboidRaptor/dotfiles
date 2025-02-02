@@ -1,6 +1,5 @@
 [General]
-NoEmptyClipboard=false
 IgnoreImages=false
 KeepClipboardContents=false
 MaxClipItems=1
-Version=6.1.4
+Version=6.2.5
