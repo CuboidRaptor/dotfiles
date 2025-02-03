@@ -53,4 +53,6 @@ config.keys = {
 -- Open new wezterms in existing instances if possible
 prefer_to_spawn_tabs = true
 
+config.enable_scroll_bar = true
+
 return config
