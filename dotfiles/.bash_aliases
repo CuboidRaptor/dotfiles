@@ -1,5 +1,8 @@
+# rebuild and switch using nh
+alias nswitch="sudo -EH nh os switch -R"
+
 # upgrade nixos, I guess
-alias yippee="nh os boot --update && sudo systemctl reboot"
+alias yippee="sudo -EH nh os boot --update -R && sudo systemctl reboot"
 
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
