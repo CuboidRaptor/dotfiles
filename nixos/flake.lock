@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "nix-index-database": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1738466368,
+        "narHash": "sha256-PZhUjtvQZOH3PO0EYdTpQvcqkgkq1NkP2A6w9SPHYsk=",
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "rev": "46a8f5fc9552b776bfc5c5c96ea3bede33f68f52",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-index-database",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1738410390,
@@ -18,6 +38,7 @@
     },
     "root": {
       "inputs": {
+        "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs"
       }
     }
