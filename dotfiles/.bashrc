@@ -105,4 +105,8 @@ if [ -f ~/.bash_path ]; then
 . ~/.bash_path
 fi
 
+# Micro editor truecolor, I guess
 export "MICRO_TRUECOLOR=1"
+
+# activate starship prompt!
+eval "$(starship init bash)"
