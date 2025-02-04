@@ -10,9 +10,6 @@ alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n
 # chillllll htop
 alias htop="htop -d 30"
 
-# copy stdin to clipboard
-alias ccopy="xclip -sel clip"
-
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
 

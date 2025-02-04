@@ -288,7 +288,7 @@ user_pref("browser.urlbal.trimURLs", false);
 // PREF_CUSTOM: this breaks stuff when it's true (desmos, google docs, google maps, etc.)
 user_pref("gfx.canvas.accelerated", false);
 
-// PREF_CUSTOM: sideloading extensions go brrrrr
+// PREF_CUSTOM: sideloading extensions go brrrrr (only for firefox dev)
 user_pref("xpinstall.signatures.required", false);
 
 // PREF_CUSTOM: disable slash quick find it annoys me
