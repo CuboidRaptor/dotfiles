@@ -3,6 +3,7 @@ alias sdi="sudo dnf install"
 alias sdr="sudo dnf remove"
 alias dse="dnf search"
 alias dli="dnf list --installed"
+alias dlim="dnf repoquery --userinstalled"
 
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
