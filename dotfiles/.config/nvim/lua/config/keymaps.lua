@@ -21,3 +21,5 @@ vim.keymap.set("i", leader_1 .. "h", "#!/usr/bin/env ", { remap=true, desc="Env 
 vim.keymap.set("n", leader_1 .. "h", "a#!/usr/bin/env ", { remap=true, desc="Env Shebang and Insert" })
 
 vim.keymap.set("n", leader_1 .. "s", ":SudaWrite", { remap=true, desc="Save with Sudo" })
+
+vim.keymap.set("n", "<CR>", "o<Esc>", { remap=true, desc="Insert Newline" })
