@@ -9,14 +9,12 @@ map C edit-config
 # Draw box!
 set drawbox
 
-# hidden files
 set hidden
-set preview
 set icons
+set relativenumber
 
-# set single pane
-set nopreview
-set ratios 1
+# set ratios and info
+set ratios 1:5:2
 set info size:time
 
 # follow symlinks
@@ -26,4 +24,5 @@ cmd follow-link %{{
 
 map gl follow-link
 
-map a push %mkdir<space>
+# create is a bash function in .bash_aliases
+map a push %create<space>
