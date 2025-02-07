@@ -26,3 +26,9 @@ map gl follow-link
 
 # create is a bash function in .bash_aliases
 map a push %create<space>
+
+# invert-below is cool
+map V invert-below
+
+# preview path annoys me greatly
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m"
