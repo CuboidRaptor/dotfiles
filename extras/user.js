@@ -260,7 +260,6 @@ user_pref("browser.tabs.closeWindowWithLastTab", false);
 // PREF_CUSTOM: Memory/disk optimizations
 user_pref("browser.cache.memory.capacity", 65535);
 user_pref("browser.sessionhistory.max_entries", 15);
-user_pref("browser.cache.disk.enable", false);
 user_pref("image.mem.surfacecache.max_size_kb", 500000);
 user_pref("browser.sessionhistory.max_total_viewers", 2);
 
@@ -285,6 +284,9 @@ user_pref("xpinstall.signatures.required", false);
 
 // PREF_CUSTOM: disable slash quick find it annoys me
 user_pref("accessibility.typeaheadfind.manual", false);
+
+// PREF_CUSTOM: strict breaks stuff
+user_pref("browser.contentblocking.category", "custom");
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
