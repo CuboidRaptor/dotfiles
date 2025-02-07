@@ -22,4 +22,5 @@ vim.keymap.set("n", leader_1 .. "h", "a#!/usr/bin/env ", { remap=true, desc="Env
 
 vim.keymap.set("n", leader_1 .. "s", ":SudaWrite", { remap=true, desc="Save with Sudo" })
 
+-- Enter in normal mode now just inserts a newline on the next line without leaving normal
 vim.keymap.set("n", "<CR>", "o<Esc>", { remap=true, desc="Insert Newline" })
