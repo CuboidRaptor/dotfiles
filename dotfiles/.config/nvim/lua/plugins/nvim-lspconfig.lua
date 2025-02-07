@@ -6,13 +6,8 @@ return {
                 pyright = {},
                 ruff = {},
                 jsonls = {},
-                clangd = {
-                    mason = false -- mason installation was bricked so just install `clang-tools`, `clang` and this works
-                },
+                clangd = {},
                 jdtls = {},
-                nixd = {
-                    mason = false -- install `nixd` for this as I don't think mason has one
-                },
                 html = {},
                 cssls = {},
                 ts_ls = {},
