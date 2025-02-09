@@ -8,6 +8,7 @@ map C edit-config
 
 # Draw box!
 set drawbox
+set roundbox
 
 set hidden
 set icons
@@ -16,6 +17,7 @@ set relativenumber
 # set ratios and info
 set ratios 1:5:2
 set info size:time
+set dircounts
 
 # follow symlinks
 cmd follow-link %{{
@@ -26,6 +28,10 @@ map gl follow-link
 
 # create is a bash function in .bash_aliases
 map a push %create<space>
+
+# trash-cli
+cmd trash %trash-put $fx
+map x trash
 
 # invert-below is cool
 map V invert-below
