@@ -13,11 +13,16 @@ set roundbox
 set hidden
 set icons
 set relativenumber
+set ignorecase
+set scrolloff 3
 
 # set ratios and info
 set ratios 1:5:2
 set info size:time
 set dircounts
+
+# enable mouse, because I can
+set mouse
 
 # follow symlinks
 cmd follow-link %{{
