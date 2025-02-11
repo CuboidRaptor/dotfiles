@@ -53,6 +53,12 @@ set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m"
 
 # set sorting
 set sortby name
+setlocal ~/Downloads sortby time
+setlocal ~/Downloads reverse
+setlocal ~/Downloads dirfirst false
+setlocal ~/DownloadsArchive sortby time
+setlocal ~/DownloadsArchive reverse
+setlocal ~/DownloadsArchive dirfirst false
 
 # allow temp z mark
 set tempmarks z
