@@ -10,16 +10,17 @@ map C edit-config
 set drawbox
 set roundbox
 
+set ifs "\n"
 set hidden
 set icons
 set relativenumber
-set ignorecase
 set scrolloff 3
 
 # set ratios and info
 set ratios 1:5:2
 set info size:time
 set dircounts
+set watch
 
 # enable mouse, because I can
 set mouse
@@ -31,12 +32,18 @@ cmd follow-link %{{
 
 map gl follow-link
 
+# go to first file (not directory)
+map gf :set dironly true; bottom; set dironly false; down
+
 # create is a bash function in .bash_aliases
 map a push %create<space>
 
 # trash-cli
-cmd trash %trash-put $fx
+cmd trash %trash-put -- $fx
 map x trash
+
+# touch
+map T %touch $fx
 
 # invert-below is cool
 map V invert-below
