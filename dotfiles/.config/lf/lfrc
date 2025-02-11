@@ -43,13 +43,16 @@ cmd trash %trash-put -- $fx
 map x trash
 
 # touch
-map T %touch $fx
+map T $touch $fx
 
 # invert-below is cool
 map V invert-below
 
 # preview path annoys me greatly
 set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%d\033[0m\033[1m"
+
+# yank filename
+map Y $echo "$f"|xclip -sel c -i
 
 # set sorting
 set sortby name
