@@ -31,27 +31,27 @@ config.window_padding = {
 -- copy/paste with mouse go brrrrrr
 local act = wezterm.action
 config.mouse_bindings = {
-	{
-		event = { Down = { streak = 1, button = "Right" } },
-		mods = "NONE",
-		action = wezterm.action_callback(function(window, pane)
-			local has_selection = window:get_selection_text_for_pane(pane) ~= ""
-			if has_selection then
-			    window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
-				window:perform_action(act.ClearSelection, pane)
-			else
-				window:perform_action(act({ PasteFrom = "Clipboard" }), pane)
-			end
-		end),
-	},
+    {
+        event = { Down = { streak = 1, button = "Right" } },
+        mods = "NONE",
+        action = wezterm.action_callback(function(window, pane)
+        local has_selection = window:get_selection_text_for_pane(pane) ~= ""
+        if has_selection then
+            window:perform_action(act.CopyTo("ClipboardAndPrimarySelection"), pane)
+            window:perform_action(act.ClearSelection, pane)
+        else
+            window:perform_action(act({ PasteFrom = "Clipboard" }), pane)
+        end
+        end),
+    },
 }
 
 config.keys = {
-	{ key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication }
+    { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication }
 }
 
 -- Open new wezterms in existing instances if possible
-prefer_to_spawn_tabs = true
+config.prefer_to_spawn_tabs = true
 
 config.enable_scroll_bar = true
 
