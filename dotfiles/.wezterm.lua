@@ -47,7 +47,9 @@ config.mouse_bindings = {
 }
 
 config.keys = {
-    { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication }
+    { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication },
+    { key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
+    { key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) }
 }
 
 -- Open new wezterms in existing instances if possible
