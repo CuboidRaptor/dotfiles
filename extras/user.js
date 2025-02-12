@@ -277,7 +277,7 @@ user_pref("browser.urlbar.trimHttps", false);
 user_pref("browser.urlbal.trimURLs", false);
 
 // PREF_CUSTOM: this breaks stuff when it's true (desmos, google docs, google maps, etc.)
-///user_pref("gfx.canvas.accelerated", false);
+///user_pref("gfx.canvas.accelerated", false); // this fix disabled because of performance reasons
 
 // PREF_CUSTOM: sideloading extensions go brrrrr (only for firefox dev)
 user_pref("xpinstall.signatures.required", false);
@@ -287,6 +287,15 @@ user_pref("accessibility.typeaheadfind.manual", false);
 
 // PREF_CUSTOM: strict breaks stuff
 user_pref("browser.contentblocking.category", "custom");
+user_pref("network.cookie.cookieBehavior", 5);
+user_pref("privacy.trackingprotection.enabled", true);
+user_pref("privacy.trackingprotection.socialtracking.enabled", true);
+user_pref("privacy.trackingprotection.cryptomining.enabled", true);
+user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
+
+// PREF_CUSTOM: set nextdns secure resolver because I can
+user_pref("network.trr.mode", 2);
+user_pref("network.trr.uri", "https://firefox.dns.nextdns.io");
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
