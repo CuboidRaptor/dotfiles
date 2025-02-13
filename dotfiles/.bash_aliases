@@ -31,7 +31,7 @@ alias imgstrip="mogrify -strip"
 
 # Auto cd into last lf
 function lf {
-    command lf -print-last-dir "$@" | tail -n1
+    cd "$(command lf -print-last-dir "$@")" || exit
 }
 export -f lf
 
