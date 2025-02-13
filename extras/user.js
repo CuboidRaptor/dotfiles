@@ -282,7 +282,7 @@ user_pref("browser.urlbal.trimURLs", false);
 // PREF_CUSTOM: sideloading extensions go brrrrr (only for firefox dev)
 user_pref("xpinstall.signatures.required", false);
 
-// PREF_CUSTOM: disable slash quick find it annoys me
+// PREF_CUSTOM: disable slash quick find because it annoys me
 user_pref("accessibility.typeaheadfind.manual", false);
 
 // PREF_CUSTOM: strict breaks stuff

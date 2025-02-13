@@ -7,6 +7,9 @@ require("colorizer").setup({
     "javascript"
 })
 
+-- setup guess-indent.nvim
+require("guess-indent").setup({})
+
 -- rose pine colorscheme
 require("rose-pine").setup({
     variant="main",
