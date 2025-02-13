@@ -10,6 +10,11 @@ require("colorizer").setup({
 -- setup guess-indent.nvim
 require("guess-indent").setup({})
 
+-- indentation settings
+vim.opt.smarttab = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4 -- default tab width for new files
+
 -- rose pine colorscheme
 require("rose-pine").setup({
     variant="main",
@@ -20,15 +25,12 @@ vim.cmd.colorscheme "rose-pine"
 -- vim explodes and annoys me with swap file messages
 vim.cmd("set shortmess+=A")
 
-vim.opt.smarttab = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4 -- default tab width for new files
-
 -- me like mouse
 vim.opt.mouse = 'a'
 
 -- keep this many lines above and below when scrolling
-vim.opt.scrolloff = 3
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 15
 
 -- don't autoformat files
 vim.g.autoformat = false
