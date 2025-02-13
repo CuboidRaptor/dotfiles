@@ -39,8 +39,8 @@ map gf :set dironly true; bottom; set dironly false; down
 map a push %create<space>
 
 # trash-cli
-cmd trash %trash-put -- $fx
-map x trash
+map x %trash-put -- $fx
+map X $trash-restore
 
 # touch
 map T $touch $fx

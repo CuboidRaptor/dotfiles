@@ -30,7 +30,10 @@ alias hack="docker run -it 'hollywood_docker'"
 alias imgstrip="mogrify -strip"
 
 # Auto cd into last lf
-alias lf='cd "$(command lf -print-last-dir "$@")"'
+function lf {
+    command lf -print-last-dir "$@" | tail -n1
+}
+export -f lf
 
 # Create file or directory with parents
 function create {
