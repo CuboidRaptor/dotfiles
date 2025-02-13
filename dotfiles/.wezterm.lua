@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.default_prog = { "bash" }
 
 config.initial_rows = 32
-config.initial_cols = 128
+config.initial_cols = 130
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
@@ -19,13 +19,13 @@ config.font = wezterm.font_with_fallback {
     "Consolas",
     "DengXian"
 }
-config.font_size = 11
+config.font_size = 12
 
 config.window_padding = {
-    left = "15px",
-    right = "15px",
-    top = "15px",
-    bottom = "15px",
+    left = "10px",
+    right = "10px",
+    top = "10px",
+    bottom = "10px",
 }
 
 -- copy/paste with mouse go brrrrrr
