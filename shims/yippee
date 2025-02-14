@@ -12,8 +12,9 @@ echo -e "\033[1m\033[7mStarting system updates...\033[0m"
 # flatpaks
 flatpak -y upgrade
 
-# cargo/rust packages
-cargo install-update -a
+oldcd=$(pwd)
+cd ~/.tmux/plugins/tpm && git pull
+cd "$oldcd" || return
 
 # system dnf
 sudo dnf -y makecache
