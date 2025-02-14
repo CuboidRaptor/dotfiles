@@ -24,3 +24,6 @@ vim.keymap.set("n", LEADER_1 .. "s", ":SudaWrite", { remap=true, desc="Save with
 
 -- Enter in normal mode now just inserts a newline on the next line without leaving normal
 vim.keymap.set("n", "<CR>", "o<Esc>", { remap=true, desc="Insert Newline" })
+
+--  Alt+q to send the z macro
+vim.keymap.set("n", "<a-q>", "@z", { remap=true, desc="Send Z Macro" })
