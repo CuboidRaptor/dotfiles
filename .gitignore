@@ -1,8 +1,8 @@
 # logs go bye bye
 *.log
 **/logs/
-**/*Cache*/
+**/*Cache*
 **/*history*
-**/*history*/
 **/*History*
-**/*History*/
+
+**/.config/tmux/plugins
