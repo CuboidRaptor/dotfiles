@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.default_prog = { "bash" }
 
 config.initial_rows = 32
-config.initial_cols = 130
+config.initial_cols = 128
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
