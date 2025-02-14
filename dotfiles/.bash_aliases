@@ -23,9 +23,6 @@ alias ls="eza -a"
 alias cat="bat"
 alias vim="nvim"
 
-# must have docker built to 'hollywood_docker' from mcrmonkey's fork of hollywood's Dockerfile
-alias hack="docker run -it 'hollywood_docker'"
-
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
