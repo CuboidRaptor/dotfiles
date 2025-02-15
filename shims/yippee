@@ -9,9 +9,10 @@ fi
 # echo!
 echo -e "\033[1m\033[7mStarting system updates...\033[0m"
 
-# flatpaks
+echo "Updating Flatpaks..."
 flatpak -y upgrade
 
+echo "Updating TPM..."
 oldcd=$(pwd)
 cd ~/.tmux/plugins/tpm && git pull
 cd "$oldcd" || return
