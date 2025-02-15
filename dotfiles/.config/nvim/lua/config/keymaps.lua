@@ -27,3 +27,5 @@ vim.keymap.set("n", "<CR>", "o<Esc>", { remap=true, desc="Insert Newline" })
 
 --  Alt+q to send the z macro
 vim.keymap.set("n", "<a-q>", "@z", { remap=true, desc="Send Z Macro" })
+
+vim.keymap.set("n", LEADER_1 .. "b", "0d^i<BS>", { remap=true, desc="Append current line to last one and insert" })
