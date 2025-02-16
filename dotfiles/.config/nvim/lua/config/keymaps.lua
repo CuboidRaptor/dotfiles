@@ -29,3 +29,9 @@ vim.keymap.set("n", "<CR>", "o<Esc>", { remap=true, desc="Insert Newline" })
 vim.keymap.set("n", "<a-q>", "@z", { remap=true, desc="Send Z Macro" })
 
 vim.keymap.set("n", LEADER_1 .. "b", "0d^i<BS>", { remap=true, desc="Append current line to last one and insert" })
+
+-- Telescope bindings
+vim.keymap.set("n", LEADER_1 .. "tb", ":Telescope buffers<CR>", { remap=true, desc="Telescope Buffers" })
+vim.keymap.set("n", LEADER_1 .. "tg", ":Telescope git_files<CR>", { remap=true, desc="Telescope Git Repo Files" })
+vim.keymap.set("n", LEADER_1 .. "tf", ":Telescope find_files<CR>", { remap=true, desc="Telescope Current Directory" })
+vim.keymap.set("n", LEADER_1 .. "tt", ":Telescope treesitter<CR>", { remap=true, desc="Telescope Treesitter" })

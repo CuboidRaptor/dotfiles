@@ -14,7 +14,7 @@ set ifs "\n"
 set hidden
 set icons
 set relativenumber
-set scrolloff 3
+set scrolloff 10
 
 # set ratios and info
 set ratios 1:5:2
@@ -65,3 +65,6 @@ setlocal ~/DownloadsArchive dirfirst false
 
 # allow temp z mark
 set tempmarks z
+
+# go to first non-hidden file
+map D push zhggzh

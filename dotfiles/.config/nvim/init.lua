@@ -40,3 +40,6 @@ vim.cmd("set clipboard=")
 
 -- set blinking insert cursor
 vim.opt.guicursor = "i:ver100-blinkwait800-blinkon400-blinkoff200"
+
+-- I'm slow
+vim.opt.timeoutlen = 1500
