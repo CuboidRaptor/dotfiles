@@ -18,6 +18,7 @@ cd ~/.tmux/plugins/tpm && git pull
 cd "$oldcd" || return
 
 # system dnf
+echo "Updating System Packages..."
 sudo dnf -y makecache
 sudo dnf -y offline-upgrade download
 sudo dnf -y offline-upgrade reboot
