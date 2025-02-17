@@ -20,17 +20,17 @@ vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>i", { remap = true, desc = "
 vim.keymap.set("t", "<F5>", "<Esc><C-w><C-k>:w<CR>:RunCode<CR>i", { remap = true, desc = "Run Code" })
 -- allow reruns directly from terminal
 
-vim.keymap.set("i", "<leader>h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" })
-vim.keymap.set("n", "<leader>h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
+vim.keymap.set("i", "<Leader>h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" })
+vim.keymap.set("n", "<Leader>h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
 
-vim.keymap.set("n", "<leader>w", ":SudaWrite", { remap = true, desc = "Save with Sudo" })
+vim.keymap.set("n", "<Leader>w", ":SudaWrite", { remap = true, desc = "Save with Sudo" })
 
 -- Enter in normal mode now just inserts a newline on the next line without leaving normal
 vim.keymap.set("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 
-vim.keymap.set("n", "<leader>z", "@z", { remap = true, desc = "Send Z Macro" })
+vim.keymap.set("n", "<Leader>z", "@z", { remap = true, desc = "Send Z Macro" })
 
-vim.keymap.set("n", "<leader>b", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
+vim.keymap.set("n", "<Leader>b", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
 
 -- Telescope bindings
 vim.keymap.set("n", "tb", ":Telescope buffers<CR>", { remap = true, desc = "Telescope Buffers" })
