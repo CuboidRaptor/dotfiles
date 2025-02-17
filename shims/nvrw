@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [ -n "$TMUX" ]; then
+    ids="$(tmux list-panes -s -F '#{pane_current_command} #{window_id} #{pane_id}' | awk '/^nvim / {print $2" "$3; exit}')"
+    read -ra idlist <<<"$ids"
+    if [ -n "$ids" ]; then
+        tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}" && nvr --servername "/tmp/nvim-tmux-session-$(tmux display-message -p '#S')" --remote-silent "$@"
+    else
+        tmux new-window && nvr -s "$@"
+    fi
+fi
