@@ -8,6 +8,9 @@ vim.keymap.set("n", "<Home>", "^", { remap = true, desc = "Go home, after indent
 vim.keymap.set("i", "<Home>", "<Esc>^i", { remap = true, desc = "Go home, after indents" })
 vim.keymap.set("v", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 
+-- space key inserts space in normal mode
+vim.keymap.set("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
+
 -- allow Esc in terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
