@@ -47,3 +47,9 @@ function create {
     esac
 }
 export -f create
+
+# server for nvrw (this is in a function because it has to or else tmux gets angry)
+# (and nvrw is a file because git edit and stuff)
+function nvrws {
+    nvr --servername "/tmp/nvim-tmux-session-$(tmux display-message -p '#S')" --remote-silent
+}

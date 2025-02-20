@@ -6,6 +6,6 @@ if [ -n "$TMUX" ]; then
     if [ -n "$ids" ]; then
         tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}" && nvr --servername "/tmp/nvim-tmux-session-$(tmux display-message -p '#S')" --remote-silent "$@"
     else
-        tmux new-window && nvr -s "$@"
+        echo "No Neovim server found. Run \`nvrws\` in a new window to start one."
     fi
 fi
