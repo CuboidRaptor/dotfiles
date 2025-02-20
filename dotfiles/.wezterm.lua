@@ -4,8 +4,8 @@ local config = wezterm.config_builder()
 -- actually use regular bash cuh
 config.default_prog = { "bash" }
 
-config.initial_rows = 32
-config.initial_cols = 128
+config.initial_rows = 34
+config.initial_cols = 130
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
@@ -49,7 +49,9 @@ config.mouse_bindings = {
 config.keys = {
     { key = "q", mods = "CTRL|SHIFT", action = wezterm.action.QuitApplication },
     { key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
-    { key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) }
+    { key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+    { key = "Tab", mods = "CTRL", action = act.DisableDefaultAssignment }, -- unbind a buncha keys so I can use them in neovim
+    { key = "Tab", mods = "CTRL|SHIFT", action = act.DisableDefaultAssignment }
 }
 
 -- Open new wezterms in existing instances if possible
