@@ -7,9 +7,6 @@ ConfigVersion=1
 [KonsoleWindow]
 UseSingleInstance=true
 
-[MainWindow]
-ToolBarsMovable=Disabled
-
 [Notification Messages]
 CloseAllTabs=true
 
