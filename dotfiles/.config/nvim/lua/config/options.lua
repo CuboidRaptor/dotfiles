@@ -25,3 +25,6 @@ vim.opt.guicursor = "i:ver100-blinkwait800-blinkon400-blinkoff200"
 
 -- I'm slow
 vim.opt.timeoutlen = 1500
+
+-- auto-session options
+vim.opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
