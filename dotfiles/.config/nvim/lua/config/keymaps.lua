@@ -14,6 +14,9 @@ vim.keymap.set("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 -- allow Esc in terminal mode
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { remap = true, desc = "Previous Buffer" })
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { remap = true, desc = "Next Buffer" })
+
 -- code runner!
 vim.keymap.set("n", "<F5>", ":w<CR>:RunCode<CR>i", { remap = true, desc = "Run Code" })
 vim.keymap.set("i", "<F5>", "<Esc>:w<CR>:RunCode<CR>i", { remap = true, desc = "Run Code" })
