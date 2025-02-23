@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# WARNING: this script is not maintained anymore. Use the python script instead.
 
 read -r -p "This script will probably overwrite a bunch of stuff randomly, possibly causing damage. Continue? [y/N] " response
 case "$response" in
