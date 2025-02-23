@@ -1,0 +1,44 @@
+magic sysrq
+earlyoom (free swap 25%)/systemd-resolved
+zram, 3*ram/5, lz4, arch wiki/pop configs, backup 8gb swap on drive
+wifi drivers (8821 morrownr or smth)
+quad9 + cloudflare dns ipv4, 6 (9.9.9.9 1.1.1.1
+    2620:fe::fe 2606:4700:4700::1111)
+fix sound delay (pulseaudio/pipewire) (arch wiki, ~ over /etc)
+dotfiles
+xmousepasteblock
+rEFInd catppuccin
+rpm fusion
+nvidia drivers, if needed
+nvidia settings for perf
+Cascadia Code/fonts
+noatime
+IDLE .desktop StartupWMClass=Toplevel
+Browser/firefox stuff:
+    Mozilla Sync
+    search engines
+    user.js
+    Violentmonkey
+        return youtube dislike
+        librescore
+        bypass all shortlinks debloated
+    uBO
+        enable cloud sync support
+        manually load/sync settings
+
+    Vimium C (backup, incase I want it back as I don't use vimium C anymore)
+        scroll size 200px
+        "ghjkl;" characters used for link hints
+        key mappings:
+            utility:
+                map <a-c-v> openUrl url="vimium://status/toggle-enabled/^%20<a-c-v>"
+                map p runKey keys="4d"
+            rh only:
+                mapKey n H
+                mapKey m J
+                mapKey , K
+                mapKey . L
+                mapKey u x
+                mapKey b f
+                mapKey y t
+        yeet custom search engines
