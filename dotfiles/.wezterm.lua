@@ -4,8 +4,8 @@ local config = wezterm.config_builder()
 -- actually use regular bash cuh
 config.default_prog = { "bash" }
 
-config.initial_rows = 34
-config.initial_cols = 130
+config.initial_rows = 32
+config.initial_cols = 118
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
@@ -58,5 +58,8 @@ config.keys = {
 config.prefer_to_spawn_tabs = true
 
 config.enable_scroll_bar = true
+
+-- I just use tmux instead
+config.enable_tab_bar = false
 
 return config
