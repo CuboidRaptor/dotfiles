@@ -36,7 +36,7 @@ map gl follow-link
 map gf :set dironly true; bottom; set dironly false; down
 
 # create is a bash function in .bash_aliases
-map a push %create<space>
+map a push %create<space>""<left>
 
 # trash-cli
 map x %trash-put -- $fx
