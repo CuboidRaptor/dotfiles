@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 import sys
+import shutil
+import os
 
 from pathlib import Path
 
-HOMETARGET: Path = Path.home()
+HOMETARGET: Path = Path(os.path.expanduser("~" + os.getlogin()))
 DOTFILEPATH: Path = Path.joinpath(HOMETARGET, "dotfiles/dotfiles")
 HOMETARGET = Path.joinpath(HOMETARGET, "dotfiles/test")
 PATHS: list[str] = [
@@ -51,6 +53,10 @@ def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
     print(f"Symlinked {src}")
 
 if __name__ == "__main__":
+    if os.geteuid() != 0:
+        print("ERROR: You need to run this as root. Try using `sudo`.")
+        sys.exit()
+
     confirm: str = input("This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] ").lower()[0]
     if confirm != "y":
         print("Aborting...")
@@ -75,3 +81,6 @@ if __name__ == "__main__":
 
     else:
         print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
+
+    shutil.copyfile(str(DOTFILEPATH.parent.joinpath("extras/keyd.conf")), "/etc/keyd/default.conf")
+    print("Copied to /etc/keyd/default.conf")
