@@ -43,7 +43,7 @@ def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
         print(f"WARNING: {src} exists, overwriting...")
 
         if src.is_dir(follow_symlinks=False):
-            src.rmdir()
+            shutil.rmtree(src)
 
         else:
             src.unlink()
