@@ -4,6 +4,7 @@
 
 -- leader key is set in options.lua
 local map = vim.keymap.set
+local telescope = require("telescope.builtin")
 
 map("n", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 map("i", "<Home>", "<Esc>^i", { remap = true, desc = "Go home, after indents" })
@@ -37,7 +38,7 @@ map("n", "<Leader>z", "@z", { remap = true, desc = "Send Z Macro" })
 map("n", "<Leader>b", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
 
 -- Telescope bindings
-map("n", "tb", "<Cmd>Telescope buffers<CR>", { remap = true, desc = "Telescope Buffers" })
-map("n", "tg", "<Cmd>Telescope git_files<CR>", { remap = true, desc = "Telescope Git Repo Files" })
-map("n", "tf", "<Cmd>Telescope find_files<CR>", { remap = true, desc = "Telescope Current Directory" })
-map("n", "tt", "<Cmd>Telescope treesitter<CR>", { remap = true, desc = "Telescope Treesitter" })
+map("n", "fb", function() telescope.buffers({sort_mru=true}) end, { remap = true, desc = "Telescope Buffers" })
+map("n", "fg", telescope.git_files, { remap = true, desc = "Telescope Git Repo Files" })
+map("n", "ff", telescope.find_files, { remap = true, desc = "Telescope Current Directory" })
+map("n", "ft", telescope.treesitter, { remap = true, desc = "Telescope Treesitter" })
