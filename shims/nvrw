@@ -4,7 +4,7 @@ if [ -n "$TMUX" ]; then
     ids="$(tmux list-panes -s -F '#{pane_current_command} #{window_id} #{pane_id}' | awk '/^nvim / {print $2" "$3; exit}')"
     read -ra idlist <<<"$ids"
     if [ -n "$ids" ]; then
-        tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}" && nvr --servername "/tmp/nvim-tmux-session-$(tmux display-message -p '#S')" --remote-silent "$@"
+        tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}" && nvim --server "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe" --remote "$@"
     else
         echo "No Neovim server found. Run \`nvrws\` in a new window to start one."
     fi
