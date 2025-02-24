@@ -16,9 +16,6 @@ map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
-map("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { remap = true, desc = "Previous Buffer" })
-map("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { remap = true, desc = "Next Buffer" })
-
 -- code runner!
 map("n", "<F5>", "<Cmd>w<CR><Cmd>RunCode<CR>i", { remap = true, desc = "Run Code" })
 map("i", "<F5>", "<Esc><Cmd>w<CR><Cmd>RunCode<CR>i", { remap = true, desc = "Run Code" })
