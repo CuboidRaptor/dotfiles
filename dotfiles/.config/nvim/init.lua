@@ -7,12 +7,23 @@ require("colorizer").setup({
   "javascript",
 })
 
--- harpoon setup
-local harpoon = require("harpoon")
-harpoon:setup()
-
 -- setup guess-indent.nvim
 require("guess-indent").setup({})
+
+require("lualine").setup({
+  sections = {
+    lualine_x = {
+      {
+        function()
+          if vim.api.nvim_buf_get_option(vim.api.nvim_get_current_buf(), "modified") then
+            return "‼️"
+          end
+          return ""
+        end
+      }
+    }
+  }
+})
 
 -- indentation settings
 vim.opt.smarttab = true
