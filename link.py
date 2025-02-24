@@ -31,22 +31,24 @@ def slink(name: str) -> None:
     fpath: Path = Path.joinpath(HOMETARGET, name)
     fpath.parent.mkdir(parents=True, exist_ok=True)
     isdir: bool = name.endswith("/")
+    symlink_to(fpath, Path.joinpath(DOTFILEPATH, name), isdir)
 
+def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
     try:
-        fpath.symlink_to(Path.joinpath(DOTFILEPATH, name), target_is_directory=isdir)
+        src.symlink_to(tgt, target_is_directory=target_is_directory)
 
     except FileExistsError:
-        print(f"WARNING: {str(fpath)} exists, overwriting...")
-        
-        if fpath.is_dir(follow_symlinks=False):
-            fpath.rmdir()
+        print(f"WARNING: {src} exists, overwriting...")
+
+        if src.is_dir(follow_symlinks=False):
+            src.rmdir()
 
         else:
-            fpath.unlink()
+            src.unlink()
 
-        fpath.symlink_to(Path.joinpath(DOTFILEPATH, name), target_is_directory=isdir)
+        src.symlink_to(tgt, target_is_directory=target_is_directory)
 
-    print(f"Symlinked {str(fpath)}")
+    print(f"Symlinked {src}")
 
 if __name__ == "__main__":
     confirm: str = input("This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] ").lower()[0]
@@ -56,3 +58,20 @@ if __name__ == "__main__":
 
     for path in PATHS:
         slink(path)
+
+    ffpath: Path = Path.joinpath(HOMETARGET, ".mozilla/firefox")
+    if ffpath.is_dir():
+        found_dev: bool = False
+        for folder in ffpath.iterdir():
+            dname: str = str(folder.name)
+            if dname.endswith(".default-release") or dname.endswith(".dev-edition-default"):
+                if dname.endswith(".dev-edition-default"):
+                    found_dev = True
+
+                symlink_to(Path.joinpath(folder, "user.js"), Path.joinpath(DOTFILEPATH.parent, "extras/user.js"))
+
+        if not found_dev:
+            print("WARNING: Firefox Dev Edition profile not found")
+
+    else:
+        print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
