@@ -38,7 +38,7 @@ map("n", "<Leader>z", "@z", { remap = true, desc = "Send Z Macro" })
 map("n", "<Leader>b", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
 
 -- Telescope bindings
-map("n", "fb", function() telescope.buffers({sort_lastused=true, path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Buffers" })
+map("n", "fb", function() telescope.buffers({sort_mru=true, path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Buffers" })
 map("n", "fg", function() telescope.git_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Git Repo Files" })
 map("n", "ff", function() telescope.find_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Current Directory" })
 map("n", "ft", telescope.treesitter, { remap = true, desc = "Telescope Treesitter" })

@@ -10,6 +10,20 @@ require("colorizer").setup({
 -- setup guess-indent.nvim
 require("guess-indent").setup({})
 
+local telescope = require("telescope")
+telescope.setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-h>"] = "close",
+        ["<C-k>"] = "move_selection_previous",
+        ["<C-j>"] = "move_selection_next",
+        ["<C-l>"] = "select_default",
+      }
+    }
+  }
+})
+
 require("lualine").setup({
   sections = {
     lualine_x = {
