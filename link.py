@@ -8,7 +8,7 @@ from pathlib import Path
 
 HOMETARGET: Path = Path("~" + os.getlogin()).expanduser()
 DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles")
-HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
+#HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS: list[str] = [
     ".bashrc",
     ".bash_aliases",
