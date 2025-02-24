@@ -6,9 +6,9 @@ import os
 
 from pathlib import Path
 
-HOMETARGET: Path = Path(os.path.expanduser("~" + os.getlogin()))
-DOTFILEPATH: Path = Path.joinpath(HOMETARGET, "dotfiles/dotfiles")
-HOMETARGET = Path.joinpath(HOMETARGET, "dotfiles/test")
+HOMETARGET: Path = Path("~" + os.getlogin()).expanduser()
+DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles")
+HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS: list[str] = [
     ".bashrc",
     ".bash_aliases",
@@ -30,10 +30,10 @@ PATHS: list[str] = [
 
 def slink(name: str) -> None:
     global HOMETARGET, DOTFILEPATH
-    fpath: Path = Path.joinpath(HOMETARGET, name)
+    fpath: Path = HOMETARGET.joinpath(name)
     fpath.parent.mkdir(parents=True, exist_ok=True)
     isdir: bool = name.endswith("/")
-    symlink_to(fpath, Path.joinpath(DOTFILEPATH, name), isdir)
+    symlink_to(fpath, DOTFILEPATH.joinpath(name), isdir)
 
 def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
     try:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
     for path in PATHS:
         slink(path)
 
-    ffpath: Path = Path.joinpath(HOMETARGET, ".mozilla/firefox")
+    ffpath: Path = HOMETARGET.joinpath(".mozilla/firefox")
     if ffpath.is_dir():
         found_dev: bool = False
         for folder in ffpath.iterdir():
@@ -74,7 +74,7 @@ if __name__ == "__main__":
                 if dname.endswith(".dev-edition-default"):
                     found_dev = True
 
-                symlink_to(Path.joinpath(folder, "user.js"), Path.joinpath(DOTFILEPATH.parent, "extras/user.js"))
+                symlink_to(folder.joinpath("user.js"), DOTFILEPATH.parent.joinpath("extras/user.js"))
 
         if not found_dev:
             print("WARNING: Firefox Dev Edition profile not found")
@@ -83,4 +83,4 @@ if __name__ == "__main__":
         print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
 
     shutil.copyfile(str(DOTFILEPATH.parent.joinpath("extras/keyd.conf")), "/etc/keyd/default.conf")
-    print("Copied to /etc/keyd/default.conf")
+    print("Copied keyd config to /etc/keyd/default.conf")
