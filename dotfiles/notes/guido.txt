@@ -13,7 +13,6 @@ nvidia drivers, if needed
 nvidia settings for perf
 Cascadia Code/fonts
 noatime
-IDLE .desktop StartupWMClass=Toplevel
 Browser/firefox stuff:
     Mozilla Sync
     search engines
