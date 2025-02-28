@@ -13,6 +13,7 @@ nvidia drivers, if needed
 nvidia settings for perf
 Cascadia Code/fonts
 noatime
+github auth with `gh auth login`
 Browser/firefox stuff:
     Mozilla Sync
     search engines
