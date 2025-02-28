@@ -16,6 +16,7 @@ PATHS: list[str] = [
     ".gitconfig",
     ".ahk/",
     ".wezterm.lua",
+    
     ".config/starship.toml",
     ".config/micro/",
     ".config/nvim/",
@@ -23,6 +24,8 @@ PATHS: list[str] = [
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/VSCodium/User/",
+    ".config/gtk-3.0/gtk.css"
+
     ".local/share/SpeedCrunch/color-schemes/",
     ".idlerc/config-main.cfg",
     "notes/guido.txt"
