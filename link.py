@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 HOMETARGET: Path = Path("~" + os.getlogin()).expanduser()
-DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles")
+DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles") # path to root of dotfiles
 #HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS: list[str] = [
     ".bashrc",
@@ -16,7 +16,7 @@ PATHS: list[str] = [
     ".gitconfig",
     ".ahk/",
     ".wezterm.lua",
-    
+
     ".config/starship.toml",
     ".config/micro/",
     ".config/nvim/",
@@ -85,5 +85,6 @@ if __name__ == "__main__":
     else:
         print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
 
+    Path("/etc/keyd/").mkdir(parents=True, exist_ok=True)
     shutil.copyfile(str(DOTFILEPATH.parent.joinpath("extras/keyd.conf")), "/etc/keyd/default.conf")
     print("Copied keyd config to /etc/keyd/default.conf")
