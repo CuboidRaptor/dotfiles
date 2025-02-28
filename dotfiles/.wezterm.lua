@@ -28,6 +28,14 @@ config.window_padding = {
     bottom = "15px",
 }
 
+local act = wezterm.action
+config.keys = {
+    { key = "q", mods = "CTRL|SHIFT", action = act.QuitApplication },
+    { key = "Tab", mods = "CTRL", action = act.DisableDefaultAssignment },
+    { key = "Tab", mods = "CTRL|SHIFT", action = act.DisableDefaultAssignment },
+    { key = "Enter", mods = "ALT", action = act.DisableDefaultAssignment },
+}
+
 -- Open new wezterms in existing instances if possible
 config.prefer_to_spawn_tabs = true
 
