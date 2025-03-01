@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.default_prog = { "bash" }
 
 config.initial_rows = 32
-config.initial_cols = 128
+config.initial_cols = 120
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
@@ -15,8 +15,9 @@ config.colors = theme.colors();
 config.window_frame = theme.window_frame();
 
 config.font = wezterm.font_with_fallback {
-    "Cascadia Code NF",
+    "Monaspace Neon Frozen",
     "Consolas",
+    "monospace",
     "DengXian"
 }
 config.font_size = 12
@@ -35,9 +36,6 @@ config.keys = {
     { key = "Tab", mods = "CTRL|SHIFT", action = act.DisableDefaultAssignment },
     { key = "Enter", mods = "ALT", action = act.DisableDefaultAssignment },
 }
-
--- Open new wezterms in existing instances if possible
-config.prefer_to_spawn_tabs = true
 
 config.enable_scroll_bar = true
 
