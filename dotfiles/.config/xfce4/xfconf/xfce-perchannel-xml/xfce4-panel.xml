@@ -62,20 +62,12 @@
         <value type="string" value="xfce4-about.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="xfce4-about.desktop"/>
-        <value type="string" value="speedcrunch.desktop"/>
-        <value type="string" value="xfce4-screenshooter.desktop"/>
-        <value type="string" value="dev.vencord.Vesktop.desktop"/>
-        <value type="string" value="net.ankiweb.Anki.desktop"/>
-        <value type="string" value="org.wezfurlong.wezterm.desktop"/>
-        <value type="string" value="xfce-settings-manager.desktop"/>
-        <value type="string" value="thunar.desktop"/>
-        <value type="string" value="system-config-printer.desktop"/>
-        <value type="string" value="github-desktop.desktop"/>
       </property>
       <property name="show-button-title" type="bool" value="true"/>
       <property name="button-title" type="string" value="Launcher"/>
       <property name="show-command-restart" type="bool" value="true"/>
+      <property name="default-category" type="int" value="2"/>
+      <property name="recent-items-max" type="int" value="0"/>
     </property>
     <property name="plugin-10" type="string" value="separator">
       <property name="expand" type="bool" value="false"/>
