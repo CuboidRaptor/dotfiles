@@ -1,0 +1,7 @@
+[user]
+forceIconSize=false
+showWindowCount=false
+middleButtonBehavior=1
+inactiveIndicatorStyle=2
+inactiveColor=rgb(53,132,228)
+pinned=thunar;xfce4-terminal;sublime_text;xfce-settings-manager;FirefoxDevEdition;

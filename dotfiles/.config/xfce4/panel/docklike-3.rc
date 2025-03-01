@@ -1,0 +1,13 @@
+[user]
+pinned=thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;speedcrunch;
+inactiveIndicatorStyle=2
+inactiveColor=rgb(53,132,228)
+forceIconSize=false
+middleButtonBehavior=1
+noWindowsListIfSingle=false
+showWindowCount=true
+indicatorOrientation=1
+indicatorStyle=0
+iconSize=30
+keyComboActive=false
+indicatorColorFromTheme=false

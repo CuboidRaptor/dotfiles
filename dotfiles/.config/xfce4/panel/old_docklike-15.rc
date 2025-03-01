@@ -1,0 +1,10 @@
+[user]
+pinned=thunar;xfce4-terminal;github-desktop;xfce-settings-manager;sublime_text;FirefoxDevEdition;
+middleButtonBehavior=1
+showWindowCount=true
+inactiveIndicatorStyle=2
+indicatorColorFromTheme=false
+indicatorStyle=0
+keyComboActive=true
+inactiveColor=rgb(53,132,228)
+forceIconSize=false
