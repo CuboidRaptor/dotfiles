@@ -68,6 +68,8 @@
       <property name="show-command-restart" type="bool" value="true"/>
       <property name="default-category" type="int" value="2"/>
       <property name="recent-items-max" type="int" value="0"/>
+      <property name="show-command-logout" type="bool" value="false"/>
+      <property name="show-command-logoutuser" type="bool" value="true"/>
     </property>
     <property name="plugin-10" type="string" value="separator">
       <property name="expand" type="bool" value="false"/>
