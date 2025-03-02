@@ -16,12 +16,6 @@ map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
--- code runner!
-map("n", "<F5>", "<Cmd>w<CR><Cmd>RunCode<CR>i", { remap = true, desc = "Run Code" })
-map("i", "<F5>", "<Esc><Cmd>w<CR><Cmd>RunCode<CR>i", { remap = true, desc = "Run Code" })
-map("t", "<F5>", "<Esc><C-w><C-k><Cmd>w<CR><Cmd>RunCode<CR>i", { remap = true, desc = "Run Code" })
--- allow reruns directly from terminal
-
 map("i", "<Leader>h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" })
 map("n", "<Leader>h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
 
