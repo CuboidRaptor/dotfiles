@@ -1,7 +1,7 @@
 [user]
-pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;speedcrunch;
+pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;com.vivaldi.Vivaldi;speedcrunch;
 inactiveIndicatorStyle=2
-inactiveColor=rgb(53,132,228)
+inactiveColor=rgb(140,93,217)
 forceIconSize=false
 middleButtonBehavior=1
 noWindowsListIfSingle=false
@@ -11,3 +11,4 @@ indicatorStyle=0
 iconSize=30
 keyComboActive=false
 indicatorColorFromTheme=false
+indicatorColor=rgb(140,93,217)
