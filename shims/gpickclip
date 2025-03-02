@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Requires gpick installed
+
+set -eo pipefail
+gpick -so | tail -n1 | tr -d "\n" | tr "[:upper:]" "[:lower:]" | xclip -i -sel clip
+echo "Pasted color"

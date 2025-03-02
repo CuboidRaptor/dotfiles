@@ -82,6 +82,7 @@
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="&lt;Super&gt;m" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;p" type="string" value="gpickclip"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
