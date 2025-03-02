@@ -1,5 +1,5 @@
 [user]
-pinned=thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;speedcrunch;
+pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;speedcrunch;
 inactiveIndicatorStyle=2
 inactiveColor=rgb(53,132,228)
 forceIconSize=false
