@@ -14,6 +14,7 @@ nvidia settings for perf
 Cascadia Code/fonts
 noatime
 github auth with `gh auth login`
+celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 Browser/firefox stuff:
     Mozilla Sync
     search engines
