@@ -16,7 +16,6 @@ celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcompon
 Browser/firefox stuff:
     Mozilla Sync
     search engines
-    user.js
     Violentmonkey
         return youtube dislike
         librescore
