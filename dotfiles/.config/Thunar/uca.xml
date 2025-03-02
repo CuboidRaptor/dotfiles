@@ -12,4 +12,20 @@
 	<startup-notify/>
 	<directories/>
 </action>
+<action>
+	<icon>configure</icon>
+	<name>Touch</name>
+	<submenu></submenu>
+	<unique-id>1740883803069246-1</unique-id>
+	<command>touch %F</command>
+	<description>Touch files or directories</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>
