@@ -72,6 +72,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-side-pane-shortcuts" "<Primary>b")
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/edit-menu" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/a343abdf43914153ad7fc84e628edf31" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/reload" "<Primary>r")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/copy" "<Primary>c")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/move-to-trash" "")
