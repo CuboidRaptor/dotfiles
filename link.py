@@ -18,15 +18,18 @@ PATHS: list[str] = [
     ".wezterm.lua",
 
     ".config/starship.toml",
-    ".config/micro/",
+    ".config/xfce4/",
     ".config/nvim/",
     ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/VSCodium/User/",
-    ".config/gtk-3.0/gtk.css"
+    ".config/gtk-3.0/gtk.css",
+    ".config/flameshot/",
 
     ".local/share/SpeedCrunch/color-schemes/",
+    ".local/share/fonts/MonaspaceNeonFrozen",
+    ".local/share/fonts/Verdana",
     ".idlerc/config-main.cfg",
     "notes/guido.txt"
 ]
