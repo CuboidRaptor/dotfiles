@@ -12,3 +12,4 @@ iconSize=30
 keyComboActive=false
 indicatorColorFromTheme=false
 indicatorColor=rgb(140,93,217)
+keyAloneActive=false
