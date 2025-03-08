@@ -8,6 +8,8 @@ alias dlim="dnf repoquery --userinstalled"
 # I use this a lot
 alias lg="lazygit"
 
+alias lsg="ls -l | grep"
+
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
 alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
