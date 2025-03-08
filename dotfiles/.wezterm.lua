@@ -16,7 +16,6 @@ config.window_frame = theme.window_frame();
 
 config.font = wezterm.font_with_fallback {
     "Monaspace Neon Frozen",
-    "Consolas",
     "monospace",
     "DengXian"
 }
