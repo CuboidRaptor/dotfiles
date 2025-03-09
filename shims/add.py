@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # only works for linux, and files in home directory of current user
-# dotfiles repo bust also be in /home/$USER/dotfiles
+# dotfiles repo must also be in /home/$USER/dotfiles
 
 import sys
 import getpass
@@ -13,7 +13,7 @@ tgt_file: str = os.path.abspath(sys.argv[1])
 strip_user: typing.Pattern = re.compile(r".*" + getpass.getuser() + r"/(.*)")
 stripped_path: str = strip_user.match(tgt_file).group(1)
 
-dotfiles_dir = f"/home/{getpass.getuser()}/dotfiles/dotfiles/" # change for different dotfile repo location
+dotfiles_dir: str = f"/home/{getpass.getuser()}/dotfiles/dotfiles/" # change for different dotfile repo location
 
 try:
     os.mkdir(dotfiles_dir)
