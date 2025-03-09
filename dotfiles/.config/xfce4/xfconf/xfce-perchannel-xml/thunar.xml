@@ -18,7 +18,6 @@
   <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_SIZE"/>
   <property name="misc-folders-first" type="bool" value="false"/>
   <property name="last-details-view-fixed-columns" type="bool" value="true"/>
-  <property name="misc-exec-shell-scripts-by-default" type="bool" value="true"/>
   <property name="last-toolbar-item-order" type="string" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"/>
   <property name="last-toolbar-visible-buttons" type="string" value="0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0"/>
 </channel>
