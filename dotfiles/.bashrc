@@ -103,7 +103,7 @@ fi
 # Micro editor truecolor, I guess
 export "MICRO_TRUECOLOR=1"
 
-# activate starship prompt!
+# enable starship
 eval "$(starship init bash)"
 
 export FLAKE="path:///home/jason/dotfiles/nixos/"

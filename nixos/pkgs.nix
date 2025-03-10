@@ -14,10 +14,8 @@
       vimAlias = true;
       viAlias = true;
     };
-    starship = {
-      enable = true;
-      interactiveOnly = false;
-    };
+    lazygit.enable = true;
+    tmux.enable = true;
   };
 
   # sublime text 4/gh desktop and some other packages need it
@@ -91,6 +89,7 @@
       fd
       dl-librescore
 
+      starship
       zip
       unzip
       curl
@@ -98,12 +97,10 @@
       bat
       fastfetch
       htop
-      ##neovim # (installed through nvim.nix)
       micro
       gh
       git
       imagemagick
-      hollywood
       http-server
       xclip
       glib
@@ -120,10 +117,6 @@
       owmods-gui
       ckan
     ];
-
-  fonts.packages = with pkgs; [
-    cascadia-code
-  ];
 
   environment.variables = {
     JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
