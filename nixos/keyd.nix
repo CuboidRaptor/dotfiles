@@ -9,7 +9,9 @@
     enable = true;
     keyboards = {
       default = {
-        ids = [ "*" ];
+        ids = [ 
+          "258a:008b"
+        ];
         settings = {
           main = {
             capslock = "esc";
