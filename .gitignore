@@ -10,3 +10,6 @@
 
 # I do dumb stuff in here
 test/
+
+# Hardware specific nix stuff
+hardware-configuration.nix
