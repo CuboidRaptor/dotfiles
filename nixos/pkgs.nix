@@ -47,6 +47,7 @@
       jdk
       sublime4
       gcc
+      libgcc
       (makeNixLDWrapper python313Full)
       nodejs
       clang-tools
@@ -59,6 +60,7 @@
       xfce.xfce4-xkb-plugin
       rose-pine-gtk-theme
       rose-pine-icon-theme
+      rose-pine-cursor
       seahorse
 
       lf
