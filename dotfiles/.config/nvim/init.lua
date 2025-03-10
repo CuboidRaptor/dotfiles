@@ -51,20 +51,3 @@ require("rose-pine").setup({
   dark_variant = "main",
 })
 vim.cmd.colorscheme "rose-pine"
-
--- vim explode and annoys me with swap file messages
--- vim.cmd("set shortmess+=A")
-
-vim.cmd([[set timeoutlen=420]])
-
--- me like mouse
-vim.opt.mouse = 'a'
-
--- keep this many lines above and below when scrolling
-vim.opt.scrolloff = 3
-
--- don't autoformat files
-vim.g.autoformat = false
-
--- don't sync to system clipboard unless I do explicitly with "+
-vim.opt.clipboard = ""
