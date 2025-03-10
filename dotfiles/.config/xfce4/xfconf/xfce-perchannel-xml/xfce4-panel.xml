@@ -38,7 +38,7 @@
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="whiskermenu">
-      <property name="button-icon" type="string" value="distributor-logo-fedora"/>
+      <property name="button-icon" type="string" value="desktop-environment-xfce"/>
       <property name="launcher-show-description" type="bool" value="false"/>
       <property name="hover-switch-category" type="bool" value="true"/>
       <property name="view-mode" type="int" value="2"/>
