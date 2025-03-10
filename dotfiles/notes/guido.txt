@@ -1,3 +1,4 @@
+sudo nixos-rebuild switch --flake "path://<abspath>#dregsdesk15"
 magic sysrq
 earlyoom (free swap 25%)/systemd-oomd
 zram, 3*ram/5, lz4, arch wiki/pop configs, backup 8gb swap on drive
