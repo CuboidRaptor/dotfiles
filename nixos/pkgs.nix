@@ -52,9 +52,12 @@
       clang
       nixd
 
-      ranger
+      xfce.xfce4-whiskermenu-plugin
+      xfce.xfce4-docklike-plugin
+      xfce.xfce4-systemload-plugin
+      xfce.xfce4-xkb-plugin
+
       lf
-      xmousepasteblock
       github-desktop
       gparted
       firefox-devedition-bin
@@ -95,6 +98,7 @@
       htop
       ##neovim # (installed through nvim.nix)
       micro
+      gh
       git
       imagemagick
       hollywood

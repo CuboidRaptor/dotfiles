@@ -22,7 +22,7 @@
   # Enable networking
   networking = {
     networkmanager.enable = true;
-    hostName = "dregsdesk10"; # Define your hostname.
+    hostName = "dregsdesk15"; # Define your hostname.
     wireless.enable = false; # Enables wireless support via wpa_supplicant.
     nameservers = [
       "9.9.9.9"
@@ -72,10 +72,10 @@
     enable = true;
     libraries = with pkgs; [
       stdenv.cc.cc
-      glib
-      libgl
     ];
   };
+  # also envfs it also makes my life easier
+  services.envfs.enable = true;
 
   # nix helper installation/config!
   programs.nh = {
@@ -96,8 +96,7 @@
   #services.displayManager.sddm.enable = true;
   #services.desktopManager.plasma6.enable = true;
 
-  # Enable Xfce
-  services.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents. Also find printers.
