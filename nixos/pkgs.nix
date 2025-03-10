@@ -14,7 +14,10 @@
       vimAlias = true;
       viAlias = true;
     };
-    starship.enable = true;
+    starship = {
+      enable = true;
+      interactiveOnly = false;
+    };
   };
 
   # sublime text 4/gh desktop and some other packages need it
@@ -67,7 +70,6 @@
       flameshot
       vlc
       thunderbird
-      kdePackages.kwalletmanager
       wineWowPackages.stable
       winetricks
       vscodium-fhs

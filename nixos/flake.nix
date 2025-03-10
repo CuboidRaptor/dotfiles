@@ -22,7 +22,7 @@
   in
   {
     nixosConfigurations = {
-      dregsdesk10 = nixpkgs.lib.nixosSystem {
+      dregsdesk15 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix

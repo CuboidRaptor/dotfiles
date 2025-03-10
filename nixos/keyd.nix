@@ -5,7 +5,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  services.displayManager.sddm.autoNumlock = true; # enable numlock by default
   services.keyd = {
     enable = true;
     keyboards = {
