@@ -57,6 +57,9 @@
       xfce.xfce4-docklike-plugin
       xfce.xfce4-systemload-plugin
       xfce.xfce4-xkb-plugin
+      rose-pine-gtk-theme
+      rose-pine-icon-theme
+      seahorse
 
       lf
       github-desktop
