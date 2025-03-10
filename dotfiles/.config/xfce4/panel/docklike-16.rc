@@ -6,4 +6,4 @@ indicatorColor=rgb(140,93,217)
 inactiveColor=rgb(140,93,217)
 showWindowCount=true
 middleButtonBehavior=1
-pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;net.ankiweb.Anki;dev.vencord.Vesktop;sublime_text;xfce-settings-manager;FirefoxDevEdition;com.vivaldi.Vivaldi;speedcrunch;
+pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;anki;vesktop;sublime_text;xfce-settings-manager;firefox-developer-edition;vivaldi-stable;org.speedcrunch.SpeedCrunch;
