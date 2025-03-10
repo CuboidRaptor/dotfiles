@@ -82,15 +82,6 @@
     enable = true;
   };
 
-  system.activationScripts.script.text = ''
-    #!/usr/bin/env bash
-    rm -rf /shims
-    cp -r /home/jason/dotfiles/nixos/shims /shims # copy shims to system
-  '';
-  environment.variables = {
-    PATH = [ "/shims" ];
-  };
-
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
