@@ -44,7 +44,7 @@
     '');
   in
     with pkgs; [
-      jdk
+      jdk # programming languages stuff
       sublime4
       gcc
       libgcc
@@ -54,7 +54,23 @@
       clang
       nil
 
-      xfce.xfce4-whiskermenu-plugin
+      starship # dev stuff/deps
+      zip
+      unzip
+      curl
+      eza
+      bat
+      fastfetch
+      htop
+      gh
+      git
+      imagemagick
+      http-server
+      xclip
+      glib
+      lf
+
+      xfce.xfce4-whiskermenu-plugin # xfce stuff
       xfce.xfce4-docklike-plugin
       xfce.xfce4-systemload-plugin
       xfce.xfce4-xkb-plugin
@@ -63,9 +79,7 @@
       rose-pine-cursor
       seahorse
 
-      lf
-      github-desktop
-      gparted
+      gparted # apps
       firefox-devedition-bin
       vesktop
       speedcrunch
@@ -97,23 +111,7 @@
       gimp
       gpick
 
-      starship
-      zip
-      unzip
-      curl
-      eza
-      bat
-      fastfetch
-      htop
-      micro
-      gh
-      git
-      imagemagick
-      http-server
-      xclip
-      glib
-
-      lutris
+      lutris # games and stuff
       (prismlauncher.override {
         jdks = [
           jdk8
