@@ -93,6 +93,9 @@
       ripgrep
       fd
       dl-librescore
+      kdePackages.kolourpaint
+      gimp
+      gpick
 
       starship
       zip
