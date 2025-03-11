@@ -25,14 +25,14 @@ configs:
     "/home/jason":
       row: 5
       col: 0
-    "60346141-f7d1-4ad5-b78e-1c02a55e0d4d":
-      row: 2
-      col: 0
-      last_seen: 1741642339620874
     "684438e0-1b34-4d8d-b4bd-3bc7cbe4218b":
       row: 6
       col: 0
       last_seen: 1741642339623233
+    "60346141-f7d1-4ad5-b78e-1c02a55e0d4d":
+      row: 2
+      col: 0
+      last_seen: 1741642339620874
     "Trash":
       row: 3
       col: 0
