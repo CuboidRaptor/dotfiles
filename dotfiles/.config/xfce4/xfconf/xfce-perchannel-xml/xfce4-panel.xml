@@ -33,7 +33,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="40"/>
       <property name="enable-struts" type="bool" value="true"/>
-      <property name="background-image" type="string" value="file:///home/jason/dotfiles/extras/ripples.png"/>
+      <property name="background-image" type="string" value="file:///home/jason/dotfiles/extras/rose_pine_ripples.png"/>
     </property>
   </property>
   <property name="plugins" type="empty">
