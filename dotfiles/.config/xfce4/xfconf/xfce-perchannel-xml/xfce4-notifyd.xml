@@ -21,5 +21,6 @@
   <property name="date-time-custom-format" type="string" value="%a %H:%M:%S"/>
   <property name="do-fadeout" type="bool" value="false"/>
   <property name="notify-location" type="string" value="bottom-right"/>
-  <property name="theme" type="string" value="Smoke"/>
+  <property name="theme" type="string" value="Bright"/>
+  <property name="initial-opacity" type="double" value="1"/>
 </channel>
