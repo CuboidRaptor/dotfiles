@@ -16,22 +16,28 @@ PATHS: list[str] = [
     ".gitconfig",
     ".ahk/",
     ".wezterm.lua",
+    "notes/guido.txt",
+    ".idlerc/config-main.cfg",
 
     ".config/starship.toml",
     ".config/xfce4/",
+    ".config/Thunar/"
     ".config/nvim/",
+    ".config/tmux/"
+    ".config/lf/"
     ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/VSCodium/User/",
     ".config/gtk-3.0/gtk.css",
     ".config/flameshot/",
+    ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf"
+    ".config/mimeapps.list"
 
     ".local/share/SpeedCrunch/color-schemes/",
     ".local/share/fonts/MonaspaceNeonFrozen",
-    ".local/share/fonts/Verdana",
-    ".idlerc/config-main.cfg",
-    "notes/guido.txt"
+    ".local/share/fonts/Verdana"
+    ".local/share/mime/"
 ]
 
 def slink(name: str) -> None:
