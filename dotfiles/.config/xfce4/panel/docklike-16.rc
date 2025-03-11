@@ -2,8 +2,8 @@
 inactiveIndicatorStyle=2
 indicatorOrientation=1
 indicatorColorFromTheme=false
-indicatorColor=rgb(140,93,217)
-inactiveColor=rgb(140,93,217)
+indicatorColor=rgb(215,130,126)
+inactiveColor=rgb(215,130,126)
 showWindowCount=true
 middleButtonBehavior=1
 pinned=net.lutris.Lutris;thunar;org.wezfurlong.wezterm;anki;vesktop;sublime_text;xfce-settings-manager;firefox-developer-edition;vivaldi-stable;org.speedcrunch.SpeedCrunch;
