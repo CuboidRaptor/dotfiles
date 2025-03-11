@@ -7,7 +7,13 @@ return {
                 html = {},
                 cssls = {},
                 lua_ls = {},
-                bashls = {}
+                bashls = {},
+                clangd = {
+                    mason = false
+                },
+                nil_ls = {
+                    mason = false
+                }
             }
         }
     }
