@@ -106,4 +106,4 @@ export "MICRO_TRUECOLOR=1"
 # enable starship
 eval "$(starship init bash)"
 
-export FLAKE="path:///home/jason/dotfiles/nixos/"
+export FLAKE="path://$HOME/dotfiles/nixos/"
