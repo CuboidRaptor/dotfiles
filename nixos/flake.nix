@@ -3,14 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, nix-index-database, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -26,7 +21,6 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix
-          nix-index-database.nixosModules.nix-index
         ];
       };
     };
