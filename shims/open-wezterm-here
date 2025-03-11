@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# this script runs wezterm in the current directory
+# basically stolen from wezterm's git repo
+exec wezterm start --cwd "$PWD" -- "$@"
