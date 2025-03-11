@@ -58,6 +58,8 @@ setlocal ~/DownloadsArchive sortby time
 setlocal ~/DownloadsArchive reverse
 setlocal ~/DownloadsArchive dirfirst false
 
+map e $nvrw $fx
+
 # allow temp z mark
 set tempmarks q
 
