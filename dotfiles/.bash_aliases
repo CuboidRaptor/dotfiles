@@ -1,5 +1,6 @@
 # rebuild and switch using nh
 alias nswitch="sudo -EH nh os switch -R"
+alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 
 # upgrade nixos, I guess
 alias yippee="sudo -EH nh os boot --update -R && sudo systemctl reboot"
