@@ -6,13 +6,13 @@
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="last-separator-position" type="int" value="170"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,118,82,50,151,50,50,458,50,308,79,50,433"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,137,82,50,151,50,50,343,50,345,119,50,433"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="default-view" type="string" value="ThunarDetailsView"/>
   <property name="misc-directory-specific-settings" type="bool" value="true"/>
   <property name="misc-full-path-in-tab-title" type="bool" value="true"/>
   <property name="misc-show-delete-action" type="bool" value="true"/>
-  <property name="last-window-width" type="int" value="1082"/>
+  <property name="last-window-width" type="int" value="1115"/>
   <property name="last-window-height" type="int" value="642"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-details-view-visible-columns" type="string" value="THUNAR_COLUMN_DATE_MODIFIED,THUNAR_COLUMN_NAME,THUNAR_COLUMN_PERMISSIONS,THUNAR_COLUMN_SIZE"/>
@@ -21,4 +21,14 @@
   <property name="last-toolbar-item-order" type="string" value="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18"/>
   <property name="last-toolbar-visible-buttons" type="string" value="0,1,1,1,1,1,1,0,0,0,0,0,0,0,1,1,1,0,0"/>
   <property name="last-toolbar-items" type="string" value="menu:0,back:1,forward:1,open-parent:1,open-home:1,undo:1,redo:1,zoom-in:0,zoom-out:0,zoom-reset:0,view-as-icons:0,view-as-detailed-list:0,view-as-compact-list:0,toggle-split-view:0,location-bar:1,reload:1,search:1,uca-action-1740437686829030-1:0,uca-action-1740883803069246-1:0,new-tab:0,new-window:0,view-switcher:0"/>
+  <property name="misc-exec-shell-scripts-by-default" type="string" value="THUNAR_EXECUTE_SHELL_SCRIPT_ASK"/>
+  <property name="misc-use-csd" type="bool" value="false"/>
+  <property name="misc-open-new-window-as-tab" type="bool" value="true"/>
+  <property name="misc-middle-click-in-tab" type="bool" value="true"/>
+  <property name="misc-symbolic-icons-in-toolbar" type="bool" value="true"/>
+  <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
+  <property name="last-menubar-visible" type="bool" value="true"/>
+  <property name="hidden-bookmarks" type="array">
+    <value type="string" value="recent:///"/>
+  </property>
 </channel>
