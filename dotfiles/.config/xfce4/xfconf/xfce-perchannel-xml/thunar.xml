@@ -31,4 +31,10 @@
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="recent:///"/>
   </property>
+  <property name="misc-expandable-folders" type="bool" value="false"/>
+  <property name="misc-folder-item-count" type="string" value="THUNAR_FOLDER_ITEM_COUNT_NEVER"/>
+  <property name="last-restore-tabs" type="bool" value="false"/>
+  <property name="last-focused-tab-left" type="int" value="0"/>
+  <property name="last-focused-tab-right" type="int" value="0"/>
+  <property name="misc-confirm-close-multiple-tabs" type="bool" value="false"/>
 </channel>
