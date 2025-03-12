@@ -207,8 +207,18 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "vboxusers"
     ];
   };
+  #users.users.test = {
+  #  isNormalUser = true;
+  #  description = "test";
+  #  extraGroups = [
+  #    "networkmanager"
+  #    "wheel"
+  #  ];
+  #  password = "test";
+  #};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
