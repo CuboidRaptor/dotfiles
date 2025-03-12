@@ -126,6 +126,10 @@
   };
   # also envfs it also makes my life easier
   services.envfs.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # nix helper installation/config!
   programs.nh = {
