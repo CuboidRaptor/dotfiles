@@ -12,7 +12,7 @@
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="icon-size" type="uint" value="0"/>
       <property name="leave-opacity" type="uint" value="100"/>
-      <property name="length" type="uint" value="100"/>
+      <property name="length" type="double" value="100"/>
       <property name="length-adjust" type="bool" value="true"/>
       <property name="mode" type="uint" value="0"/>
       <property name="nrows" type="uint" value="1"/>
@@ -29,11 +29,12 @@
         <value type="int" value="10"/>
         <value type="int" value="11"/>
       </property>
-      <property name="position" type="string" value="p=8;x=512;y=752"/>
+      <property name="position" type="string" value="p=8;x=960;y=1059"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="40"/>
       <property name="enable-struts" type="bool" value="true"/>
       <property name="background-image" type="string" value="file:///home/jason/dotfiles/extras/rose_pine_ripples.png"/>
+      <property name="border-width" type="uint" value="0"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -99,6 +100,9 @@
       <property name="square-icons" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (54%)"/>
+        <value type="string" value="configuring wi-fi network connection “notsecretnew”…"/>
+        <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (94%)"/>
         <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (100%)"/>
         <value type="string" value="no network connection"/>
         <value type="string" value="pragha music player"/>
