@@ -5,7 +5,6 @@ zram, 3*ram/5, lz4, arch wiki/pop configs, backup 8gb swap on drive
 wifi drivers (8821 morrownr or smth)
 quad9 + cloudflare dns ipv4, 6 (9.9.9.9 1.1.1.1
     2620:fe::fe 2606:4700:4700::1111)
-fix sound delay (pulseaudio/pipewire) (arch wiki, ~ over /etc)
 dotfiles
 rEFInd catppuccin
 rpm fusion
