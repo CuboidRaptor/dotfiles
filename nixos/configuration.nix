@@ -121,7 +121,12 @@
   #services.displayManager.sddm.enable = true;
   #services.desktopManager.plasma6.enable = true;
 
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters.gtk = {
+      clock-format = "%H:%M:%S";
+    };
+  };
   services.xserver.desktopManager.xfce.enable = true;
 
   # Enable CUPS to print documents. Also find printers.
