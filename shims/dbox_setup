@@ -17,3 +17,5 @@ do
     done
 done
 distrobox-export --bin "/usr/bin/python3" --export-path "$HOME/dotfiles/dboxexports"
+mv "$HOME/dotfiles/dboxexports/python3" "$HOME/dotfiles/dboxexports/boxpython3"
+ln -s "$HOME/dotfiles/dboxexports/boxpython3" "$HOME/dotfiles/dboxexports/boxpython"
