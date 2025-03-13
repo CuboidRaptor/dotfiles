@@ -147,6 +147,24 @@
     pkgs.xfce.thunar-archive-plugin
   ];
 
+  nixpkgs.overlays = [
+    (self: super: {
+      xarchiver = super.xarchiver.overrideAttrs (old: {
+        postInstall = ''
+          rm -rf $out/libexec
+        '';
+      });
+
+      xfce = super.xfce.overrideScope (xself: xsuper: {
+        thunar-archive-plugin = xsuper.thunar-archive-plugin.overrideAttrs (old: {
+          postInstall = ''
+            cp ${super.xarchiver}/libexec/thunar-archive-plugin/* $out/libexec/thunar-archive-plugin/
+          '';
+        });
+      });
+    })
+  ];
+
   environment.variables = {
     JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
     JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
