@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
+# echo!
+echo -e "\033[1m\033[7mStarting system updates...\033[0m"
+
+echo "Updating system nixpkgs..."
+sudo -EH nh os boot --update -R
+
+echo "Updating distrobox zypper..."
+distrobox enter dregsbox -- sudo zypper up
+echo "Updating distrobox pipx packages..."
+distrobox enter dregsbox -- pipx upgrade-all
+
+read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
+echo "Rebooting..."
+sudo systemctl reboot
+
