@@ -36,8 +36,6 @@ config.keys = {
     { key = "Enter", mods = "ALT", action = act.DisableDefaultAssignment },
 }
 
-config.enable_scroll_bar = true
-
 -- I just use tmux instead
 config.enable_tab_bar = false
 
