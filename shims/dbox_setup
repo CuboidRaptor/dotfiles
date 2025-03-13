@@ -13,6 +13,7 @@ do
     files=($(ls | grep -v '^activate' | grep -v '^Activate' | grep -v '^python[23]\?'))
     for bin in "${files[@]}"
     do
-        distrobox-export --bin "$(pwd)/$bin" --export-path ~/dotfiles/dboxexports && mv ~/.local/bin/$bin ~/.local/bin/${bin}_distrobox_bak
+        distrobox-export --bin "$(pwd)/$bin" --export-path "$HOME/dotfiles/dboxexports" && mv "$HOME/.local/bin/$bin" "~/.local/bin/${bin}_distrobox_bak"
     done
 done
+distrobox-export --bin "/usr/bin/python3" --export-path "$HOME/dotfiles/dboxexports"
