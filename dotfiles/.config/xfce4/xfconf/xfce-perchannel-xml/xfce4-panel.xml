@@ -135,7 +135,7 @@
     <property name="plugin-9" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="false"/>
-      <property name="known-players" type="string" value="firefox-aurora;LibreWolf;pragha;Vivaldi;vlc"/>
+      <property name="known-players" type="string" value="firefox-aurora;librewolf;LibreWolf;pragha;Vivaldi;vlc"/>
       <property name="rec-indicator-persistent" type="bool" value="false"/>
     </property>
     <property name="clipman" type="empty">
