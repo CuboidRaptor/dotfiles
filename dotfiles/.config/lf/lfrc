@@ -33,6 +33,13 @@ map a push %create<space>""<left>
 
 map E $chmod +x $fx
 
+# gl to follow symlinks
+cmd follow-link %{{
+  lf -remote "send $id select \"$(readlink -- "$f" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+}}
+
+map gl follow-link
+
 # trash-cli
 map x %trash-put -- $fx
 map X $trash-restore
