@@ -18,6 +18,19 @@
     tmux.enable = true;
   };
 
+  ## fuck me does this cause problems
+  ## (breaks podman, breaks distrobox, takes 45645,6,456 morbillion hours to compile)
+  #virtualisation.virtualbox.host = {
+  #  enable = true;
+  #  enableExtensionPack = true;
+  #};
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat= true;
+  };
+
+  services.gvfs.enable = true; # for trash-cli
+
   # sublime text 4/gh desktop and some other packages need it
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
@@ -61,23 +74,18 @@
       eza
       bat
       fastfetch
-      htop
+      btop
       gh
       git
+      lf
       imagemagick
       http-server
       xclip
       glib
-      lf
-
-      xfce.xfce4-whiskermenu-plugin # xfce stuff
-      xfce.xfce4-docklike-plugin
-      xfce.xfce4-systemload-plugin
-      xfce.xfce4-xkb-plugin
-      rose-pine-gtk-theme
-      rose-pine-icon-theme
-      rose-pine-cursor
-      seahorse
+      fuse
+      fzf
+      ripgrep
+      fd
 
       gparted # apps
       firefox-devedition-bin
@@ -103,13 +111,14 @@
       parsec-bin
       wezterm
       librewolf
-      fzf
-      ripgrep
-      fd
       dl-librescore
+      kdePackages.okular
       kdePackages.kolourpaint
       gimp
       gpick
+      dconf-editor
+      distrobox
+      audacity
 
       lutris # games and stuff
       (prismlauncher.override {
@@ -122,7 +131,21 @@
       mindustry
       owmods-gui
       ckan
+
+      xarchiver  # xfce stuff
+      seahorse
+      xfce.xfce4-whiskermenu-plugin
+      xfce.xfce4-docklike-plugin
+      xfce.xfce4-systemload-plugin
+      xfce.xfce4-xkb-plugin
+      rose-pine-gtk-theme
+      rose-pine-icon-theme
+      rose-pine-cursor
     ];
+
+  programs.thunar.plugins = [
+    pkgs.xfce.thunar-archive-plugin
+  ];
 
   environment.variables = {
     JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
