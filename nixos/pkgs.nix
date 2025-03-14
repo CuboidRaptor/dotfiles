@@ -97,7 +97,6 @@
       thunderbird
       wineWowPackages.stable
       winetricks
-      vscodium-fhs
       (vivaldi.overrideAttrs (
           oldAttrs: {
             dontWrapQtApps = false;
@@ -108,7 +107,6 @@
       vivaldi-ffmpeg-codecs
       remmina
       pavucontrol
-      parsec-bin
       wezterm
       librewolf
       dl-librescore
@@ -149,6 +147,7 @@
   ];
 
   nixpkgs.overlays = [
+    # patch xarchiver and thunar-archive-plugin so the context menu actuaally find xarchiver
     (self: super: {
       xarchiver = super.xarchiver.overrideAttrs (old: {
         postInstall = ''
@@ -165,10 +164,4 @@
       });
     })
   ];
-
-  environment.variables = {
-    JAVA_8_HOME = "${pkgs.jdk8}/lib/openjdk";
-    JAVA_17_HOME = "${pkgs.jdk17}/lib/openjdk";
-    JAVA_21_HOME = "${pkgs.jdk21}/lib/openjdk";
-  };
 }
