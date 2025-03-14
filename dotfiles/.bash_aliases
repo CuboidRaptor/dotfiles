@@ -14,8 +14,6 @@ alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n
 # I use this a lot
 alias lg="lazygit"
 
-alias lsg="ls -l | grep"
-
 # chillllll htop
 alias htop="htop -d 30"
 
