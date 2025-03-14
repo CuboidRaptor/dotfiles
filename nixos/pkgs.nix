@@ -119,6 +119,7 @@
       dconf-editor
       distrobox
       audacity
+      libreoffice
 
       lutris # games and stuff
       (prismlauncher.override {
