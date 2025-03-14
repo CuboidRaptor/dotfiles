@@ -97,12 +97,14 @@
     enable = true;
   };
 
-  system.activationScripts.script.text = ''
-    #!/usr/bin/env bash
-
-    rm -rf /shims
-    cp -r /home/jason/dotfiles/shims /shims # copy shims to system
-  '';
+  # this copies shims to /shims
+  # yes I know it's called tmpfiles it works for persistent ones too
+  systemd.tmpfiles.settings.my-shims."/shims"."C+" = {
+    group = "root";
+    user = "root";
+    age = "-";
+    argument = "/home/jason/dotfiles/shims";
+  };
   environment.variables = {
     PATH = [ "/shims" ];
   };
