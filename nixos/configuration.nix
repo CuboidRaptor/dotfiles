@@ -109,6 +109,14 @@
     PATH = [ "/shims" ];
   };
 
+  # copy wallpaper to root so lightdm-gtk-greeter can find it
+  systemd.tmpfiles.settings.wallpaper."/wallpaper.png"."C+" = {
+    group = "root";
+    user = "root";
+    age = "-";
+    argument = "/home/jason/dotfiles/extras/wallpaper.png";
+  };
+
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -127,6 +135,14 @@
     enable = true;
     greeters.gtk = {
       clock-format = "%H:%M:%S";
+      cursorTheme = {
+        package = pkgs.rose-pine-cursor;
+        name = "BreezeX-RosePine-Linux";
+      };
+      extraConfig = ''
+        [greeter]
+        background=/wallpaper.png
+      '';
     };
   };
   services.xserver.desktopManager.xfce.enable = true;
