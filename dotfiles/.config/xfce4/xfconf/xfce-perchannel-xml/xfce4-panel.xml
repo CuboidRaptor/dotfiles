@@ -100,6 +100,7 @@
       <property name="square-icons" type="bool" value="false"/>
       <property name="symbolic-icons" type="bool" value="false"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (99%)"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (52%)"/>
         <value type="string" value="wi-fi network connection “notsecretnew” active: notsecretnew (54%)"/>
