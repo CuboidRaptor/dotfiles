@@ -24,7 +24,7 @@ alias neofetch="fastfetch -c neofetch"
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
 alias nano="micro"
 alias ls="eza -a"
-alias cat="bat"
+#alias cat="bat" # probably shouldn't do this
 alias vim="nvim"
 
 # strip metadata from image
