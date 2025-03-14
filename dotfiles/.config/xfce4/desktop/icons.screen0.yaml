@@ -13,7 +13,7 @@ configs:
       height: 1080
   icons:
     "trash:///":
-      row: 0
+      row: 1
       col: 0
     "40a376bf-2e4d-478e-832a-e5e327a877f5":
       row: 1
