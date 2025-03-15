@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 
 -- leader key is set in options.lua
+local leader = "," -- set custom leader because I'm too lazy to deal with plugins
+    -- overwriting my bindings
 local map = vim.keymap.set
 local telescope = require("telescope.builtin")
 
@@ -16,20 +18,20 @@ map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
-map("i", "<Leader>h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" })
-map("n", "<Leader>h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
+map("i", leader .. "h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" })
+map("n", leader .. "h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
 
-map("n", "<Leader>w", "<Cmd>SudaWrite", { remap = true, desc = "Save with Sudo" })
+map("n", leader .. "w", "<Cmd>SudaWrite", { remap = true, desc = "Save with Sudo" })
 
 -- Enter in normal mode now just inserts a newline on the next line without leaving normal
 map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 
-map("n", "<Leader>z", "@z", { remap = true, desc = "Send Z Macro" })
+map("n", leader .. "z", "@z", { remap = true, desc = "Send Z Macro" })
 
-map("n", "<Leader>b", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
+map("n", leader .. "^", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
 
 -- Telescope bindings
-map("n", "fb", function() telescope.buffers({sort_mru=true, path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Buffers" })
-map("n", "fg", function() telescope.git_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Git Repo Files" })
-map("n", "ff", function() telescope.find_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Current Directory" })
-map("n", "ft", telescope.treesitter, { remap = true, desc = "Telescope Treesitter" })
+map("n", leader .. "b", function() telescope.buffers({sort_mru=true, path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Buffers" })
+map("n", leader .. "g", function() telescope.git_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Git Repo Files" })
+map("n", leader .. "f", function() telescope.find_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Current Directory" })
+map("n", leader .. "t", telescope.treesitter, { remap = true, desc = "Telescope Treesitter" })
