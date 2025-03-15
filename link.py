@@ -21,22 +21,24 @@ PATHS: list[str] = [
 
     ".config/starship.toml",
     ".config/xfce4/",
-    ".config/Thunar/"
+    ".config/Thunar/",
     ".config/nvim/",
-    ".config/tmux/"
-    ".config/lf/"
+    ".config/tmux/",
+    ".config/lf/",
+    ".config/btop/btop.conf",
+    ".config/btop/themes/",
     ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/VSCodium/User/",
     ".config/gtk-3.0/gtk.css",
     ".config/flameshot/",
-    ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf"
-    ".config/mimeapps.list"
+    ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
+    ".config/mimeapps.list",
 
     ".local/share/SpeedCrunch/color-schemes/",
     ".local/share/fonts/MonaspaceNeonFrozen",
-    ".local/share/fonts/Verdana"
+    ".local/share/fonts/Verdana",
     ".local/share/mime/"
 ]
 
@@ -66,8 +68,10 @@ def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
 
 if __name__ == "__main__":
     if os.geteuid() != 0:
-        print("ERROR: You need to run this as root. Try using `sudo`.")
-        sys.exit()
+        #print("ERROR: You need to run this as root. Try using `sudo`.")
+        #sys.exit()
+        # we don't need sudo anymore because nix manages keyd
+        pass
 
     confirm: str = input("This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] ").lower()[0]
     if confirm != "y":
@@ -93,7 +97,3 @@ if __name__ == "__main__":
 
     else:
         print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
-
-    Path("/etc/keyd/").mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(str(DOTFILEPATH.parent.joinpath("extras/keyd.conf")), "/etc/keyd/default.conf")
-    print("Copied keyd config to /etc/keyd/default.conf")
