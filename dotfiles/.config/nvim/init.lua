@@ -19,6 +19,7 @@ telescope.setup({
         ["<C-k>"] = "move_selection_previous",
         ["<C-j>"] = "move_selection_next",
         ["<C-l>"] = "select_default",
+        ["<C-x>"] = "delete_buffer"
       }
     }
   }
@@ -45,9 +46,7 @@ vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4 -- default tab width for new files
 
--- rose pine colorscheme
-require("rose-pine").setup({
-  variant = "main",
-  dark_variant = "main",
+require("catppuccin").setup({
+  flavour = "mocha"
 })
-vim.cmd.colorscheme "rose-pine"
+vim.cmd.colorscheme "catppuccin"

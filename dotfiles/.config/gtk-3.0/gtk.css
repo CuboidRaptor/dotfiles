@@ -1,2 +1,4 @@
-#docklike-plugin button { padding: 4px; margin: -1px; }
-@import 'colors.css';
+#docklike-plugin button {
+    padding: 4px;
+    margin: -1px;
+}

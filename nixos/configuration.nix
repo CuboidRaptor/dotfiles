@@ -136,8 +136,8 @@
     greeters.gtk = {
       clock-format = "%H:%M:%S";
       cursorTheme = {
-        package = pkgs.rose-pine-cursor;
-        name = "BreezeX-RosePine-Linux";
+        #package = pkgs.catppuccin.cursors.latteDark;
+        name = "catppuccin-latte-dark-cursors";
       };
       extraConfig = ''
         [greeter]

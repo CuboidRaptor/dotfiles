@@ -26,7 +26,7 @@
   #};
   virtualisation.podman = {
     enable = true;
-    dockerCompat= true;
+    dockerCompat = true;
   };
 
   services.gvfs.enable = true; # for trash-cli
@@ -137,9 +137,17 @@
       xfce.xfce4-docklike-plugin
       xfce.xfce4-systemload-plugin
       xfce.xfce4-xkb-plugin
-      rose-pine-gtk-theme
-      rose-pine-icon-theme
-      rose-pine-cursor
+      catppuccin
+      catppuccin-cursors.mochaDark
+      (catppuccin-papirus-folders.override {
+        flavor = "latte";
+        accent = "maroon";
+      })
+      (colloid-gtk-theme.override { # this is used only for window decoration
+        themeVariants = [ "red" ];
+        colorVariants = [ "light" ];
+        tweaks = [ "catppuccin" ];
+      })
     ];
 
   programs.thunar.plugins = [

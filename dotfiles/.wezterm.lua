@@ -9,15 +9,11 @@ config.initial_cols = 120
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
-local theme = wezterm.plugin.require('https://github.com/neapsix/wezterm').main
-
-config.colors = theme.colors();
-config.window_frame = theme.window_frame();
+config.color_scheme = "Catppuccin Mocha"
 
 config.font = wezterm.font_with_fallback {
     "Monaspace Neon Frozen",
     "monospace",
-    "DengXian"
 }
 config.font_size = 12
 
