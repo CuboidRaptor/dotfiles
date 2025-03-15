@@ -29,7 +29,19 @@
     dockerCompat = true;
   };
 
-  services.gvfs.enable = true; # for trash-cli
+  xdg.portal = { # for flatpak
+    enable = true; 
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+  services = {
+    gvfs.enable = true; # for trash-cli
+    flatpak = {
+      enable = true;
+      packages = [
+        "io.github.everestapi.Olympus"
+      ];
+    };
+  };
 
   # sublime text 4/gh desktop and some other packages need it
   nixpkgs.config.permittedInsecurePackages = [
