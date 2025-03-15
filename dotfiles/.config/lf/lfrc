@@ -19,7 +19,7 @@ set scrolloff 10
 # set ratios and info
 set ratios 1:5:2
 set info size:time
-set dircounts
+#set dircounts
 set watch
 
 # enable mouse, because I can
