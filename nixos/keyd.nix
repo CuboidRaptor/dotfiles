@@ -22,10 +22,9 @@
             end = "pagedown";
             esc = "layer(nump)"; # this enable numpad layer
           };
-          shift = {
-            capslock = "capslock"; # shift caps enables caps
-          };
           nump = { # numpad!
+            capslock = "capslock"; # esc caps enables caps (why not)
+
             comma = "kp0";
             dot = "kpdot";
             slash = "^";
