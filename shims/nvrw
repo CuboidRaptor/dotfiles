@@ -9,7 +9,7 @@ if [ -n "$TMUX" ]; then
         abspaths=()
         for i in "$@"
         do
-            abspaths+=($(realpath "$i"))
+            abspaths+=("$(realpath "$i")")
         done
         nvim --server "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe" --remote "${abspaths[@]}"
         tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}"
