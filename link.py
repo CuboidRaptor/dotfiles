@@ -27,6 +27,7 @@ PATHS: list[str] = [
     ".config/lf/",
     ".config/btop/btop.conf",
     ".config/btop/themes/",
+    ".config/bat/"
     ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
