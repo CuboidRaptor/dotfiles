@@ -67,7 +67,7 @@ setlocal ~/DownloadsArchive dirfirst false
 
 map e $nvrw $fx
 
-# allow temp z mark
+# allow temp q mark
 set tempmarks q
 
 # go to first non-hidden file

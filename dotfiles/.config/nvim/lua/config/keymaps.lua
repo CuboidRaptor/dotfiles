@@ -26,7 +26,7 @@ map("n", leader .. "w", "<Cmd>SudaWrite", { remap = true, desc = "Save with Sudo
 -- Enter in normal mode now just inserts a newline on the next line without leaving normal
 map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 
-map("n", leader .. "z", "@z", { remap = true, desc = "Send Z Macro" })
+map("n", leader .. "q", "@q", { remap = true, desc = "Send Q Macro" })
 
 map("n", leader .. "^", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
 
