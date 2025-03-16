@@ -91,6 +91,7 @@
       git
       lf
       imagemagick
+      lutgen
       http-server
       xclip
       glib
