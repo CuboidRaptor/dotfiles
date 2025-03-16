@@ -97,19 +97,8 @@
     enable = true;
   };
 
-  # this copies shims to /shims
-  # yes I know it's called tmpfiles it works for persistent ones too
-  systemd.tmpfiles.settings.my-shims."/shims"."C+" = {
-    group = "root";
-    user = "root";
-    age = "-";
-    argument = "/home/jason/dotfiles/shims";
-  };
-  environment.variables = {
-    PATH = [ "/shims" ];
-  };
-
   # copy wallpaper to root so lightdm-gtk-greeter can find it
+  # this requires `sudo rm /wallpaper.png` to refresh
   systemd.tmpfiles.settings.wallpaper."/wallpaper.png"."C+" = {
     group = "root";
     user = "root";

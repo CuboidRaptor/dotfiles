@@ -83,7 +83,7 @@
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-applicationsmenu"/>
       <property name="&lt;Super&gt;m" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;a" type="string" value="pavucontrol"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;p" type="string" value="/shims/gpickclip"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;p" type="string" value="/home/jason/dotfiles/shims/gpickclip"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
