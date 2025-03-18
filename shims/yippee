@@ -13,6 +13,9 @@ distrobox enter dregsbox -- sudo zypper up
 echo "Updating distrobox pipx packages..."
 distrobox enter dregsbox -- pipx upgrade-all
 
+echo "Updating flatpak apps..."
+flatpak upgrade
+
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
 echo "Rebooting..."
 sudo systemctl reboot
