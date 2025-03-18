@@ -90,6 +90,7 @@
       gh
       git
       lf
+      trash-cli
       imagemagick
       lutgen
       http-server
