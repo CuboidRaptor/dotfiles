@@ -26,6 +26,7 @@
         <value type="int" value="8"/>
         <value type="int" value="4"/>
         <value type="int" value="9"/>
+        <value type="int" value="3"/>
         <value type="int" value="10"/>
         <value type="int" value="11"/>
       </property>
@@ -200,5 +201,6 @@
       <property name="expand" type="bool" value="true"/>
     </property>
     <property name="plugin-16" type="string" value="docklike"/>
+    <property name="plugin-3" type="string" value="notification-plugin"/>
   </property>
 </channel>
