@@ -87,6 +87,7 @@
       bat
       fastfetch
       btop
+      tmuxp
       gh
       git
       lf
@@ -132,6 +133,7 @@
       distrobox
       audacity
       libreoffice
+      musescore
 
       lutris # games and stuff
       (prismlauncher.override {
