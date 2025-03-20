@@ -125,7 +125,6 @@
       pavucontrol
       wezterm
       librewolf
-      dl-librescore
       kdePackages.okular
       kdePackages.kolourpaint
       gimp
@@ -134,8 +133,10 @@
       distrobox
       libreoffice
       qdirstat
-      musescore
+
+      musescore # audio stuff
       audacity
+      dl-librescore
       reaper
       yabridge
       yabridgectl
@@ -152,7 +153,7 @@
       owmods-gui
       ckan
 
-      xarchiver  # xfce stuff
+      xarchiver  # xfce and theming stuff
       seahorse
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-docklike-plugin
@@ -176,7 +177,7 @@
   ];
 
   nixpkgs.overlays = [
-    # patch xarchiver and thunar-archive-plugin so the context menu actuaally find xarchiver
+    # patch xarchiver and thunar-archive-plugin so the context menu actually finds xarchiver
     (self: super: {
       xarchiver = super.xarchiver.overrideAttrs (old: {
         postInstall = ''
