@@ -88,6 +88,7 @@
       fastfetch
       btop
       tmuxp
+      zenity
       gh
       git
       lf
@@ -131,9 +132,13 @@
       gpick
       dconf-editor
       distrobox
-      audacity
       libreoffice
+      qdirstat
       musescore
+      audacity
+      reaper
+      yabridge
+      yabridgectl
 
       lutris # games and stuff
       (prismlauncher.override {
