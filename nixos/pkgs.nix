@@ -16,6 +16,7 @@
     };
     lazygit.enable = true;
     tmux.enable = true;
+    nh.enable = true; # nix helper installation/config!
   };
 
   ## fuck me does this cause problems
@@ -70,7 +71,6 @@
   in
     with pkgs; [
       jdk # programming languages stuff
-      sublime4
       gcc
       libgcc
       (makeNixLDWrapper python313Full)
@@ -105,6 +105,7 @@
 
       gparted # apps
       firefox-devedition-bin
+      sublime4
       vesktop
       speedcrunch
       anki
@@ -194,4 +195,30 @@
       });
     })
   ];
+
+  ### nixos compat stuff
+  # nix-ld because I'm lazy and it works
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      alsa-lib at-spi2-atk at-spi2-core atk cairo # taken from u/henry_tennenbaum, who took it from someone else
+      cups curl dbus expat fontconfig
+      freetype fuse3 gdk-pixbuf glib gtk3
+      icu libGL libappindicator-gtk3 libdrm libglvnd
+      libnotify libpulseaudio libunwind libusb1 libuuid
+      libxkbcommon libxml2 mesa nspr nss
+      openssl pango pipewire stdenv.cc.cc systemd
+      vulkan-loader xorg.libX11 xorg.libXScrnSaver
+      xorg.libXcomposite xorg.libXcursor xorg.libXdamage
+      xorg.libXext xorg.libXfixes xorg.libXi
+      xorg.libXrandr xorg.libXrender xorg.libXtst
+      xorg.libxcb xorg.libxkbfile xorg.libxshmfence zlib
+    ];
+  };
+  # also envfs it also makes my life easier
+  services.envfs.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 }
