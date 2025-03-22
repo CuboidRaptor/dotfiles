@@ -67,6 +67,7 @@
     enableNotifications = true;
   };
 
+  # set cpu performance setting
   powerManagement.cpuFreqGovernor = "performance";
 
   # copy wallpaper to root so lightdm-gtk-greeter can find it
@@ -92,6 +93,7 @@
   #services.displayManager.sddm.enable = true;
   #services.desktopManager.plasma6.enable = true;
 
+  # Enable Xfce and LightDM.
   services.xserver.displayManager.lightdm = {
     enable = true;
     greeters.gtk = {
