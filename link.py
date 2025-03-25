@@ -33,8 +33,6 @@ PATHS: list[str] = [
     ".config/sublime-text/Packages/User/",
     ".config/gtk-3.0/gtk.css",
     ".config/vesktop/themes/",
-    ".config/vesktop/settings.json",
-    ".config/vesktop/settings/",
     ".config/flameshot/",
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
