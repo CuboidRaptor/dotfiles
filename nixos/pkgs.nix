@@ -95,6 +95,7 @@
       trash-cli
       imagemagick
       lutgen
+      xmousepasteblock
       http-server
       xclip
       glib
@@ -223,6 +224,7 @@
   # also envfs it also makes my life easier
   services.envfs.enable = true;
   programs.appimage = {
+    # screw with appimages to make them run
     enable = true;
     binfmt = true;
   };
