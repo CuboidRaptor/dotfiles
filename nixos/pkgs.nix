@@ -106,7 +106,9 @@
       gparted # apps
       firefox-devedition-bin
       sublime4
-      vesktop
+      (vesktop.override {
+        withMiddleClickScroll = true;
+      })
       speedcrunch
       anki
       flameshot
