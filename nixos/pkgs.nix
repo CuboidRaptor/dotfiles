@@ -137,6 +137,7 @@
       distrobox
       libreoffice
       qdirstat
+      mate.engrampa
 
       musescore # audio stuff
       audacity
@@ -157,8 +158,7 @@
       owmods-gui
       ckan
 
-      xarchiver  # xfce and theming stuff
-      seahorse
+      seahorse # xfce and theming stuff
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-docklike-plugin
       xfce.xfce4-systemload-plugin
@@ -181,25 +181,6 @@
 
   programs.thunar.plugins = [
     pkgs.xfce.thunar-archive-plugin
-  ];
-
-  nixpkgs.overlays = [
-    # patch xarchiver and thunar-archive-plugin so the context menu actually finds xarchiver
-    (self: super: {
-      xarchiver = super.xarchiver.overrideAttrs (old: {
-        postInstall = ''
-          rm -rf $out/libexec
-        '';
-      });
-
-      xfce = super.xfce.overrideScope (xself: xsuper: {
-        thunar-archive-plugin = xsuper.thunar-archive-plugin.overrideAttrs (old: {
-          postInstall = ''
-            cp ${super.xarchiver}/libexec/thunar-archive-plugin/* $out/libexec/thunar-archive-plugin/
-          '';
-        });
-      });
-    })
   ];
 
   ### nixos compat stuff
