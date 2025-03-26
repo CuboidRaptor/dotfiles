@@ -98,10 +98,6 @@
     enable = true;
     greeters.gtk = {
       clock-format = "%H:%M:%S";
-      cursorTheme = {
-        #package = pkgs.catppuccin.cursors.latteDark;
-        name = "catppuccin-latte-dark-cursors";
-      };
       extraConfig = ''
         [greeter]
         background=/wallpaper.png

@@ -169,7 +169,10 @@
       (colloid-gtk-theme.override { # this is used only for window decoration
         themeVariants = [ "red" ];
         colorVariants = [ "light" ];
-        tweaks = [ "catppuccin" ];
+        tweaks = [
+          "catppuccin"
+          "rimless"
+        ];
       })
     ];
 
