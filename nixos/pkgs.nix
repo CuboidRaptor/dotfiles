@@ -44,7 +44,7 @@
     };
   };
 
-  # sublime text 4/gh desktop and some other packages need it
+  # sublime text 4 and some other packages need it
   nixpkgs.config.permittedInsecurePackages = [
     "openssl-1.1.1w"
   ];
