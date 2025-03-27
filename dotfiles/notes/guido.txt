@@ -1,4 +1,8 @@
 sudo nixos-rebuild switch --flake "path://<abspath>#dregsdesk15"
+distrobox stuff:
+    distrobox create --name dregsbox --init --image registry.opensuse.org/opensuse/distrobox:latest --additional-packages "python3 python3-pipx"
+    distrobox enter dregsbox
+    pipx install bpython
 magic sysrq
 earlyoom (free swap 25%)/systemd-oomd
 zram, 3*ram/5, lz4, arch wiki/pop configs, backup 8gb swap on drive
@@ -12,10 +16,6 @@ nvidia settings for perf
 noatime
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
-distrobox stuff:
-    distrobox create --name dregsbox --init --image registry.opensuse.org/opensuse/distrobox:latest --additional-packages "python3 python3-pipx"
-    distrobox enter dregsbox
-    pipx install bpython
 Browser/firefox stuff:
     Mozilla Sync
     search engines
