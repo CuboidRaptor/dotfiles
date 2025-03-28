@@ -119,7 +119,7 @@
       flameshot
       vlc
       thunderbird
-      wineWowPackages.stable
+      wineWowPackages.staging
       winetricks
       (vivaldi.overrideAttrs (
           oldAttrs: {
