@@ -42,29 +42,16 @@
   boot.kernel.sysctl = {
     "kernel.sysrq" = 246;
 
-    "vm.swappiness" = 180; # zram optimisations from arch/pop! wiki
+    "vm.swappiness" = 180; # zram optimisations from arch/pop! zram wiki page
     "vm.watermark_boost_factor" = 0;
     "vm.watermark_scale_factor" = 125;
     "vm.page-cluster" = 0;
   };
 
-  # zram + swapfile!!
+  # zram!!
   zramSwap = {
     enable = true;
-    memoryPercent = 60;
-  };
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 8 * 1024;
-    }
-  ];
-
-  # earlyoom config
-  services.earlyoom = {
-    enable = true;
-    freeSwapThreshold = 25;
-    enableNotifications = true;
+    memoryPercent = 100;
   };
 
   # set cpu performance setting

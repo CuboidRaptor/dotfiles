@@ -42,6 +42,10 @@
         "io.github.everestapi.Olympus"
       ];
     };
+    earlyoom = {
+      enable = true;
+      enableNotifications = true;
+    };
   };
 
   # sublime text 4 and some other packages need it
