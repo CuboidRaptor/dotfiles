@@ -127,6 +127,34 @@
     #media-session.enable = true;
   };
 
+  # set memlock and other stuff for realtime with vst plugins
+  security.pam.loginLimits = [
+      {
+        domain = "@audio";
+        item = "memlock";
+        type = "-";
+        value = "unlimited";
+      }
+      {
+        domain = "@audio";
+        item = "rtprio";
+        type = "-";
+        value = "99";
+      }
+      {
+        domain = "@audio";
+        item = "nofile";
+        type = "soft";
+        value = "99999";
+      }
+      {
+        domain = "@audio";
+        item = "nofile";
+        type = "hard";
+        value = "99999";
+      }
+    ];
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -137,7 +165,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "vboxusers"
+      "audio"
     ];
   };
   #users.users.test = {
