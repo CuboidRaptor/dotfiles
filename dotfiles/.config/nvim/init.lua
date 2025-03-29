@@ -35,7 +35,7 @@ require("lualine").setup({
           end
           return ""
         end,
-        color = { fg = "#ff7c70" }
+        color = { fg = "#f38ba8" }
       }
     }
   }
