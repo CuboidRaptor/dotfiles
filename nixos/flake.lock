@@ -36,10 +36,10 @@
       "inputs": {
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs",
-        "winepin": "winepin"
+        "winepinnednixpkgs": "winepinnednixpkgs"
       }
     },
-    "winepin": {
+    "winepinnednixpkgs": {
       "locked": {
         "lastModified": 1735554305,
         "narHash": "sha256-zExSA1i/b+1NMRhGGLtNfFGXgLtgo+dcuzHzaWA6w3Q=",
