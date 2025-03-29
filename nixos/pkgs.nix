@@ -73,7 +73,7 @@
       done
     '');
   in
-  ((with pkgs; [
+  (with pkgs; [
     jdk # programming languages stuff
     gcc
     libgcc
@@ -119,6 +119,7 @@
     flameshot
     vlc
     thunderbird
+    wineWowPackages.staging
     winetricks
     (vivaldi.overrideAttrs (
         oldAttrs: {
@@ -146,8 +147,10 @@
     audacity
     dl-librescore
     reaper
-    #yabridge
-    #yabridgectl
+    (yabridge.override {
+      wine = winepinnedpkgs.wineWowPackages.staging;
+    })
+    yabridgectl
 
     lutris # games and stuff
     (prismlauncher.override {
@@ -180,9 +183,7 @@
         "rimless"
       ];
     })
-  ]) ++ (with winepinnedpkgs; [
-    wineWowPackages.staging
-  ]));
+  ]);
 
   programs.thunar.plugins = [
     pkgs.xfce.thunar-archive-plugin
