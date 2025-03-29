@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, winepinnedpkgs, ... }:
 
 {
   # Allow unfree packages
@@ -73,115 +73,116 @@
       done
     '');
   in
-    with pkgs; [
-      jdk # programming languages stuff
-      gcc
-      libgcc
-      (makeNixLDWrapper python313Full)
-      nodejs
-      clang-tools
-      clang
-      nil
+  ((with pkgs; [
+    jdk # programming languages stuff
+    gcc
+    libgcc
+    (makeNixLDWrapper python313Full)
+    nodejs
+    clang-tools
+    clang
+    nil
 
-      starship # dev stuff/deps
-      zip
-      unzip
-      curl
-      eza
-      bat
-      fastfetch
-      btop
-      tmuxp
-      zenity
-      gh
-      git
-      lf
-      trash-cli
-      imagemagick
-      lutgen
-      xmousepasteblock
-      http-server
-      xclip
-      glib
-      fuse
-      fzf
-      ripgrep
-      fd
+    starship # dev stuff/deps
+    zip
+    unzip
+    curl
+    eza
+    bat
+    fastfetch
+    btop
+    tmuxp
+    zenity
+    gh
+    git
+    lf
+    trash-cli
+    imagemagick
+    lutgen
+    xmousepasteblock
+    http-server
+    xclip
+    glib
+    fuse
+    fzf
+    ripgrep
+    fd
 
-      gparted # apps
-      firefox-devedition-bin
-      sublime4
-      (vesktop.override {
-        withMiddleClickScroll = true;
-      })
-      speedcrunch
-      anki
-      flameshot
-      vlc
-      thunderbird
-      wineWowPackages.staging
-      winetricks
-      (vivaldi.overrideAttrs (
-          oldAttrs: {
-            dontWrapQtApps = false;
-            dontPatchELF = true;
-            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
-          }
-      ))
-      vivaldi-ffmpeg-codecs
-      remmina
-      pavucontrol
-      wezterm
-      librewolf
-      kdePackages.okular
-      kdePackages.kolourpaint
-      gimp
-      gpick
-      dconf-editor
-      distrobox
-      libreoffice
-      qdirstat
-      mate.engrampa
+    gparted # apps
+    firefox-devedition-bin
+    sublime4
+    (vesktop.override {
+      withMiddleClickScroll = true;
+    })
+    speedcrunch
+    anki
+    flameshot
+    vlc
+    thunderbird
+    winetricks
+    (vivaldi.overrideAttrs (
+        oldAttrs: {
+          dontWrapQtApps = false;
+          dontPatchELF = true;
+          nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
+        }
+    ))
+    vivaldi-ffmpeg-codecs
+    remmina
+    pavucontrol
+    wezterm
+    librewolf
+    kdePackages.okular
+    kdePackages.kolourpaint
+    gimp
+    gpick
+    dconf-editor
+    distrobox
+    libreoffice
+    qdirstat
+    mate.engrampa
 
-      musescore # audio stuff
-      audacity
-      dl-librescore
-      reaper
-      yabridge
-      yabridgectl
+    musescore # audio stuff
+    audacity
+    dl-librescore
+    reaper
+    #yabridge
+    #yabridgectl
 
-      lutris # games and stuff
-      (prismlauncher.override {
-        jdks = [
-          jdk8
-          jdk17
-          jdk21
-        ];
-      })
-      mindustry
-      owmods-gui
-      ckan
+    lutris # games and stuff
+    (prismlauncher.override {
+      jdks = [
+        jdk8
+        jdk17
+        jdk21
+      ];
+    })
+    mindustry
+    owmods-gui
+    ckan
 
-      seahorse # xfce and theming stuff
-      xfce.xfce4-whiskermenu-plugin
-      xfce.xfce4-docklike-plugin
-      xfce.xfce4-systemload-plugin
-      xfce.xfce4-xkb-plugin
-      catppuccin
-      catppuccin-cursors.mochaDark
-      (catppuccin-papirus-folders.override {
-        flavor = "latte";
-        accent = "maroon";
-      })
-      (colloid-gtk-theme.override { # this is used only for window decoration
-        themeVariants = [ "red" ];
-        colorVariants = [ "light" ];
-        tweaks = [
-          "catppuccin"
-          "rimless"
-        ];
-      })
-    ];
+    seahorse # xfce and theming stuff
+    xfce.xfce4-whiskermenu-plugin
+    xfce.xfce4-docklike-plugin
+    xfce.xfce4-systemload-plugin
+    xfce.xfce4-xkb-plugin
+    catppuccin
+    catppuccin-cursors.mochaDark
+    (catppuccin-papirus-folders.override {
+      flavor = "latte";
+      accent = "maroon";
+    })
+    (colloid-gtk-theme.override { # this is used only for window decoration
+      themeVariants = [ "red" ];
+      colorVariants = [ "light" ];
+      tweaks = [
+        "catppuccin"
+        "rimless"
+      ];
+    })
+  ]) ++ (with winepinnedpkgs; [
+    wineWowPackages.staging
+  ]));
 
   programs.thunar.plugins = [
     pkgs.xfce.thunar-archive-plugin
