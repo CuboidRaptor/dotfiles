@@ -29,7 +29,12 @@ vim.opt.timeoutlen = 1500
 -- Don't auto-add comments on new lines
 vim.opt.formatoptions:remove({"c", "r", "o"})
 
-vim.opt.cindent = true
+-- indentation settings
+vim.opt.smarttab = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4 -- default tab width for new files
+vim.opt.cindent = true -- fix ctrl+f reindent
+vim.opt.cinkeys:remove { "0#" } -- fix comments being unindented
 
 -- auto-session options
 vim.opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"

@@ -41,11 +41,6 @@ require("lualine").setup({
   }
 })
 
--- indentation settings
-vim.opt.smarttab = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4 -- default tab width for new files
-
 require("catppuccin").setup({
   flavour = "mocha"
 })
