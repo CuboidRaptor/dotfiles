@@ -1,15 +1,4 @@
-pipx install bpython
-magic sysrq
-earlyoom (free swap 25%)/systemd-oomd
-zram, 1*ram, zstd, arch wiki/pop configs
-wifi drivers (8821 morrownr or smth)
-quad9 + cloudflare dns ipv4, 6 (9.9.9.9 1.1.1.1
-    2620:fe::fe 2606:4700:4700::1111)
 dotfiles
-rpm fusion
-nvidia drivers, if needed
-nvidia settings for perf
-noatime
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 Browser/firefox stuff:
