@@ -30,9 +30,8 @@
     ];
     networkmanager.dns = "none";
   };
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    rtl88xxau-aircrack
-  ];
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # noatime
   fileSystems."/".options = [ "noatime" ];
