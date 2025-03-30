@@ -2,10 +2,7 @@
 alias nswitch="sudo -EH nh os switch -R"
 alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
-
-# upgrade nixos, I guess
-#alias yippee="sudo -EH nh os boot --update -R && sudo systemctl reboot"
-# this is a bash script in shims now
+alias ncg="sudo nix-collect-garbage --delete-older-than 14d"
 
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "
