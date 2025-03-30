@@ -9,13 +9,14 @@ echo "Updating system nixpkgs..."
 sudo -EH nh os boot --update -R
 
 echo "Updating distrobox zypper..."
-distrobox enter dregsbox -- sudo zypper up
+distrobox enter dregsbox -- sudo zypper dup -y
 echo "Updating distrobox pipx packages..."
 distrobox enter dregsbox -- pipx upgrade-all
 
 echo "Updating flatpak apps..."
-flatpak upgrade
+flatpak upgrade -y
 
+zenity --notification --text "Yippee: Finished updating.\nAutomatically rebooting in 30 seconds..."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
 echo "Rebooting..."
 sudo systemctl reboot
