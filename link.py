@@ -27,13 +27,14 @@ PATHS: list[str] = [
     ".config/lf/",
     ".config/btop/btop.conf",
     ".config/btop/themes/",
-    ".config/bat/"
+    ".config/bat/",
     ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/gtk-3.0/gtk.css",
     ".config/vesktop/themes/",
     ".config/flameshot/",
+
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
 
