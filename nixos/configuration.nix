@@ -58,7 +58,7 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   # copy wallpaper to root so lightdm-gtk-greeter can find it
-  # this requires `sudo rm /wallpaper.png` to refresh
+  # this requires `sudo rm /wallpaper.png` and reboot to refresh
   systemd.tmpfiles.settings.wallpaper."/wallpaper.png"."C+" = {
     group = "root";
     user = "root";
