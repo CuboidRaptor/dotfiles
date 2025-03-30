@@ -1,11 +1,7 @@
-sudo nixos-rebuild switch --flake "path://<abspath>#dregsdesk15"
-distrobox stuff:
-    distrobox create --name dregsbox --init --image registry.opensuse.org/opensuse/distrobox:latest --additional-packages "python3 python3-pipx"
-    distrobox enter dregsbox
-    pipx install bpython
+pipx install bpython
 magic sysrq
 earlyoom (free swap 25%)/systemd-oomd
-zram, 3*ram/5, lz4, arch wiki/pop configs, backup 8gb swap on drive
+zram, 1*ram, zstd, arch wiki/pop configs
 wifi drivers (8821 morrownr or smth)
 quad9 + cloudflare dns ipv4, 6 (9.9.9.9 1.1.1.1
     2620:fe::fe 2606:4700:4700::1111)
