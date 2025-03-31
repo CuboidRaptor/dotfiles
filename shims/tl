@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+# merge tmux and tmuxp lists to get all available sessions
+chosen="$(echo -e "$(tmux ls -F "#{session_name}")\n$(tmuxp ls)" | sort -u)"
+display=()
+
+# add a plus to all inactive session/all session only loaded in tmuxp
+while IFS= read -r line || [[ -n "$line" ]]; do
+    if tmux ls -F "#{session_name}" | grep -q "$line" ; then
+        display+=("$line")
+    else
+        display+=("$line +")
+    fi
+done < <(printf "%s" "$chosen")
+
+# plug it into fzf with some formatting
+chosen="$(printf "%s\n" "${display[@]}" | fzf)"
+# filter out the plus returned if we select an inactive session
+chosen="${chosen%' +'}"
+
+if tmux ls -F "#{session_name}" | grep -q "$chosen" ; then
+    if [[ -z "$TMUX" ]]; then
+        # attach the session
+        tmux attach -t "$chosen"
+    else
+        # switch current client to the session
+        tmux switchc -t "$chosen"
+    fi
+else
+    # boot up the session in tmuxp
+    tmuxp load -y "$chosen"
+fi
