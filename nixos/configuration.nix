@@ -152,7 +152,7 @@
       domain = "@audio";
       item = "nofile";
       type = "hard";
-      value = "99999";
+      value = "524288"; # higher limit for esync
     }
   ];
   services.udev = {
