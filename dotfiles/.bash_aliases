@@ -1,5 +1,5 @@
 # rebuild and switch using nh
-alias nswitch="sudo -EH nh os switch -R"
+alias nsw="sudo -EH nh os switch -R"
 alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
 alias ncg="sudo nix-collect-garbage --delete-older-than 14d"
