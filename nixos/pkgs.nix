@@ -119,6 +119,7 @@
     flameshot
     vlc
     thunderbird
+    obs-studio
     wineWowPackages.staging
     winetricks
     (vivaldi.overrideAttrs (
