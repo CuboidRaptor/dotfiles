@@ -1,0 +1,28 @@
+session_name: template
+start_directory: $HOME
+windows:
+- panes:
+  - focus: 'true'
+    shell_command: nvrws
+  window_name: nvim
+
+- panes:
+  - focus: 'true'
+    shell_command:
+    - cmd: echo foo
+      enter: false
+  window_name: run
+
+- panes:
+  - focus: 'true'
+    shell_command: lazygit
+  window_name: lazygit
+
+- panes:
+  - focus: 'true'
+    shell_command: lf
+  window_name: lf
+
+- panes:
+  - focus: 'true'
+  focus: 'true'

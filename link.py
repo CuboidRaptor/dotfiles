@@ -18,6 +18,8 @@ PATHS: list[str] = [
     ".wezterm.lua",
     "notes/guido.txt",
     ".idlerc/config-main.cfg",
+    ".tmuxp/misc.yaml",
+    ".tmuxp/template.yaml",
 
     ".config/starship.toml",
     ".config/xfce4/",
