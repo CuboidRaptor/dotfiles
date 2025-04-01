@@ -2,6 +2,8 @@
 # cursed bash script that automatically exports every pipx bin
 # *only* run in distroboxes!
 
+set -eo pipefail
+
 # list of pipx things you want to export
 pyapps=($(ls "$HOME/.local/share/pipx/venvs/"))
 dboxpath="$HOME/dotfiles/dboxexports"
@@ -16,7 +18,8 @@ do
     files=($(ls | grep -v '^activate' | grep -v '^Activate' | grep -v '^python[23]\?'))
     for bin in "${files[@]}"
     do
-        distrobox-export --bin "$(pwd)/$bin" --export-path "$dboxpath" && mv "$HOME/.local/bin/$bin" "~/.local/bin/${bin}_distrobox_bak"
+        distrobox-export --bin "$(pwd)/$bin" --export-path "$dboxpath"
+        mv "$HOME/.local/bin/$bin" "~/.local/bin/${bin}_distrobox_bak" || :
     done
 done
 # export python to boxpython3 and boxpython
