@@ -35,4 +35,8 @@ config.keys = {
 -- I just use tmux instead
 config.enable_tab_bar = false
 
+-- ignore missing glyphs because they only appear very occasionally in journalctl
+-- and I will notice if they're a problem anyways
+config.warn_about_missing_glyphs = false
+
 return config
