@@ -1,1 +1,10 @@
-/home/jason/dotfiles/dboxexports/boxpython3
+#!/bin/sh
+# distrobox_binary
+# name: dregsbox
+if [ -z "${CONTAINER_ID}" ]; then
+	exec "/run/current-system/sw/bin/distrobox-enter"  -n dregsbox  --  '/usr/bin/python3'  "$@"
+elif [ -n "${CONTAINER_ID}" ] && [ "${CONTAINER_ID}" != "dregsbox" ]; then
+	exec distrobox-host-exec '/home/jason/dotfiles/dboxexports/python3' "$@"
+else
+	exec '/usr/bin/python3' "$@"
+fi
