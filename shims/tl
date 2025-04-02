@@ -1,23 +1,30 @@
 #!/usr/bin/env bash
 
 set -eo pipefail
+# get tmux ls and filter for when no tmux sessions are running/other errors
+# this script does not handle if there are no tmuxp sessions so uh yeah.
+tmuxsessions="$(tmux ls -F "#{session_name}")
+" || tmuxsessions=""
+
 # merge tmux and tmuxp lists to get all available sessions
-chosen="$(echo -e "$(tmux ls -F "#{session_name}")\n$(tmuxp ls)" | sort -u)"
+chosen="$(echo -e "${tmuxsessions}$(tmuxp ls)" | sort -u)"
 display=()
 
-# add a plus to all inactive session/all session only loaded in tmuxp
+# add an (inactive) to all inactive session/all session only loaded in tmuxp
+tmuxsessions="$(tmux ls -F "#{session_name}")
+" || tmuxsessions="" # check the list of tmux sessions again, because I can
 while IFS= read -r line || [[ -n "$line" ]]; do
     if tmux ls -F "#{session_name}" | grep -q "$line" ; then
         display+=("$line")
     else
-        display+=("$line +")
+        display+=("$line (inactive)")
     fi
 done < <(printf "%s" "$chosen")
 
 # plug it into fzf with some formatting
 chosen="$(printf "%s\n" "${display[@]}" | fzf)"
-# filter out the plus returned if we select an inactive session
-chosen="${chosen%' +'}"
+# filter out the (inactive) returned if we select an inactive session
+chosen="${chosen%' (inactive)'}"
 
 if tmux ls -F "#{session_name}" | grep -q "$chosen" ; then
     if [[ -z "$TMUX" ]]; then
