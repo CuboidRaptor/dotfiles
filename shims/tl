@@ -13,7 +13,7 @@ display=()
 # add an (inactive) to all inactive session/all session only loaded in tmuxp
 tmuxsessions="$(tmux ls -F "#{session_name}")
 " || tmuxsessions="" # check the list of tmux sessions again, because I can
-while IFS= read -r line || [[ -n "$line" ]]; do
+while IFS= read -r line || [ -n "$line" ]; do
     if tmux ls -F "#{session_name}" | grep -q "$line" ; then
         display+=("$line")
     else
@@ -27,7 +27,7 @@ chosen="$(printf "%s\n" "${display[@]}" | fzf)"
 chosen="${chosen%' (inactive)'}"
 
 if tmux ls -F "#{session_name}" | grep -q "$chosen" ; then
-    if [[ -z "$TMUX" ]]; then
+    if [ -z "$TMUX" ]; then
         # attach the session
         tmux attach -t "$chosen"
     else
