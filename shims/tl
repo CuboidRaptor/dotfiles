@@ -4,7 +4,7 @@ set -eo pipefail
 # get tmux ls and filter for when no tmux sessions are running/other errors
 # this script does not handle if there are no tmuxp sessions so uh yeah.
 tmuxsessions="$(tmux ls -F "#{session_name}")
-" || tmuxsessions=""
+" || tmuxsessions="" # (extra newline added here so it only gets added when it's non-empty)
 
 # merge tmux and tmuxp lists to get all available sessions
 chosen="$(echo -e "${tmuxsessions}$(tmuxp ls)" | sort -u)"
