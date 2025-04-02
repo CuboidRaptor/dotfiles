@@ -25,4 +25,4 @@ done
 # export python to boxpython3 and boxpython
 distrobox-export --bin "/usr/bin/python3" --export-path "$dboxpath"
 mv "$dboxpath/python3" "$dboxpath/boxpython3"
-cp "$dboxpath/boxpython3" "$dboxpath/boxpython"
+ln -s "$dboxpath/boxpython3" "$dboxpath/boxpython"

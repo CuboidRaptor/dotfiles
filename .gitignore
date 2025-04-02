@@ -11,5 +11,8 @@
 # I do dumb stuff in here
 test/
 
+# distrobox bin exports that should just be regenerated for every install
+dboxexports/
+
 # Hardware specific nix stuff
 hardware-configuration.nix
