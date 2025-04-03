@@ -33,6 +33,7 @@
   xdg.portal = { # for flatpak
     enable = true; 
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
   };
   services = {
     gvfs.enable = true; # for trash-cli
