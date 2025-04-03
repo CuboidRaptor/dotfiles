@@ -154,8 +154,7 @@
     })
     yabridgectl
 
-    lutris # games and stuff
-    (prismlauncher.override {
+    (prismlauncher.override { # games and stuff
       jdks = [
         jdk8
         jdk17
@@ -165,6 +164,9 @@
     mindustry
     owmods-gui
     ckan
+    gamemode
+    lutris
+    umu-launcher
 
     seahorse # xfce and theming stuff
     xfce.xfce4-whiskermenu-plugin
