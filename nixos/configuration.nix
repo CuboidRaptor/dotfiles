@@ -83,11 +83,26 @@
   # Enable Xfce and LightDM.
   services.xserver.displayManager.lightdm = {
     enable = true;
-    greeters.gtk = {
-      clock-format = "%H:%M:%S";
+    greeters.slick = let
+      dmbackground-pkg = pkgs.stdenvNoCC.mkDerivation {
+        name = "background-img";
+        src = ./nix-wallpaper-nineish-catppuccin-latte-alt.png;
+        dontUnpack = true;
+        installPhase = ''
+          cp "$src" "$out"
+        '';
+      };
+    in
+    {
+      enable = true;
+      font.name = "Ubuntu 12";
       extraConfig = ''
-        [greeter]
-        background=/wallpaper.png
+        [Greeter]
+        activate-numlock=true
+        background=${dmbackground-pkg}
+        background-color=#e6e9ef
+        clock-format=%H:%M:%S
+        xft-rgba=none
       '';
     };
   };

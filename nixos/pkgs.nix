@@ -97,6 +97,7 @@
     gh
     git
     lf
+    numlockx
     trash-cli
     imagemagick
     lutgen
