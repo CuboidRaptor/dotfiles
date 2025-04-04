@@ -11,15 +11,11 @@ alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n
 # I use this a lot
 alias lg="lazygit"
 
-# chillllll htop
-alias htop="htop -d 30"
-
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
 
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
-alias nano="micro"
 alias ls="eza -a"
 #alias cat="bat" # probably shouldn't do this
 alias vim="nvim"
