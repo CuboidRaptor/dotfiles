@@ -28,8 +28,6 @@ map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 
 map("n", leader .. "q", "@q", { remap = true, desc = "Send Q Macro" })
 
-map("n", leader .. "^", "0d^i<BS>", { remap = true, desc = "Append current line to last one and insert" })
-
 -- Telescope bindings
 map("n", leader .. "b", function() telescope.buffers({sort_mru=true, path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Buffers" })
 map("n", leader .. "g", function() telescope.git_files({path_display={"filename_first", "truncate"}}) end, { remap = true, desc = "Telescope Git Repo Files" })
