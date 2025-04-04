@@ -106,7 +106,7 @@ export "MICRO_TRUECOLOR=1"
 # enable starship
 eval "$(starship init bash)"
 
-export FLAKE="path://$HOME/dotfiles/nixos/"
+export FLAKE="path://$HOME/dotfiles/nixos"
 
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
