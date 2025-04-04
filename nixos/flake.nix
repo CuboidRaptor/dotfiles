@@ -2,7 +2,7 @@
   description = "Default flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     winepinnednixpkgs.url = "github:NixOS/nixpkgs/0e82ab234249d8eee3e8c91437802b32c74bb3fd";
   };
