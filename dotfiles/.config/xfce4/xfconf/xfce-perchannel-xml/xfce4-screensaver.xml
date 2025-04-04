@@ -12,9 +12,11 @@
   <property name="lock" type="empty">
     <property name="saver-activation" type="empty">
       <property name="delay" type="int" value="10"/>
+      <property name="enabled" type="bool" value="true"/>
     </property>
     <property name="status-messages" type="empty">
       <property name="enabled" type="bool" value="true"/>
     </property>
+    <property name="enabled" type="bool" value="true"/>
   </property>
 </channel>
