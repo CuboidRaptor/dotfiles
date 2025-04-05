@@ -45,7 +45,8 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 
 # fzf integration
 eval "$(fzf --bash)"
-export FZF_DEFAULT_OPTS="--bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
+export FZF_DEFAULT_OPTS="-i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
+export FZF_ALT_C_OPTS='--preview "eza -a --icons=always --group-directories-first {}"'
 
 # zoxide integration
 eval "$(zoxide init bash)"
