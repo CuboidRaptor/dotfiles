@@ -17,7 +17,7 @@ set relativenumber
 set scrolloff 10
 
 # set ratios and info
-set ratios 1:5:2
+set ratios 5:3
 set info size:time
 #set dircounts
 set watch
