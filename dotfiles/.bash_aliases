@@ -16,9 +16,12 @@ alias neofetch="fastfetch -c neofetch"
 
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
-alias ls="eza -a"
+alias ls="eza -a --icons=always --group-directories-first"
 #alias cat="bat" # probably shouldn't do this
-alias vim="nvim"
+#alias vim="nvim" # unneeded because of nixos
+
+# show sizes in MB
+alias free="free -m"
 
 # strip metadata from image
 alias imgstrip="mogrify -strip"
