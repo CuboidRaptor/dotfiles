@@ -37,7 +37,7 @@ crust = "#11111b"
 
 [directory]
 style = "blue"
-truncation_length = 4
+truncation_length = 8
 
 [character]
 success_symbol = "[❯](green)"
@@ -45,14 +45,14 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](lightgray)"
 
 [directory.substitutions]
-"Downloads" = ""
-"Documents" = "󰈙"
-"Music" = ""
-"Pictures" = ""
-"Games" = "󰊴"
-"Archive" = ""
-"dotfiles" = ""
-".config" = "."
+"Downloads" = " "
+"Documents" = "󰈙 "
+"Music" = " "
+"Pictures" = " "
+"Games" = "󰊴 "
+"Archive" = "  "
+"dotfiles" = "  "
+".config" = "  "
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
