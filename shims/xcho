@@ -14,4 +14,4 @@ text="
 
 clear
 echo -e "$text"
-read -p ""
+read -rn1
