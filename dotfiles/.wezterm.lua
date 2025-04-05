@@ -27,8 +27,6 @@ config.window_padding = {
 local act = wezterm.action
 config.keys = {
     { key = "q", mods = "CTRL|SHIFT", action = act.QuitApplication },
-    { key = "Tab", mods = "CTRL", action = act.DisableDefaultAssignment },
-    { key = "Tab", mods = "CTRL|SHIFT", action = act.DisableDefaultAssignment },
     { key = "Enter", mods = "ALT", action = act.DisableDefaultAssignment },
 }
 
@@ -38,5 +36,8 @@ config.enable_tab_bar = false
 -- ignore missing glyphs because they only appear very occasionally in journalctl
 -- and I will notice if they're a problem anyways
 config.warn_about_missing_glyphs = false
+
+-- tmux typ shi
+config.window_close_confirmation = "NeverPrompt"
 
 return config
