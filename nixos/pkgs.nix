@@ -104,8 +104,6 @@
     xmousepasteblock
     http-server
     xclip
-    glib
-    fuse
     fzf
     ripgrep
     fd
@@ -198,8 +196,8 @@
   # nix-ld because I'm lazy and it works
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [
-      alsa-lib at-spi2-atk at-spi2-core atk cairo # taken from u/henry_tennenbaum, who took it from someone else
+    libraries = with pkgs; [ # taken from u/henry_tennenbaum, who took it from someone else
+      alsa-lib at-spi2-atk at-spi2-core atk cairo 
       cups curl dbus expat fontconfig
       freetype fuse3 gdk-pixbuf glib gtk3
       icu libGL libappindicator-gtk3 libdrm libglvnd
