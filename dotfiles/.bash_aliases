@@ -16,7 +16,7 @@ alias neofetch="fastfetch -c neofetch"
 
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
-alias ls="eza -a --icons=always --group-directories-first"
+alias ls="eza -a --color=always --icons=always --group-directories-first"
 #alias cat="bat" # probably shouldn't do this
 #alias vim="nvim" # unneeded because of nixos
 
