@@ -17,6 +17,7 @@
     lazygit.enable = true;
     tmux.enable = true;
     nh.enable = true; # nix helper installation/config!
+    zoxide.enable = true;
   };
 
   ## fuck me does this cause problems
@@ -98,6 +99,7 @@
     gh
     git
     lf
+    tldr
     numlockx
     trash-cli
     imagemagick
