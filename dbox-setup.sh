@@ -16,7 +16,7 @@ for dir in "${pyapps[@]}"
 do
     cd "$HOME/.local/share/pipx/venvs/$dir/bin/"
     # loop over every file in current pipx folder, filter out python/activation scripts
-    mapfile -t files <<< "$(ls | grep -iv "^activate\|^python[23]\?")"
+    mapfile -t files <<< "$(ls | grep -v "^activate\|^Activate\|^python[23]\?")"
     for bin in "${files[@]}"
     do
         distrobox-export --bin "$(pwd)/$bin" --export-path "$dboxpath"
