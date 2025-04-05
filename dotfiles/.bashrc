@@ -23,16 +23,6 @@ shopt -s checkwinsize
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-# set some aliases
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
-
-# set $PATH
-if [ -f ~/.bash_path ]; then
-    source ~/.bash_path
-fi
-
 # enable starship
 eval "$(starship init bash)"
 
@@ -62,3 +52,13 @@ z() {
     fi
   
 }
+
+# set some aliases
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
+# set $PATH
+if [ -f ~/.bash_path ]; then
+    source ~/.bash_path
+fi
