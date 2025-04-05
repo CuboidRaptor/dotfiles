@@ -7,7 +7,9 @@ return {
                 html = {},
                 cssls = {},
                 lua_ls = {},
-                bashls = {},
+                bashls = {
+                    mason = false
+                },
                 clangd = {
                     mason = false
                 },

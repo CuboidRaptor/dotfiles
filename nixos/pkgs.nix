@@ -83,6 +83,7 @@
     clang-tools
     clang
     nil
+    bash-language-server
 
     starship # dev stuff/deps
     zip
