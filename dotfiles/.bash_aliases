@@ -20,6 +20,14 @@ alias ls="eza -a --icons=always --group-directories-first"
 #alias cat="bat" # probably shouldn't do this
 #alias vim="nvim" # unneeded because of nixos
 
+# add color to stuff
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # show sizes in MB
 alias free="free -m"
 
