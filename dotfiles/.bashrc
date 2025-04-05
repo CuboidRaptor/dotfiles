@@ -42,16 +42,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=border:#313244,label:#cdd6f4"
 
 # zoxide integration
-eval "$(zoxide init --no-cmd bash)"
-
-z() {
-    if [ "$#" -gt 0 ] ; then
-        __zoxide_z "$@"
-    else
-        __zoxide_zi
-    fi
-  
-}
+eval "$(zoxide init bash)"
 
 # set some aliases
 if [ -f ~/.bash_aliases ]; then

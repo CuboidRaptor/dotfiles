@@ -35,6 +35,16 @@ alias free="free -m"
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
+\builtin unset z
+z() {
+    if [ "$#" -gt 0 ] ; then
+        __zoxide_z "$@"
+    else
+        __zoxide_zi
+    fi
+}
+alias f='eval "$(__fzf_cd__)"'
+
 # Auto cd into last lf
 function lf {
     cd "$(command lf -print-last-dir "$@")" || exit
@@ -62,3 +72,4 @@ export -f create
 function nvrws {
     nvim --listen "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe"
 }
+
