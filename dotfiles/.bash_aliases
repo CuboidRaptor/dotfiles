@@ -37,7 +37,7 @@ alias imgstrip="mogrify -strip"
 
 function f {
     if [[ "$1" == "." ]] ; then
-        eval "$(find . -maxdepth 1 -mindepth 1 -type d | sed -e 's/^..//' -e 's!$!/!' | __fzf_cd__)"
+        eval "$(fd --min-depth 1 --max-depth 1 --type d -u --follow --strip-cwd-prefix | __fzf_cd__)"
     else
         eval "$(__fzf_cd__)"
     fi
