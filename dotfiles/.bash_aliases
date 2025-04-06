@@ -37,13 +37,16 @@ alias imgstrip="mogrify -strip"
 
 \builtin unset z
 z() {
-    if [ "$#" -gt 0 ] ; then
-        __zoxide_z "$@"
-    else
+    if [[ "$#" -eq 0 ]] ; then
         __zoxide_zi
+    elif [[ "$#" -eq 1 && "$1" == "." ]] ; then
+        eval "$(find . -maxdepth 1 -mindepth 1 -type d | sed -e 's/^..//' -e 's!$!/!' | __fzf_cd__)"
+    elif [[ "$#" -eq 1 && "$1" == "./" ]] ; then
+        eval "$(__fzf_cd__)"
+    else
+        __zoxide_z "$@"
     fi
 }
-alias f='eval "$(__fzf_cd__)"'
 
 # Auto cd into last lf
 function lf {

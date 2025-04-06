@@ -33,7 +33,7 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 # fzf integration
 eval "$(fzf --bash)"
 export FZF_DEFAULT_OPTS="-i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
-export FZF_ALT_C_OPTS='--preview "eza -a --color=always --icons=always --group-directories-first {}"'
+export FZF_ALT_C_OPTS='--preview "eza -a --color=always --icons=always --group-directories-first -- {}"'
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
