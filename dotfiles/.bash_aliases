@@ -47,23 +47,24 @@ function f {
 function lf {
     cd "$(command lf -print-last-dir "$@")" || exit
 }
-export -f lf
 
 # Create file or directory with parents
 function create {
-    case $1 in 
-        */) # directory path
-            mkdir -p "$1"
-            echo Created directory
-            ;;
+    for arg in "$@"
+    do
+        case "$arg" in 
+            */) # directory path
+                mkdir -p "$arg"
+                echo Created directory
+                ;;
 
-        *) # filepath
-            mkdir -p "$(dirname "$1")" && touch "$1"
-            echo Created file
-            ;;
-    esac
+            *) # filepath
+                mkdir -p "$(dirname "$arg")" && touch "$arg"
+                echo Created file
+                ;;
+        esac
+    done
 }
-export -f create
 
 # server for nvrw (this is in a function because it has to or else tmux gets angry)
 # (and nvrw is a file because git edit and stuff)
