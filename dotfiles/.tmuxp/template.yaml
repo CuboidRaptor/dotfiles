@@ -20,9 +20,4 @@ windows:
 
 - panes:
   - focus: 'true'
-    shell_command: lf
-  window_name: lf
-
-- panes:
-  - focus: 'true'
   focus: 'true'
