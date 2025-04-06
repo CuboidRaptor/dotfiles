@@ -45,11 +45,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 eval "$(zoxide init bash)"
 
 # set some aliases
-if [ -f ~/.bash_aliases ]; then
+if [[ -f ~/.bash_aliases ]]; then
     source ~/.bash_aliases
 fi
 
 # set $PATH
-if [ -f ~/.bash_path ]; then
+if [[ -f ~/.bash_path ]]; then
     source ~/.bash_path
 fi
