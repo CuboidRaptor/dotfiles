@@ -35,16 +35,11 @@ alias free="free -m"
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
-\builtin unset z
-z() {
-    if [[ "$#" -eq 0 ]] ; then
-        __zoxide_zi
-    elif [[ "$#" -eq 1 && "$1" == "." ]] ; then
+function f {
+    if [[ "$1" == "." ]] ; then
         eval "$(find . -maxdepth 1 -mindepth 1 -type d | sed -e 's/^..//' -e 's!$!/!' | __fzf_cd__)"
-    elif [[ "$#" -eq 1 && "$1" == "./" ]] ; then
-        eval "$(__fzf_cd__)"
     else
-        __zoxide_z "$@"
+        eval "$(__fzf_cd__)"
     fi
 }
 
