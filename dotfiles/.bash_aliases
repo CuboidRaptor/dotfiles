@@ -36,11 +36,10 @@ alias free="free -m"
 alias imgstrip="mogrify -strip"
 
 function f {
-    if [[ "$1" == "." ]] ; then
-        eval "$(fd --min-depth 1 --max-depth 1 --type d -u --follow --strip-cwd-prefix | __fzf_cd__)"
-    else
-        eval "$(__fzf_cd__)"
-    fi
+    eval "$(__fzf_cd__)"
+}
+function c {
+    eval "$(fd --min-depth 1 --max-depth 1 --type d -u --follow --strip-cwd-prefix | __fzf_cd__)"
 }
 
 # Auto cd into last lf
