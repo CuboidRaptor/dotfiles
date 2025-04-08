@@ -146,6 +146,7 @@
     libreoffice
     qdirstat
     mate.engrampa
+    shotcut
 
     musescore # audio stuff
     audacity
