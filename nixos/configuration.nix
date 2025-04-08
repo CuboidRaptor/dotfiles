@@ -84,20 +84,10 @@
   # Enable Xfce and LightDM.
   services.xserver.displayManager.lightdm = {
     enable = true;
-    greeters.gtk = let
-      dmbackground-pkg = pkgs.stdenvNoCC.mkDerivation {
-        name = "background-img";
-        src = ./nix-wallpaper-nineish-catppuccin-latte-alt.png;
-        dontUnpack = true;
-        installPhase = ''
-          cp "$src" "$out"
-        '';
-      };
-    in
-    {
+    greeters.gtk = {
       extraConfig = ''
         [greeter]
-        background = ${dmbackground-pkg}
+        background = /wallpaper.png
       '';
       clock-format = "%H:%M:%S";
     };
