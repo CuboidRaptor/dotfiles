@@ -156,7 +156,6 @@
       wine = winepinnedpkgs.wineWowPackages.staging;
     })
     yabridgectl
-    (pkgs.callPackage ./rtcqs.nix {})
 
     (prismlauncher.override { # games and stuff
       jdks = [
