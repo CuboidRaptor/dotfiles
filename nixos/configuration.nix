@@ -36,6 +36,7 @@
   # noatime
   fileSystems."/".options = [ "noatime" ];
   fileSystems."/home".options = [ "noatime" ];
+  fileSystems."/boot".options = [ "noatime" ];
 
   # Enable magic sysrq key
   boot.kernel.sysctl = {
