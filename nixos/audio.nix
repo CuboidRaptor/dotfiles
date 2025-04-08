@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
+  ### decent chunk of this config is just a customised (stolen) version of musnix
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -20,7 +21,6 @@
   };
 
   # set memlock and other stuff for realtime with vst plugins
-  # most of this stuff stolen from musnix
   security.pam.loginLimits = [
     {
       domain = "@audio";
@@ -44,7 +44,7 @@
       domain = "@audio";
       item = "nofile";
       type = "hard";
-      value = "524288"; # higher limit for esync
+      value = "524288"; # higher limit for esync as well as audio
     }
   ];
   services.udev = {
@@ -54,9 +54,8 @@
       DEVPATH=="/devices/virtual/misc/cpu_dma_latency", OWNER="root", GROUP="audio", MODE="0660"
     '';
   };
-  boot.kernelParams = [
-    "threadirqs"
-  ];
+  boot.kernelParams = [ "threadirqs" ];
+  services.das_watchdog.enable = true;
   boot.kernelModules = [
     "snd-seq"
     "snd-rawmidi"
