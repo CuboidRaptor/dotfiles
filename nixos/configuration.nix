@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./nvidia.nix
+    ./audio.nix
     ./pkgs.nix
     ./keyd.nix
   ];
