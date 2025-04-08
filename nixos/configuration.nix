@@ -133,7 +133,7 @@
     };
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -141,6 +141,7 @@
   };
 
   # set memlock and other stuff for realtime with vst plugins
+  # most of this stuff stolen from musnix
   security.pam.loginLimits = [
     {
       domain = "@audio";
@@ -174,6 +175,9 @@
       DEVPATH=="/devices/virtual/misc/cpu_dma_latency", OWNER="root", GROUP="audio", MODE="0660"
     '';
   };
+  boot.kernelParams = [
+    "threadirqs"
+  ];
   boot.kernelModules = [
     "snd-seq"
     "snd-rawmidi"
