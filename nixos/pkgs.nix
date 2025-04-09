@@ -103,7 +103,6 @@
     numlockx
     trash-cli
     imagemagick
-    lutgen
     xmousepasteblock
     http-server
     xclip
