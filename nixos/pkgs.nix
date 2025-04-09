@@ -120,7 +120,6 @@
     anki
     flameshot
     vlc
-    thunderbird
     obs-studio
     wineWowPackages.staging
     winetricks
@@ -143,7 +142,6 @@
     dconf-editor
     distrobox
     libreoffice
-    qdirstat
     mate.engrampa
     shotcut
 
