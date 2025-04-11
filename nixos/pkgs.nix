@@ -153,6 +153,7 @@
       wine = winepinnedpkgs.wineWowPackages.staging;
     })
     yabridgectl
+    surge
 
     (prismlauncher.override { # games and stuff
       jdks = [
