@@ -144,6 +144,7 @@
     libreoffice
     mate.engrampa
     shotcut
+    yt-dlg
 
     musescore # audio stuff
     audacity
