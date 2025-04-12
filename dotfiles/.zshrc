@@ -16,8 +16,8 @@ compinit
 HISTCONTROL=ignoreboth
 
 # for setting history length see HISTSIZE and HISTFILESIZE
-HISTSIZE=20000
-HISTFILESIZE=40000
+HISTSIZE=30000
+HISTFILESIZE=60000
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
