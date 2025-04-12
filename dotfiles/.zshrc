@@ -4,8 +4,13 @@
         https://github.com/marlonrichert/zsh-snap.git ~/.znaprepos/znap
 source ~/.znaprepos/znap/znap.zsh  # Start Znap
 
-znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
+
+# compinstall stuff
+zstyle :compinstall filename "/home/jason/.zshrc"
+autoload -Uz compinit
+compinit
 
 # vim bindings
 bindkey -v
