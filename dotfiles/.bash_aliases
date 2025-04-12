@@ -1,8 +1,7 @@
 # rebuild and switch using nh
-alias nsw="sudo -EH nh os switch -R"
+alias nsw='sudo nh os switch "path:///home/jason/dotfiles/nixos" -R'
 alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
-alias ncg="sudo nix-collect-garbage --delete-older-than 14d"
 
 # last time system was upgraded
 export HISTTIMEFORMAT="%y/%m/%d %T "

@@ -2,19 +2,27 @@
 
 set -eo pipefail
 
+# get sudo perms
+if [ "$EUID" != 0 ]; then
+    sudo "$0" "$@"
+    exit $?
+fi
+
 # echo!
 echo -e "\033[1m\033[7mStarting system updates...\033[0m"
 
-echo "Updating system nixpkgs..."
-sudo -EH nh os boot --update -R
-
 echo "Updating distrobox zypper..."
-distrobox enter dregsbox -- sudo zypper dup -y
+sudo -u "$(logname)" distrobox enter dregsbox -- sudo zypper dup -y
 echo "Updating distrobox pipx packages..."
-distrobox enter dregsbox -- pipx upgrade-all
+sudo -u "$(logname)" distrobox enter dregsbox -- pipx upgrade-all
 
 echo "Updating flatpak apps..."
-flatpak upgrade -y
+sudo flatpak upgrade -y
+
+echo "Updating system nixpkgs..."
+sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
+echo "GC'ing Nix..."
+sudo nix-collect-garbage --delete-older-than 14d
 
 zenity --notification --text "Yippee: Finished updating.\nAutomatically rebooting in 30 seconds..."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :

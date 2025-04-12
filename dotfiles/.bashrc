@@ -26,8 +26,6 @@ test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors
 # enable starship
 eval "$(starship init bash)"
 
-export FLAKE="path://$HOME/dotfiles/nixos"
-
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # fzf integration
