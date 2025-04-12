@@ -20,6 +20,7 @@
     zoxide.enable = true;
     zsh = {
       enable = true;
+      enableCompletion = false; # for zsh-autocomplete
     };
   };
 

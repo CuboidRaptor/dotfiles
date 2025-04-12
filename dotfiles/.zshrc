@@ -1,23 +1,22 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-##HISTSIZE=1000
-##SAVEHIST=1000
+# Download Znap, if it's not there yet.
+[[ -r ~/.znaprepos/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.znaprepos/znap
+source ~/.znaprepos/znap/znap.zsh  # Start Znap
+
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-syntax-highlighting
+
+# vim bindings
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/jason/.zshrc'
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# for setting history length see HISTSIZE and HISTFILESIZE
+# history options
 HISTSIZE=30000
 HISTFILESIZE=60000
+HISTFILE=~/.histfile
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
