@@ -1,8 +1,8 @@
 local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 
--- actually use regular bash cuh
-config.default_prog = { "bash" }
+-- use zsh
+config.default_prog = { "zsh" }
 
 config.initial_rows = 32
 config.initial_cols = 120
