@@ -51,12 +51,14 @@ function create {
     for arg in "$@"
     do
         case "$arg" in 
-            */) # directory path
+            */)
+                # directory path
                 mkdir -p "$arg"
                 echo Created directory
                 ;;
 
-            *) # filepath
+            *)
+                # filepath
                 mkdir -p "$(dirname "$arg")" && touch "$arg"
                 echo Created file
                 ;;
