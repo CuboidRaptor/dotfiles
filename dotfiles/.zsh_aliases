@@ -63,7 +63,7 @@ function create {
     done
 }
 
-function ns {
+function nshell {
     # wrapper for nix shell --impure that sets $IN_NIX_SHELL correctly
     oldvalue="$IN_NIX_SHELL"
     export IN_NIX_SHELL="impure"
