@@ -18,9 +18,7 @@
     tmux.enable = true;
     nh.enable = true; # nix helper installation/config!
     zoxide.enable = true;
-    zsh = {
-      enable = true;
-    };
+    zsh.enable = true;
   };
 
   ## fuck me does this cause problems

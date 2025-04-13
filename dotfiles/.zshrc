@@ -4,16 +4,28 @@
         https://github.com/marlonrichert/zsh-snap.git ~/.znaprepos/znap
 source ~/.znaprepos/znap/znap.zsh  # Start Znap
 
+# znap plugins
+setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
+compinit # run this explicitly so setting $_comp_options works
+_comp_options+=(globdots)
 znap source zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 znap source zsh-users/zsh-syntax-highlighting
 
-# compinstall stuff
-zstyle :compinstall filename "/home/jason/.zshrc"
-autoload -Uz compinit
-compinit
+znap eval "starship" "starship init zsh"
+znap eval "zoxide" "zoxide init zsh"
+znap eval "fzf" "fzf --zsh"
 
 # vim bindings
 bindkey -v
+
+# make tab always accept and then continue suggesting
+function _zsh_autosuggest_accept_and_refresh {
+    zle autosuggest-accept
+    zle autosuggest-fetch
+}
+zle -N _zsh_autosuggest_accept_and_refresh
+bindkey '^I' _zsh_autosuggest_accept_and_refresh
 
 # history options
 HISTSIZE=30000
@@ -27,12 +39,12 @@ setopt HIST_IGNORE_SPACE
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
 # enable starship
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # fzf integration
-eval "$(fzf --zsh)"
+#eval "$(fzf --zsh)"
 export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -44,7 +56,7 @@ export FZF_ALT_C_OPTS='--preview "eza -a --color=always --icons=always --group-d
 export FZF_ALT_C_COMMAND="fd --type d -u --follow --strip-cwd-prefix --exclude .git"
 
 # zoxide integration
-eval "$(zoxide init zsh)"
+#eval "$(zoxide init zsh)"
 
 # set some aliases
 if [[ -f ~/.bash_aliases ]]; then
