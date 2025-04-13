@@ -35,10 +35,7 @@ alias free="free -m"
 alias imgstrip="mogrify -strip"
 
 function f {
-    eval "$(__fzf_cd__)"
-}
-function c {
-    eval "$(fd --min-depth 1 --max-depth 1 --type d -u --follow --strip-cwd-prefix | __fzf_cd__)"
+    cd "$(fd --type d -u --follow --strip-cwd-prefix --exclude .git | fzf --preview "eza -a --color=always --icons=always --group-directories-first -- {}")"
 }
 
 # Auto cd into last lf

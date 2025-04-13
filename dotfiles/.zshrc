@@ -12,7 +12,8 @@ znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 znap source zsh-users/zsh-syntax-highlighting
 
-znap eval "starship" "starship init zsh"
+znap prompt sindresorhus/pure
+#znap eval "starship" "starship init zsh"
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
 
@@ -52,8 +53,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
-export FZF_ALT_C_OPTS='--preview "eza -a --color=always --icons=always --group-directories-first -- {}"'
-export FZF_ALT_C_COMMAND="fd --type d -u --follow --strip-cwd-prefix --exclude .git"
 
 # zoxide integration
 #eval "$(zoxide init zsh)"
