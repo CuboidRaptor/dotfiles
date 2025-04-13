@@ -5,6 +5,7 @@
 source ~/.znaprepos/znap/znap.zsh  # Start Znap
 
 # znap plugins
+znap prompt sindresorhus/pure
 setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
 compinit # run this explicitly so setting $_comp_options works
 _comp_options+=(globdots)
@@ -12,7 +13,6 @@ znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 znap source zsh-users/zsh-syntax-highlighting
 
-znap prompt sindresorhus/pure
 #znap eval "starship" "starship init zsh"
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
