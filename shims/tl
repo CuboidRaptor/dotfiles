@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -o pipefail
 # get tmux ls and filter for when no tmux sessions are running/other errors
 # this script does not handle if there are no tmuxp sessions so uh yeah.
 tmuxsessions="$(tmux ls -F "#{session_name}")
