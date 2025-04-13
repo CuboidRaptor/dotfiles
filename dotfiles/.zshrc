@@ -6,6 +6,15 @@ source ~/.znaprepos/znap/znap.zsh  # Start Znap
 
 # znap plugins
 znap prompt sindresorhus/pure
+gray="#6c7086"
+zstyle ":prompt:pure:prompt:success" color green
+zstyle ":prompt:pure:git:branch" color "$gray" # set catppuccin colors because pure prompt doesn't use terminal colors for these
+zstyle ":prompt:pure:git:action" color "$gray"
+zstyle ":prompt:pure:git:dirty" color "#f5c2e7" # pink
+zstyle ":prompt:pure:host" color "$gray"
+zstyle ":prompt:pure:prompt:continuation" color "$gray"
+zstyle ":prompt:pure:user" color "$gray"
+zstyle ":prompt:pure:virtualenv" color "$gray"
 setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
 compinit # run this explicitly so setting $_comp_options works
 _comp_options+=(globdots)
