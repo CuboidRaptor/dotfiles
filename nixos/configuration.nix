@@ -124,7 +124,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "audio"
     ];
     hashedPassword = "$y$j9T$C247i/8BbAzdZ/NuKQ1Nm/$6RTfpsMyWSlmhVKCXeLrATYWBhtBVny.7kTjz.GnR95";
   };

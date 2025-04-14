@@ -60,4 +60,5 @@
     "snd-seq"
     "snd-rawmidi"
   ];
+  users.users.jason.extraGroups = [ "audio" ];
 }
