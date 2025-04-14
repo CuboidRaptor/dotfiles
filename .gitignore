@@ -1,15 +1,9 @@
-# logs go bye bye
-*.log
-**/logs/
-**/*Cache*
-**/*history*
-**/*History*
-
 # Tmux plugins, they should be added by TPM instead of cramming the plugins in my repo.
 **/.config/tmux/plugins
 
 # I do dumb stuff in here
 test/
+test.sh
 
 # distrobox bin exports that should just be regenerated for every install
 dboxexports/
