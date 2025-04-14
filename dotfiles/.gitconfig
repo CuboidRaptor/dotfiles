@@ -12,3 +12,8 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[maintenance]
+	repo = /home/jason/.local/share/znaprepos/znap
+	repo = /home/jason/.local/share/znaprepos/sindresorhus/pure
+	repo = /home/jason/.local/share/znaprepos/zsh-users/zsh-autosuggestions
+	repo = /home/jason/.local/share/znaprepos/zsh-users/zsh-syntax-highlighting
