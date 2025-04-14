@@ -1,8 +1,8 @@
 # Download Znap, if it's not there yet.
-[[ -r ~/.znaprepos/znap/znap.zsh ]] ||
+[[ -r ~/.local/share/znaprepos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/.znaprepos/znap
-source ~/.znaprepos/znap/znap.zsh  # Start Znap
+        https://github.com/marlonrichert/zsh-snap.git ~/.local/share/znaprepos/znap
+source ~/.local/share/znaprepos/znap/znap.zsh  # Start Znap
 
 # znap plugins
 znap prompt sindresorhus/pure
