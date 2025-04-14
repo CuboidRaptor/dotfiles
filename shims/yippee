@@ -12,6 +12,7 @@ fi
 echo -e "\033[1m\033[7mStarting system updates...\033[0m"
 
 usern="$(logname)"
+echo "Detected username: $usern"
 
 echo "Updating Zsh plugins..."
 sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
