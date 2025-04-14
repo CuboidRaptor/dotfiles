@@ -55,7 +55,7 @@ bindkey '^I' _zsh_autosuggest_accept_and_refresh
 HISTSIZE=40000
 HISTFILESIZE=80000
 HISTFILE=~/.histfile
-setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
