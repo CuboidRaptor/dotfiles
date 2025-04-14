@@ -24,6 +24,9 @@ sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
 echo "GC'ing Nix..."
 sudo nix-collect-garbage --delete-older-than 14d
 
+echo "Writing to update history file..."
+date >> ~/.local/share/.yippeehistfile
+
 zenity --notification --text "Yippee: Finished updating.\nAutomatically rebooting in 30 seconds..."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
 echo "Rebooting..."

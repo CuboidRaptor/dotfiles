@@ -4,8 +4,7 @@ alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
 
 # last time system was upgraded
-export HISTTIMEFORMAT="%y/%m/%d %T "
-alias lasty="history | grep -E '([0-9]{2}:?){3} yippee$' --color=never | tail -n 3"
+alias lasty="cat ~/.local/share/.yippeehistfile | tail -n 3"
 
 # I use this a lot
 alias lg="lazygit"
