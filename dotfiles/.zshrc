@@ -45,10 +45,9 @@ zle -N _zsh_autosuggest_accept_and_refresh
 bindkey '^I' _zsh_autosuggest_accept_and_refresh
 
 # history options
-HISTSIZE=30000
-HISTFILESIZE=60000
+HISTSIZE=40000
+HISTFILESIZE=80000
 HISTFILE=~/.histfile
-setopt EXTENDED_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 
