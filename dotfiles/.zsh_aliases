@@ -2,13 +2,6 @@
 alias nsw='sudo nh os switch "path:///home/jason/dotfiles/nixos" -R'
 alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
-function nshell {
-    # wrapper for nix shell --impure that sets $IN_NIX_SHELL correctly
-    oldvalue="$IN_NIX_SHELL"
-    export IN_NIX_SHELL="impure"
-    nix shell --impure "$@"
-    export IN_NIX_SHELL="$oldvalue"
-}
 
 # last time system was upgraded
 alias lasty="cat ~/.local/share/.yippeehistfile | tail -n 3"
