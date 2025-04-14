@@ -15,14 +15,16 @@ zstyle ":prompt:pure:host" color "$gray"
 zstyle ":prompt:pure:prompt:continuation" color "$gray"
 zstyle ":prompt:pure:user" color "$gray"
 zstyle ":prompt:pure:virtualenv" color "$gray"
+
 setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
 compinit # run this explicitly so setting $_comp_options works
 _comp_options+=(globdots)
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
+
 znap source zsh-users/zsh-syntax-highlighting
 
-#znap eval "starship" "starship init zsh"
+# eval stuff for shell integration
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
 export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
@@ -48,8 +50,7 @@ bindkey '^I' _zsh_autosuggest_accept_and_refresh
 HISTSIZE=40000
 HISTFILESIZE=80000
 HISTFILE=~/.histfile
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
