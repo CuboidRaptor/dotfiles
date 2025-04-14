@@ -58,11 +58,11 @@ test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # set some aliases
-if [[ -f ~/.bash_aliases ]]; then
+if [[ -f ~/.zsh_aliases ]]; then
     source ~/.zsh_aliases
 fi
 
 # set $PATH
-if [[ -f ~/.bash_path ]]; then
-    source ~/.zsh_path
+if [[ -f ~/.path_source ]]; then
+    source ~/.path_source
 fi
