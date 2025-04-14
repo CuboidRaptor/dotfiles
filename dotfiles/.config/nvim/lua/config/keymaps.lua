@@ -29,6 +29,7 @@ map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 map("n", leader .. "q", "@q", { remap = true, desc = "Send Q Macro" })
 
 map("n", leader .. "r", "*<S-n>cgn", { remap = true, desc = "Replace occurences of current word" })
+map("v", leader .. "r", "*<S-n>cgn", { remap = true, desc = "Replace occurences of current word" })
 
 -- Telescope bindings
 map("n", leader .. "b", function() telescope.buffers({ sort_mru = true, path_display = { "filename_first", "truncate" } }) end, { remap = true, desc = "Telescope Buffers" })
