@@ -15,7 +15,7 @@
         settings = {
           main = {
             capslock = "esc";
-            rightalt = "overload(alt, macro(* * tab))"; # rAlt is alt but only when held
+            rightalt = "overload(alt, f5)"; # rAlt is alt but only when held
             pageup = "home";
             pagedown = "end";
             home = "pageup";
