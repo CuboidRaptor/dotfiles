@@ -38,6 +38,11 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 # vim bindings
 bindkey -v
 
+# line editing bindings to delete whole line or chunks of line
+bindkey "^U" kill-whole-line
+bindkey "^Y" backward-kill-line
+bindkey "^K" kill-line
+
 # make tab always accept and then continue suggesting
 function _zsh_autosuggest_accept_and_refresh {
     zle autosuggest-accept
