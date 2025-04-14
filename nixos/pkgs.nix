@@ -87,8 +87,7 @@
     nil
     bash-language-server
 
-    starship # dev stuff/deps
-    zip
+    zip # dev stuff/deps
     unzip
     curl
     eza
