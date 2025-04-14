@@ -11,17 +11,25 @@ fi
 # echo!
 echo -e "\033[1m\033[7mStarting system updates...\033[0m"
 
-echo "Updating distrobox zypper..."
-sudo -u "$(logname)" distrobox enter dregsbox -- sudo zypper dup -y
-echo "Updating distrobox pipx packages..."
-sudo -u "$(logname)" distrobox enter dregsbox -- pipx upgrade-all
+usern="$(logname)"
 
-echo "Updating flatpak apps..."
+echo "Updating Zsh plugins..."
+sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
+
+echo "Updating tmux plugins..."
+sudo -u "$usern" /home/"$usern"/.tmux/plugins/tpm/bin/update_plugins all
+
+echo "Updating Distrobox Zypper..."
+sudo -u "$usern" distrobox enter dregsbox -- sudo zypper dup -y
+echo "Updating Distrobox pipx packages..."
+sudo -u "$usern" distrobox enter dregsbox -- pipx upgrade-all
+
+echo "Updating Flatpak apps..."
 sudo flatpak upgrade -y
 
-echo "Updating system nixpkgs..."
+echo "Updating system Nixpkgs..."
 sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
-echo "GC'ing Nix..."
+echo "Garbage collecting Nix..."
 sudo nix-collect-garbage --delete-older-than 14d
 
 echo "Writing to update history file..."
