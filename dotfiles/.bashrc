@@ -30,6 +30,6 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 # set $PATH
-if [[ -f ~/.bash_path ]]; then
-    source ~/.bash_path
+if [[ -f ~/.path_source ]]; then
+    source ~/.path_source
 fi
