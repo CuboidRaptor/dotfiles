@@ -28,6 +28,7 @@ znap source zsh-users/zsh-syntax-highlighting
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
 export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
+# catppuccin for fzf
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
