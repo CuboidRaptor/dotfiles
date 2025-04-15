@@ -98,7 +98,6 @@
     zenity
     gh
     git
-    lf
     tldr
     numlockx
     trash-cli

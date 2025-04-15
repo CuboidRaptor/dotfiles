@@ -42,31 +42,6 @@ function f {
     cd "$(fd -t d | fzf --preview "eza -a --color=always --icons=always --group-directories-first -- {}")"
 }
 
-# Auto cd into last lf
-function lf {
-    cd "$(command lf -print-last-dir "$@")" || exit
-}
-
-# Create file or directory with parents
-function create {
-    for arg in "$@"
-    do
-        case "$arg" in 
-            */)
-                # directory path
-                mkdir -p "$arg"
-                echo Created directory
-                ;;
-
-            *)
-                # filepath
-                mkdir -p "$(dirname "$arg")" && touch "$arg"
-                echo Created file
-                ;;
-        esac
-    done
-}
-
 # server for nvrw (this is in a function because it has to or else tmux gets angry)
 # (and nvrw is a file because git edit and stuff)
 function nvrws {
