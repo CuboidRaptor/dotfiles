@@ -39,7 +39,7 @@ alias imgstrip="mogrify -strip"
 alias fd="fd -u --follow --exclude .git"
 
 function f {
-    cd "$(fd -t d | fzf --style minimal --preview "eza -a --color=always --icons=always --group-directories-first -- {}" "$@")"
+    cd "$(fd -t d | fzf --style full --preview "eza -a --color=always --icons=always --group-directories-first -- {}" "$@")"
 }
 
 # server for nvrw (this is in a function because it has to or else tmux gets angry)
