@@ -35,8 +35,11 @@ alias free="free -m"
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
+# better fd
+alias fd="fd -u --follow --exclude .git"
+
 function f {
-    cd "$(fd --type d -u --follow --strip-cwd-prefix --exclude .git | fzf --preview "eza -a --color=always --icons=always --group-directories-first -- {}")"
+    cd "$(fd -t d | fzf --preview "eza -a --color=always --icons=always --group-directories-first -- {}")"
 }
 
 # Auto cd into last lf
