@@ -29,7 +29,7 @@ znap source zsh-users/zsh-syntax-highlighting
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
 # set some fzf bindings and other options
-export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept"
+export FZF_DEFAULT_OPTS="--no-height -i --style full --bind ctrl-h:abort,ctrl-l:accept"
 # catppuccin for fzf
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -37,14 +37,6 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
-
-# vim bindings
-bindkey -v
-
-# line editing bindings to delete whole line or chunks of line
-bindkey "^U" kill-whole-line
-bindkey "^Y" backward-kill-line
-bindkey "^K" kill-line
 
 # make tab always accept and then continue suggesting
 FZF_COMPLETION_TRIGGER="**" # explicitly set this so the following function works
@@ -61,6 +53,14 @@ function _zsh_fzf_autosuggest {
 }
 zle -N _zsh_fzf_autosuggest
 bindkey '^I' _zsh_fzf_autosuggest
+
+# vim bindings
+bindkey -v
+
+# line editing bindings to delete whole line or chunks of line
+bindkey "^U" kill-whole-line
+bindkey "^Y" backward-kill-line
+bindkey "^K" kill-line
 
 # history options
 HISTSIZE=40000
