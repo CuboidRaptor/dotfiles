@@ -8,7 +8,8 @@ source ~/.local/share/znaprepos/znap/znap.zsh  # Start Znap
 znap prompt sindresorhus/pure
 gray="#6c7086"
 zstyle ":prompt:pure:prompt:success" color green
-zstyle ":prompt:pure:git:branch" color "$gray" # set catppuccin colors because pure prompt doesn't use terminal colors for these
+# set catppuccin colors because pure prompt doesn't use terminal colors for these
+zstyle ":prompt:pure:git:branch" color "$gray"
 zstyle ":prompt:pure:git:action" color "$gray"
 zstyle ":prompt:pure:git:dirty" color "#f5c2e7" # pink
 zstyle ":prompt:pure:host" color "$gray"
@@ -27,7 +28,8 @@ znap source zsh-users/zsh-syntax-highlighting
 # eval stuff for shell integration
 znap eval "zoxide" "zoxide init zsh"
 znap eval "fzf" "fzf --zsh"
-export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept" # set some fzf bindings
+# set some fzf bindings and other options
+export FZF_DEFAULT_OPTS="--no-height -i --bind ctrl-h:abort,ctrl-l:accept"
 # catppuccin for fzf
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
@@ -48,7 +50,9 @@ bindkey "^K" kill-line
 FZF_COMPLETION_TRIGGER="**" # explicitly set this so the following function works
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
-    if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
+    if [[ ${#bufwords} -gt 1 ]] \
+        && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
+
         zle fzf-completion
     else
         zle autosuggest-accept
