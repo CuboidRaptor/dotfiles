@@ -8,7 +8,7 @@ vim.g.mapleader = "\\"
 vim.cmd("set shortmess+=A")
 
 -- me like mouse
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- keep this many lines above and below when scrolling
 vim.opt.scrolloff = 10
@@ -18,7 +18,7 @@ vim.opt.sidescrolloff = 15
 vim.g.autoformat = false
 
 -- don't sync to system clipboard unless I do explicitly with "+
-vim.cmd("set clipboard=")
+vim.opt.clipboard = nil
 
 -- set blinking insert cursor
 vim.opt.guicursor = "i:ver100-blinkwait800-blinkon400-blinkoff200"
@@ -34,7 +34,10 @@ vim.opt.smarttab = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4 -- default tab width for new files
 vim.opt.cindent = true -- fix ctrl+f reindent
-vim.opt.cinkeys:remove { "0#" } -- fix comments being unindented
+vim.opt.cinkeys:remove { "0#" } -- fix comments being autoindented
+
+-- set line length indicator
+vim.opt.colorcolumn = "89"
 
 -- auto-session options
 vim.opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
