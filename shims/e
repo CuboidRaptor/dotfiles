@@ -3,7 +3,8 @@
 set -o pipefail
 
 if [ -n "$TMUX" ]; then
-    ids="$(tmux list-panes -s -F '#{pane_current_command} #{window_id} #{pane_id}' | awk '/^nvim / {print $2" "$3; exit}')"
+    ids="$(tmux list-panes -s -F '#{pane_current_command} #{window_id} #{pane_id}' \
+        | awk '/^nvim / {print $2" "$3; exit}')"
     read -ra idlist <<<"$ids"
     if [ -n "$ids" ]; then
         abspaths=()
@@ -11,7 +12,8 @@ if [ -n "$TMUX" ]; then
         do
             abspaths+=("$(realpath "$i")")
         done
-        nvim --server "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe" --remote "${abspaths[@]}"
+        nvim --server "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe" \
+            --remote "${abspaths[@]}"
         tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}"
     else
         echo "No Neovim server found. Run \`nvrws\` in a new window to start one."
