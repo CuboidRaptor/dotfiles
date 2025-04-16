@@ -37,7 +37,7 @@ vim.opt.cindent = true -- fix ctrl+f reindent
 vim.opt.cinkeys:remove { "0#" } -- fix comments being autoindented
 
 -- set line length indicator
-vim.opt.colorcolumn = "89"
+vim.opt.colorcolumn = "101"
 
 -- auto-session options
 vim.opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
