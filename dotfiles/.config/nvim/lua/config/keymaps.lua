@@ -32,7 +32,13 @@ map("n", leader .. "r", "*<S-n>cgn", { remap = true, desc = "Replace occurences 
 map("v", leader .. "r", "*<S-n>cgn", { remap = true, desc = "Replace occurences of current word" })
 
 -- Telescope bindings
-map("n", leader .. "b", function() telescope.buffers({ sort_mru = true, path_display = { "filename_first", "truncate" } }) end, { remap = true, desc = "Telescope Buffers" })
-map("n", leader .. "g", function() telescope.git_files({ path_display = { "filename_first", "truncate" } }) end, { remap = true, desc = "Telescope Git Repo Files" })
-map("n", leader .. "f", function() telescope.find_files({ path_display = { "filename_first", "truncate" } }) end, { remap = true, desc = "Telescope Current Directory" })
+map("n", leader .. "b",
+    function() telescope.buffers({ sort_mru = true, path_display = { "filename_first", "truncate" } }) end,
+    { remap = true, desc = "Telescope Buffers" })
+map("n", leader .. "g",
+    function() telescope.git_files({ path_display = { "filename_first", "truncate" } }) end,
+    { remap = true, desc = "Telescope Git Repo Files" })
+map("n", leader .. "f",
+    function() telescope.find_files({ path_display = { "filename_first", "truncate" } }) end,
+    { remap = true, desc = "Telescope Current Directory" })
 map("n", leader .. "t", telescope.treesitter, { remap = true, desc = "Telescope Treesitter" })
