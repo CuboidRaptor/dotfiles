@@ -45,12 +45,18 @@ bindkey "^Y" backward-kill-line
 bindkey "^K" kill-line
 
 # make tab always accept and then continue suggesting
-function _zsh_autosuggest_accept_and_refresh {
-    zle autosuggest-accept
-    zle autosuggest-fetch
+FZF_COMPLETION_TRIGGER="**" # explicitly set this so the following function works
+function _zsh_fzf_autosuggest {
+    bufwords=(${(z)LBUFFER})
+    if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
+        zle fzf-completion
+    else
+        zle autosuggest-accept
+        zle autosuggest-fetch
+    fi
 }
-zle -N _zsh_autosuggest_accept_and_refresh
-bindkey '^I' _zsh_autosuggest_accept_and_refresh
+zle -N _zsh_fzf_autosuggest
+bindkey '^I' _zsh_fzf_autosuggest
 
 # history options
 HISTSIZE=40000
