@@ -12,7 +12,7 @@ vim.opt.mouse = "a"
 
 -- keep this many lines above and below when scrolling
 vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 15
+vim.opt.sidescrolloff = 10
 
 -- don't autoformat files
 vim.g.autoformat = false
