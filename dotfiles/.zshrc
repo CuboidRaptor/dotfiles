@@ -42,8 +42,7 @@ FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest w
 # make tab always accept and then continue suggesting
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
-    if [[ ${#bufwords} -gt 1 ]] \
-        && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
+    if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
 
         zle fzf-completion
     else
