@@ -37,9 +37,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
+FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
 
 # make tab always accept and then continue suggesting
-FZF_COMPLETION_TRIGGER="**" # explicitly set this so the following function works
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
     if [[ ${#bufwords} -gt 1 ]] \
