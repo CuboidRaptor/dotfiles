@@ -79,7 +79,6 @@
   (with pkgs; [
     jdk # programming languages stuff
     gcc
-    libgcc
     (makeNixLDWrapper python313Full)
     nodejs
     clang-tools
@@ -90,6 +89,7 @@
     zip # dev stuff/deps
     unzip
     curl
+    libgcc
     eza
     bat
     fastfetch
