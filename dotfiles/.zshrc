@@ -65,7 +65,8 @@ bindkey "^K" kill-line
 HISTSIZE=40000
 HISTFILESIZE=80000
 HISTFILE=~/.histfile
-setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY \
+    NO_INC_APPEND_HISTORY INC_APPEND_HISTORY_TIME NO_SHARE_HISTORY
 
 # enable color support of ls and also add handy aliases
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
