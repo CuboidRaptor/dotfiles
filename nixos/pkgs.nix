@@ -120,6 +120,8 @@
     flameshot
     vlc
     obs-studio
+    gtop
+    libgtop
     wineWowPackages.staging
     winetricks
     (vivaldi.overrideAttrs (
@@ -162,30 +164,45 @@
     lutris
     umu-launcher
 
-    seahorse # xfce and theming stuff
-    xfce.xfce4-whiskermenu-plugin
-    xfce.xfce4-docklike-plugin
-    xfce.xfce4-systemload-plugin
-    xfce.xfce4-xkb-plugin
-    catppuccin
+    # theming stuff
     catppuccin-cursors.mochaDark
     (catppuccin-papirus-folders.override {
       flavor = "latte";
       accent = "maroon";
     })
-    (colloid-gtk-theme.override { # this is used only for window decoration
+    ((colloid-gtk-theme.overrideAttrs (finalAttrs: previousAttrs: {
+      # patch padding between windows icons
+      postInstall = (previousAttrs.postInstall or "") + ''
+        printf "\n/* PATCH for panel window icon sizes */
+        .grouped-window-list-item-box {
+          width: 40px !important;
+        }" >> "$out/share/themes/Colloid-Red-Dark-Catppuccin/cinnamon/cinnamon.css"
+      '';
+    })).override {
       themeVariants = [ "red" ];
-      colorVariants = [ "light" ];
+      colorVariants = [ "dark" ];
       tweaks = [
         "catppuccin"
         "rimless"
       ];
     })
-  ]);
+    (mint-themes.overrideAttrs (finalAttrs: previousAttrs: {
+      # patch accent color to catppuccin maroon
+      postInstall = (previousAttrs.postInstall or "") + ''
+        cp -r "$out/share/themes/Mint-Y-Red" "$out/share/themes/Mint-Y-Maroon"
+        function subcolor {
+          substituteInPlace "$out/share/themes/Mint-Y-Maroon/$1" --replace "#e82127" "#e64553"
+        }
 
-  programs.thunar.plugins = [
-    pkgs.xfce.thunar-archive-plugin
-  ];
+        subcolor "cinnamon/cinnamon.css"
+        subcolor "gtk-2.0/gtkrc"
+        subcolor "gtk-3.0/gtk.css"
+        subcolor "gtk-3.0/gtk-dark.css"
+        subcolor "gtk-4.0/gtk.css"
+        subcolor "gtk-4.0/gtk-dark.css"
+      '';
+    }))
+  ]);
 
   ### nixos compat stuff
   # nix-ld because I'm lazy and it works

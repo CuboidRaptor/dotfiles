@@ -83,18 +83,25 @@
   #services.desktopManager.plasma6.enable = true;
 
   # Enable Xfce and LightDM.
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    greeters.gtk = {
-      extraConfig = ''
-        [greeter]
-        background = /wallpaper.png
-      '';
-      clock-format = "%H:%M:%S";
-    };
+  #services.xserver.displayManager.lightdm = {
+  #  enable = true;
+  #  greeters.gtk = {
+  #    extraConfig = ''
+  #      [greeter]
+  #      background = /wallpaper.png
+  #    '';
+  #    clock-format = "%H:%M:%S";
+  #  };
 
+  #};
+  #services.xserver.desktopManager.xfce.enable = true;
+  services.xserver = {
+    displayManager = {
+      lightdm.enable = true;
+    };
+    desktopManager.cinnamon.enable = true;
   };
-  services.xserver.desktopManager.xfce.enable = true;
+  services.displayManager.defaultSession = "cinnamon";
 
   # Enable CUPS to print documents. Also find printers.
   services.printing = {
@@ -129,15 +136,15 @@
     ];
     hashedPassword = "$y$j9T$C247i/8BbAzdZ/NuKQ1Nm/$6RTfpsMyWSlmhVKCXeLrATYWBhtBVny.7kTjz.GnR95";
   };
-  #users.users.test = {
-  #  isNormalUser = true;
-  #  description = "test";
-  #  extraGroups = [
-  #    "networkmanager"
-  #    "wheel"
-  #  ];
-  #  password = "test";
-  #};
+  users.users.test = {
+    isNormalUser = true;
+    description = "test";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    password = "test";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
