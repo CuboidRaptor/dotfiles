@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, winepinnedpkgs, ... }:
 
 {
   ### decent chunk of this config is just a customised (stolen) version of musnix
@@ -19,6 +19,16 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  # packages
+  environment.systemPackages = with pkgs; [
+    reaper
+    (yabridge.override {
+      wine = winepinnedpkgs.wineWowPackages.staging;
+    })
+    yabridgectl
+    sfizz
+  ];
 
   # set memlock and other stuff for realtime with vst plugins
   security.pam.loginLimits = [

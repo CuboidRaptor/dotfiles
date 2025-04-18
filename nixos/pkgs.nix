@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, winepinnedpkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Allow unfree packages
@@ -144,16 +144,9 @@
     mate.engrampa
     shotcut
     yt-dlg
-
     musescore # audio stuff
     audacity
     dl-librescore
-    reaper
-    (yabridge.override {
-      wine = winepinnedpkgs.wineWowPackages.staging;
-    })
-    yabridgectl
-    sfizz
 
     (prismlauncher.override { # games and stuff
       jdks = [
