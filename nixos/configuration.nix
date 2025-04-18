@@ -125,15 +125,15 @@
     ];
     hashedPassword = "$y$j9T$C247i/8BbAzdZ/NuKQ1Nm/$6RTfpsMyWSlmhVKCXeLrATYWBhtBVny.7kTjz.GnR95";
   };
-  users.users.test = {
-    isNormalUser = true;
-    description = "test";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    password = "test";
-  };
+  #users.users.test = {
+  #  isNormalUser = true;
+  #  description = "test";
+  #  extraGroups = [
+  #    "networkmanager"
+  #    "wheel"
+  #  ];
+  #  password = "test";
+  #};
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
