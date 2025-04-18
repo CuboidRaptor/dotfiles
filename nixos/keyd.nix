@@ -52,5 +52,4 @@
       };
     };
   };
-  users.users.jason.extraGroups = [ "keyd" ];
 }
