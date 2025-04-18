@@ -153,6 +153,7 @@
       wine = winepinnedpkgs.wineWowPackages.staging;
     })
     yabridgectl
+    sfizz
 
     (prismlauncher.override { # games and stuff
       jdks = [
