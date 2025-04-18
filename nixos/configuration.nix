@@ -59,15 +59,6 @@
   # set cpu performance setting
   powerManagement.cpuFreqGovernor = "performance";
 
-  # copy wallpaper to root so lightdm-gtk-greeter can find it
-  # this requires `sudo rm /wallpaper.png` and reboot to refresh
-  systemd.tmpfiles.settings.wallpaper."/wallpaper.png"."C+" = {
-    group = "root";
-    user = "root";
-    age = "-";
-    argument = "/home/jason/dotfiles/extras/wallpaper.png";
-  };
-
   # Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -75,9 +66,9 @@
   i18n.defaultLocale = "en_CA.UTF-8";
 
   environment.systemPackages = [
-    #pkgs.nixos-artwork.wallpapers.nineish-catppuccin-latte-alt
+    pkgs.nixos-artwork.wallpapers.nineish-catppuccin-latte-alt
   ];
-  environment.pathsToLink = [ "/share/background/nixos" ];
+  environment.pathsToLink = [ "/share/backgrounds/nixos" ];
   services.xserver = {
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
@@ -90,6 +81,7 @@
         extraConfig = ''
           [Greeter]
           activate-numlock=true
+          background=/run/current-system/sw/share/backgrounds/nixos/nix-wallpaper-nineish-catppuccin-latte-alt.png
           background-color=#e6e9ef
           clock-format=%H:%M:%S
           xft-rgba=none
