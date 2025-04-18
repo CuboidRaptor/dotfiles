@@ -74,30 +74,27 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-
-  ## Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
-
-  # Enable Xfce and LightDM.
-  #services.xserver.displayManager.lightdm = {
-  #  enable = true;
-  #  greeters.gtk = {
-  #    extraConfig = ''
-  #      [greeter]
-  #      background = /wallpaper.png
-  #    '';
-  #    clock-format = "%H:%M:%S";
-  #  };
-
-  #};
-  #services.xserver.desktopManager.xfce.enable = true;
+  environment.systemPackages = [
+    #pkgs.nixos-artwork.wallpapers.nineish-catppuccin-latte-alt
+  ];
+  environment.pathsToLink = [ "/share/background/nixos" ];
   services.xserver = {
-    displayManager = {
-      lightdm.enable = true;
+    # Enable the X11 windowing system.
+    # You can disable this if you're only using the Wayland session.
+    enable = true;
+    # enable/config lightdm/slick greeter
+    displayManager.lightdm = {
+      enable = true;
+      greeters.slick = {
+        enable = true;
+        extraConfig = ''
+          [Greeter]
+          activate-numlock=true
+          background-color=#e6e9ef
+          clock-format=%H:%M:%S
+          xft-rgba=none
+        '';
+      };
     };
     desktopManager.cinnamon.enable = true;
   };
