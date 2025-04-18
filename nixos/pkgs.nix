@@ -143,7 +143,6 @@
     dconf-editor
     distrobox
     libreoffice
-    mate.engrampa
     shotcut
     yt-dlg
     musescore # audio stuff
