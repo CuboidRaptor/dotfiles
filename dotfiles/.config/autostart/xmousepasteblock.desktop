@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=numlockx on
+Exec=xmousepasteblock
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[en_CA]=numlockx
+Name[en_CA]=xmousepasteblock
 Comment[en_CA]=No description
-X-GNOME-Autostart-Delay=3
+X-GNOME-Autostart-Delay=5
