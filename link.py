@@ -77,7 +77,9 @@ if __name__ == "__main__":
         # we don't need sudo anymore because nix manages keyd
         pass
 
-    confirm: str = input("This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] ").lower()[0]
+    confirm: str = input(
+        "This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] "
+    ).lower()[:1]
     if confirm != "y":
         print("Aborting...")
         sys.exit()
