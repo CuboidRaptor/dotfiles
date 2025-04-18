@@ -37,7 +37,8 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
-FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
+export FZF_ALT_C_COMMAND="fd -u --follow --exclude .git -t d --min-depth 1 --max-depth 1"
+export FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
 
 # make tab always accept and then continue suggesting
 function _zsh_fzf_autosuggest {
