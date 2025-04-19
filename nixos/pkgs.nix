@@ -167,21 +167,26 @@
       flavor = "latte";
       accent = "maroon";
     })
-    ((colloid-gtk-theme.overrideAttrs (oldAttrs: {
-      # patch padding between windows icons
+    ((magnetic-catppuccin-gtk.overrideAttrs (oldAttrs: {
       postInstall = (oldAttrs.postInstall or "") + ''
-        printf "\n/* PATCH for panel window icon sizes */
-        .grouped-window-list-item-box {
-          width: 40px !important;
-        }" >> "$out/share/themes/Colloid-Red-Dark-Catppuccin/cinnamon/cinnamon.css"
+        printf "\n/* PATCH for panel opacities and colors */
+        .panel-top, .panel-bottom, .panel-left, .panel-right {
+          color: #eff1f5 !important;
+          background-color: #1e1e2e !important;
+        }
+
+        /* PATCH for tooltip border radius */
+        #Tooltip {
+          border-radius: 12px !important;
+        }" >> "$out/share/themes/Catppuccin-GTK-Red-Dark/cinnamon/cinnamon.css"
+
+        # patch mocha red to mocha maroon
+        substituteInPlace "$out/share/themes/Catppuccin-GTK-Red-Dark/cinnamon/cinnamon.css" \
+          --replace "#f38ba8" "#eba0ac"
       '';
     })).override {
-      themeVariants = [ "red" ];
-      colorVariants = [ "dark" ];
-      tweaks = [
-        "catppuccin"
-        "rimless"
-      ];
+      accent = [ "red" ];
+      tweaks = [ "black" ];
     })
     (mint-themes.overrideAttrs (oldAttrs: {
       # patch accent color to catppuccin maroon
