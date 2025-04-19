@@ -15,6 +15,10 @@ map("v", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 -- space key inserts space in normal mode
 map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 
+-- stay on current word when * searching
+map("n", "*", "*``", { desc = "Search current word or selection" })
+map("v", "*", "*``", { desc = "Search current word or selection" })
+
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
 
@@ -27,9 +31,6 @@ map("n", leader .. "w", "<Cmd>SudaWrite", { remap = true, desc = "Save with Sudo
 map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
 
 map("n", leader .. "q", "@q", { remap = true, desc = "Send Q Macro" })
-
-map("n", leader .. "r", "*``cgn", { remap = true, desc = "Replace occurences of current word" })
-map("v", leader .. "r", "*``cgn", { remap = true, desc = "Replace occurences of current word" })
 
 -- Telescope bindings
 map("n", leader .. "b",
