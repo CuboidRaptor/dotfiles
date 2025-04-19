@@ -89,7 +89,6 @@
     zip # dev stuff/deps
     unzip
     curl
-    libgcc
     eza
     bat
     fastfetch
@@ -120,7 +119,6 @@
     flameshot
     vlc
     obs-studio
-    gtop
     libgtop
     wineWowPackages.staging
     winetricks
@@ -169,9 +167,9 @@
       flavor = "latte";
       accent = "maroon";
     })
-    ((colloid-gtk-theme.overrideAttrs (finalAttrs: previousAttrs: {
+    ((colloid-gtk-theme.overrideAttrs (oldAttrs: {
       # patch padding between windows icons
-      postInstall = (previousAttrs.postInstall or "") + ''
+      postInstall = (oldAttrs.postInstall or "") + ''
         printf "\n/* PATCH for panel window icon sizes */
         .grouped-window-list-item-box {
           width: 40px !important;
@@ -185,9 +183,9 @@
         "rimless"
       ];
     })
-    (mint-themes.overrideAttrs (finalAttrs: previousAttrs: {
+    (mint-themes.overrideAttrs (oldAttrs: {
       # patch accent color to catppuccin maroon
-      postInstall = (previousAttrs.postInstall or "") + ''
+      postInstall = (oldAttrs.postInstall or "") + ''
         cp -r "$out/share/themes/Mint-Y-Red" "$out/share/themes/Mint-Y-Maroon"
         function subcolor {
           substituteInPlace "$out/share/themes/Mint-Y-Maroon/$1" --replace "#e82127" "#e64553"
