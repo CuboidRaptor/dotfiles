@@ -84,6 +84,7 @@
     clang-tools
     clang
     nil
+    nixfmt-rfc-style
     bash-language-server
 
     zip # dev stuff/deps
