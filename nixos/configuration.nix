@@ -73,6 +73,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # get a default wallpaper
   environment.systemPackages = [
     pkgs.nixos-artwork.wallpapers.nineish-catppuccin-latte-alt
   ];
