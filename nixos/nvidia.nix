@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   #love nvidia fr
@@ -19,5 +24,7 @@
     };
   };
   environment.systemPackages = with pkgs; [ vulkan-tools ];
-  environment.variables = { WEBKIT_DISABLE_DMABUF_RENDERER = 1; };
+  environment.variables = {
+    WEBKIT_DISABLE_DMABUF_RENDERER = 1;
+  };
 }

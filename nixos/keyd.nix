@@ -2,14 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   services.keyd = {
     enable = true;
     keyboards = {
       default = {
-        ids = [ 
+        ids = [
           "258a:008b"
         ];
         settings = {
@@ -22,7 +27,8 @@
             end = "pagedown";
             esc = "layer(nump)"; # this enable numpad layer
           };
-          nump = { # numpad!
+          nump = {
+            # numpad!
             capslock = "capslock"; # esc caps enables caps (why not)
 
             comma = "kp0";

@@ -1,4 +1,11 @@
-{ config, lib, pkgs, inputs, winepinnedpkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  winepinnedpkgs,
+  ...
+}:
 
 {
   ### decent chunk of this config is just a customised (stolen) version of musnix
@@ -74,20 +81,24 @@
     "snd-rawmidi"
   ];
   # set some variables for paths of plugins
-  environment.sessionVariables = let
-    makePluginPath = format: "$HOME/.${format}:" + ( lib.makeSearchPath format [
-      "$HOME/.nix-profile/lib"
-      "/run/current-system/sw/lib"
-      "/etc/profiles/per-user/$USER/lib"
-    ]);
-  in
-  {
-    CLAP_PATH = lib.mkDefault (makePluginPath "clap");
-    DSSI_PATH = lib.mkDefault (makePluginPath "dssi");
-    LADSPA_PATH = lib.mkDefault (makePluginPath "ladspa");
-    LV2_PATH = lib.mkDefault (makePluginPath "lv2");
-    LXVST_PATH = lib.mkDefault (makePluginPath "lxvst");
-    VST3_PATH = lib.mkDefault (makePluginPath "vst3");
-    VST_PATH = lib.mkDefault (makePluginPath "vst");
-  };
+  environment.sessionVariables =
+    let
+      makePluginPath =
+        format:
+        "$HOME/.${format}:"
+        + (lib.makeSearchPath format [
+          "$HOME/.nix-profile/lib"
+          "/run/current-system/sw/lib"
+          "/etc/profiles/per-user/$USER/lib"
+        ]);
+    in
+    {
+      CLAP_PATH = lib.mkDefault (makePluginPath "clap");
+      DSSI_PATH = lib.mkDefault (makePluginPath "dssi");
+      LADSPA_PATH = lib.mkDefault (makePluginPath "ladspa");
+      LV2_PATH = lib.mkDefault (makePluginPath "lv2");
+      LXVST_PATH = lib.mkDefault (makePluginPath "lxvst");
+      VST3_PATH = lib.mkDefault (makePluginPath "vst3");
+      VST_PATH = lib.mkDefault (makePluginPath "vst");
+    };
 }
