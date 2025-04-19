@@ -89,6 +89,7 @@
     zip # dev stuff/deps
     unzip
     curl
+    libgtop
     eza
     bat
     fastfetch
@@ -119,7 +120,6 @@
     flameshot
     vlc
     obs-studio
-    libgtop
     wineWowPackages.staging
     winetricks
     (vivaldi.overrideAttrs (
@@ -200,6 +200,10 @@
       '';
     }))
   ]);
+  environment.variables = {
+    # add libraries such as libgtop so imports.gi/cinnamon spices can find them
+    GI_TYPELIB_PATH = "/run/current-system/sw/lib/girepository-1.0";
+  };
 
   ### nixos compat stuff
   # nix-ld because I'm lazy and it works
