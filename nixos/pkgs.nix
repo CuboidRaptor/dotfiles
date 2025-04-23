@@ -175,45 +175,24 @@
       catppuccin-cursors.mochaDark
       (catppuccin-papirus-folders.override {
         flavor = "latte";
-        accent = "mauve";
+        accent = "maroon";
       })
-      (
-        (magnetic-catppuccin-gtk.overrideAttrs (oldAttrs: {
-          postInstall =
-            (oldAttrs.postInstall or "")
-            + ''
-              # PATCH for text opacity in cinnamon
-              substituteInPlace "$out/share/themes/Catppuccin-GTK-Purple-Dark/cinnamon/cinnamon.css" \
-                --replace "rgba(239, 241, 245, 0.7)" "rgba(239, 241, 245, 1)"
-
-              printf "
-              /* PATCH for panel opacities and colors */
-              .panel-top, .panel-bottom, .panel-left, .panel-right {
-                background-color: #1e1e2e !important;
-              }
-
-              /* PATCH for tooltip border radius */
-              #Tooltip {
-                border-radius: 12px !important;
-              }" >> "$out/share/themes/Catppuccin-GTK-Purple-Dark/cinnamon/cinnamon.css"
-
-            '';
-        })).override
-        {
-          accent = [ "purple" ];
-          tweaks = [ "black" ];
-        }
-      )
       (mint-themes.overrideAttrs (oldAttrs: {
         # patch accent color to catppuccin mauve
         postInstall =
           (oldAttrs.postInstall or "")
           + ''
-            cp -r "$out/share/themes/Mint-Y-Purple" "$out/share/themes/Mint-Y-Catppuccin-Mauve"
+            cp -r "$out/share/themes/Mint-Y-Red" "$out/share/themes/Mint-Y-Maroon-Catppuccin"
+            cp -r "$out/share/themes/Mint-Y-Dark-Red" "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin"
+
             function subcolor {
-              substituteInPlace "$out/share/themes/Mint-Y-Catppuccin-Mauve/$1" --replace "#8c5dd9" "#8839ef"
-              substituteInPlace "$out/share/themes/Mint-Y-Catppuccin-Mauve/$1" --replace "#8C5DD9" "#8839EF"
-              substituteInPlace "$out/share/themes/Mint-Y-Catppuccin-Mauve/$1" --replace "rgba(140, 93, 217" "rgba(136, 57, 239"
+              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "#e82127" "#e64553"
+              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "#E82127" "#E64553"
+              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "rgba(232, 33, 39" "rgba(230, 69, 83"
+
+              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "#e82127" "#eba0ac"
+              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "#E82127" "#EBA0AC"
+              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "rgba(232, 33, 39" "rgba(235, 160, 172"
             }
 
             subcolor "cinnamon/cinnamon.css"
