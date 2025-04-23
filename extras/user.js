@@ -252,9 +252,6 @@ user_pref("security.cert_pinning.enforcement_level", 2);
 // PREF_CUSTOM: keep browser open when last tab closed
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 
-// PREF_CUSTOM: Windows 11 themed scrollbars
-// user_pref("widget.non-native-theme.scrollbar.style", 5);
-
 // PREF_CUSTOM: Memory/disk optimizations
 user_pref("browser.cache.memory.capacity", 65535);
 user_pref("browser.sessionhistory.max_entries", 15);
@@ -268,14 +265,11 @@ user_pref("browser.uidensity", 1);
 user_pref("toolkit.zoomManager.zoomValues", ".3,.5,.67,.8,.9,1,1.05,1.1,1.2,1.33,1.5,1.7,2,2.4,3,4,5");
 
 // PREF_CUSTOM: My nvidia hardware is ass so av1 explodes it slightly
-user_pref("media.av1.enabled", false);
+///user_pref("media.av1.enabled", false);
 
 // PREF_CUSTOM: lemme see the full url bruh
 user_pref("browser.urlbar.trimHttps", false);
 user_pref("browser.urlbal.trimURLs", false);
-
-// PREF_CUSTOM: this breaks stuff when it's true (desmos, google docs, google maps, etc.)
-///user_pref("gfx.canvas.accelerated", false); // this fix disabled because of performance reasons
 
 // PREF_CUSTOM: sideloading extensions go brrrrr (only for firefox dev)
 user_pref("xpinstall.signatures.required", false);
