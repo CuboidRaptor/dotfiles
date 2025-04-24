@@ -22,11 +22,8 @@ PATHS: list[str] = [
     ".tmuxp/template.yaml",
 
     ".config/starship.toml",
-    ".config/xfce4/",
-    ".config/Thunar/",
     ".config/nvim/",
     ".config/tmux/",
-    ".config/lf/",
     ".config/btop/btop.conf",
     ".config/btop/themes/",
     ".config/bat/",
@@ -36,6 +33,7 @@ PATHS: list[str] = [
     ".config/gtk-3.0/gtk.css",
     ".config/vesktop/themes/",
     ".config/flameshot/",
+    ".config/vlc/vlcrc"
 
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
