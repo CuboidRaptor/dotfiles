@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-nixfmt ./audio.nix
-nixfmt ./nvidia.nix
-nixfmt ./configuration.nix
-nixfmt ./flake.nix
-nixfmt ./keyd.nix
-nixfmt ./pkgs.nix
+# recursively nixfmt all nix files in current directory except for hardware-configuration
+# it just break idk why
+fd -u ".*\.nix" | grep -v "hardware-configuration.nix" | xargs nixfmt
