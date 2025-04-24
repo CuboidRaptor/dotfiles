@@ -17,7 +17,7 @@ map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 
 -- stay on current word when * searching
 map("n", "*", "*``", { desc = "Search current word or selection" })
-map("v", "*", "*``", { desc = "Search current word or selection" })
+map("v", "*", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>``", { desc = "Search current word or selection" })
 
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
