@@ -42,6 +42,7 @@ export FZF_CTRL_T_COMMAND="fd -u --follow --exclude .git"
 export FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
 
 # make tab always accept and then continue suggesting
+# unless there's a double star in which case trigger fzf's autocomplete
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
     if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
