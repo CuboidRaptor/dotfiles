@@ -1,2 +1,5 @@
-export PATH="$PATH:$HOME/dotfiles/shims:$HOME/dotfiles/dboxexports:$HOME/.local/bin:\
+export PATH="$PATH:\
+$HOME/dotfiles/shims:\
+$HOME/dotfiles/dboxexports:\
+$HOME/.local/bin:\
 $HOME/cargo/bin:$HOME/bin"
