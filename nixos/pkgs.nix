@@ -152,7 +152,7 @@
       libreoffice
       shotcut
       yt-dlg
-      musescore # audio stuff
+      musescore
       audacity
       dl-librescore
 
