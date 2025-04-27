@@ -6,7 +6,7 @@ height=476
 width=600
 
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/nm-applet/'
+saved-pathbar-path='/org/gtk/settings/file-chooser/'
 saved-view='/org/'
 show-warning=false
 window-height=500
@@ -46,6 +46,10 @@ window-effect-speed=1
 [org/cinnamon/cinnamon-session]
 quit-time-delay=60
 
+[org/cinnamon/desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
 [org/cinnamon/desktop/a11y/keyboard]
 bouncekeys-delay=300
 mousekeys-accel-time=300
@@ -54,8 +58,10 @@ mousekeys-max-speed=10
 slowkeys-delay=300
 
 [org/cinnamon/desktop/a11y/mouse]
+dwell-click-enabled=false
 dwell-threshold=10
 dwell-time=1.2
+secondary-click-enabled=false
 secondary-click-time=1.2
 
 [org/cinnamon/desktop/applications/calculator]
@@ -82,6 +88,7 @@ gtk-overlay-scrollbars=true
 gtk-theme='Mint-Y-Maroon-Catppuccin'
 icon-theme='Papirus-Light'
 text-scaling-factor=1.0
+toolkit-accessibility=false
 
 [org/cinnamon/desktop/keybindings]
 custom-list=['custom0', 'custom1', 'custom2', '__dummy__']
@@ -220,7 +227,6 @@ xkb-options=@as []
 
 [org/gnome/desktop/interface]
 can-change-accels=false
-clock-format='24h'
 clock-show-date=false
 clock-show-seconds=false
 cursor-blink=true
@@ -244,7 +250,6 @@ icon-theme='Papirus-Light'
 menubar-accel='F10'
 menubar-detachable=false
 menus-have-tearoff=false
-monospace-font-name='Monaspace Neon Frozen 10'
 scaling-factor=uint32 0
 text-scaling-factor=1.0
 toolbar-detachable=false
@@ -300,46 +305,6 @@ workspace-names=@as []
 
 [org/gnome/evolution-data-server]
 migrated=true
-
-[org/gnome/file-roller/dialogs/extract]
-height=800
-recreate-folders=true
-skip-newer=false
-width=1000
-
-[org/gnome/file-roller/file-selector]
-show-hidden=false
-sidebar-size=300
-sort-method='name'
-sort-type='ascending'
-window-size=(-1, -1)
-
-[org/gnome/file-roller/listing]
-list-mode='as-folder'
-name-column-width=68
-show-path=false
-sort-method='name'
-sort-type='ascending'
-
-[org/gnome/file-roller/ui]
-sidebar-width=200
-window-height=480
-window-width=600
-
-[org/gnome/nm-applet]
-disable-connected-notifications=true
-
-[org/gnome/nm-applet/eap/3264ea14-a230-4e7b-9d95-2b8cf47228c8]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/344878f5-ed66-478b-a3c4-9469c6cd5594]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/eaace59a-2c64-4222-b4c0-bf10818e3fa2]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
 
 [org/gtk/gtk4/settings/color-chooser]
 custom-colors=[(0.41999998688697815, 0.40599998831748962, 0.40599998831748962, 1.0)]
@@ -409,7 +374,7 @@ sort-directories-first=false
 selection-menu-make-link=true
 
 [org/nemo/window-state]
-geometry='1120x633+570+87'
+geometry='1120x633+89+90'
 maximized=false
 sidebar-bookmark-breakpoint=9
 sidebar-width=190
