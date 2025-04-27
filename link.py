@@ -11,13 +11,13 @@ DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles") # path to root of d
 #HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS: list[str] = [
     ".bashrc",
-    ".bash_aliases",
-    ".bash_path",
+    ".bash_profile",
+    ".zshrc",
+    ".zsh_aliases",
+    ".path_source",
     ".gitconfig",
     ".ahk/",
-    ".wezterm.lua",
     "notes/guido.txt",
-    ".idlerc/config-main.cfg",
     ".tmuxp/misc.yaml",
     ".tmuxp/template.yaml",
 
@@ -33,14 +33,13 @@ PATHS: list[str] = [
     ".config/gtk-3.0/gtk.css",
     ".config/vesktop/themes/",
     ".config/flameshot/",
-    ".config/vlc/vlcrc"
-
+    ".config/vlc/vlcrc",
+    ".config/wezterm/",
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
 
     ".local/share/SpeedCrunch/color-schemes/",
     ".local/share/fonts/MonaspaceNeonFrozen",
-    ".local/share/fonts/Verdana",
     ".local/share/mime/"
 ]
 
