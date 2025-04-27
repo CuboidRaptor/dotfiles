@@ -1,5 +1,9 @@
 #!/usr/bin/env dash
 
+dconfdump() {
+    dconf dump / > /home/jason/dotfiles/dconfdump
+}
+
 dconfwatch() {
     while read -r data; do
         case "$data" in
@@ -8,11 +12,13 @@ dconfwatch() {
                 # we filter for slashes as output entries always start with a path in dconf
                 # and acting only on lines that begin with a slash prevents dumping dconf
                 # like 3 times unnecessarily
-                dconf dump / > /home/jason/dotfiles/dconfdump
+                dconfdump
                 ;;
         esac
     done
 }
 
+# run dconfdump once at startup to help ensure better sync
+dconfdump
 dconf watch / | dconfwatch
 zenity --notification --text "Warning: dconfd exited.\nError code of dconfwatch function: $?"
