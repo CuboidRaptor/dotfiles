@@ -1,7 +1,5 @@
 #!/usr/bin/env dash
 
-set -o pipefail
-
 dconfwatch() {
     while read -r data; do
         case "$data" in
@@ -17,4 +15,4 @@ dconfwatch() {
 }
 
 dconf watch / | dconfwatch
-zenity --notification --text "Warning: dconfd exited.\nError code of dconf watch pipe: $?"
+zenity --notification --text "Warning: dconfd exited.\nError code of dconfwatch function: $?"
