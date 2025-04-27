@@ -96,6 +96,7 @@
       nil
       nixfmt-rfc-style
       bash-language-server
+      dash
 
       zip # dev stuff/deps
       unzip
