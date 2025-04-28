@@ -306,6 +306,23 @@ workspace-names=@as []
 [org/gnome/evolution-data-server]
 migrated=true
 
+[org/gnome/file-roller/dialogs/new]
+default-extension='.tar.gz'
+encrypt-header=false
+volume-size=104857
+
+[org/gnome/file-roller/listing]
+list-mode='as-folder'
+name-column-width=63
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
 [org/gtk/gtk4/settings/color-chooser]
 custom-colors=[(0.41999998688697815, 0.40599998831748962, 0.40599998831748962, 1.0)]
 selected-color=(true, 1.0, 1.0, 1.0, 1.0)
@@ -374,7 +391,7 @@ sort-directories-first=false
 selection-menu-make-link=true
 
 [org/nemo/window-state]
-geometry='1120x633+89+90'
+geometry='1120x633+340+202'
 maximized=false
 sidebar-bookmark-breakpoint=9
 sidebar-width=190
