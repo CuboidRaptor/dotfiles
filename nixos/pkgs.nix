@@ -111,6 +111,7 @@
       gh
       git
       tldr
+      ffmpeg
       numlockx
       trash-cli
       imagemagick
