@@ -8,6 +8,6 @@ sudo nixos-rebuild switch --flake "path:///home/$usern/dotfiles/nixos#dregsdesk1
 distrobox create --name dregsbox --init --image registry.opensuse.org/opensuse/distrobox:latest \
     --additional-packages "python3 python3-pipx python3-tk"
 distrobox enter dregsbox -- pipx install bpython
-distrobox enter dregsbox -- "/home/$usern/dotfiles/dbox-setup.sh"
+distrobox enter dregsbox -- "/home/$usern/dotfiles/dbox-setup"
 python3 "$HOME/dotfiles/link.py"
 

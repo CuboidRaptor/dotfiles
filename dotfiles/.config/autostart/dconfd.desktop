@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/jason/dotfiles/scripts/dconfd.sh
+Exec=/home/jason/dotfiles/scripts/dconfd
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false

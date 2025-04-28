@@ -2,7 +2,7 @@
 # cursed bash script that automatically exports every pipx bin
 # *only* run in distroboxes!
 
-set -eo pipefail
+set -o pipefail
 
 # list of pipx things you want to export
 mapfile -t pyapps <<< "$(ls "$HOME/.local/share/pipx/venvs/")"
@@ -14,7 +14,7 @@ mkdir "$dboxpath"
 
 for dir in "${pyapps[@]}"
 do
-    cd "$HOME/.local/share/pipx/venvs/$dir/bin/"
+    cd "$HOME/.local/share/pipx/venvs/$dir/bin/" || return
     # loop over every file in current pipx folder, filter out python/activation scripts
     mapfile -t files <<< "$(ls | grep -v "^activate\|^Activate\|^python[23]\?")"
     for bin in "${files[@]}"
