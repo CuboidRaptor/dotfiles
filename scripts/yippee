@@ -31,6 +31,7 @@ sudo flatpak upgrade -y
 echo "Updating system Nixpkgs..."
 sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
 echo "Garbage collecting Nix..."
+sudo rm /nix/var/nix/gcroots/auto/* # remove auto gcroots
 sudo nh clean all --keep 3 --keep-since 25d
 echo "Optimising Nix store..."
 sudo nix store optimise
