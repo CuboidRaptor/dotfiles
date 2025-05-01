@@ -31,7 +31,7 @@
   environment.systemPackages = with pkgs; [
     reaper
     (yabridge.override {
-      wine = winepinnedpkgs.wineWowPackages.staging;
+      wine = winepinnedpkgs.wineWowPackages.stagingFull;
     })
     yabridgectl
     (pkgs.callPackage ./tx16wx.nix { })
