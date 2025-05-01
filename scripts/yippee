@@ -34,7 +34,7 @@ echo "Garbage collecting Nix..."
 sudo nix-collect-garbage --delete-older-than 25d
 
 echo "Writing to update history file..."
-date >> ~/.local/share/.yippeehistfile
+date >> ~/.local/share/.yippee_history
 
 zenity --notification --text "Yippee: Finished updating.\nAutomatically rebooting in 30 seconds..."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :

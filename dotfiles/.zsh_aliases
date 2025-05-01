@@ -6,7 +6,7 @@ alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
 alias nli="nix-store --query --requisites /run/current-system"
 
 # last time system was upgraded
-alias lasty="cat ~/.local/share/.yippeehistfile | tail -n 3"
+alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 
 # I use this a lot
 alias lg="lazygit"
