@@ -6,8 +6,8 @@ height=476
 width=600
 
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gtk/settings/file-chooser/'
-saved-view='/org/'
+saved-pathbar-path='/org/gnome/desktop/'
+saved-view='/org/gnome/desktop/'
 show-warning=false
 window-height=500
 window-is-maximized=false
@@ -68,7 +68,7 @@ secondary-click-time=1.2
 exec='speedcrunch'
 
 [org/cinnamon/desktop/applications/terminal]
-exec='gnome-terminal'
+exec='/home/jason/dotfiles/scripts/open-wezterm-here'
 exec-arg='--'
 
 [org/cinnamon/desktop/background]
@@ -391,7 +391,7 @@ sort-directories-first=false
 selection-menu-make-link=true
 
 [org/nemo/window-state]
-geometry='1120x633+72+72'
+geometry='1120x633+50+50'
 maximized=false
 sidebar-bookmark-breakpoint=9
 sidebar-width=190
