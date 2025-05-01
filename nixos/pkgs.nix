@@ -107,7 +107,7 @@
       fastfetch
       btop
       tmuxp
-      zenity
+      libnotify
       gh
       git
       tldr

@@ -21,4 +21,4 @@ dconfwatch() {
 # run dconfdump once at startup to help ensure better sync
 dconfdump
 dconf watch / | dconfwatch
-zenity --notification --text "Warning: dconfd exited.\nError code of dconfwatch function: $?"
+notify-send "Warning: dconfd exited." "Error code of dconfwatch function: $?"

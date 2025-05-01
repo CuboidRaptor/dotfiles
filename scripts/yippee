@@ -18,7 +18,7 @@ echo "Updating Zsh plugins..."
 sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
 
 echo "Updating tmux plugins..."
-sudo -u "$usern" zsh -c "~/.tmux/plugins/tpm/bin/update_plugins all"
+sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
 
 echo "Updating Distrobox Zypper..."
 sudo -u "$usern" distrobox enter dregsbox -- sudo zypper dup -y
@@ -37,9 +37,10 @@ echo "Optimising Nix store..."
 sudo nix store optimise
 
 echo "Writing to update history file..."
-date >> ~/.local/share/.yippee_history
+sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
 
-zenity --notification --text "Yippee: Finished updating.\nAutomatically rebooting in 30 seconds..."
+sudo -u "$usern" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$(id -u "$usern")"/bus \
+    notify-send "Yippee: Finished updating." "Automatically rebooting in 30 seconds."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
 echo "Rebooting..."
 sudo systemctl reboot
