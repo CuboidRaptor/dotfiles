@@ -40,7 +40,7 @@ alias imgstrip="mogrify -strip"
 # better fd
 alias fd="fd -u --exclude .git"
 
-function f {
+function c {
     cd "$(fd -t d | fzf --style full --preview "eza -a --color=always --icons=always --group-directories-first -- {}" "$@")"
 }
 
