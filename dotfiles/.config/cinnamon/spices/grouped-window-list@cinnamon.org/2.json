@@ -357,7 +357,7 @@
             "org.gnome.Terminal.desktop"
         ],
         "value": [
-            "firefox-developer-edition.desktop",
+            "firefox-devedition.desktop",
             "org.wezfurlong.wezterm.desktop",
             "nemo.desktop",
             "anki.desktop",

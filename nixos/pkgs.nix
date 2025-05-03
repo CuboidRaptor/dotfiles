@@ -123,7 +123,7 @@
       fd
 
       gparted # apps
-      firefox-devedition-bin
+      firefox-devedition
       sublime4
       (vesktop.override {
         withMiddleClickScroll = true;
