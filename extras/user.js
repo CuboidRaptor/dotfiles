@@ -249,8 +249,8 @@ user_pref("browser.download.useDownloadDir", false);
 // 2 = strict
 user_pref("security.cert_pinning.enforcement_level", 2);
 
-// PREF_CUSTOM: keep browser open when last tab closed
-user_pref("browser.tabs.closeWindowWithLastTab", false);
+// PREF_CUSTOM: don't keep browser open when last tab closed
+user_pref("browser.tabs.closeWindowWithLastTab", true);
 
 // PREF_CUSTOM: Memory/disk optimizations
 user_pref("browser.cache.memory.capacity", 65535);
