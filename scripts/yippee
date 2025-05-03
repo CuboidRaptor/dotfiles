@@ -20,6 +20,9 @@ sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap p
 echo "Updating tmux plugins..."
 sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
 
+echo "Updating Neovim plugins..."
+sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
+
 echo "Updating Distrobox Zypper..."
 sudo -u "$usern" distrobox enter dregsbox -- sudo zypper dup -y
 echo "Updating Distrobox pipx packages..."
