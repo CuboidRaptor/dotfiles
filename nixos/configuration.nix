@@ -101,6 +101,22 @@
   };
   services.displayManager.defaultSession = "cinnamon";
 
+  # set nice limits for performance reasons
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nice";
+      value = "-10";
+    }
+    {
+      domain = "*";
+      type = "hard";
+      item = "nice";
+      value = "-10";
+    }
+  ];
+
   # Enable CUPS to print documents. Also find printers.
   services.printing = {
     enable = true;
