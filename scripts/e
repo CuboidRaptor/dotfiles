@@ -16,6 +16,6 @@ if [ -n "$TMUX" ]; then
             --remote "${abspaths[@]}"
         tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}"
     else
-        echo "No Neovim server found. Run \`nvrws\` in a new window to start one."
+        printf "No Neovim server found. Run \`nvrws\` in a new window to start one."
     fi
 fi

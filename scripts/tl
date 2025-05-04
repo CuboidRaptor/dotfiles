@@ -7,14 +7,14 @@ tmuxsessions="$(tmux ls -F "#{session_name}")
 " || tmuxsessions="" # (extra newline added here so it only gets added when it's non-empty)
 
 # merge tmux and tmuxp lists to get all available sessions
-chosen="$(echo -e "${tmuxsessions}$(tmuxp ls)" | sort -u)"
+chosen="$(printf "%s" "${tmuxsessions}$(tmuxp ls)" | sort -u)"
 display=()
 
 # add an (inactive) to all inactive session/all session only loaded in tmuxp
 tmuxsessions="$(tmux ls -F "#{session_name}")
 " || tmuxsessions="" # check the list of tmux sessions again, because I can
 while IFS= read -r line || [ -n "$line" ]; do
-    if echo "$tmuxsessions" | grep -q "$line" ; then
+    if printf "%s" "$tmuxsessions" | grep -q "$line" ; then
         display+=("$line")
     else
         display+=("$line (inactive)")

@@ -4,4 +4,4 @@
 
 set -o pipefail
 gpick -so | tail -n1 | tr -d "\n" | tr "[:upper:]" "[:lower:]" | xclip -i -sel clip
-echo "Copied color"
+printf "Copied color"

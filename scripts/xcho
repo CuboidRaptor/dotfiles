@@ -13,5 +13,5 @@ text="
                                                                              "
 
 clear
-echo -e "$text"
+printf "%s" "$text"
 read -rn1
