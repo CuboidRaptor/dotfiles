@@ -1,7 +1,7 @@
 #!/usr/bin/env dash
 
 dconfdump() {
-    dconf dump / > /home/jason/dotfiles/dconfdump
+    dconf dump / > /home/jason/dotfiles/dconf.ini
 }
 
 dconfwatch() {
