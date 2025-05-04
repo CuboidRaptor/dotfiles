@@ -115,6 +115,7 @@
       numlockx
       trash-cli
       imagemagick
+      p7zip
       xmousepasteblock
       http-server
       xclip
