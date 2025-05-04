@@ -8,6 +8,8 @@ alias nli="nix-store --query --requisites /run/current-system"
 # last time system was upgraded
 alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 
+alias dreset="git checkout -- dconf.ini && dconf load / < dconf.ini"
+
 # I use this a lot
 alias lg="lazygit"
 
