@@ -71,9 +71,6 @@ HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY \
     NO_INC_APPEND_HISTORY INC_APPEND_HISTORY_TIME NO_SHARE_HISTORY
 
-# enable color support of ls and also add handy aliases
-test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # set some aliases
