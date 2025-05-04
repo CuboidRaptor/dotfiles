@@ -1,5 +1,6 @@
 session_name: misc
 start_directory: $HOME
+suppress_history: false
 windows:
 - panes:
   - focus: "true"
