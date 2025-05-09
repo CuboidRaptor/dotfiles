@@ -63,6 +63,10 @@
     "openssl-1.1.1w"
   ];
 
+  # cursed hack to fix firefox dev
+  environment.sessionVariables = {
+    MOZ_APP_REMOTINGNAME = "firefox-devedition";
+  };
   environment.systemPackages =
     let
       # NixLDWrapper code from bvngee https://bvngee.com/blogs/using-python-virtualenvs-in-nixos
