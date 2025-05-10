@@ -26,12 +26,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     name = "tx16wx-software-sampler-${version}-amd64.deb";
-    # make it shorter cuz I don't like long lines
-    url = lib.concatStrings [
-      "https://www.tx16wx.com/download/"
-      "tx16wx-software-sampler-3-linux-x64-debian-2/"
-      "?wpdmdl=19516&refresh=680e7e1227cc11745780242"
-    ];
+    url = "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-debian-2/?wpdmdl=19516&refresh=680e7e1227cc11745780242";
     hash = "sha256-Lddcc84SnJOc7OIZX66OrBcA6r39/s2zLjkSYG/UER8=";
   };
 
@@ -94,6 +89,7 @@ stdenv.mkDerivation rec {
   meta = {
     description = "A sampler plug-in for the creative musician";
     homepage = "https://www.tx16wx.com";
+    platforms = [ "x86_64-linux" ];
     #license = lib.licenses.;
     #maintainers = with lib.maintainers; [  ];
   };
