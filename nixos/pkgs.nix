@@ -47,6 +47,7 @@
     gvfs.enable = true; # for trash-cli
     flatpak = {
       enable = true;
+      uninstallUnmanaged = true;
       packages = [
         # requires nix-flatpak flake
         "io.github.everestapi.Olympus"
