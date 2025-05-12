@@ -61,7 +61,7 @@
       domain = "@audio";
       item = "nofile";
       type = "hard";
-      value = "524288"; # higher limit for esync as well as audio
+      value = "524288"; # higher limit for esync
     }
   ];
   # set more rules for less latency
