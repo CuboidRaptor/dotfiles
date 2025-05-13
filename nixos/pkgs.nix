@@ -131,9 +131,7 @@
       gparted # apps
       firefox-devedition
       sublime4
-      (vesktop.override {
-        withMiddleClickScroll = true;
-      })
+      vesktop
       speedcrunch
       anki
       flameshot
@@ -141,11 +139,7 @@
       obs-studio
       wineWowPackages.staging
       winetricks
-      (vivaldi.overrideAttrs (oldAttrs: {
-        dontWrapQtApps = false;
-        dontPatchELF = true;
-        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
-      }))
+      vivaldi
       vivaldi-ffmpeg-codecs
       remmina
       pavucontrol
@@ -162,7 +156,6 @@
       yt-dlg
       musescore
       audacity
-      dl-librescore
 
       (prismlauncher.override {
         # games and stuff
