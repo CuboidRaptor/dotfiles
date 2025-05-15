@@ -25,6 +25,9 @@ alias l="eza -a --color=always --icons=always --group-directories-first"
 # add color to ls
 alias ls="ls --color=auto"
 
+# make tree show hiddens and ignore .git
+alias tree="tree -a -I '.git'"
+
 alias retrack="git rm -r --cached . && git add ."
 
 # show sizes in MB

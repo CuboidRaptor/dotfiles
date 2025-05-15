@@ -113,6 +113,7 @@
       btop
       tmuxp
       libnotify
+      tree
       gh
       git
       tldr
