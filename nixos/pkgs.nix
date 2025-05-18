@@ -131,6 +131,7 @@
 
       gparted # apps
       firefox-devedition
+      ungoogled-chromium
       sublime4
       vesktop
       speedcrunch
