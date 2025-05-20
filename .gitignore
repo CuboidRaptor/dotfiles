@@ -3,6 +3,7 @@
 
 # I do dumb stuff in here
 test/
+test
 test.sh
 
 # distrobox bin exports that should just be regenerated for every install
