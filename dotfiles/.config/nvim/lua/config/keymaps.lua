@@ -15,9 +15,22 @@ map("v", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 -- space key inserts space in normal mode
 map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
 
--- stay on current word when * searching
-map("n", "*", "*``", { desc = "Search current word or selection" })
-map("v", "*", "y/\\V<C-r>=escape(@\",'/\\')<CR><CR>``", { desc = "Search current word or selection" })
+-- stay on current word when searching (but with ,s instead of *)
+vim.keymap.set("n", ",s", function()
+    vim.fn.setreg("/", [[\V\<]] .. vim.fn.escape(vim.fn.expand("<cword>"), [[/\]]) .. [[\>]])
+    vim.fn.histadd("/", vim.fn.getreg("/"))
+    vim.o.hlsearch = true
+end)
+vim.keymap.set("v", ",s", function()
+    local old_reg = vim.fn.getreg('"')
+    local old_regtype = vim.fn.getregtype("\'")
+    vim.cmd([[noau normal! ""y]])
+    vim.fn.setreg("/", [[\V]]
+        .. vim.fn.substitute(vim.fn.escape(vim.fn.getreg('"'), [[/\]]), [[\_s\+]], [[\\_s\\+]], "g"))
+    vim.fn.histadd("/", vim.fn.getreg("/"))
+    vim.o.hlsearch = true
+    vim.fn.setreg('"', old_reg, old_regtype)
+end)
 
 -- allow Esc in terminal mode
 map("t", "<Esc>", "<C-\\><C-n>", { remap = true, desc = "Escape in Terminal Mode" })
