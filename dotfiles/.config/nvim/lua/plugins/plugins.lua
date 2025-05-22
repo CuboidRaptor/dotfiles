@@ -41,7 +41,9 @@ return {
     {
         "norcalli/nvim-colorizer.lua"
     },
-    { "nmac427/guess-indent.nvim" },
+    {
+        "nmac427/guess-indent.nvim"
+    },
     {
         "folke/noice.nvim",
         opts = {
