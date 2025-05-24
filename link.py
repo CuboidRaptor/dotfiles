@@ -50,7 +50,7 @@ def slink(name: str) -> None:
     isdir: bool = name.endswith("/")
     symlink_to(fpath, DOTFILEPATH.joinpath(name), isdir)
 
-def symlink_to(src: Path, tgt: Path, target_is_directory:bool=False) -> None:
+def symlink_to(src: Path, tgt: Path, target_is_directory: bool = False) -> None:
     try:
         src.symlink_to(tgt, target_is_directory=target_is_directory)
 
