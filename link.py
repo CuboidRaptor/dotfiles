@@ -9,7 +9,7 @@ from pathlib import Path
 HOMETARGET: Path = Path("~" + os.getlogin()).expanduser()
 DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles") # path to root of dotfiles
 #HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
-PATHS: list[str] = [
+PATHS = [
     ".bashrc",
     ".bash_profile",
     ".zshrc",
@@ -47,7 +47,7 @@ def slink(name: str) -> None:
     global HOMETARGET, DOTFILEPATH
     fpath: Path = HOMETARGET.joinpath(name)
     fpath.parent.mkdir(parents=True, exist_ok=True)
-    isdir: bool = name.endswith("/")
+    isdir = name.endswith("/")
     symlink_to(fpath, DOTFILEPATH.joinpath(name), isdir)
 
 def symlink_to(src: Path, tgt: Path, target_is_directory: bool = False) -> None:
@@ -74,7 +74,7 @@ if __name__ == "__main__":
         # we don't need sudo anymore because nix manages keyd
         pass
 
-    confirm: str = input(
+    confirm = input(
         "This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] "
     ).lower()[:1]
     if confirm != "y":
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     if ffpath.is_dir():
         found_dev: bool = False
         for folder in ffpath.iterdir():
-            dname: str = str(folder.name)
+            dname = str(folder.name)
             if dname.endswith(".default-release") or dname.endswith(".dev-edition-default"):
                 if dname.endswith(".dev-edition-default"):
                     found_dev = True
