@@ -15,6 +15,8 @@ COLORS = [
 ROWS = 2
 COLS = 3
 FONTNAME = "Ubuntu"
+TEXTCOLOR = "#cdd6f4"
+SURFACE0 = "#313244"
 
 def rcindex(r: int, c: int) -> int:
     # based on a row/col number, generate a unique index
@@ -47,11 +49,12 @@ if __name__ == "__main__":
     root.geometry("400x300+50+50")
     root.wm_attributes("-type", "splash")
     root.wm_attributes("-topmost", True)
+    root.configure(background=SURFACE0)
 
-    top_text = tk.Label(root, text="touch grass", font=(FONTNAME, 24))
+    top_text = tk.Label(root, text="touch grass", font=(FONTNAME, 24), fg=TEXTCOLOR, bg=SURFACE0)
     top_text.pack()
 
-    button_frame = tk.Frame(root)
+    button_frame = tk.Frame(root, bg=SURFACE0)
     button_frame.pack()
 
     # make all ze buttons
@@ -66,9 +69,10 @@ if __name__ == "__main__":
                 bg="#11111b",
                 command=(lambda x=colors3[ind][0]: clicked(x))
             )
+            b.configure(state="normal", relief="raised", bg="#11111b")
             b.grid(row=r+1, column=c+1)
 
-    status = tk.Label(root, font=(FONTNAME, 14))
+    status = tk.Label(root, font=(FONTNAME, 14), fg=TEXTCOLOR, bg=SURFACE0)
     status.pack()
 
     root.mainloop()
