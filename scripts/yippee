@@ -8,42 +8,48 @@ if [ "$EUID" != 0 ]; then
     exit $?
 fi
 
-# printf!
-printf "\033[1m\033[7mStarting system updates...\033[0m"
+function msg {
+    main_string="$1"
+    shift
+    printf "\033[1m\033[7m$main_string\033[0m\n" "$@"
+}
+
+# msg!
+msg "Starting system updates..."
 
 usern="$(logname)"
-printf "Detected username: %s" "$usern"
+msg "Detected username: %s" "$usern"
 
-printf "Updating system Nixpkgs..."
+msg "Updating system Nixpkgs..."
 sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
-printf "Garbage collecting Nix..."
+msg "Garbage collecting Nix..."
 sudo nh clean all --keep 3 --keep-since 25d
-printf "Optimising Nix store..."
+msg "Optimising Nix store..."
 sudo nix store optimise
 
-printf "Updating Flatpak apps..."
+msg "Updating Flatpak apps..."
 sudo flatpak upgrade -y
 
-printf "Updating Distrobox Zypper..."
+msg "Updating Distrobox Zypper..."
 sudo -u "$usern" distrobox enter dregsbox -- sudo zypper dup -y
-printf "Updating Distrobox pipx packages..."
+msg "Updating Distrobox pipx packages..."
 sudo -u "$usern" distrobox enter dregsbox -- pipx upgrade-all
 
-printf "Updating Neovim plugins..."
+msg "Updating Neovim plugins..."
 sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
 
-printf "Updating Zsh plugins..."
+msg "Updating Zsh plugins..."
 sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
 
-printf "Updating tmux plugins..."
+msg "Updating tmux plugins..."
 sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
 
-printf "Writing to update history file..."
+msg "Writing to update history file..."
 sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
 
 sudo -u "$usern" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$(id -u "$usern")"/bus \
     notify-send "Yippee: Finished updating." "Automatically rebooting in 30 seconds."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
-printf "Rebooting..."
+msg "Rebooting..."
 sudo systemctl reboot
 
