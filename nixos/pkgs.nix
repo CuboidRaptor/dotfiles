@@ -136,6 +136,7 @@
       vesktop
       speedcrunch
       anki
+      obsidian
       flameshot
       vlc
       obs-studio
