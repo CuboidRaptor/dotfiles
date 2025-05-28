@@ -80,7 +80,7 @@
       # be generally ok though
       makeNixLDWrapper =
         program:
-        (pkgs.runCommand "${program.pname}-nix-ld-wrapped" { } ''
+        (pkgs.runCommand "${program.name}-nix-ld-wrapped" { } ''
           mkdir -p $out/bin
           for file in ${program}/bin/*; do
             new_file=$out/bin/$(basename $file)
@@ -94,7 +94,14 @@
     (with pkgs; [
       jdk # programming languages stuff
       gcc
-      (makeNixLDWrapper python313Full)
+      (makeNixLDWrapper (
+        python313.withPackages (
+          _pkgs: with _pkgs; [
+            tkinter
+            pyside6
+          ]
+        )
+      ))
       nodejs
       clang-tools
       clang
