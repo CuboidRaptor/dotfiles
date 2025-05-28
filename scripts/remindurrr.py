@@ -67,6 +67,8 @@ if __name__ == "__main__":
                 font=(FONTNAME, 14),
                 fg=colors3[ind][0],
                 bg="#11111b",
+                highlightthickness=0,
+                borderwidth=0,
                 command=(lambda x=colors3[ind][0]: clicked(x))
             )
             b.configure(state="normal", relief="raised", bg="#11111b")
