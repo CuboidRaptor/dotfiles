@@ -1,0 +1,6 @@
+[Nemo Action]
+Name=Touch
+Exec=touch %F
+Icon-Name=configure
+Selection=any
+Extensions=any;

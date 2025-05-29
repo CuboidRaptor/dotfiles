@@ -40,7 +40,8 @@ PATHS = [
 
     ".local/share/SpeedCrunch/color-schemes/",
     ".local/share/fonts/MonaspaceNeonFrozen",
-    ".local/share/mime/"
+    ".local/share/mime/",
+    ".local/share/nemo/actions/"
 ]
 
 def slink(name: str) -> None:
