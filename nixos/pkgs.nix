@@ -24,6 +24,7 @@
     nh.enable = true; # nix helper installation/config!
     zoxide.enable = true;
     zsh.enable = true;
+    gamemode.enable = true;
   };
 
   ## fuck me does this cause problems
@@ -138,7 +139,6 @@
 
       gparted # apps
       firefox-devedition
-      ungoogled-chromium
       sublime4
       vesktop
       speedcrunch
@@ -155,7 +155,6 @@
         nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ pkgs.kdePackages.wrapQtAppsHook ];
       }))
       vivaldi-ffmpeg-codecs
-      remmina
       pavucontrol
       wezterm
       librewolf
@@ -182,9 +181,7 @@
       mindustry
       owmods-gui
       ckan
-      gamemode
       lutris
-      umu-launcher
 
       # theming stuff
       catppuccin-cursors.mochaDark
