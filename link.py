@@ -39,7 +39,7 @@ PATHS = [
     ".config/mimeapps.list",
 
     ".local/share/SpeedCrunch/color-schemes/",
-    ".local/share/fonts/MonaspaceNeonFrozen",
+    ".local/share/fonts/MonaspaceNeonFrozen/",
     ".local/share/mime/",
     ".local/share/nemo/actions/"
 ]
