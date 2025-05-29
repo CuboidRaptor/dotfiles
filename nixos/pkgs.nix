@@ -169,7 +169,6 @@
       yt-dlg
       musescore
       audacity
-      (pkgs.callPackage ./app-librescore.nix { })
 
       (prismlauncher.override {
         # games and stuff
