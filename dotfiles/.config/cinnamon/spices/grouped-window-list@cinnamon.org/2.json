@@ -361,6 +361,7 @@
             "org.wezfurlong.wezterm.desktop",
             "nemo.desktop",
             "anki.desktop",
+            "obsidian.desktop",
             "cockos-reaper.desktop",
             "vesktop.desktop",
             "sublime_text.desktop",
