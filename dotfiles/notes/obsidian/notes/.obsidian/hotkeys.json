@@ -19,10 +19,10 @@
   "omnisearch:show-modal": [
     {
       "modifiers": [
-        "Alt",
         "Mod"
       ],
-      "key": "F"
+      "key": "O"
     }
-  ]
+  ],
+  "switcher:open": []
 }
