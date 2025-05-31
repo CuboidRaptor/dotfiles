@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Calculus.md",
+                "file": "Music.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Calculus"
+              "title": "Music"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calculus.md",
+                "file": "Music.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Calculus"
+              "title": "Backlinks for Music"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calculus.md",
+                "file": "Music.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Calculus"
+              "title": "Outgoing links from Music"
             }
           },
           {
@@ -171,6 +171,7 @@
   "active": "257fbf50e8dbb308",
   "lastOpenFiles": [
     "Root.md",
+    "Music.md",
     "Calculus.md",
     "Physics.md",
     "Untitled.md",
