@@ -1,4 +1,0 @@
-- [[Cpp]]
-- [[Calculus]]
-- [[Physics]]
-- [[Music]]
