@@ -142,7 +142,6 @@
       sublime4
       vesktop
       speedcrunch
-      anki
       obsidian
       flameshot
       vlc
