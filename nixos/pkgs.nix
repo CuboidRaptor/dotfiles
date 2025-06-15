@@ -131,6 +131,7 @@
       imagemagick
       p7zip
       xmousepasteblock
+      poppler-utils
       http-server
       xclip
       fzf
