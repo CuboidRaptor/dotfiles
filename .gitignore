@@ -11,3 +11,7 @@ dboxexports/
 
 # Hardware specific nix stuff
 hardware-configuration.nix
+
+# personal backup and script thing
+backup
+backup.tar.xz
