@@ -4,6 +4,7 @@
 
 {
   pkgs,
+  lib,
   ...
 }:
 
@@ -98,6 +99,9 @@
     desktopManager.cinnamon.enable = true;
   };
   services.displayManager.defaultSession = "cinnamon";
+
+  # cursed distrobox.selinux hack
+  security.lsm = lib.mkForce [ ];
 
   # set nice limits for performance reasons
   security.pam.loginLimits = [
