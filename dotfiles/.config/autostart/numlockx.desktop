@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=numlockx on
-X-GNOME-Autostart-enabled=true
-NoDisplay=false
-Hidden=false
-Name[en_CA]=numlockx
-Comment[en_CA]=No description
-X-GNOME-Autostart-Delay=3
