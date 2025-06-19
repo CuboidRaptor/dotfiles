@@ -40,7 +40,7 @@
     networkmanager.dns = "none";
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
 
   # noatime
   fileSystems."/".options = [ "noatime" ];
