@@ -183,7 +183,6 @@
       lutris
 
       # theming stuff
-      catppuccin-cursors.mochaDark
       (catppuccin-papirus-folders.override {
         flavor = "latte";
         accent = "maroon";
