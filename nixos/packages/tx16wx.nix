@@ -1,8 +1,8 @@
 {
   stdenv,
-  lib,
   fetchurl,
   dpkg,
+  autoPatchelfHook,
 
   glib,
   glibc,
@@ -20,18 +20,18 @@
   libxml2,
 }:
 
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "tx16wx";
   version = "3.7.0h";
 
   src = fetchurl {
-    name = "tx16wx-software-sampler-${version}-amd64.deb";
     url = "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-debian-2/?wpdmdl=19516";
     hash = "sha256-Dj6G5hSkc+ZTACbCiKB9vW+Y1eqRh9ErC7JmQ1Pr+B0=";
   };
 
   nativeBuildInputs = [
     dpkg
+    autoPatchelfHook
   ];
 
   buildInputs = [
@@ -69,21 +69,9 @@ stdenv.mkDerivation rec {
     runHook preInstall
 
     mkdir -p $out
-    mv ./usr/lib $out/lib
-    mv ./usr/share $out/share
+    cp -r ./usr/* $out
 
     runHook postInstall
-  '';
-
-  # patch the binaries so they find their libs
-  postFixup = ''
-    for file in \
-      $out/lib/vst/TX16Wx.vst.so \
-      $out/lib/vst3/TX16Wx.vst3/Contents/x86_64-linux/TX16Wx.so \
-      $out/lib/clap/TX16Wx.clap
-    do
-      patchelf --set-rpath "${lib.makeLibraryPath buildInputs}" $file
-    done
   '';
 
   meta = {
