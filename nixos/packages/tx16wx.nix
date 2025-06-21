@@ -22,12 +22,12 @@
 
 stdenv.mkDerivation rec {
   pname = "tx16wx";
-  version = "3.7.0j";
+  version = "3.7.0h";
 
   src = fetchurl {
     name = "tx16wx-software-sampler-${version}-amd64.deb";
     url = "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-debian-2/?wpdmdl=19516";
-    hash = "sha256-Wza3x1SJq4+5S/E23Q2fgaEt0bbAqtvv3FmZuRElUgk=";
+    hash = "sha256-Dj6G5hSkc+ZTACbCiKB9vW+Y1eqRh9ErC7JmQ1Pr+B0=";
   };
 
   nativeBuildInputs = [
