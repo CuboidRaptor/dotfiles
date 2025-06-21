@@ -166,7 +166,7 @@
       libreoffice
       shotcut
       yt-dlg
-      musescore
+      (pkgs.callPackage ./packages/musescore.nix { })
       audacity
 
       (prismlauncher.override {
