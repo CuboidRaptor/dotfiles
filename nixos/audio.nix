@@ -34,7 +34,7 @@
       wine = winepinnedpkgs.wineWowPackages.stagingFull;
     })
     yabridgectl
-    (pkgs.callPackage ./tx16wx.nix { })
+    (pkgs.callPackage ./packages/tx16wx.nix { })
   ];
 
   # set memlock and other stuff for realtime with vst plugins
