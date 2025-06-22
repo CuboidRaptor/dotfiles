@@ -182,42 +182,7 @@
       ckan
       lutris
 
-      # theming stuff
-      (catppuccin-papirus-folders.override {
-        flavor = "latte";
-        accent = "maroon";
-      })
-      (mint-themes.overrideAttrs (oldAttrs: {
-        # patch accent color to catppuccin mauve
-        postInstall =
-          (oldAttrs.postInstall or "")
-          + ''
-            cp -r "$out/share/themes/Mint-Y-Red" "$out/share/themes/Mint-Y-Maroon-Catppuccin"
-            cp -r "$out/share/themes/Mint-Y-Dark-Red" "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin"
-
-            function subcolor {
-              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "#e82127" "#e64553"
-              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "#E82127" "#E64553"
-              substituteInPlace "$out/share/themes/Mint-Y-Maroon-Catppuccin/$1" --replace "rgba(232, 33, 39" "rgba(230, 69, 83"
-
-              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "#e82127" "#eba0ac"
-              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "#E82127" "#EBA0AC"
-              substituteInPlace "$out/share/themes/Mint-Y-Dark-Maroon-Catppuccin/$1" --replace "rgba(232, 33, 39" "rgba(235, 160, 172"
-            }
-
-            subcolor "cinnamon/cinnamon.css"
-            subcolor "gtk-2.0/apps.rc"
-            subcolor "gtk-2.0/gtkrc"
-            subcolor "gtk-2.0/main.rc"
-            subcolor "gtk-2.0/menubar-toolbar.rc"
-            subcolor "gtk-2.0/menubar-toolbar-dark.rc"
-            subcolor "gtk-2.0/panel.rc"
-            subcolor "gtk-3.0/gtk.css"
-            subcolor "gtk-3.0/gtk-dark.css"
-            subcolor "gtk-4.0/gtk.css"
-            subcolor "gtk-4.0/gtk-dark.css"
-          '';
-      }))
+      papirus-icon-theme # theme
     ]);
 
   environment.variables = {
