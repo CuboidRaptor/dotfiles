@@ -2,7 +2,7 @@
   stdenv,
   fetchurl,
   dpkg,
-  autoPatchelfHook,
+  lib,
 
   glib,
   glibc,
@@ -20,7 +20,7 @@
   libxml2,
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   pname = "tx16wx";
   version = "3.7.0h";
 
@@ -31,7 +31,6 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [
     dpkg
-    autoPatchelfHook
   ];
 
   buildInputs = [
@@ -72,6 +71,17 @@ stdenv.mkDerivation {
     cp -r ./usr/* $out
 
     runHook postInstall
+  '';
+
+  # patch the binaries so they find their libs
+  postFixup = ''
+    for file in \
+      $out/lib/vst/TX16Wx.vst.so \
+      $out/lib/vst3/TX16Wx.vst3/Contents/x86_64-linux/TX16Wx.so \
+      $out/lib/clap/TX16Wx.clap
+    do
+      patchelf --set-rpath "${lib.makeLibraryPath buildInputs}" $file
+    done
   '';
 
   meta = {
