@@ -27,11 +27,11 @@ PATHS = [
     ".config/btop/btop.conf",
     ".config/btop/themes/",
     ".config/bat/",
-    ".config/obs-studio/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
-    ".config/gtk-3.0/gtk.css",
     ".config/vesktop/themes/",
+    ".config/nixpkgs/config.nix",
+    ".config/autostart/"
     ".config/flameshot/",
     ".config/vlc/vlcrc",
     ".config/wezterm/",
