@@ -8,6 +8,7 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- don't auto comment because it's annoying
+-- (this option is already set in options.lua but we reset it at every buffer because it gets overwritten)
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     callback = function()
@@ -15,6 +16,7 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- same thing, constantly reset system clipboard sync option
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     callback = function()
