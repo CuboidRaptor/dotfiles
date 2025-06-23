@@ -20,7 +20,6 @@
         settings = {
           main = {
             capslock = "esc";
-            rightalt = "overload(alt, f5)"; # rAlt is alt but only when held
             pageup = "home";
             pagedown = "end";
             home = "pageup";
@@ -30,6 +29,7 @@
           nump = {
             # numpad!
             capslock = "capslock"; # esc caps enables caps (why not)
+            "1" = "f5";
 
             comma = "kp0";
             dot = "kpdot";
