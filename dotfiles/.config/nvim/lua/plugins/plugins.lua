@@ -45,14 +45,6 @@ return {
         "nmac427/guess-indent.nvim"
     },
     {
-        "mason-org/mason.nvim",
-        version = "^1.0.0" -- pin mason to v1 otherwisde lazyvim breaks (LazyVim/LazyVim #6039)
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        version = "^1.0.0"
-    },
-    {
         "folke/noice.nvim",
         opts = {
             lsp = {
