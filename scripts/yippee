@@ -44,6 +44,10 @@ sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap p
 msg "Updating tmux plugins..."
 sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
 
+msg "Emptying trashes..."
+sudo -u "$usern" trash-empty 60 -f
+sudo trash-empty 60 -f
+
 msg "Writing to update history file..."
 sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
 
