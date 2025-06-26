@@ -12,6 +12,7 @@ return {
     },
     {
         "Saghen/blink.cmp",
+        tag = "v1.3.1", -- super-tab lazyvim currently causes issues, check LazyVim/LazyVim issue #6185
         opts = {
             completion = {
                 list = {
