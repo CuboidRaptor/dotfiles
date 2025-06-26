@@ -11,8 +11,7 @@ return {
         }
     },
     {
-        "saghen/blink.cmp",
-        version = "*",
+        "Saghen/blink.cmp",
         opts = {
             completion = {
                 list = {
@@ -42,7 +41,7 @@ return {
         "norcalli/nvim-colorizer.lua"
     },
     {
-        "nmac427/guess-indent.nvim"
+        "NMAC427/guess-indent.nvim"
     },
     {
         "folke/noice.nvim",
@@ -55,7 +54,7 @@ return {
         }
     },
     {
-        'windwp/nvim-autopairs',
+        "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = true
         -- use opts = {} for passing setup options
