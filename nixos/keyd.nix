@@ -30,6 +30,7 @@
             # numpad!
             capslock = "capslock"; # esc caps enables caps (why not)
             "1" = "f5";
+            "2" = "macro(up C-a delete enter enter)";
 
             comma = "kp0";
             dot = "kpdot";
