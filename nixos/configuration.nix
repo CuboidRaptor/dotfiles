@@ -39,8 +39,8 @@
     networkmanager.dns = "none";
   };
 
-  # use kernel 6.14 because it has in kernel drivers for my wifi
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  # use kernel 6.14+ because it has in kernel drivers for my wifi
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # noatime
   fileSystems."/".options = [ "noatime" ];
