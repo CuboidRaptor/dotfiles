@@ -1,7 +1,7 @@
 {
 	"dark_theme": "Default Dark.sublime-theme",
 	"light_theme": "Default.sublime-theme",
-	"theme": "Default Dark.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
 	"font_face": "Monaspace Neon Frozen",
 	"font_size": 11,
