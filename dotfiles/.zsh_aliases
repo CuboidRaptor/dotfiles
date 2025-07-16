@@ -1,9 +1,16 @@
-# rebuild and switch using nh
-FLAKEPATH="path:///home/jason/dotfiles/nixos"
-alias nsw="sudo nh os switch \"$FLAKEPATH\" -R"
-alias nbt="sudo nh os boot \"$FLAKEPATH\" -R"
-alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
-alias nli="nix-store --query --requisites /run/current-system"
+# dnf aliases, I'm lazy
+alias sdi="sudo dnf install"
+alias sdr="sudo dnf remove"
+alias dse="dnf search"
+alias dli="dnf list --installed"
+alias dlim="dnf repoquery --userinstalled"
+
+## rebuild and switch using nh
+#FLAKEPATH="path:///home/jason/dotfiles/nixos"
+#alias nsw="sudo nh os switch \"$FLAKEPATH\" -R"
+#alias nbt="sudo nh os boot \"$FLAKEPATH\" -R"
+#alias nsetboot="sudo /run/current-system/bin/switch-to-configuration boot"
+#alias nli="nix-store --query --requisites /run/current-system"
 
 # nix stuff
 alias nix-alien="nix run \"github:thiagokokada/nix-alien#nix-alien\""
