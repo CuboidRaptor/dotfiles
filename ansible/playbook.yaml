@@ -1,0 +1,26 @@
+- name: Default playbook
+  tasks:
+    - name: Install packages
+      ansible.builtin.dnf:
+        name:
+          - python3-pip
+          - distrobox
+        state: present
+
+    - name: Remove packages
+      ansible.builtin.dnf:
+        name:
+          - 
+        state: absent
+
+    - name: Install pip packages
+      ansible.builtin.pip:
+        name:
+          - ansible
+        state: present
+
+    - name: Remove pip packages
+      ansible.builtin.pip:
+        name:
+          - 
+        state: absent
