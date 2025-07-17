@@ -1,5 +1,17 @@
 - name: Default playbook
   tasks:
+    - name: Import RPM GPG keys
+      ansible.builtin.rpm_key:
+        key:
+          - 'https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
+        state: present
+
+    - name: Add Sublime Text repos
+      ansible.builtin.yum_repository:
+        name: sublime_text
+        description: Sublime Text 4 repo
+        baseurl: 'https://download.sublimetext.com/rpm/stable/x86_64'
+
     - name: Enable Copr repos
       community.general.copr:
         name:
@@ -14,7 +26,7 @@
         state: absent
 
     - name: Install packages
-      ansible.builtin.dnf:
+      ansible.builtin.dnf5:
         name:
           - python3-pip
           - distrobox
@@ -33,6 +45,8 @@
       community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
+          - md.obsidian.Obsidian
+          - fm.reaper.Reaper
         state: present
 
     - name: Remove flatpaks
