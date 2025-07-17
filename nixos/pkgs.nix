@@ -163,6 +163,7 @@
       gpick
       dconf-editor
       distrobox
+      zoom-us
       libreoffice
       shotcut
       yt-dlg
