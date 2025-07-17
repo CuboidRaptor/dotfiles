@@ -1,14 +1,42 @@
 - name: Default playbook
   tasks:
+    - name: Enable Copr repos
+      community.general.copr:
+        name:
+          - the4runner/firefox-dev
+          - wezfurlong/wezterm-nightly
+        state: enabled
+
+    - name: Remove Copr repos
+      community.general.copr:
+        name:
+          - 
+        state: absent
+
     - name: Install packages
       ansible.builtin.dnf:
         name:
           - python3-pip
           - distrobox
+          - firefox-dev # Copr
+          - wezterm # Copr
+          - 'https://vencord.dev/download/vesktop/amd64/rpm'
         state: present
 
     - name: Remove packages
       ansible.builtin.dnf:
+        name:
+          - 
+        state: absent
+
+    - name: Install flatpaks
+      community.general.flatpak:
+        name:
+          - com.github.tchx84.Flatseal
+        state: present
+
+    - name: Remove flatpaks
+      community.general.flatpak:
         name:
           - 
         state: absent
