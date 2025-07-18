@@ -6,11 +6,10 @@
           - 'https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
         state: present
 
-    - name: Add Sublime Text repos
-      ansible.builtin.yum_repository:
-        name: sublime_text
-        description: Sublime Text 4 repo
-        baseurl: 'https://download.sublimetext.com/rpm/stable/x86_64'
+    #- name: Add Sublime Text 4 Stable repo
+    #  ansible.builtin.command:
+    #    cmd: dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+    #    creates: /etc/ # run the above command to figure out where .repos are stored
 
     - name: Enable Copr repos
       community.general.copr:
