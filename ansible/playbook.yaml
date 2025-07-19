@@ -1,13 +1,23 @@
 - name: Default playbook
   hosts: all
   become: true
+  #become_user: jason
   tasks:
-    - name: Set Fedora Release Version Number
+    - name: Set Fedora Release Version Number Variable
       ansible.builtin.command:
         cmd: rpm -E %fedora
       register: fedora_release_number
+      changed_when: false
     - ansible.builtin.set_fact:
         fedora_release_number: "{{ fedora_release_number.stdout }}"
+
+    - name: Set Username Variable
+      ansible.builtin.command:
+        cmd: logname
+      register: usern
+      changed_when: false
+    - ansible.builtin.set_fact:
+        usern: "{{ usern.stdout }}"
 
     - name: Download and Add RPM Fusion GPG keys and repos
       ansible.builtin.dnf:
@@ -55,7 +65,7 @@
         name: peterwu/rendezvous
         state: enabled
 
-    - name: Enable keyd repo
+    - name: Enable keyd Copr repo
       community.general.copr:
         name: alternateved/keyd
         state: enabled
@@ -75,6 +85,9 @@
 
           # language stuff/deps
           - python3-tkinter
+          - python3-bpython
+          - rust
+          - cargo
 
           # cmdline stuff
           - distrobox
@@ -82,12 +95,13 @@
           - gh
           - zsh
           - tmux
-          - python-tmuxp
+          - python3-tmuxp
           - lazygit # Copr
           - neovim
           - fzf
           - zoxide
-          - keyd
+          - keyd # Copr
+          - trash-cli
 
           # apps
           - firefox-dev # Copr
@@ -100,13 +114,14 @@
 
           # theming
           - papirus-icon-theme
-          - bibata-cursor-themes
+          - bibata-cursor-themes # Copr
 
     - name: Add flathub flatpak repo
       community.general.flatpak_remote:
         name: flathub
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
         method: user
+      become_user: "{{ usern }}"
 
     - name: Install flatpaks
       community.general.flatpak:
@@ -115,6 +130,13 @@
           - md.obsidian.Obsidian
           - fm.reaper.Reaper
         method: user
+      become_user: "{{ usern }}"
+
+    - name: Install cargo packages
+      community.general.cargo:
+        name:
+          - eza
+      become_user: "{{ usern }}"
 
     - name: Copying keyd config
       ansible.builtin.file: # create necessary config folder
@@ -133,4 +155,4 @@
 #      ansible.builtin.pip:
 #        name:
 #          - 
-#        state: absent
+#        state: present
