@@ -353,22 +353,20 @@
         "type": "generic",
         "default": [
             "nemo.desktop",
-            "firefox.desktop",
+            "org.mozilla.firefox.desktop",
+            "net.thunderbird.Thunderbird.desktop",
             "org.gnome.Terminal.desktop"
         ],
         "value": [
-            "firefox-devedition.desktop",
+            "firefox-aurora.desktop",
             "org.wezfurlong.wezterm.desktop",
             "nemo.desktop",
-            "obsidian.desktop",
-            "cockos-reaper.desktop",
-            "vesktop.desktop",
             "sublime_text.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
             "vivaldi-stable.desktop",
-            "org.speedcrunch.SpeedCrunch.desktop"
+            "speedcrunch.desktop"
         ]
     },
-    "__md5__": "b7d0a7558cf87c22c50195c9d408485f"
+    "__md5__": "9e7302e8001913ced95816fd420dc8e0"
 }

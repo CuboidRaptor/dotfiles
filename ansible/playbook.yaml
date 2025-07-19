@@ -1,44 +1,109 @@
 - name: Default playbook
+  hosts: all
+  become: true
   tasks:
-    - name: Import RPM GPG keys
+    - name: Set Fedora Release Version Number
+      ansible.builtin.command:
+        cmd: rpm -E %fedora
+      register: fedora_release_number
+    - ansible.builtin.set_fact:
+        fedora_release_number: "{{ fedora_release_number.stdout }}"
+
+    - name: Download RPM Fusion repo GPG keys
+      ansible.builtin.dnf:
+        name: distribution-gpg-keys
+
+    - name: Install RPM Fusion GPG keys
       ansible.builtin.rpm_key:
-        key:
-          - 'https://download.sublimetext.com/sublimehq-rpm-pub.gpg'
-        state: present
+        key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-{{ fedora_release_number }}
+    - ansible.builtin.rpm_key:
+        key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ fedora_release_number }}
 
-    #- name: Add Sublime Text 4 Stable repo
-    #  ansible.builtin.command:
-    #    cmd: dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
-    #    creates: /etc/ # run the above command to figure out where .repos are stored
-
-    - name: Enable Copr repos
-      community.general.copr:
-        name:
-          - the4runner/firefox-dev
-          - wezfurlong/wezterm-nightly
-        state: enabled
-
-    - name: Remove Copr repos
-      community.general.copr:
-        name:
-          - 
-        state: absent
-
-    - name: Install packages
-      ansible.builtin.dnf5:
-        name:
-          - python3-pip
-          - distrobox
-          - firefox-dev # Copr
-          - wezterm # Copr
-          - 'https://vencord.dev/download/vesktop/amd64/rpm'
-        state: present
-
-    - name: Remove packages
+    - name: Add RPM Fusion repos
       ansible.builtin.dnf:
         name:
-          - 
-        state: absent
+          - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_release_number }}.noarch.rpm
+          - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_release_number }}.noarch.rpm
+
+    - name: Import Sublime Text RPM GPG keys
+      ansible.builtin.rpm_key:
+        key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+    - name: Add Sublime Text Stable repo
+      ansible.builtin.command:
+        cmd: dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+        creates: /etc/yum.repos.d/sublime-text.repo
+
+    - name: Add Vivaldi Stable repo
+      ansible.builtin.command:
+        cmd: dnf config-manager addrepo --from-repofile=https://repo.vivaldi.com/stable/vivaldi-fedora.repo
+        creates: /etc/yum.repos.d/vivaldi-fedora.repo
+
+    - name: Enable Firefox Dev Copr repo
+      community.general.copr:
+        name: the4runner/firefox-dev
+        state: enabled
+
+    - name: Enable Wezterm Copr repo
+      community.general.copr:
+        name: wezfurlong/wezterm-nightly
+        state: enabled
+
+    - name: Enable Lazygit Copr repo
+      community.general.copr:
+        name: atim/lazygit
+        state: enabled
+
+    - name: Enable Bibata Cursor Copr repo
+      community.general.copr:
+        name: peterwu/rendezvous
+        state: enabled
+
+    - name: Install NVIDIA drivers
+      ansible.builtin.dnf:
+        name:
+          - akmod-nvidia
+          - xorg-x11-drv-nvidia-cuda
+
+    - name: Install packages
+      ansible.builtin.dnf:
+        name:
+          # ansible deps/ansible
+          - python3-pip
+          - ansible
+
+          # language stuff/deps
+          - python3-tkinter
+
+          # cmdline stuff
+          - distrobox
+          - git
+          - zsh
+          - tmux
+          - python-tmuxp
+          - lazygit # Copr
+          - neovim
+          - fzf
+          - zoxide
+
+          # apps
+          - firefox-dev # Copr
+          - vivaldi-stable # 3rd-Party Repo
+          - wezterm # Copr
+          - sublime-text # 3rd-Party Repo
+          - lutris
+          - seahorse
+          - speedcrunch
+
+          # theming
+          - papirus-icon-theme
+          - bibata-cursor-themes
+
+    - name: Add flathub flatpak repo
+      community.general.flatpak_remote:
+        name: flathub
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: user
 
     - name: Install flatpaks
       community.general.flatpak:
@@ -46,22 +111,10 @@
           - com.github.tchx84.Flatseal
           - md.obsidian.Obsidian
           - fm.reaper.Reaper
-        state: present
+        method: user
 
-    - name: Remove flatpaks
-      community.general.flatpak:
-        name:
-          - 
-        state: absent
-
-    - name: Install pip packages
-      ansible.builtin.pip:
-        name:
-          - ansible
-        state: present
-
-    - name: Remove pip packages
-      ansible.builtin.pip:
-        name:
-          - 
-        state: absent
+#    - name: Install pip packages
+#      ansible.builtin.pip:
+#        name:
+#          - 
+#        state: absent

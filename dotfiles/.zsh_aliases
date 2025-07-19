@@ -5,6 +5,9 @@ alias dse="dnf search"
 alias dli="dnf list --installed"
 alias dlim="dnf repoquery --userinstalled"
 
+# ansible localhost run current playbook
+alias ap="sudo ansible-playbook --connection=local --inventory 127.0.0.1, ~/dotfiles/ansible/playbook.yaml -v"
+
 ## rebuild and switch using nh
 #FLAKEPATH="path:///home/jason/dotfiles/nixos"
 #alias nsw="sudo nh os switch \"$FLAKEPATH\" -R"
