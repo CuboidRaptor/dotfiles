@@ -139,6 +139,11 @@
           - eza
       become_user: "{{ usern }}"
 
+    - name: Copying zram-generator config
+      ansible.builtin.copy:
+        src: zram-generator.conf
+        dest: /etc/systemd/zram-generator.conf
+
     - name: Copying keyd config
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
