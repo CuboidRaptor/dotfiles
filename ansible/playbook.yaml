@@ -144,6 +144,29 @@
         src: zram-generator.conf
         dest: /etc/systemd/zram-generator.conf
 
+    - name: Enabling Magic SysRq Key
+      ansible.posix.sysctl:
+        name: kernel.sysrq
+        value: '246'
+
+    # these optimizations are from arch/pop! wiki
+    - name: Setting swappiness
+      ansible.posix.sysctl:
+        name: vm.swappiness
+        value: '180'
+    - name: Setting watermark boost factor
+      ansible.posix.sysctl:
+        name: vm.watermark_boost_factor
+        value: '0'
+    - name: Setting watermark scale factor
+      ansible.posix.sysctl:
+        name: vm.watermark_scale_factor
+        value: '125'
+    - name: Setting page cluster
+      ansible.posix.sysctl:
+        name: vm.page-cluster
+        value: '0'
+
     - name: Copying keyd config
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
