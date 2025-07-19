@@ -57,7 +57,7 @@ zle -N _zsh_fzf_autosuggest
 bindkey '^I' _zsh_fzf_autosuggest
 
 # vim bindings
-bindkey -v
+bindkey -e
 
 # line editing bindings to delete whole line or chunks of line
 bindkey "^U" kill-whole-line
