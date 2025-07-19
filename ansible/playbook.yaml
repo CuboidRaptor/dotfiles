@@ -152,6 +152,8 @@
         state: started
     - ansible.builtin.command:
         cmd: keyd reload
+      register: _keyd_reload
+      changed_when: _keyd_reload.stdout != ""
 
 #    - name: Install pip packages
 #      ansible.builtin.pip:
