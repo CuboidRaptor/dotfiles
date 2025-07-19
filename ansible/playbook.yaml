@@ -160,7 +160,7 @@
         cmd: keyd reload
       when: _keyd_copy.changed
       register: _keyd_reload
-      changed_when: _keyd_reload.stdout != ""
+      changed_when: _keyd_reload.stdout != ''
 
 #    - name: Install pip packages
 #      ansible.builtin.pip:
