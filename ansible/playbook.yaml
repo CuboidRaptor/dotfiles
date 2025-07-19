@@ -99,6 +99,7 @@
           - lazygit # Copr
           - neovim
           - fzf
+          - fd-find
           - zoxide
           - keyd # Copr
           - trash-cli
@@ -111,6 +112,7 @@
           - lutris
           - seahorse
           - speedcrunch
+          - gpick
 
           # theming
           - papirus-icon-theme
