@@ -9,18 +9,14 @@
     - ansible.builtin.set_fact:
         fedora_release_number: "{{ fedora_release_number.stdout }}"
 
-    - name: Download RPM Fusion repo GPG keys
+    - name: Download and Add RPM Fusion GPG keys and repos
       ansible.builtin.dnf:
         name: distribution-gpg-keys
-
-    - name: Install RPM Fusion GPG keys
-      ansible.builtin.rpm_key:
+    - ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-{{ fedora_release_number }}
     - ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ fedora_release_number }}
-
-    - name: Add RPM Fusion repos
-      ansible.builtin.dnf:
+    - ansible.builtin.dnf:
         name:
           - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_release_number }}.noarch.rpm
           - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_release_number }}.noarch.rpm
@@ -59,6 +55,11 @@
         name: peterwu/rendezvous
         state: enabled
 
+    - name: Enable keyd repo
+      community.general.copr:
+        name: alternateved/keyd
+        state: enabled
+
     - name: Install NVIDIA drivers
       ansible.builtin.dnf:
         name:
@@ -78,6 +79,7 @@
           # cmdline stuff
           - distrobox
           - git
+          - gh
           - zsh
           - tmux
           - python-tmuxp
@@ -85,6 +87,7 @@
           - neovim
           - fzf
           - zoxide
+          - keyd
 
           # apps
           - firefox-dev # Copr
@@ -112,6 +115,19 @@
           - md.obsidian.Obsidian
           - fm.reaper.Reaper
         method: user
+
+    - name: Copying keyd config
+      ansible.builtin.file: # create necessary config folder
+        path: /etc/keyd
+        state: directory
+    - ansible.builtin.copy:
+        src: "{{ playbook_dir }}/../extras/keyd.conf"
+        dest: /etc/keyd/default.conf
+    - ansible.builtin.systemd_service: # ensure service is started and reload config
+        name: keyd
+        state: started
+    - ansible.builtin.command:
+        cmd: keyd reload
 
 #    - name: Install pip packages
 #      ansible.builtin.pip:
