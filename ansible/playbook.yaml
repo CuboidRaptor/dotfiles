@@ -117,14 +117,14 @@
           - papirus-icon-theme
           - bibata-cursor-themes # Copr
 
-    - name: Add flathub flatpak repo
+    - name: Add Flathub Flatpak repo
       community.general.flatpak_remote:
         name: flathub
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
         method: user
       become_user: "{{ usern }}"
 
-    - name: Install flatpaks
+    - name: Install Flatpaks
       community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
