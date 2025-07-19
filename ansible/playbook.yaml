@@ -1,7 +1,6 @@
 - name: Default playbook
   hosts: all
   become: true
-  #become_user: jason
   tasks:
     - name: Set Fedora Release Version Number Variable
       ansible.builtin.command:
@@ -147,11 +146,14 @@
     - ansible.builtin.copy:
         src: keyd.conf
         dest: /etc/keyd/default.conf
+      register: _keyd_copy
     - ansible.builtin.systemd_service: # ensure service is started and reload config
         name: keyd
         state: started
+      when: _keyd_copy.changed
     - ansible.builtin.command:
         cmd: keyd reload
+      when: _keyd_copy.changed
       register: _keyd_reload
       changed_when: _keyd_reload.stdout != ""
 
