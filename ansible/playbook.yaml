@@ -108,6 +108,7 @@
           - zoxide
           - keyd # Copr
           - trash-cli
+          - tldr
 
           # apps
           - firefox-dev # Copr
