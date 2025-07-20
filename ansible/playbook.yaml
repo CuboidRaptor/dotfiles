@@ -169,6 +169,24 @@
         value: '0'
 
     - name: Copying keyd config
+    - name: Setting root partition noatime
+      ansible.posix.mount:
+        path: /
+        src: UUID={{ ansible_mounts | community.general.json_query('[?mount == `/`] | [0].uuid') }}
+        fstype: ext4
+        opts: defaults,noatime
+        dump: '1'
+        passno: '1'
+        state: present
+    - name: Setting root partition noatime
+      ansible.posix.mount:
+        path: /home
+        src: UUID={{ ansible_mounts | community.general.json_query('[?mount == `/home`] | [0].uuid') }}
+        fstype: ext4
+        opts: defaults,noatime
+        dump: '1'
+        passno: '2'
+        state: present
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
         state: directory
