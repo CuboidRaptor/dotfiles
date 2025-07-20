@@ -210,6 +210,7 @@
         src: slick-greeter.conf
         dest: /etc/lightdm/slick-greeter.conf
 
+    # performance optimisations for realtime audio and gaming/esync
     - name: Setting nice PAM limit
       community.general.pam_limits:
         domain: '*'
