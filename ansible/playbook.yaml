@@ -118,6 +118,7 @@
           - seahorse
           - speedcrunch
           - gpick
+          - dconf-editor
 
           # theming
           - papirus-icon-theme
