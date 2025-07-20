@@ -203,6 +203,31 @@
         src: slick-greeter.conf
         dest: /etc/lightdm/slick-greeter.conf
 
+    - name: Setting nice PAM limit
+      community.general.pam_limits:
+        domain: '*'
+        limit_type: '-'
+        limit_item: nice
+        value: '-10'
+    - name: Setting memlock PAM limit
+      community.general.pam_limits:
+        domain: '@audio'
+        limit_type: '-'
+        limit_item: memlock
+        value: 'unlimited'
+    - name: Setting rtprio PAM limit
+      community.general.pam_limits:
+        domain: '@audio'
+        limit_type: '-'
+        limit_item: rtprio
+        value: '99'
+    - name: Setting nofile PAM limit
+      community.general.pam_limits:
+        domain: '*'
+        limit_type: '-'
+        limit_item: nofile
+        value: '524288'
+
     - name: Creating keyd config directory
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
