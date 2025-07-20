@@ -236,6 +236,15 @@
         limit_item: nofile
         value: '524288'
 
+    - name: Creating udev rules directory
+      ansible.builtin.file:
+        path: /etc/udev/rules.d
+        state: directory
+    - name: Copying udev rules config
+      ansible.builtin.copy:
+        src: custom-udev.rules
+        dest: /etc/udev/rules.d/custom-udev.rules
+
     - name: Creating keyd config directory
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
