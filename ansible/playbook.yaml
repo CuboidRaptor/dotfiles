@@ -168,7 +168,6 @@
         name: vm.page-cluster
         value: '0'
 
-    - name: Copying keyd config
     - name: Setting root partition noatime
       ansible.posix.mount:
         path: /
@@ -187,20 +186,26 @@
         dump: '1'
         passno: '2'
         state: present
+
+    - name: Creating keyd config directory
       ansible.builtin.file: # create necessary config folder
         path: /etc/keyd
         state: directory
-    - ansible.builtin.copy:
+    - name: Copying keyd config
+      ansible.builtin.copy:
         src: keyd.conf
         dest: /etc/keyd/default.conf
       register: _keyd_copy
-    - ansible.builtin.systemd_service: # ensure service is started and reload config
+    - name: Ensuring keyd systemd service is enabled and started
+      when: _keyd_copy.changed
+      ansible.builtin.systemd_service:
         name: keyd
+        enabled: true
         state: started
+    - name: Reloading keyd config
       when: _keyd_copy.changed
-    - ansible.builtin.command:
+      ansible.builtin.command:
         cmd: keyd reload
-      when: _keyd_copy.changed
       register: _keyd_reload
       changed_when: _keyd_reload.stdout != ''
 
