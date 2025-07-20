@@ -266,3 +266,18 @@
       ansible.builtin.copy:
         src: custom-udev.rules
         dest: /etc/udev/rules.d/custom-udev.rules
+
+    - name: Ensuring threadirqs parameter is added to grub
+      ansible.builtin.replace:
+        path: /etc/default/grub
+        after: 'GRUB_CMDLINE_LINUX="'
+        before: '\n'
+        regexp: '(?<!threadirqs)"'
+        replace: ' threadirqs"'
+    - name: Removing duplicate threadirqs parameters from grub
+      ansible.builtin.replace:
+        path: /etc/default/grub
+        after: 'GRUB_CMDLINE_LINUX="'
+        before: '\n'
+        regexp: 'threadirqs '
+        replace: ''
