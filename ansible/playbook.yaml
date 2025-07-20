@@ -147,6 +147,12 @@
           - eza
       become_user: "{{ usern }}"
 
+    - name: Add user "{{ usern }}" to groups
+      ansible.builtin.user:
+        name: "{{ usern }}"
+        groups: keyd,audio
+        append: true
+
     - name: Creating zram-generator config directory
       ansible.builtin.file: # create necessary config folder
         path: /etc/systemd/zram-generator.conf.d
