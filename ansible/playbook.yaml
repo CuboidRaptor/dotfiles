@@ -7,7 +7,8 @@
         cmd: rpm -E %fedora
       register: fedora_release_number
       changed_when: false
-    - ansible.builtin.set_fact:
+    - name: Set Fedora Release Version Number Fact
+      ansible.builtin.set_fact:
         fedora_release_number: "{{ fedora_release_number.stdout }}"
 
     - name: Set Username Variable
@@ -15,17 +16,21 @@
         cmd: logname
       register: usern
       changed_when: false
-    - ansible.builtin.set_fact:
+    - name: Set Username Fact
+      ansible.builtin.set_fact:
         usern: "{{ usern.stdout }}"
 
-    - name: Download and Add RPM Fusion GPG keys and repos
+    - name: Download RPM Fusion GPG keys
       ansible.builtin.dnf:
         name: distribution-gpg-keys
-    - ansible.builtin.rpm_key:
+    - name: Add RPM Fusion Free GPG key
+      ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-{{ fedora_release_number }}
-    - ansible.builtin.rpm_key:
+    - name: Add RPM Fusion Nonfree GPG key
+      ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ fedora_release_number }}
-    - ansible.builtin.dnf:
+    - name: Add RPM Fusion repo packages
+      ansible.builtin.dnf:
         name:
           - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_release_number }}.noarch.rpm
           - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_release_number }}.noarch.rpm
