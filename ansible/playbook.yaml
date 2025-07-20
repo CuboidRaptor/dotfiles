@@ -154,6 +154,28 @@
         groups: keyd,audio
         append: true
 
+    - name: Creating keyd config directory
+      ansible.builtin.file: # create necessary config folder
+        path: /etc/keyd
+        state: directory
+    - name: Copying keyd config
+      ansible.builtin.copy:
+        src: keyd.conf
+        dest: /etc/keyd/default.conf
+      register: _keyd_copy
+    - name: Ensuring keyd systemd service is enabled and started
+      when: _keyd_copy.changed
+      ansible.builtin.systemd_service:
+        name: keyd
+        enabled: true
+        state: started
+    - name: Reloading keyd config
+      when: _keyd_copy.changed
+      ansible.builtin.command:
+        cmd: keyd reload
+      register: _keyd_reload
+      changed_when: _keyd_reload.stdout != ''
+
     - name: Creating zram-generator config directory
       ansible.builtin.file: # create necessary config folder
         path: /etc/systemd/zram-generator.conf.d
@@ -244,31 +266,3 @@
       ansible.builtin.copy:
         src: custom-udev.rules
         dest: /etc/udev/rules.d/custom-udev.rules
-
-    - name: Creating keyd config directory
-      ansible.builtin.file: # create necessary config folder
-        path: /etc/keyd
-        state: directory
-    - name: Copying keyd config
-      ansible.builtin.copy:
-        src: keyd.conf
-        dest: /etc/keyd/default.conf
-      register: _keyd_copy
-    - name: Ensuring keyd systemd service is enabled and started
-      when: _keyd_copy.changed
-      ansible.builtin.systemd_service:
-        name: keyd
-        enabled: true
-        state: started
-    - name: Reloading keyd config
-      when: _keyd_copy.changed
-      ansible.builtin.command:
-        cmd: keyd reload
-      register: _keyd_reload
-      changed_when: _keyd_reload.stdout != ''
-
-#    - name: Install pip packages
-#      ansible.builtin.pip:
-#        name:
-#          - 
-#        state: present
