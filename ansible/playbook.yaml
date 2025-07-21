@@ -280,6 +280,7 @@
         before: '\n'
         regexp: '(?<!threadirqs)"'
         replace: ' threadirqs"'
+      register: _threadirqs_grub_add
     - name: Removing duplicate threadirqs parameters from grub
       ansible.builtin.replace:
         path: /etc/default/grub
@@ -287,3 +288,7 @@
         before: '\n'
         regexp: 'threadirqs '
         replace: ''
+    - name: Updating grub config
+      when: _threadirqs_grub_add.changed
+      ansible.builtin.command:
+        cmd: grub2-mkconfig -o /etc/grub2.cfg
