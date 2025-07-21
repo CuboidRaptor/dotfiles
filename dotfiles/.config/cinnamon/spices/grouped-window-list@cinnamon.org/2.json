@@ -363,6 +363,7 @@
             "nemo.desktop",
             "md.obsidian.Obsidian.desktop:flatpak",
             "fm.reaper.Reaper.desktop:flatpak",
+            "vesktop.desktop",
             "sublime_text.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
