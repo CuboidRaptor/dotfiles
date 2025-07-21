@@ -74,6 +74,11 @@
         name: alternateved/keyd
         state: enabled
 
+    - name: Enable wine/audio Copr repo
+      community.general.copr:
+        name: patrickl/wine-tkg
+        state: enabled
+
     - name: Install NVIDIA drivers
       ansible.builtin.dnf:
         name:
@@ -109,6 +114,7 @@
           - keyd # Copr
           - trash-cli
           - tldr
+          - yabridge # Copr
 
           # apps
           - firefox-dev # Copr
