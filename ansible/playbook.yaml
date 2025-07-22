@@ -102,9 +102,13 @@
           - python3-bpython
           - rust
           - cargo
+          - nodejs-bash-language-server
+          - dash
 
           # cmdline stuff
           - distrobox
+          - fastfetch
+          - btop
           - git
           - gh
           - zsh
@@ -115,6 +119,7 @@
           - bat
           - fzf
           - fd-find
+          - ripgrep
           - zoxide
           - keyd # Copr
           - trash-cli
@@ -128,12 +133,22 @@
           - sublime-text # 3rd-Party Repo
           - librewolf # 3rd-Party Repo
           - lutris
+          - vlc
+          - obs-studio
+          - okular
+          - kolourpaint
+          - gimp
+          - shotcut
+          - musescore
+          - audacity
           - seahorse
           - speedcrunch
+          - gparted
           - pavucontrol
           - gpick
           - dconf-editor
           - flameshot
+          - gamemode
 
           # theming
           - papirus-icon-theme
