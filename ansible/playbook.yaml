@@ -127,6 +127,7 @@
           - pavucontrol
           - gpick
           - dconf-editor
+          - flameshot
 
           # theming
           - papirus-icon-theme
