@@ -49,6 +49,11 @@
         cmd: dnf config-manager addrepo --from-repofile=https://repo.vivaldi.com/stable/vivaldi-fedora.repo
         creates: /etc/yum.repos.d/vivaldi-fedora.repo
 
+    - name: Add LibreWolf repo
+      ansible.builtin.command:
+        cmd: dnf config-manager addrepo --from-repofile=https://repo.librewolf.net/librewolf.repo
+        creates: /etc/yum.repos.d/librewolf.repo
+
     - name: Enable Firefox Dev Copr repo
       community.general.copr:
         name: the4runner/firefox-dev
@@ -121,6 +126,7 @@
           - vivaldi-stable # 3rd-Party Repo
           - wezterm # Copr
           - sublime-text # 3rd-Party Repo
+          - librewolf # 3rd-Party Repo
           - lutris
           - seahorse
           - speedcrunch
