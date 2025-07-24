@@ -124,6 +124,7 @@
           - keyd # Copr
           - trash-cli
           - tldr
+          - winetricks
           - yabridge # Copr
 
           # apps
