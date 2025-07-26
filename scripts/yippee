@@ -2,6 +2,20 @@
 
 set -eo pipefail
 
+# don't update other stuff if bootstrapping
+bootstrap_flag=false
+while getopts "b" flag ; do
+    case "$flag" in
+        b) # Bootstrap instead of updating, skip some tasks
+            bootstrap_flag=true
+            ;;
+        ?)
+            printf "Unrecognized option. Use \`-b\` to bootstrap. Use none to update."
+            exit 1
+            ;;
+    esac
+done
+
 # get sudo perms
 if [ "$EUID" != 0 ]; then
     sudo "$0" "$@"
@@ -20,39 +34,48 @@ msg "Starting system updates..."
 usern="$(logname)"
 msg "Detected username: %s" "$usern"
 
-msg "Updating system Nixpkgs..."
-sudo nh os boot "path:///home/jason/dotfiles/nixos" -u -R
-msg "Garbage collecting Nix..."
-sudo nh clean all --keep 3 --keep-since 25d
-msg "Optimising Nix store..."
-sudo nix store optimise
+msg "Updating system packages..."
+sudo dnf upgrade --refresh
 
-msg "Updating Flatpak apps..."
-sudo flatpak upgrade -y
+if [ "$bootstrap_flag" = false ] ; then
+    msg "Updating Flatpak apps..."
+    sudo -u "$usern" flatpak upgrade -y
 
-msg "Updating Distrobox Zypper..."
-sudo -u "$usern" distrobox enter dregsbox -- sudo zypper dup -y
-msg "Updating Distrobox pipx packages..."
-sudo -u "$usern" distrobox enter dregsbox -- pipx upgrade-all
+    msg "Updating Neovim plugins..."
+    sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
 
-msg "Updating Neovim plugins..."
-sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
+    msg "Updating Zsh plugins..."
+    sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
 
-msg "Updating Zsh plugins..."
-sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
+    msg "Updating tmux plugins..."
+    sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
 
-msg "Updating tmux plugins..."
-sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
+    msg "Emptying trashes..."
+    sudo -u "$usern" trash-empty 60 -f
+    sudo trash-empty 60 -f
+fi
 
-msg "Emptying trashes..."
-sudo -u "$usern" trash-empty 60 -f
-sudo trash-empty 60 -f
+msg "Updating local rpmcache..."
+sudo -u "$usern" bash -c 'wget "https://vencord.dev/download/vesktop/amd64/rpm" \
+    -O "~/dotfiles/ansible/rpmcache/vesktop-latest.rpm"'
+sudo -u "$usern" bash -c 'wget "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-redhat-2/?wpdmdl=19517" \
+    -O "$HOME/dotfiles/ansible/rpmcache/tx16wx-latest.rpm"'
+
+msg "Ensuring dotfiles are linked..."
+sudo -u "$usern" bash -c "~/dotfiles/link.py"
+
+msg "Running Ansible playbook..."
+# this is a script in ~/dotfiles/scripts
+sap
 
 msg "Writing to update history file..."
 sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
 
+msg "Waiting for akmods to finish building..."
+sudo akmods --force
+
 sudo -u "$usern" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$(id -u "$usern")"/bus \
-    notify-send "Yippee: Finished updating." "Automatically rebooting in 30 seconds."
+    notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
 msg "Rebooting..."
 sudo systemctl reboot

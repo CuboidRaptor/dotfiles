@@ -156,11 +156,13 @@
           - papirus-icon-theme
           - bibata-cursor-themes # Copr
 
-    - name: Installing unsigned RPMs
+    - name: Installing unsigned/extra RPMs
       ansible.builtin.dnf:
         disable_gpg_check: true
         name:
-          - 'https://vencord.dev/download/vesktop/amd64/rpm'
+          - "{{ playbook_dir }}/rpmcache/vesktop-latest.rpm"
+          - "{{ playbook_dir }}/rpmcache/tx16wx-latest.rpm"
+        state: latest
 
     - name: Add Flathub Flatpak repo
       community.general.flatpak_remote:

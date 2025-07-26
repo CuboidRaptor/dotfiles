@@ -9,6 +9,9 @@ test.sh
 # distrobox bin exports that should just be regenerated for every install
 dboxexports/
 
+# RPM cache for my cursed .rpm downloader hack thing
+rpmcache/
+
 # Hardware specific nix stuff
 hardware-configuration.nix
 
