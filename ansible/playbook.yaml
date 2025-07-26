@@ -126,6 +126,8 @@
           - tldr
           - winetricks
           - yabridge # Copr
+          - fuse
+          - fuse-libs
 
           # apps
           - firefox-dev # Copr
@@ -140,7 +142,6 @@
           - kolourpaint
           - gimp
           - shotcut
-          - musescore
           - audacity
           - seahorse
           - speedcrunch
@@ -174,6 +175,7 @@
           - com.github.tchx84.Flatseal
           - md.obsidian.Obsidian
           - fm.reaper.Reaper
+          - it.mijorus.gearlever
         method: user
       become_user: "{{ usern }}"
 
