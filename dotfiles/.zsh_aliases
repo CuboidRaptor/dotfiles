@@ -58,8 +58,7 @@ alias imgstrip="mogrify -strip"
 # better fd
 alias fd="fd -u --exclude .git"
 
-function fzf-cd-recursively-widget {
-    #cd "$(fd -t d | fzf --style full --preview "eza -a --color=always --icons=always --group-directories-first -- {}" "$@")"
+fzf-cd-recursively-widget () {
     FZF_ALT_C_COMMAND="{ fd -u --exclude .git -t d && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }" \
         zle fzf-cd-widget
 }
@@ -68,6 +67,6 @@ bindkey "^[f" fzf-cd-recursively-widget
 
 # server for nvrw (this is in a function because it has to or else tmux gets angry)
 # (and nvrw is a file because git edit and stuff)
-function nvrws {
+nvrws () {
     nvim --listen "$HOME/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe"
 }
