@@ -32,7 +32,7 @@ PATHS = [
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/vesktop/themes/",
-    ".config/autostart/"
+    ".config/autostart/",
     ".config/flameshot/",
     ".config/vlc/vlcrc",
     ".config/wezterm/",
@@ -71,12 +71,16 @@ def symlink_to(src: Path, tgt: Path, target_is_directory: bool = False) -> None:
     print(f"Symlinked {src}")
 
 if __name__ == "__main__":
-    confirm = input(
-        "This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] "
-    ).lower()[:1]
-    if confirm != "y":
-        print("Aborting...")
-        sys.exit()
+    print(f"DEBUG: Home target detected/set as {HOMETARGET}")
+    if HOMETARGET.joinpath(".bashrc").is_symlink():
+        print("WARNING: `.bashrc` is a symlink, system is likely already linked")
+
+        if "--force" in sys.argv:
+            print("DEBUG: `--force` passed, linking anyways...")
+
+        else:
+            print("ERROR: Not linking, pass `--force` to force a link.")
+            sys.exit()
 
     for path in PATHS:
         slink(path)
