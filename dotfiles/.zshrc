@@ -41,6 +41,14 @@ export FZF_ALT_C_COMMAND="{ fd -u -t d --min-depth 1 --max-depth 1 && find -mind
 export FZF_CTRL_T_COMMAND="fd -u --exclude .git"
 export FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
 
+# like alt+c cd, but it's recursive and ignores .git
+fzf-cd-recursively-widget () {
+    FZF_ALT_C_COMMAND="{ fd -u --exclude .git -t d && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }" \
+        zle fzf-cd-widget
+}
+zle -N fzf-cd-recursively-widget
+bindkey "^[f" fzf-cd-recursively-widget
+
 # make tab always accept and then continue suggesting
 # unless there's a double star in which case trigger fzf's autocomplete
 function _zsh_fzf_autosuggest {
