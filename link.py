@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Note: this script should not be run with sudo
+
 import sys
 import shutil
 import os
@@ -70,12 +72,6 @@ def symlink_to(src: Path, tgt: Path, target_is_directory: bool = False) -> None:
     print(f"Symlinked {src}")
 
 if __name__ == "__main__":
-    if os.geteuid() != 0:
-        #print("ERROR: You need to run this as root. Try using `sudo`.")
-        #sys.exit()
-        # we don't need sudo anymore because nix manages keyd
-        pass
-
     confirm = input(
         "This script is very prone to breaking stuff. Are you sure you would like to run this? [y/N] "
     ).lower()[:1]
@@ -101,4 +97,4 @@ if __name__ == "__main__":
             print("WARNING: Firefox Dev Edition profile not found")
 
     else:
-        print(f"WARNING: {ffpath} doesn't exist or isn't a directory")
+        print(f"WARNING: `{ffpath}` doesn't exist or isn't a directory")
