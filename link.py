@@ -32,7 +32,6 @@ PATHS = [
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/vesktop/themes/",
-    ".config/nixpkgs/config.nix",
     ".config/autostart/"
     ".config/flameshot/",
     ".config/vlc/vlcrc",
