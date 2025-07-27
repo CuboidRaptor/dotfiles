@@ -10,7 +10,7 @@ test.sh
 dboxexports/
 
 # RPM cache for my cursed .rpm downloader hack thing
-rpmcache/
+appcache/
 
 # Hardware specific nix stuff
 hardware-configuration.nix

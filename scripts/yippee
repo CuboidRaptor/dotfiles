@@ -58,11 +58,11 @@ if [ "$bootstrap_flag" = false ] ; then
     sudo trash-empty 60 -f
 fi
 
-msg "Updating local rpmcache..."
+msg "Updating local appcache..."
 sudo -u "$usern" bash -c 'wget "https://vencord.dev/download/vesktop/amd64/rpm" \
-    -O "~/dotfiles/ansible/rpmcache/vesktop-latest.rpm"'
+    -O "~/dotfiles/ansible/appcache/vesktop-latest.rpm"'
 sudo -u "$usern" bash -c 'wget "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-redhat-2/?wpdmdl=19517" \
-    -O "$HOME/dotfiles/ansible/rpmcache/tx16wx-latest.rpm"'
+    -O "$HOME/dotfiles/ansible/appcache/tx16wx-latest.rpm"'
 
 msg "Ensuring dotfiles are linked..."
 sudo -u "$usern" bash -c "~/dotfiles/link.py"
