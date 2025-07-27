@@ -167,6 +167,7 @@
     - name: Installing unsigned/extra RPMs
       ansible.builtin.dnf:
         disable_gpg_check: true
+        # These are downloaded by yippee at update/bootstrap
         name:
           - "{{ playbook_dir }}/rpmcache/vesktop-latest.rpm"
           - "{{ playbook_dir }}/rpmcache/tx16wx-latest.rpm"
