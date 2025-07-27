@@ -41,6 +41,9 @@ if [ "$bootstrap_flag" = false ] ; then
     msg "Updating Flatpak apps..."
     sudo -u "$usern" flatpak upgrade -y
 
+    msg "Updating Gear Lever AppImages..."
+    sudo -u "$usern" flatpak run it.mijorus.gearlever --update --all -y
+
     msg "Updating Neovim plugins..."
     sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
 
