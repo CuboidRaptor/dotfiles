@@ -54,6 +54,11 @@
         cmd: dnf config-manager addrepo --from-repofile=https://repo.librewolf.net/librewolf.repo
         creates: /etc/yum.repos.d/librewolf.repo
 
+    - name: Add CKAN repo
+      ansible.builtin.command:
+        cmd: dnf config-manager addrepo --from-repofile=https://ksp-ckan.s3-us-west-2.amazonaws.com/rpm/stable/ckan_stable.repo
+        creates: /etc/yum.repos.d/ckan_stable.repo
+
     - name: Enable Firefox Dev Copr repo
       community.general.copr:
         name: the4runner/firefox-dev
@@ -135,7 +140,6 @@
           - wezterm # Copr
           - sublime-text # 3rd-Party Repo
           - librewolf # 3rd-Party Repo
-          - lutris
           - vlc
           - obs-studio
           - okular
@@ -150,7 +154,11 @@
           - gpick
           - dconf-editor
           - flameshot
+
+          # Game stuff
+          - lutris
           - gamemode
+          - ckan # 3rd-Party Repo
 
           # theming
           - papirus-icon-theme
@@ -178,6 +186,9 @@
           - md.obsidian.Obsidian
           - fm.reaper.Reaper
           - it.mijorus.gearlever
+          - io.github.everestapi.Olympus
+          - com.github.Anuken.Mindustry
+          - org.prismlauncher.PrismLauncher
         method: user
       become_user: "{{ usern }}"
 
