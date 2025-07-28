@@ -72,12 +72,13 @@ bindkey "^U" kill-whole-line
 bindkey "^Y" backward-kill-line
 bindkey "^K" kill-line
 
-# fix home and end key
+# fix home, end, and ctrl+arrow keys
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
 if [[ "$TERM" == "xterm"* ]] ; then
     bindkey "^[[H" beginning-of-line
     bindkey "^[[F" end-of-line
 elif [[ "$TERM" == "tmux"* ]] ; then
-    echo "tmux"
     bindkey "^[[1~" beginning-of-line
     bindkey "^[[4~" end-of-line
 fi
