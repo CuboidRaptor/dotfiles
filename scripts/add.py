@@ -7,13 +7,12 @@ import getpass
 import shutil
 import os
 import re
-import typing
 
-tgt_file: str = os.path.abspath(sys.argv[1])
-strip_user: typing.Pattern = re.compile(r".*" + getpass.getuser() + r"/(.*)")
-stripped_path: str = strip_user.match(tgt_file).group(1)
+tgt_file = os.path.abspath(sys.argv[1])
+strip_user = re.compile(r".*" + getpass.getuser() + r"/(.*)")
+stripped_path = strip_user.match(tgt_file).group(1)
 
-dotfiles_dir: str = f"/home/{getpass.getuser()}/dotfiles/dotfiles/" # change for different dotfile repo location
+dotfiles_dir = f"/home/{getpass.getuser()}/dotfiles/dotfiles/" # change for different dotfile repo location
 
 try:
     os.mkdir(dotfiles_dir)
