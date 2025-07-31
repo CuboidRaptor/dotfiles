@@ -20,7 +20,8 @@ sudo mkdir -p /run/dbus
 sudo ln -s /run/host/run/dbus/system_bus_socket /run/dbus || true
 
 # Install libs/deps and apps
-paru -S mesa vlc bibata-cursor-theme vesktop
+paru -S mesa vlc pipewire-jack bibata-cursor-theme vesktop reaper
 
 # Export apps
 distrobox-export --app vesktop
+distrobox-export --app reaper
