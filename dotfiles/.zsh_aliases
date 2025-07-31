@@ -5,22 +5,13 @@ alias dse="dnf search"
 alias dli="dnf list --installed"
 alias dlim="dnf repoquery --userinstalled"
 
-# nix stuff
-alias nix-alien="nix run \"github:thiagokokada/nix-alien#nix-alien\""
-alias nix-alien-ld="nix run \"github:thiagokokada/nix-alien#nix-alien-ld\""
-alias nix-alien-find-libs="nix run \"github:thiagokokada/nix-alien#nix-alien-find-libs\""
+# nixGL
 alias nixGL="nix run --impure github:nix-community/nixGL" # requires nixos-unstable! check repo for more
-
-# distrobox quick enter command
-alias dbox="distrobox enter dregsbox"
 
 # last time system was upgraded
 alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 
 alias dreset="git checkout -- dconf.ini && dconf load / < dconf.ini"
-
-# I use this a lot
-alias lg="lazygit"
 
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
@@ -45,7 +36,7 @@ alias free="free -m"
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
-# better fd
+# make fd show hiddens and ignore .git
 alias fd="fd -u --exclude .git"
 
 # server for nvrw (this is in a function because it has to or else tmux gets angry)
