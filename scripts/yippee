@@ -28,16 +28,14 @@ function msg {
     printf "\033[1m\033[7m$main_string\033[0m\n" "$@"
 }
 
-# msg!
-msg "Starting system updates..."
-
 usern="$(logname)"
 msg "Detected username: %s" "$usern"
 
-msg "Updating system packages..."
-sudo dnf upgrade --refresh
-
 if [ "$bootstrap_flag" = false ] ; then
+    # Regular update
+    msg "Updating system packages..."
+    sudo dnf upgrade --refresh
+
     msg "Updating Flatpak apps..."
     sudo -u "$usern" flatpak upgrade -y
 
@@ -56,22 +54,23 @@ if [ "$bootstrap_flag" = false ] ; then
     msg "Emptying trashes..."
     sudo -u "$usern" trash-empty 60 -f
     sudo trash-empty 60 -f
+else
+    # Bootstrap system
+    msg "Updating system packages..."
+    sudo dnf upgrade --refresh
+
+    msg "Installing Ansible dependencies..."
+    sudo dnf install python3-pip ansible
+
+    msg "Ensuring dotfiles are linked..."
+    sudo -u "$usern" bash -c "~/dotfiles/link.py"
+
+    msg "Running Ansible playbook..."
+    # this is a script in ~/dotfiles/scripts
+    sap
 fi
 
-msg "Updating local appcache..."
-sudo -u "$usern" bash -c 'wget "https://vencord.dev/download/vesktop/amd64/rpm" \
-    -O "~/dotfiles/ansible/appcache/vesktop-latest.rpm"'
-sudo -u "$usern" bash -c 'wget "https://www.tx16wx.com/download/tx16wx-software-sampler-3-linux-x64-redhat-2/?wpdmdl=19517" \
-    -O "$HOME/dotfiles/ansible/appcache/tx16wx-latest.rpm"'
-
-msg "Ensuring dotfiles are linked..."
-sudo -u "$usern" bash -c "~/dotfiles/link.py"
-
-msg "Running Ansible playbook..."
-# this is a script in ~/dotfiles/scripts
-sap
-
-msg "Writing to update history file..."
+msg "Writing to yippee history file..."
 sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
 
 msg "Waiting for akmods to finish building..."
@@ -79,7 +78,7 @@ sudo akmods --force
 
 sudo -u "$usern" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$(id -u "$usern")"/bus \
     notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
-read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || :
+read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || true
 msg "Rebooting..."
 sudo systemctl reboot
 

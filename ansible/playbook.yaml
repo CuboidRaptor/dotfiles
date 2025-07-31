@@ -164,15 +164,6 @@
           - papirus-icon-theme
           - bibata-cursor-themes # Copr
 
-    - name: Installing unsigned/extra RPMs
-      ansible.builtin.dnf:
-        disable_gpg_check: true
-        # These are downloaded by yippee at update/bootstrap
-        name:
-          - "{{ playbook_dir }}/appcache/vesktop-latest.rpm"
-          - "{{ playbook_dir }}/appcache/tx16wx-latest.rpm"
-        state: latest
-
     - name: Add Flathub Flatpak repo
       community.general.flatpak_remote:
         name: flathub
@@ -185,7 +176,6 @@
         name:
           - com.github.tchx84.Flatseal
           - md.obsidian.Obsidian
-          - fm.reaper.Reaper
           - it.mijorus.gearlever
           - io.github.everestapi.Olympus
           - com.github.Anuken.Mindustry

@@ -1,6 +1,10 @@
 dotfiles
-gearlever
-    musescore
+extra packages
+    gearlever
+        musescore
+        librescore
+    tx16wx rpm
+    reaper
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 Browser/firefox stuff:
