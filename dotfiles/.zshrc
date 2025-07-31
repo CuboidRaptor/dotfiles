@@ -98,6 +98,6 @@ if [[ -f ~/.zsh_aliases ]]; then
 fi
 
 # set $PATH
-if [[ -f ~/.path_source ]]; then
-    source ~/.path_source
+if [[ -f ~/.environment ]]; then
+    source ~/.environment
 fi

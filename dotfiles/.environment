@@ -1,6 +1,8 @@
 export PATH="$PATH:\
 $HOME/dotfiles/scripts:\
-$HOME/dotfiles/dboxexports:\
 $HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $HOME/bin"
+
+export WINEESYNC=1
+export WINEFSYNC=1
