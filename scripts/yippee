@@ -68,6 +68,10 @@ else
     msg "Running Ansible playbook..."
     # this is a script in ~/dotfiles/scripts
     sap
+
+    msg "Creating distrobox..."
+    sudo -u "$usern" distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
+    sudo -u "$usern" bash -c "distrobox enter arch-toolbox-latest -- ~/dotfiles/scripts/distrobox.sh"
 fi
 
 msg "Writing to yippee history file..."
