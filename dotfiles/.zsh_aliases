@@ -8,6 +8,9 @@ alias dlim="dnf repoquery --userinstalled"
 # nixGL
 alias nixGL="nix run --impure github:nix-community/nixGL" # requires nixos-unstable! check repo for more
 
+# wineprefix for vst plugins
+alias vstwine='WINEPREFIX="$HOME/.local/share/wineprefixes/Wine_VSTs" wine'
+
 # last time system was upgraded
 alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 
