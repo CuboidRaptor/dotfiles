@@ -153,6 +153,7 @@
           - gpick
           - dconf-editor
           - flameshot
+          - '@virtualization'
 
           # Game stuff
           - lutris

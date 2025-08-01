@@ -5,6 +5,12 @@ extra packages
         librescore
     tx16wx rpm
     reaper
+    virt-manager ('@virtualization' group in fedora)
+        https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
+            (shift+F10 cmd, `start ms-cxh:localonly`)
+            or google more recent instructions
+        https://www.debugpoint.com/kvm-share-folder-windows-guest/
+            `choco install winfsp` for winfsp
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 Browser/firefox stuff:
