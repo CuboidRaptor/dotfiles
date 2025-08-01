@@ -4,7 +4,6 @@ extra packages
         musescore
         librescore
     tx16wx rpm
-    reaper
     virt-manager ('@virtualization' group in fedora)
         https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
             (shift+F10 cmd, `start ms-cxh:localonly`)
