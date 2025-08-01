@@ -84,11 +84,12 @@ elif [[ "$TERM" == "tmux"* ]] ; then
 fi
 
 # history options
-HISTSIZE=40000
-HISTFILESIZE=80000
+#HISTFILESIZE=1000000
+SAVEHIST=1000000
+HISTSIZE=1000000
 HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY
-setopt NO_INC_APPEND_HISTORY INC_APPEND_HISTORY_TIME NO_SHARE_HISTORY
+setopt INC_APPEND_HISTORY_TIME
 
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
