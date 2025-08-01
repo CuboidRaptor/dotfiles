@@ -37,7 +37,7 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     sudo dnf upgrade --refresh
 
     msg "Updating Flatpak apps..."
-    sudo flatpak upgrade
+    sudo flatpak update
 
     msg "Updating Distrobox..."
     distrobox enter arch-toolbox-latest -- paru -Syu
@@ -84,7 +84,10 @@ msg "Waiting for akmods to finish building..."
 sudo akmods --force
 
 notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
-read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || true
+read -p "Press Enter to reboot. (auto-rebooting in 30 seconds) " -r -t 30 || true
 msg "Rebooting..."
-systemctl reboot
+systemctl reboot || (
+    read -p "\`systemctl reboot\` failed. Press Enter to force reboot with \`-i\`. " -r
+    systemctl reboot -i
+)
 
