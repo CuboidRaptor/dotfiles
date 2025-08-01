@@ -25,8 +25,7 @@ ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 
 znap source zsh-users/zsh-syntax-highlighting
 
-# eval stuff for shell integration
-znap eval "zoxide" "zoxide init zsh"
+# fzf stuff and shell integration
 znap eval "fzf" "fzf --zsh"
 # set some fzf bindings and other options
 export FZF_DEFAULT_OPTS="--no-height -i --style full --bind ctrl-h:abort,ctrl-l:accept"

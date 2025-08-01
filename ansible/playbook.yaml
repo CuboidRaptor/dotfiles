@@ -125,7 +125,6 @@
           - fzf
           - fd-find
           - ripgrep
-          - zoxide
           - keyd # Copr
           - trash-cli
           - tldr
