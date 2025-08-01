@@ -31,16 +31,19 @@ function msg {
 usern="$(logname)"
 msg "Detected username: %s" "$usern"
 
-if [ "$bootstrap_flag" = false ] ; then
-    # Regular update
+if [ "$bootstrap_flag" = false ] ; then # Regular update 
     msg "Updating system packages..."
     sudo dnf upgrade --refresh
 
     msg "Updating Flatpak apps..."
-    sudo -u "$usern" flatpak upgrade -y
+    sudo flatpak upgrade
 
+    msg "Updating Distrobox..."
+    sudo -u "$usern" distrobox enter arch-toolbox-latest -- paru -Syu
+
+    # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
-    sudo -u "$usern" flatpak run it.mijorus.gearlever --update --all -y
+    sudo -u "$usern" bash -c "flatpak run it.mijorus.gearlever --update --all -y"
 
     msg "Updating Neovim plugins..."
     sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
@@ -54,8 +57,7 @@ if [ "$bootstrap_flag" = false ] ; then
     msg "Emptying trashes..."
     sudo -u "$usern" trash-empty 60 -f
     sudo trash-empty 60 -f
-else
-    # Bootstrap system
+else # Bootstrap system
     msg "Updating system packages..."
     sudo dnf upgrade --refresh
 
