@@ -153,6 +153,7 @@
           - dconf-editor
           - flameshot
           - '@virtualization'
+          - timeshift
 
           # Game stuff
           - lutris
