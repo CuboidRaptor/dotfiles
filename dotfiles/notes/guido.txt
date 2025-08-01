@@ -17,26 +17,12 @@ Browser/firefox stuff:
     Mozilla Sync
     search engines
     Violentmonkey
-        return youtube dislike
         librescore
         bypass all shortlinks debloated
     uBO
         enable cloud sync support
         manually load/sync settings
-
-    Vimium C (backup, incase I want it back as I don't use vimium C anymore)
-        scroll size 200px
-        "ghjkl;" characters used for link hints
-        key mappings:
-            utility:
-                map <a-c-v> openUrl url="vimium://status/toggle-enabled/^%20<a-c-v>"
-                map p runKey keys="4d"
-            rh only:
-                mapKey n H
-                mapKey m J
-                mapKey , K
-                mapKey . L
-                mapKey u x
-                mapKey b f
-                mapKey y t
-        yeet custom search engines
+    return youtube dislike
+    firefox color
+        catppuccin latte, change accent to theme color
+    the other stuff (xkcd-ntmin/sitg)
