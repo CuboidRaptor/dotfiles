@@ -16,20 +16,21 @@ while getopts "b" flag ; do
     esac
 done
 
-# get sudo perms
-if [ "$EUID" != 0 ]; then
-    sudo "$0" "$@"
-    exit $?
-fi
+# sudoloop in the background so only one prompt is necessary
+    # (we prevent sudo'ing the script because it breaks user commands and stuff)
+sudo -v || exit "$?"
+while true;
+do
+    sleep 60
+    kill -0 "$$" || exit
+    sudo -nv
+done 2>/dev/null &
 
 function msg {
     main_string="$1"
     shift
     printf "\033[1m\033[7m$main_string\033[0m\n" "$@"
 }
-
-usern="$(logname)"
-msg "Detected username: %s" "$usern"
 
 if [ "$bootstrap_flag" = false ] ; then # Regular update 
     msg "Updating system packages..."
@@ -39,23 +40,23 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     sudo flatpak upgrade
 
     msg "Updating Distrobox..."
-    sudo -u "$usern" distrobox enter arch-toolbox-latest -- paru -Syu
+    distrobox enter arch-toolbox-latest -- paru -Syu
 
     # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
-    sudo -u "$usern" bash -c "flatpak run it.mijorus.gearlever --update --all -y"
+    flatpak run it.mijorus.gearlever --update --all -y
 
     msg "Updating Neovim plugins..."
-    sudo -u "$usern" nvim --headless "+Lazy! sync" +qa
+    nvim --headless "+Lazy! sync" +qa
 
     msg "Updating Zsh plugins..."
-    sudo -u "$usern" zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
+    zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
 
     msg "Updating tmux plugins..."
-    sudo -u "$usern" bash -c "~/.tmux/plugins/tpm/bin/update_plugins all"
+    ~/.tmux/plugins/tpm/bin/update_plugins all
 
     msg "Emptying trashes..."
-    sudo -u "$usern" trash-empty 60 -f
+    trash-empty 60 -f
     sudo trash-empty 60 -f
 else # Bootstrap system
     msg "Updating system packages..."
@@ -65,26 +66,25 @@ else # Bootstrap system
     sudo dnf install python3-pip ansible
 
     msg "Ensuring dotfiles are linked..."
-    sudo -u "$usern" bash -c "~/dotfiles/link.py"
+    ~/dotfiles/link.py
 
     msg "Running Ansible playbook..."
     # this is a script in ~/dotfiles/scripts
     sap
 
     msg "Creating distrobox..."
-    sudo -u "$usern" distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
-    sudo -u "$usern" bash -c "distrobox enter arch-toolbox-latest -- ~/dotfiles/scripts/distrobox.sh"
+    distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
+    distrobox enter arch-toolbox-latest -- ~/dotfiles/scripts/distrobox.sh
 fi
 
 msg "Writing to yippee history file..."
-sudo -u "$usern" bash -c "date >> ~/.local/share/.yippee_history"
+date >> ~/.local/share/.yippee_history
 
 msg "Waiting for akmods to finish building..."
 sudo akmods --force
 
-sudo -u "$usern" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$(id -u "$usern")"/bus \
-    notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
+notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
 read -p "Press Enter to reboot (auto-rebooting in 30 seconds) " -r -t 30 || true
 msg "Rebooting..."
-sudo systemctl reboot
+systemctl reboot
 
