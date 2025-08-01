@@ -1,7 +1,12 @@
 #!/usr/bin/env dash
 
 dconfdump() {
-    dconf dump / > /home/jason/dotfiles/dconf.ini
+    (
+        cd ~/dotfiles/dconf || exit
+        dconf dump /org/cinnamon/ > cinnamon.dconf.ini
+        dconf dump /org/nemo/ > nemo.dconf.ini
+        dconf dump /org/gtk/ > gtk.dconf.ini
+    )
 }
 
 dconfwatch() {
@@ -20,5 +25,6 @@ dconfwatch() {
 
 # run dconfdump once at startup to help ensure better sync
 dconfdump
+# watching the root tree may cause unnecessary writes but it's like a couple kB and idrc
 dconf watch / | dconfwatch
 notify-send "Warning: dconfd exited." "Error code of dconfwatch function: $?"

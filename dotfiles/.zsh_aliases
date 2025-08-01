@@ -14,7 +14,16 @@ alias vstwine='WINEPREFIX="$HOME/.local/share/wineprefixes/Wine_VSTs" wine'
 # last time system was upgraded
 alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 
-alias dreset="git checkout -- dconf.ini && dconf load / < dconf.ini"
+# Reset changes to dconf in dotfiles repo and then write those to database
+dreset () {
+    (
+        cd ~/dotfiles/dconf || exit
+        git checkout -- ./
+        dconf load /org/cinnamon/ < cinnamon.dconf.ini
+        dconf load /org/nemo/ < nemo.dconf.ini
+        dconf load /org/gtk/ < gtk.dconf.ini
+    )
+}
 
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
