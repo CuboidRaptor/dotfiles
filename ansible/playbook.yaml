@@ -140,7 +140,6 @@
           - wezterm # Copr
           - sublime-text # 3rd-Party Repo
           - librewolf # 3rd-Party Repo
-          - vlc
           - obs-studio
           - okular
           - kolourpaint
