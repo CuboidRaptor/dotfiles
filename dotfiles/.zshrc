@@ -53,7 +53,6 @@ bindkey "^[f" fzf-cd-recursively-widget
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
     if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
-
         zle fzf-completion
     else
         zle autosuggest-accept
@@ -83,16 +82,15 @@ elif [[ "$TERM" == "tmux"* ]] ; then
 fi
 
 # history options
-#HISTFILESIZE=1000000
 SAVEHIST=1000000
 HISTSIZE=1000000
 HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY
 setopt INC_APPEND_HISTORY_TIME
 
-# Not all environments have neovim (e.g. distrobox)
 if command -v nvim &>/dev/null
 then
+    # Not all environments have neovim (e.g. distrobox)
     export MANPAGER="nvim +Man!"
 fi
 
@@ -101,7 +99,7 @@ if [[ -f ~/.zsh_aliases ]]; then
     source ~/.zsh_aliases
 fi
 
-# set $PATH
+# set $PATH and other environment variables
 if [[ -f ~/.environment ]]; then
     source ~/.environment
 fi
