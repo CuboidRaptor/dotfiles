@@ -12,7 +12,7 @@ if [ -n "$TMUX" ]; then
         do
             abspaths+=("$(realpath "$i")")
         done
-        nvim --server "${HOME}/.cache/nvim/nvim-tmux-session-$(tmux display-message -p '#S').pipe" \
+        nvim --server "${HOME}/.local/share/nvim/pipes/nvim-tmux-session-$(tmux display-message -p '#S').pipe" \
             --remote "${abspaths[@]}"
         tmux select-window -t "${idlist[0]}" && tmux select-pane -t "${idlist[1]}"
     else
