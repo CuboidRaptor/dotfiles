@@ -12,9 +12,6 @@ map("n", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 map("i", "<Home>", "<Esc>^i", { remap = true, desc = "Go home, after indents" })
 map("v", "<Home>", "^", { remap = true, desc = "Go home, after indents" })
 
--- space key inserts space in normal mode
-map("n", " ", "a <Esc>", { remap = true, desc = "Insert Space" })
-
 -- stay on current word when searching (but with ,s instead of *)
 vim.keymap.set("n", ",s", function()
     vim.fn.setreg("/", [[\V\<]] .. vim.fn.escape(vim.fn.expand("<cword>"), [[/\]]) .. [[\>]])
@@ -39,11 +36,6 @@ map("i", leader .. "h", "#!/usr/bin/env ", { remap = true, desc = "Env Shebang" 
 map("n", leader .. "h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang and Insert" })
 
 map("n", leader .. "w", ":SudaWrite", { remap = true, desc = "Save with Sudo" })
-
--- Enter in normal mode now just inserts a newline on the next line without leaving normal
-map("n", "<CR>", "o<Esc>", { remap = true, desc = "Insert Newline" })
-
-map("n", leader .. "q", "@q", { remap = true, desc = "Send Q Macro" })
 
 -- Telescope bindings
 map("n", leader .. "b",
