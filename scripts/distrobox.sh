@@ -20,9 +20,11 @@ sudo mkdir -p /run/dbus
 sudo ln -s /run/host/run/dbus/system_bus_socket /run/dbus || true
 
 # Install libs/deps and apps
-paru -S mesa vlc pipewire-jack xapp libxml2-legacy xcb-util-xrm xcb-util-cursor bibata-cursor-theme \
-    vesktop reaper
+paru -S mesa vlc pipewire-jack xapp bibata-cursor-theme vesktop
 
 # Export apps
 distrobox-export --app vesktop
 distrobox-export --app reaper
+
+# Clean unnecessary packages
+sudo bash -c "pacman -Qdtq | pacman -Rs -"
