@@ -228,6 +228,11 @@
         src: custom-zram-generator.conf
         dest: /etc/systemd/zram-generator.conf.d/custom-zram-generator.conf
 
+    - name: Copying dnf5 config
+      ansible.builtin.copy:
+        src: 9999-automated-dnf5.conf
+        dest: /etc/dnf/libdnf5.conf.d/9999-automated-dnf5.conf
+
     - name: Enabling Magic SysRq Key
       ansible.posix.sysctl:
         name: kernel.sysrq
