@@ -58,6 +58,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating tmux plugins..."
     ~/.tmux/plugins/tpm/bin/update_plugins all
 
+    msg "Cleaning user cache..."
+    trash-put ~/.cache
+
     msg "Emptying trashes..."
     trash-empty 60 -f
     sudo trash-empty 60 -f
