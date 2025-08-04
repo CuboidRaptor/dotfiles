@@ -155,6 +155,7 @@
           - flameshot
           - '@virtualization'
           - timeshift
+          - qdirstat
 
           # Game stuff
           - lutris
