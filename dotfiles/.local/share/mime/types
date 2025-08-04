@@ -6,6 +6,16 @@ application/x-extension-xht
 application/x-extension-xhtml
 application/x-ms-application
 application/x-ms-xbap
+application/x-reaper-bak-undo
+application/x-reaper-config
+application/x-reaper-fxchain
+application/x-reaper-peak
+application/x-reaper-project
+application/x-reaper-project-backup
+application/x-reaper-proxy
+application/x-reaper-theme
+application/x-reaper-tracktemplate
+application/x-reaper-undo
 application/x-wine-extension-appref-ms
 application/x-wine-extension-msp
 application/xaml+xml

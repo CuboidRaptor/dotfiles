@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-reaper-peak">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment xml:lang="en">REAPER peak file</comment>
+  <icon name="cockos-reaper-peak"/>
+  <glob pattern="*.reapeaks"/>
+</mime-type>

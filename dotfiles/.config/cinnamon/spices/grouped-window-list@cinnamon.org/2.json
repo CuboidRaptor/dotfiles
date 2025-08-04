@@ -362,7 +362,7 @@
             "org.wezfurlong.wezterm.desktop",
             "nemo.desktop",
             "md.obsidian.Obsidian.desktop:flatpak",
-            "arch-toolbox-latest-cockos-reaper.desktop",
+            "cockos-reaper.desktop",
             "arch-toolbox-latest-vesktop.desktop",
             "sublime_text.desktop",
             "cinnamon-settings.desktop",

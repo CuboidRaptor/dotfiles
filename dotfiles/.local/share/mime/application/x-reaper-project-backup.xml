@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-reaper-project-backup">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <sub-class-of type="text/plain"/>
+  <comment xml:lang="en">REAPER project backup</comment>
+  <icon name="cockos-reaper-backup"/>
+  <glob pattern="*.rpp-bak"/>
+</mime-type>

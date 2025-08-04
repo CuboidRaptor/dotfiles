@@ -1,9 +1,12 @@
 dotfiles
 extra packages
+    reaper
     gearlever
         musescore
         librescore
-    tx16wx rpm
+    rpm files
+        tx16wx
+        surge-xt
     virt-manager ('@virtualization' group in fedora)
         https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
             (shift+F10 cmd, `start ms-cxh:localonly`)
