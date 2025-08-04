@@ -225,8 +225,8 @@
         state: directory
     - name: Copying zram-generator config
       ansible.builtin.copy:
-        src: custom-zram-generator.conf
-        dest: /etc/systemd/zram-generator.conf.d/custom-zram-generator.conf
+        src: 9999-automated-zram-generator.conf
+        dest: /etc/systemd/zram-generator.conf.d/9999-automated-zram-generator.conf
 
     - name: Copying dnf5 config
       ansible.builtin.copy:
@@ -312,8 +312,8 @@
         state: directory
     - name: Copying udev rules config
       ansible.builtin.copy:
-        src: custom-udev.rules
-        dest: /etc/udev/rules.d/custom-udev.rules
+        src: 9999-automated-udev.rules
+        dest: /etc/udev/rules.d/9999-automated-udev.rules
 
     - name: Ensuring threadirqs parameter is added to grub
       ansible.builtin.replace:
