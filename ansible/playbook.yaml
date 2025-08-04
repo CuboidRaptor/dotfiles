@@ -121,7 +121,6 @@
           - python3-tmuxp
           - lazygit # Copr
           - neovim
-          - bat
           - fzf
           - fd-find
           - ripgrep
