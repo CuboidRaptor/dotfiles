@@ -78,6 +78,10 @@ else # Bootstrap system
     # this is a script in ~/dotfiles/scripts
     sap
 
+    msg "Setting up multimedia and codecs..."
+    sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+    sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+
     msg "Creating distrobox..."
     distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
     distrobox enter arch-toolbox-latest -- ~/dotfiles/scripts/distrobox.sh
