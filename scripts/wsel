@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# fzf select a wineprefix and then print it/execute a command with it
+
+wineprefixespath="$HOME/.local/share/wineprefixes"
+export WINEPREFIX
+WINEPREFIX="$(fd -u -t d --min-depth 1 --max-depth 1 . "$wineprefixespath" | fzf)"
+if [ "$#" -eq 0 ]
+then
+    echo "$WINEPREFIX"
+else
+    "$@"
+fi
