@@ -17,13 +17,13 @@ zstyle ":prompt:pure:user" color "$gray"
 zstyle ":prompt:pure:virtualenv" color "$gray"
 znap prompt sindresorhus/pure
 
+znap source zsh-users/zsh-syntax-highlighting
+
 setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
 compinit # run this explicitly so setting $_comp_options works
 _comp_options+=(globdots)
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
-
-znap source zsh-users/zsh-syntax-highlighting
 
 # fzf stuff and shell integration
 znap eval "fzf" "fzf --zsh"
@@ -106,8 +106,7 @@ fi
 SAVEHIST=1000000
 HISTSIZE=1000000
 HISTFILE=~/.zsh_history
-setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY
-setopt INC_APPEND_HISTORY_TIME
+setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY INC_APPEND_HISTORY_TIME
 
 if command -v nvim &>/dev/null
 then
