@@ -52,8 +52,29 @@ bindkey "^[f" fzf-cd-recursively-widget
 # unless there's a double star in which case trigger fzf's autocomplete
 function _zsh_fzf_autosuggest {
     bufwords=(${(z)LBUFFER})
-    if [[ ${#bufwords} -gt 1 ]] && [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]] ; then
-        zle fzf-completion
+    if [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]]
+    then
+        if [[ "${#bufwords}" -gt 1 ]]
+        then
+            zle fzf-completion
+        elif [[ "${#bufwords}" -eq 1 ]]
+        then
+            # store whether or not original LBUFFER had a `./` before it
+            dotslash=""
+            if [[ "$LBUFFER" == "./"* ]]
+            then
+                dotslash="./"
+            fi
+
+            # add `touch` before autocomplete to make fzf-completion run file-completion, then remove it
+            local filestring="touch "
+            LBUFFER="${filestring}$LBUFFER"
+            zle fzf-completion
+            LBUFFER=${LBUFFER[$((${#filestring} + 1)),-1]}
+
+            #if LBUFFER originally had a ./ before it, add it back so we can quickly execute stuff
+            LBUFFER="${dotslash}$LBUFFER"
+        fi
     else
         zle autosuggest-accept
         zle autosuggest-fetch
