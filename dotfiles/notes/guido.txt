@@ -17,6 +17,7 @@ yabridgectl paths
     "<wineroot>/Program Files/Common Files/CLAP"
     "<wineroot>/Program Files/Common Files/VST3"
     "<wineroot>/Program Files/VstPlugins"
+    also install DXVK in a seperate wineroot for plugins that can use it
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 Browser/firefox stuff:
