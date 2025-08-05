@@ -136,6 +136,7 @@
           - yabridge # Copr
           - fuse
           - fuse-libs
+          - gdk-pixbuf2-modules-extra # Needed for reaper/changing cursor
           - yt-dlp
 
           # apps
