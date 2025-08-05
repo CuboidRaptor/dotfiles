@@ -314,6 +314,18 @@
         src: 9999-automated-udev.rules
         dest: /etc/udev/rules.d/9999-automated-udev.rules
 
+    - name: Copying cpufreq_performance systemd service
+      ansible.builtin.copy:
+        src: cpufreq_performance.service
+        dest: /etc/systemd/system/cpufreq_performance.service
+      register: _cpufreq_copy
+    - name: Enabling cpufreq_performance systemd service
+      when: _cpufreq_copy.changed
+      ansible.builtin.systemd_service:
+        name: cpufreq_performance
+        enabled: true
+        state: started
+
     - name: Ensuring threadirqs parameter is added to grub
       ansible.builtin.replace:
         path: /etc/default/grub
