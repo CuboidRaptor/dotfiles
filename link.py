@@ -36,7 +36,6 @@ PATHS = [
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
 
-    ".local/share/SpeedCrunch/color-schemes/",
     ".local/share/fonts/MonaspaceNeonFrozen/",
     ".local/share/mime/",
     ".local/share/nemo/actions/",
