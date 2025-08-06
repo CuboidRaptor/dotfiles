@@ -28,7 +28,6 @@ PATHS = [
     ".config/tmux/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
-    ".config/vesktop/themes/",
     ".config/autostart/",
     ".config/flameshot/",
     ".config/vlc/vlcrc",
