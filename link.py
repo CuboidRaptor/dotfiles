@@ -30,8 +30,6 @@ PATHS = [
     ".config/autostart/",
     ".config/flameshot/",
     ".config/wezterm/",
-    ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
-    ".config/mimeapps.list",
 
     ".local/share/fonts/MonaspaceNeonFrozen/",
     ".local/share/mime/",
