@@ -28,7 +28,7 @@ ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 # fzf stuff and shell integration
 znap eval "fzf" "fzf --zsh"
 # set some fzf bindings and other options
-export FZF_DEFAULT_OPTS="--no-height -i --style full --bind ctrl-h:abort,ctrl-l:accept"
+export FZF_DEFAULT_OPTS="--no-height -i --style full --multi --bind ctrl-h:abort,ctrl-l:accept"
 # catppuccin for fzf
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
