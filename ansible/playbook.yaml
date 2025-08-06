@@ -40,9 +40,13 @@
           - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_release_number }}.noarch.rpm
           - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_release_number }}.noarch.rpm
 
-    - name: Import Sublime Text RPM GPG keys
+    - name: Import Sublime Text RPM keys
       ansible.builtin.rpm_key:
         key: https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+
+    - name: Import VS Code RPM keys
+      ansible.builtin.rpm_key:
+        key: https://packages.microsoft.com/keys/microsoft.asc
 
     - name: Add Sublime Text Stable repo
       ansible.builtin.command:
@@ -63,6 +67,12 @@
       ansible.builtin.command:
         cmd: dnf config-manager addrepo --from-repofile=https://ksp-ckan.s3-us-west-2.amazonaws.com/rpm/stable/ckan_stable.repo
         creates: /etc/yum.repos.d/ckan_stable.repo
+
+    - name: Add VS Code repo
+      # extract the repo from microsoft installation instructions, then delete `autorefresh=1` (openSUSE option)
+      ansible.builtin.command:
+        cmd: dnf config-manager addrepo --from-repofile={{ playbook_dir }}/files/vscode.repo
+        creates: /etc/yum.repos.d/vscode.repo
 
     - name: Enable Firefox Dev Copr repo
       community.general.copr:
@@ -145,6 +155,7 @@
           - wezterm # Copr
           - sublime-text # 3rd-Party Repo
           - librewolf # 3rd-Party Repo
+          - code
           - obs-studio
           - okular
           - kolourpaint
