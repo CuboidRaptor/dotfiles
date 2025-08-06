@@ -23,7 +23,6 @@ PATHS = [
     ".tmuxp/misc.yaml",
     ".tmuxp/template.yaml",
 
-    ".config/starship.toml",
     ".config/nvim/",
     ".config/tmux/",
     ".config/SpeedCrunch/",
