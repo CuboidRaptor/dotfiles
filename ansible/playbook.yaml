@@ -157,6 +157,7 @@
           - librewolf # 3rd-Party Repo
           - code
           - obs-studio
+          - steam
           - okular
           - kolourpaint
           - gimp
