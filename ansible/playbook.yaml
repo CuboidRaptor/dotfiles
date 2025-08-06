@@ -124,6 +124,7 @@
           - cargo
           - nodejs-bash-language-server
           - dash
+          - 'g++'
 
           # cmdline stuff
           - distrobox
