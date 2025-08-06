@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-reaper-proxy">
-  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
-  <icon name="cockos-reaper-peak"/>
-  <comment xml:lang="en">REAPER proxy</comment>
-  <glob pattern="*.rpp-prox"/>
-</mime-type>

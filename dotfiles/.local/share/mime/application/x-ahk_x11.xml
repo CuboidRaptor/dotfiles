@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-ahk_x11">
-  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
-  <comment>AHK_X11: AutoHotkey for Linux</comment>
-  <icon name="application-x-ahk_x11"/>
-  <glob pattern="*.ahk"/>
-</mime-type>

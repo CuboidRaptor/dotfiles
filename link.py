@@ -32,7 +32,6 @@ PATHS = [
     ".config/wezterm/",
 
     ".local/share/fonts/MonaspaceNeonFrozen/",
-    ".local/share/mime/",
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/"
 ]

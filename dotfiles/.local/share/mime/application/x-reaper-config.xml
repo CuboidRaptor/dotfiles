@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-reaper-config">
-  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
-  <sub-class-of type="text/plain"/>
-  <icon name="cockos-reaper"/>
-  <comment xml:lang="en">REAPER configuration</comment>
-  <glob pattern="reaper*.ini"/>
-</mime-type>
