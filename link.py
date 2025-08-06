@@ -26,8 +26,6 @@ PATHS = [
     ".config/starship.toml",
     ".config/nvim/",
     ".config/tmux/",
-    ".config/btop/btop.conf",
-    ".config/btop/themes/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/vesktop/themes/",

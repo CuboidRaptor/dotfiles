@@ -128,7 +128,6 @@
           # cmdline stuff
           - distrobox
           - fastfetch
-          - btop
           - git
           - gh
           - zsh
