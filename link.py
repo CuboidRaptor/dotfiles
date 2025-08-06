@@ -28,7 +28,6 @@ PATHS = [
     ".config/tmux/",
     ".config/btop/btop.conf",
     ".config/btop/themes/",
-    ".config/bat/",
     ".config/SpeedCrunch/",
     ".config/sublime-text/Packages/User/",
     ".config/vesktop/themes/",
