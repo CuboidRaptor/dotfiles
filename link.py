@@ -29,7 +29,6 @@ PATHS = [
     ".config/sublime-text/Packages/User/",
     ".config/autostart/",
     ".config/flameshot/",
-    ".config/vlc/vlcrc",
     ".config/wezterm/",
     ".config/wireplumber/wireplumber.conf.d/51-disable-suspension.conf",
     ".config/mimeapps.list",
