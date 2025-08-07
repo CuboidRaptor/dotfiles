@@ -147,6 +147,7 @@
           - fuse
           - fuse-libs
           - gdk-pixbuf2-modules-extra # Needed for reaper/changing cursor
+          - cascadia-fonts-all
           - yt-dlp
 
           # apps
