@@ -112,6 +112,7 @@ if command -v nvim &>/dev/null
 then
     # Not all environments have neovim (e.g. distrobox)
     export MANPAGER="nvim +Man!"
+    export MANWIDTH=100
 fi
 
 # set some aliases
