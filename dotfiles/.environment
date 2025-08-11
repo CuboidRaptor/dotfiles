@@ -5,4 +5,3 @@ $HOME/.cargo/bin:\
 $HOME/bin"
 
 export WINEESYNC=1
-export WINEFSYNC=1
