@@ -36,6 +36,7 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
+# some extra stuff at the end so it works with symlinks
 export FZF_ALT_C_COMMAND="{ fd -u -t d --min-depth 1 --max-depth 1 && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }"
 export FZF_CTRL_T_COMMAND="fd -u --exclude .git"
 export FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
@@ -46,7 +47,7 @@ fzf-cd-recursively-widget () {
         zle fzf-cd-widget
 }
 zle -N fzf-cd-recursively-widget
-bindkey "^[f" fzf-cd-recursively-widget
+bindkey "^[f" fzf-cd-recursively-widget # bind it to alt+f
 
 # make tab always accept and then continue suggesting
 # unless there's a double star in which case trigger fzf's autocomplete
@@ -83,7 +84,7 @@ function _zsh_fzf_autosuggest {
 zle -N _zsh_fzf_autosuggest
 bindkey '^I' _zsh_fzf_autosuggest
 
-# vim bindings
+# emacs bindings, because vim bindings are cursed and break things (I swear I'm a real vim user)
 bindkey -e
 
 # line editing bindings to delete whole line or chunks of line
