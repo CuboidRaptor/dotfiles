@@ -38,51 +38,47 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=border:#313244,label:#cdd6f4"
 # some extra stuff at the end so it works with symlinks
 export FZF_ALT_C_COMMAND="{ fd -u -t d --min-depth 1 --max-depth 1 && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }"
-export FZF_CTRL_T_COMMAND="fd -u --exclude .git"
-export FZF_COMPLETION_TRIGGER="**" # explicitly set this so that _zsh_fzf_autosuggest works
+export FZF_COMPLETION_TRIGGER="" # explicitly set this so we can make ctrl+t run my cursed
+    # autocomplete file hack thing
 
 # like alt+c cd, but it's recursive and ignores .git
-fzf-cd-recursively-widget () {
+custom-fzf-cd-recursively-widget () {
     FZF_ALT_C_COMMAND="{ fd -u --exclude .git -t d && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }" \
         zle fzf-cd-widget
 }
-zle -N fzf-cd-recursively-widget
-bindkey "^[f" fzf-cd-recursively-widget # bind it to alt+f
+zle -N custom-fzf-cd-recursively-widget
+bindkey "^[f" custom-fzf-cd-recursively-widget # bind it to alt+f
 
-# make tab always accept and then continue suggesting
-# unless there's a double star in which case trigger fzf's autocomplete
-function _zsh_fzf_autosuggest {
+custom-fzf-ctrl-t-widget () {
     bufwords=(${(z)LBUFFER})
-    if [[ "${bufwords[-1]}" == *"$FZF_COMPLETION_TRIGGER" ]]
+    if [[ "${#bufwords}" -gt 1 ]] || [[ "$LBUFFER[-1]" == [[:space:]] ]]
     then
-        if [[ "${#bufwords}" -gt 1 ]]
-        then
-            zle fzf-completion
-        elif [[ "${#bufwords}" -eq 1 ]]
-        then
-            # store whether or not original LBUFFER had a `./` before it
-            dotslash=""
-            if [[ "$LBUFFER" == "./"* ]]
-            then
-                dotslash="./"
-            fi
-
-            # add `touch` before autocomplete to make fzf-completion run file-completion, then remove it
-            local filestring="touch "
-            LBUFFER="${filestring}$LBUFFER"
-            zle fzf-completion
-            LBUFFER=${LBUFFER[$((${#filestring} + 1)),-1]}
-
-            #if LBUFFER originally had a ./ before it, add it back so we can quickly execute stuff
-            LBUFFER="${dotslash}$LBUFFER"
-        fi
+        zle fzf-completion
     else
-        zle autosuggest-accept
-        zle autosuggest-fetch
+        # add `touch` before autocomplete to make fzf-completion run file-completion, then remove it
+        local filestring="touch "
+        LBUFFER="${filestring}$LBUFFER"
+        zle fzf-completion
+        LBUFFER=${LBUFFER[$((${#filestring} + 1)),-1]}
+
+        # Add a `./` if it doesn't already begin with `/`, we assume this completion when used with one
+            # word is looking for a file, so add a `./` in that case for quick execution
+        if [[ "$LBUFFER" != "/"* ]]
+        then
+            LBUFFER="./$LBUFFER"
+        fi
     fi
 }
-zle -N _zsh_fzf_autosuggest
-bindkey '^I' _zsh_fzf_autosuggest
+zle -N custom-fzf-ctrl-t-widget
+bindkey "^T" custom-fzf-ctrl-t-widget
+
+# the underscore is needed for some reason (smh zsh)
+_custom-autosuggest-widget () {
+    zle autosuggest-accept
+    zle autosuggest-fetch
+}
+zle -N _custom-autosuggest-widget
+bindkey '^I' _custom-autosuggest-widget
 
 # emacs bindings, because vim bindings are cursed and break things (I swear I'm a real vim user)
 bindkey -e
