@@ -108,6 +108,12 @@ setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE EXTENDED_HISTORY INC_APPEND_HISTORY_TI
 if command -v nvim &>/dev/null
 then
     # Not all environments have neovim (e.g. distrobox)
+    # set nvim as editor and add aliases
+    export VISUAL="nvim"
+    export EDITOR="$VISUAL"
+    alias vi="nvim"
+    alias vim="nvim"
+    # set nvim as manpager
     export MANPAGER="nvim +Man!"
     export MANWIDTH=100
 fi
