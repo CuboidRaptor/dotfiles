@@ -31,11 +31,7 @@ alias egrep="egrep --color=auto"
 
 if command -v nvim &>/dev/null
 then
-    # Not all environments have neovim (e.g. distrobox)
-    # set nvim as editor and add aliases
-    alias vi="nvim"
-    alias vim="nvim"
-    # set nvim as manpager
+    # set nvim as manpager if it exists (e.g. distrobox)
     export MANPAGER="nvim +Man!"
     export MANWIDTH=100
 fi
