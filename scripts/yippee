@@ -45,6 +45,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Distrobox..."
     distrobox enter arch-toolbox-latest -- paru -Syu
 
+    msg "Autoremoving Distrobox packages..."
+    distrobox enter arch-toolbox-latest -- bash -c 'sudo pacman -Rs "$(pacman -Qtdq)"'
+
     # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
     flatpak run it.mijorus.gearlever --update --all -y
