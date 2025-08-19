@@ -83,7 +83,8 @@ else # Bootstrap system
 
     msg "Setting up multimedia and codecs..."
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-    sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+    sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+    sudo dnf install @sound-and-video
 
     msg "Creating distrobox..."
     distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
