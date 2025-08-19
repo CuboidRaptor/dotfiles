@@ -43,7 +43,7 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     sudo flatpak update
 
     msg "Updating Distrobox..."
-    distrobox enter arch-toolbox-latest -- paru -Syu
+    distrobox enter arch-toolbox-latest -- paru
 
     msg "Autoremoving Distrobox packages..."
     distrobox enter arch-toolbox-latest -- bash -c \
