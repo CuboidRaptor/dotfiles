@@ -113,6 +113,7 @@ then
 fi
 
 # set some aliases
-if [[ -f ~/.zsh_aliases ]]; then
+if [[ -f ~/.zsh_aliases ]]
+then
     source ~/.zsh_aliases
 fi

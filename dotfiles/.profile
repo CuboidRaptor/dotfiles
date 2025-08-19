@@ -1,7 +1,8 @@
 # .profile
 
 # Get the aliases and functions
-if [ -f ~/.environment ]; then
+if [ -f ~/.environment ]
+then
     source ~/.environment
 fi
 
