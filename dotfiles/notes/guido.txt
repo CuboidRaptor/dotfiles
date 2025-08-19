@@ -36,3 +36,7 @@ Browser/firefox stuff:
     firefox color
         catppuccin latte, change accent to theme color
     the other stuff (xkcd-ntmin/sitg)
+other setup notes:
+    mark packages as explicitly installed:
+        `sudo dnf mark user`
+        `sudo pacman -D --asexplicit`
