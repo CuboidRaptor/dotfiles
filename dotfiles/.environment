@@ -4,4 +4,8 @@ $HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $HOME/bin"
 
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+
 export WINEESYNC=1
+export WINEFSYNC=1

@@ -33,8 +33,6 @@ if command -v nvim &>/dev/null
 then
     # Not all environments have neovim (e.g. distrobox)
     # set nvim as editor and add aliases
-    export VISUAL="nvim"
-    export EDITOR="$VISUAL"
     alias vi="nvim"
     alias vim="nvim"
     # set nvim as manpager
