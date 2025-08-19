@@ -37,7 +37,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     sudo dnf upgrade --refresh
 
     msg "Autoremoving system packages..."
-    sudo dnf autoremove
+    sudo dnf autoremove \
+        || msg 'System package autoremove failed/cancelled! Use `dnf mark install` to mark packages.' \
+        && false
 
     msg "Updating Flatpak apps..."
     sudo flatpak update
@@ -48,7 +50,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Autoremoving Distrobox packages..."
     # we use an if instead of [ ] because we need it to not return false if `pacman -Qdtq` errors
     distrobox enter arch-toolbox-latest -- bash -c \
-        'if orphanlist="$(pacman -Qdtq)"; then echo "$orphanlist" | sudo pacman -Rs -; fi'
+        'if orphanlist="$(pacman -Qdtq)"; then echo "$orphanlist" | sudo pacman -Rs -; fi' \
+        || msg 'Pacman autoremove failed/cancelled! Use `pacman -D --asexplicit` to mark packages.' \
+        && false
 
     # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
