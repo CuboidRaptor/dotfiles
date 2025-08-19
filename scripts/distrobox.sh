@@ -24,7 +24,6 @@ paru -S mesa vlc xapp bibata-cursor-theme noto-fonts-emoji vesktop
 
 # Export apps
 distrobox-export --app vesktop
-distrobox-export --app reaper
 
 # Clean unnecessary packages
 sudo bash -c "pacman -Qdtq | pacman -Rs -"
