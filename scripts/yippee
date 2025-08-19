@@ -46,8 +46,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     distrobox enter arch-toolbox-latest -- paru
 
     msg "Autoremoving Distrobox packages..."
+    # we use an if instead of [ ] because we need it to not return false if `pacman -Qdtq` errors
     distrobox enter arch-toolbox-latest -- bash -c \
-        'orphanlist="$(pacman -Qdtq)" && sudo pacman -Rs "$orphanlist"'
+        'if orphanlist="$(pacman -Qdtq)"; then echo "$orphanlist" | sudo pacman -Rs -; fi'
 
     # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
