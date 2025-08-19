@@ -25,6 +25,10 @@ _comp_options+=(globdots)
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
 
+# emacs bindings, because vim bindings are cursed and break things (I swear I'm a real vim user)
+# this needs to be set before fzf init because zsh auto-loads viins bindings and breaks my shit or smth
+bindkey -e
+
 # fzf stuff and shell integration
 znap eval "fzf" "fzf --zsh"
 # set some fzf bindings and other options
@@ -79,9 +83,6 @@ _custom-autosuggest-widget () {
 }
 zle -N _custom-autosuggest-widget
 bindkey '^I' _custom-autosuggest-widget
-
-# emacs bindings, because vim bindings are cursed and break things (I swear I'm a real vim user)
-bindkey -e
 
 # line editing bindings to delete whole line or chunks of line
 bindkey "^U" kill-whole-line
