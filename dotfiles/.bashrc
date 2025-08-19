@@ -35,8 +35,3 @@ then
     export MANPAGER="nvim +Man!"
     export MANWIDTH=100
 fi
-
-# set $PATH
-if [[ -f ~/.environment ]]; then
-    source ~/.environment
-fi

@@ -13,7 +13,7 @@ DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles") # path to root of d
 #HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS = [
     ".bashrc",
-    ".bash_profile",
+    ".profile",
     ".zshrc",
     ".zsh_aliases",
     ".path_source",

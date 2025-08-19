@@ -116,8 +116,3 @@ fi
 if [[ -f ~/.zsh_aliases ]]; then
     source ~/.zsh_aliases
 fi
-
-# set $PATH and other environment variables
-if [[ -f ~/.environment ]]; then
-    source ~/.environment
-fi
