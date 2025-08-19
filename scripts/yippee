@@ -46,7 +46,8 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     distrobox enter arch-toolbox-latest -- paru -Syu
 
     msg "Autoremoving Distrobox packages..."
-    distrobox enter arch-toolbox-latest -- bash -c 'sudo pacman -Rs "$(pacman -Qtdq)"'
+    distrobox enter arch-toolbox-latest -- bash -c \
+        'orphanlist="$(pacman -Qdtq)" && sudo pacman -Rs "$orphanlist"'
 
     # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
