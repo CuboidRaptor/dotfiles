@@ -40,3 +40,5 @@ other setup notes:
     mark packages as explicitly installed:
         `sudo dnf mark user`
         `sudo pacman -D --asexplicit`
+    update firmware
+        `sudo fwupdmgr get-updates && sudo fwupdmgr upgrade`
