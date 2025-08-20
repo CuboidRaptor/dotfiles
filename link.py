@@ -16,7 +16,7 @@ PATHS = [
     ".profile",
     ".zshrc",
     ".zsh_aliases",
-    ".path_source",
+    ".environment",
     ".gitconfig",
     ".ahk/",
     "notes/guido.txt",
