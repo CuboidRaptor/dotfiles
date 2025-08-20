@@ -19,7 +19,6 @@ PATHS = [
     ".environment",
     ".gitconfig",
     ".ahk/",
-    "notes/guido.txt",
     ".tmuxp/misc.yaml",
     ".tmuxp/template.yaml",
 
