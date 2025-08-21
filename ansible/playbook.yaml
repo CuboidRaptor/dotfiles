@@ -208,6 +208,7 @@
       community.general.cargo:
         name:
           - eza
+          - cargo-update
       become_user: "{{ usern }}"
 
     - name: Add user "{{ usern }}" to groups
