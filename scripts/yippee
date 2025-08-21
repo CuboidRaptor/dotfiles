@@ -54,6 +54,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Gear Lever AppImages..."
     flatpak run it.mijorus.gearlever --update --all -y
 
+    msg "Updating cargo packages..."
+    cargo install-update -a
+
     msg "Updating Neovim plugins..."
     nvim --headless "+Lazy! sync" +qa
 
