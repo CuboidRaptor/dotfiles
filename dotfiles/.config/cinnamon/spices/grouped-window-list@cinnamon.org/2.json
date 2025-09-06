@@ -358,6 +358,7 @@
             "org.gnome.Terminal.desktop"
         ],
         "value": [
+            "vivaldi-stable.desktop",
             "firefox-aurora.desktop",
             "org.wezfurlong.wezterm.desktop",
             "nemo.desktop",
@@ -368,7 +369,6 @@
             "code.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
-            "vivaldi-stable.desktop",
             "speedcrunch.desktop"
         ]
     },
