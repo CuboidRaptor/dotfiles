@@ -32,7 +32,8 @@ PATHS = [
 
     ".local/share/fonts/MonaspaceNeonFrozen/",
     ".local/share/nemo/actions/",
-    ".local/share/flatpak/overrides/"
+    ".local/share/flatpak/overrides/",
+    ".local/share/applications/vivaldi-stable.desktop"
 ]
 
 def slink(name: str) -> None:
