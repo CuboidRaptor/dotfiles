@@ -22,8 +22,18 @@ github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 sync stuff/settings
     firefox
+    vivaldi
     vs code
     vesktop
+Vivaldi stuff:
+    sync
+    copy `vivaldi-stable.desktop` from `/usr/share/applications` -> `~/.local/share/applications`
+    add `--enable-blink-features=MiddleClickAutoscroll` after all `/usr/bin/vivaldi-stable`
+    Violentmonkey
+        dl-librescore
+        bypass-all-shortlinks-debloated
+    search engines
+    xkcd-ntmin
 Browser/firefox stuff:
     search engines
     Violentmonkey
