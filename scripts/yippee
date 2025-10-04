@@ -42,17 +42,8 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Flatpak apps..."
     sudo flatpak update
 
-    msg "Updating Distrobox..."
-    distrobox enter arch-toolbox-latest -- paru
-
-    msg "Autoremoving Distrobox packages..."
-    # we use an if instead of [ ] because we need it to not return false if `pacman -Qdtq` errors
-    distrobox enter arch-toolbox-latest -- bash -c \
-        'if orphanlist="$(pacman -Qdtq)"; then echo "$orphanlist" | sudo pacman -Rs -; fi'
-
-    # Unattended/maintenance tasks
     msg "Updating Gear Lever AppImages..."
-    flatpak run it.mijorus.gearlever --update --all -y
+    flatpak run it.mijorus.gearlever --update --all
 
     msg "Updating cargo packages..."
     cargo install-update -a
@@ -90,10 +81,6 @@ else # Bootstrap system
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
     sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
     sudo dnf install @sound-and-video
-
-    msg "Creating distrobox..."
-    distrobox create -i quay.io/toolbx/arch-toolbox:latest --nvidia --yes
-    distrobox enter arch-toolbox-latest -- ~/dotfiles/scripts/distrobox.sh
 fi
 
 msg "Writing to yippee history file..."
