@@ -31,9 +31,6 @@ alias l="eza -a --color=always --icons=always --group-directories-first"
 # add color to ls
 alias ls="ls --color=auto"
 
-# make tree show hiddens and ignore .git
-alias tree="tree -a -I '.git'"
-
 # Retrack files that may have been ignored in `.gitignore`
 alias retrack="git rm -r --cached . && git add ."
 
