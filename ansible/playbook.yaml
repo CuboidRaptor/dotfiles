@@ -75,11 +75,6 @@
         cmd: dnf config-manager addrepo --from-repofile={{ playbook_dir }}/files/vscode.repo
         creates: /etc/yum.repos.d/vscode.repo
 
-    - name: Enable Firefox Dev Copr repo
-      community.general.copr:
-        name: the4runner/firefox-dev
-        state: enabled
-
     - name: Enable Wezterm Copr repo
       community.general.copr:
         name: wezfurlong/wezterm-nightly
@@ -152,7 +147,6 @@
           - yt-dlp
 
           # apps
-          - firefox-dev # Copr
           - vivaldi-stable # 3rd-Party Repo
           - wezterm # Copr
           - sublime-text # 3rd-Party Repo
