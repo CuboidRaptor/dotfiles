@@ -1,12 +1,9 @@
 `yippee -b` (ansible/dotfiles/distrobox bootstrapping)
 extra packages
-    reaper
     gearlever
         musescore
         librescore
     rpm files
-        tx16wx
-        surge-xt
         vesktop
     virt-manager ('@virtualization' group in fedora)
         https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
@@ -14,15 +11,9 @@ extra packages
             or google more recent instructions
         https://www.debugpoint.com/kvm-share-folder-windows-guest/
             `choco install winfsp` for winfsp
-yabridgectl paths
-    "<wineroot>/Program Files/Common Files/CLAP"
-    "<wineroot>/Program Files/Common Files/VST3"
-    "<wineroot>/Program Files/VstPlugins"
-    also install DXVK in a seperate wineroot for plugins that can use it
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 sync stuff/settings
-    firefox
     vivaldi
     vs code
     vesktop
@@ -44,9 +35,7 @@ Browser/firefox stuff:
         enable cloud sync support
         manually load/sync settings
     return youtube dislike
-    firefox color
-        catppuccin latte, change accent to theme color
-    the other stuff (xkcd-ntmin/sitg)
+    the other stuff (xkcd-ntmin)
 other setup notes:
     mark packages as explicitly installed:
         `sudo dnf mark user`
