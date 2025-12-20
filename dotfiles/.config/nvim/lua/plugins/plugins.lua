@@ -9,7 +9,6 @@ return {
     },
     {
         "Saghen/blink.cmp",
-        tag = "v1.3.1", -- super-tab lazyvim currently causes issues, check LazyVim/LazyVim issue #6185
         opts = {
             completion = {
                 list = {
@@ -30,16 +29,16 @@ return {
         "akinsho/bufferline.nvim",
         enabled = false
     },
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000
-    },
-    {
-        "norcalli/nvim-colorizer.lua"
-    },
+    { "ellisonleao/gruvbox.nvim" },
     {
         "NMAC427/guess-indent.nvim"
+    },
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            -- Configure LazyVim to load gruvbox
+            colorscheme = "gruvbox",
+        },
     },
     {
         "folke/noice.nvim",

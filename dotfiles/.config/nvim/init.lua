@@ -1,12 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-require("colorizer").setup({
-  "html",
-  "css",
-  "javascript",
-})
-
 -- setup guess-indent.nvim
 require("guess-indent").setup({})
 
@@ -41,7 +35,7 @@ require("lualine").setup({
   }
 })
 
-require("catppuccin").setup({
-  flavour = "mocha"
-})
-vim.cmd.colorscheme "catppuccin"
+-- require("catppuccin").setup({
+--   flavour = "mocha"
+-- })
+-- vim.cmd.colorscheme "catppuccin"
