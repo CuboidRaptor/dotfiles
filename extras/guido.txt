@@ -19,8 +19,10 @@ sync stuff/settings
     vesktop
 Vivaldi stuff:
     sync
-    copy `vivaldi-stable.desktop` from `/usr/share/applications` -> `~/.local/share/applications`
-    add `--enable-blink-features=MiddleClickAutoscroll` after all `/usr/bin/vivaldi-stable`
+    enable middle click autoscrroll
+        `cp "/usr/share/applications/vivaldi-stable.desktop" "./dotfiles/.local/share/applications/vivaldi-stable.desktop"`
+        run this command from DOTFILES ROOT
+        add `--enable-blink-features=MiddleClickAutoscroll` after all `/usr/bin/vivaldi-stable`
     Violentmonkey
         dl-librescore
         bypass-all-shortlinks-debloated
