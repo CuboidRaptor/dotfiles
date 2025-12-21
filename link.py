@@ -30,7 +30,6 @@ PATHS = [
     ".config/flameshot/",
     ".config/wezterm/",
 
-    ".local/share/fonts/MonaspaceNeonFrozen/",
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/",
     ".local/share/applications/vivaldi-stable.desktop"
