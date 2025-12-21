@@ -1,4 +1,5 @@
 `yippee -b` (ansible/dotfiles/distrobox bootstrapping)
+configure timeshift
 extra packages
     gearlever
         musescore
