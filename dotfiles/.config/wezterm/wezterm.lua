@@ -10,20 +10,13 @@ config.initial_cols = 120
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
-config.color_scheme = "GruvboxDark"
+config.color_scheme = "GruvboxDarkHard"
 
 config.font = wezterm.font_with_fallback {
     "Cascadia Code NF",
     "monospace",
 }
 config.font_size = 12
-
-config.window_padding = {
-    left = "15px",
-    right = "15px",
-    top = "15px",
-    bottom = "15px",
-}
 
 local act = wezterm.action
 config.keys = {

@@ -5,16 +5,15 @@
 source ~/.local/share/znaprepos/znap/znap.zsh  # Start Znap
 
 # znap plugins
-gray="#6c7086"
 zstyle ":prompt:pure:prompt:success" color green
-# set catppuccin colors because pure prompt doesn't use terminal colors for these
-zstyle ":prompt:pure:git:branch" color "$gray"
-zstyle ":prompt:pure:git:action" color "$gray"
-zstyle ":prompt:pure:git:dirty" color "#f5c2e7" # pink
-zstyle ":prompt:pure:host" color "$gray"
-zstyle ":prompt:pure:prompt:continuation" color "$gray"
-zstyle ":prompt:pure:user" color "$gray"
-zstyle ":prompt:pure:virtualenv" color "$gray"
+# set terminal colors
+zstyle ":prompt:pure:git:branch" color white
+zstyle ":prompt:pure:git:action" color white
+zstyle ":prompt:pure:git:dirty" color magenta
+zstyle ":prompt:pure:host" color white
+zstyle ":prompt:pure:prompt:continuation" color white
+zstyle ":prompt:pure:user" color white
+zstyle ":prompt:pure:virtualenv" color white
 znap prompt sindresorhus/pure
 
 znap source zsh-users/zsh-syntax-highlighting
