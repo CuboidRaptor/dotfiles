@@ -19,8 +19,6 @@ PATHS = [
     ".environment",
     ".gitconfig",
     ".ahk/",
-    ".tmuxp/misc.yaml",
-    ".tmuxp/template.yaml",
 
     ".config/nvim/",
     ".config/tmux/",
