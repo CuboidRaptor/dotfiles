@@ -39,3 +39,8 @@ require("lualine").setup({
 --   flavour = "mocha"
 -- })
 -- vim.cmd.colorscheme "catppuccin"
+
+require("gruvbox").setup({
+  contrast = "hard"
+})
+vim.cmd([[colorscheme gruvbox]])

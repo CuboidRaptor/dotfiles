@@ -34,13 +34,6 @@ return {
         "NMAC427/guess-indent.nvim"
     },
     {
-        "LazyVim/LazyVim",
-        opts = {
-            -- Configure LazyVim to load gruvbox
-            colorscheme = "gruvbox",
-        },
-    },
-    {
         "folke/noice.nvim",
         opts = {
             lsp = {
