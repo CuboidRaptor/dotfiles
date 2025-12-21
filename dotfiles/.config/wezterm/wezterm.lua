@@ -2,17 +2,18 @@ local wezterm = require "wezterm"
 local config = wezterm.config_builder()
 
 -- use zsh
-config.default_prog = { "zsh" }
+-- config.default_prog = { "zsh" }
+config.default_prog = { "tmux", "new", "-As0" }
 
 config.initial_rows = 32
 config.initial_cols = 120
 
 config.switch_to_last_active_tab_when_closing_tab = true
 
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "GruvboxDark"
 
 config.font = wezterm.font_with_fallback {
-    "Monaspace Neon Frozen",
+    "Cascadia Code NF",
     "monospace",
 }
 config.font_size = 12
