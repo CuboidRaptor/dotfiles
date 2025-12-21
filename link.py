@@ -74,20 +74,3 @@ if __name__ == "__main__":
 
     for path in PATHS:
         slink(path)
-
-    ffpath: Path = HOMETARGET.joinpath(".mozilla/firefox")
-    if ffpath.is_dir():
-        found_dev: bool = False
-        for folder in ffpath.iterdir():
-            dname = str(folder.name)
-            if dname.endswith(".default-release") or dname.endswith(".dev-edition-default"):
-                if dname.endswith(".dev-edition-default"):
-                    found_dev = True
-
-                symlink_to(folder.joinpath("user.js"), DOTFILEPATH.parent.joinpath("extras/user.js"))
-
-        if not found_dev:
-            print("WARNING: Firefox Dev Edition profile not found")
-
-    else:
-        print(f"WARNING: `{ffpath}` doesn't exist or isn't a directory")
