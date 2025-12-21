@@ -36,7 +36,7 @@ export FZF_ALT_C_COMMAND="{ fd -u -t d --min-depth 1 --max-depth 1 && find -mind
 
 # like alt+c cd, but it's recursive and ignores .git
 custom-fzf-cd-recursively-widget () {
-    FZF_ALT_C_COMMAND="{ fd -u --exclude .git -t d && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }" \
+    FZF_ALT_C_COMMAND="{ fd -u --exclude .git --exclude node_modules -t d && find -mindepth 1 -maxdepth 1 -type l -xtype d -printf '%P/\n'; }" \
         zle fzf-cd-widget
 }
 zle -N custom-fzf-cd-recursively-widget
