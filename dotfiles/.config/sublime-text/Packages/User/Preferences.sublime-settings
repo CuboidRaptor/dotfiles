@@ -2,12 +2,11 @@
 	"dark_theme": "Default Dark.sublime-theme",
 	"light_theme": "Default.sublime-theme",
 	"theme": "Adaptive.sublime-theme",
-	"color_scheme": "Catppuccin Mocha.sublime-color-scheme",
-	"font_face": "Monaspace Neon Frozen",
+	"color_scheme": "gruvbox (Dark) (Hard).sublime-color-scheme",
+	"font_face": "Cascadia Code NF",
 	"font_size": 11,
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
-	"auto_complete": false,
 	"auto_match_enabled": false,
 	"auto_close_tags": false,
 	"ignored_packages":
@@ -17,4 +16,6 @@
 	"index_files": false,
 	"spell_check": false,
 	"auto_complete_commit_on_tab": true,
+	"dark_color_scheme": "Celeste.sublime-color-scheme",
+	"light_color_scheme": "Celeste.sublime-color-scheme",
 }

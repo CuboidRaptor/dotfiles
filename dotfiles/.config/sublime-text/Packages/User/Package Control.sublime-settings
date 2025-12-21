@@ -6,18 +6,15 @@
 	"installed_packages":
 	[
 		"AutoPEP8",
-		"Catppuccin color schemes",
+		"gruvbox",
 		"LSP",
 		"LSP-clangd",
-		"LSP-jdtls",
 		"LSP-json",
 		"LSP-pyright",
 		"LSP-ruff",
 		"MarkdownPreview",
 		"Nix",
 		"Package Control",
-		"Terminus",
-		"Theme - Rose Pine",
 		"TOML",
 	],
 }
