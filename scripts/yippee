@@ -64,6 +64,7 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     trash-empty 60 -f
     sudo trash-empty 60 -f
 else # Bootstrap system
+    # dotfiles MUST be in ~/dotfiles for this to work properly
     msg "Updating system packages..."
     sudo dnf upgrade --refresh
 
@@ -74,8 +75,7 @@ else # Bootstrap system
     ~/dotfiles/link.py
 
     msg "Running Ansible playbook..."
-    # this is a script in ~/dotfiles/scripts
-    sap
+    ~/dotfiles/scripts/sap
 
     msg "Setting up multimedia and codecs..."
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
