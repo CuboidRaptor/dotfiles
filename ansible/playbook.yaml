@@ -127,7 +127,6 @@
           - neovim
           - fzf
           - fd-find
-          - ripgrep
           - keyd # Copr
           - trash-cli
           - tldr
