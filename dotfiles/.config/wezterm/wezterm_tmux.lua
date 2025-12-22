@@ -13,7 +13,8 @@ function module.apply_to_config(config)
     local act = wezterm.action
     config.keys = {
         -- Send leader to terminal when pressed twice
-        { key = config.leader.key, mods = "LEADER|" .. config.leader.mods, action = act.SendKey(config.leader)},
+        { key = config.leader.key, mods = "LEADER|" .. config.leader.mods,
+            action = act.SendKey({ key = config.leader.key, mods = config.leader.mods }) },
         { key = "-", mods = "LEADER", action = act.SplitVertical({ domain="CurrentPaneDomain" }) },
             -- non-standard
         { key = "\\", mods = "LEADER", action = act.SplitHorizontal({ domain="CurrentPaneDomain" }) },

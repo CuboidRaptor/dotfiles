@@ -19,7 +19,7 @@ config.font = wezterm.font_with_fallback {
 }
 config.font_size = 12
 
-config.leader = { key=" ", mods="CTRL" }
+config.leader = { key=" ", mods="CTRL", timeout_milliseconds=2000 }
 wezterm_tmux.apply_to_config(config)
 
 local act = wezterm.action
