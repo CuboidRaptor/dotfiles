@@ -1,5 +1,8 @@
+`sudo dnf upgrade`
 `yippee -b` (ansible/dotfiles/distrobox bootstrapping)
 configure timeshift
+set hostname
+    `sudo hostnamectl set-hostname --static <name>`
 extra packages
     gearlever
         musescore
@@ -12,6 +15,7 @@ extra packages
             or google more recent instructions
         https://www.debugpoint.com/kvm-share-folder-windows-guest/
             `choco install winfsp` for winfsp
+`yippee` again to update userspace stuff
 github auth with `gh auth login`
 celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 sync stuff/settings
