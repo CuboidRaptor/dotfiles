@@ -18,7 +18,7 @@ function module.apply_to_config(config)
             -- non-standard
         { key = "\\", mods = "LEADER", action = act.SplitHorizontal({ domain="CurrentPaneDomain" }) },
             -- non-standard
-        { key = "z", mods = "LEADER", action = "TogglePaneZoomState" },
+        { key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
         { key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
         { key = "LeftArrow", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
         { key = "DownArrow", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
@@ -44,12 +44,12 @@ function module.apply_to_config(config)
         { key = 'RightArrow', mods = 'LEADER|SHIFT', action = act.MoveTabRelative(1) }, -- non-standard
         { key = "&", mods = "LEADER|SHIFT", action = act.CloseCurrentTab({ confirm=true }) },
         { key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm=true }) },
-        { key = "n", mods = "SHIFT|CTRL", action = "ToggleFullScreen" },
-        { key = "v", mods = "SHIFT|CTRL", action = act.PasteFrom 'Clipboard' },
-        { key = "c", mods = "SHIFT|CTRL", action = act.CopyTo 'Clipboard' },
-        { key = "+", mods = "SHIFT|CTRL", action = "IncreaseFontSize" },
-        { key = "-", mods = "SHIFT|CTRL", action = "DecreaseFontSize" },
-        { key = "0", mods = "SHIFT|CTRL", action = "ResetFontSize" },
+        { key = "n", mods = "SHIFT|CTRL", action = act.ToggleFullScreen },
+        { key = "v", mods = "SHIFT|CTRL", action = act.PasteFrom("Clipboard") },
+        { key = "c", mods = "SHIFT|CTRL", action = act.CopyTo("Clipboard") },
+        { key = "+", mods = "SHIFT|CTRL", action = act.IncreaseFontSize },
+        { key = "-", mods = "SHIFT|CTRL", action = act.DecreaseFontSize },
+        { key = "0", mods = "SHIFT|CTRL", action = act.ResetFontSize },
         { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
         { key = '!', mods = 'LEADER|SHIFT', action = wezterm.action_callback(convert_pane_to_tab) },
     }
