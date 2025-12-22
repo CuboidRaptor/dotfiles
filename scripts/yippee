@@ -36,9 +36,6 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating system packages..."
     sudo dnf upgrade --refresh
 
-    msg "Autoremoving system packages..."
-    sudo dnf autoremove
-
     msg "Updating Flatpak apps..."
     sudo flatpak update
 
