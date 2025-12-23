@@ -21,7 +21,7 @@ PATHS = [
     ".ahk/",
 
     ".config/nvim/",
-    ".config/tmux/",
+    ".config/tmux/tmux.conf",
     ".config/SpeedCrunch/",
     ".config/cinnamon/"
     ".config/sublime-text/Packages/User/",

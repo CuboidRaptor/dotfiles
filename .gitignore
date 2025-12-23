@@ -1,6 +1,3 @@
-# Tmux plugins, they should be added by TPM instead of cramming the plugins in my repo.
-**/.config/tmux/plugins
-
 # I do dumb stuff in here
 test/
 test
