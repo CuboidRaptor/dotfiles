@@ -9,9 +9,18 @@ config.prefer_to_spawn_tabs = true
 config.initial_rows = 32
 config.initial_cols = 120
 
-config.switch_to_last_active_tab_when_closing_tab = true
+config.scrollback_lines = 1000000
+config.enable_scroll_bar = true
 
-config.color_scheme = "GruvboxDarkHard"
+local scheme_name = "GruvboxDarkHard"
+local scheme = wezterm.get_builtin_color_schemes()[scheme_name]
+scheme.scrollbar_thumb = scheme.foreground
+config.color_schemes = {
+    ["GruvboxDarkHard"] = scheme
+}
+config.color_scheme = scheme_name
+
+config.switch_to_last_active_tab_when_closing_tab = true
 
 config.font = wezterm.font_with_fallback {
     "Cascadia Code NF",
