@@ -197,7 +197,7 @@
         append: true
 
     - name: Creating keyd config directory
-      ansible.builtin.file: # create necessary config folder
+      ansible.builtin.file: 
         path: /etc/keyd
         state: directory
     - name: Copying keyd config
@@ -219,7 +219,7 @@
       changed_when: _keyd_reload.stdout != ''
 
     - name: Creating zram-generator config directory
-      ansible.builtin.file: # create necessary config folder
+      ansible.builtin.file: 
         path: /etc/systemd/zram-generator.conf.d
         state: directory
     - name: Copying zram-generator config
@@ -228,13 +228,22 @@
         dest: /etc/systemd/zram-generator.conf.d/9999-automated-zram-generator.conf
 
     - name: Creating wireplumber config directory
-      ansible.builtin.file: # create necessary config folder
+      ansible.builtin.file: 
         path: /etc/wireplumber/wireplumber.conf.d
         state: directory
     - name: Copying wireplumber config
       ansible.builtin.copy:
         src: 9999-automated-wireplumber.conf
         dest: /etc/wireplumber/wireplumber.conf.d/9999-automated-wireplumber.conf
+
+    - name: Creating NetworkManager config directory
+      ansible.builtin.file: 
+        path: /etc/NetworkManager/conf.d
+        state: directory
+    - name: Copying NetworkManager config
+      ansible.builtin.copy:
+        src: 9999-automated-wifi-powersave-off.conf
+        dest: /etc/NetworkManager/conf.d/9999-automated-wifi-powersave-off.conf
 
     - name: Enabling Magic SysRq Key
       ansible.posix.sysctl:
