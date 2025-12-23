@@ -193,7 +193,7 @@
     - name: Add user "{{ usern }}" to groups
       ansible.builtin.user:
         name: "{{ usern }}"
-        groups: keyd,audio
+        groups: keyd,audio,docker
         append: true
 
     - name: Creating keyd config directory
