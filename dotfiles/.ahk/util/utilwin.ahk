@@ -3,7 +3,7 @@
 
 ; script built for regular ahk
 
-Capslock::Send("{Esc}") ; capslock becomes esc because I don't use it anyways
-Esc & Capslock::SetCapsLockState !GetKeyState("CapsLock", "T")
-Esc & 1::Send("{F5}")
-Esc & 2::Send("{Up}^a{Delete}{Enter}{Enter}") ; delete last discord message
+Capslock & c::SetCapsLockState !GetKeyState("CapsLock", "T")
+Capslock & e::Send("{Esc}")
+Capslock & r::Send("{F5}")
+Capslock & d::Send("{Up}^a{Delete}{Enter}{Enter}") ; delete last discord message
