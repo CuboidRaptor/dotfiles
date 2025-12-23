@@ -16,7 +16,7 @@ local scheme_name = "GruvboxDarkHard"
 local scheme = wezterm.get_builtin_color_schemes()[scheme_name]
 scheme.scrollbar_thumb = scheme.foreground
 config.color_schemes = {
-    ["GruvboxDarkHard"] = scheme
+    [scheme_name] = scheme
 }
 config.color_scheme = scheme_name
 
