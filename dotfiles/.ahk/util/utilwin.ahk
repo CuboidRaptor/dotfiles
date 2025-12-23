@@ -3,6 +3,7 @@
 
 ; script built for regular ahk
 
+Capslock::return
 Capslock & c::SetCapsLockState !GetKeyState("CapsLock", "T")
 Capslock & e::Send("{Esc}")
 Capslock & r::Send("{F5}")
