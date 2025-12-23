@@ -1,13 +1,5 @@
 return {
     {
-        "rmagatti/auto-session",
-        lazy = false,
-
-        opts = {
-            -- log_level = 'debug',
-        }
-    },
-    {
         "Saghen/blink.cmp",
         opts = {
             completion = {
@@ -24,10 +16,6 @@ return {
                 preset = "super-tab"
             },
         }
-    },
-    {
-        "akinsho/bufferline.nvim",
-        enabled = false
     },
     { "ellisonleao/gruvbox.nvim" },
     {
