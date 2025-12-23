@@ -1,5 +1,6 @@
 `sudo dnf upgrade`
 `yippee -b` (ansible/dotfiles/distrobox bootstrapping)
+`dreset` for cinnamon options
 configure timeshift
 set hostname
     `sudo hostnamectl set-hostname --static <name>`
