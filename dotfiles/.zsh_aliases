@@ -11,7 +11,7 @@ alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
 # Reset changes to dconf in dotfiles repo and then write those to database
 dreset () {
     (
-        cd ~/dotfiles/dconf || exit
+        cd ~/dotfiles/dconf || return
         git checkout -- ./
         dconf load /org/cinnamon/ < cinnamon.dconf.ini
         dconf load /org/nemo/ < nemo.dconf.ini
