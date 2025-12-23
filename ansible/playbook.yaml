@@ -137,6 +137,7 @@
           - sublime-text # 3rd-Party Repo
           - librewolf # 3rd-Party Repo
           - code
+          - syncthing
           - obs-studio
           - steam
           - okular
