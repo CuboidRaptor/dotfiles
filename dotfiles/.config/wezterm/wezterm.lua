@@ -42,7 +42,4 @@ config.keys = {
 -- and I will notice if they're a problem anyways
 config.warn_about_missing_glyphs = false
 
--- always prompt for confirmation when killing things (more similar to tmux, and I like consistency)
-config.skip_close_confirmation_for_processes_named = {}
-
 return config
