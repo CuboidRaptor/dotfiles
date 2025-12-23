@@ -40,5 +40,5 @@ alias free="free -m"
 # strip metadata from image
 alias imgstrip="mogrify -strip"
 
-# make fd show hiddens and ignore .git
-alias fd="fd -u --exclude .git"
+# make fd show hiddens and ignore .git and node_modules
+alias fd="fd -u --exclude .git --exclude node_modules"
