@@ -31,6 +31,9 @@ alias l="eza -a --color=auto --icons=auto --group-directories-first"
 # add color to ls
 alias ls="ls --color=auto"
 
+# connect to default tmux session and create if it doesn't exist
+alias tmun="tmux new -As0"
+
 # Retrack files that may have been ignored in `.gitignore`
 alias retrack="git rm -r --cached . && git add ."
 
