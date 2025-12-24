@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=syncthing --no-browser
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_CA]=Syncthing
+Comment[en_CA]=Start syncthing
+X-GNOME-Autostart-Delay=10
