@@ -69,7 +69,7 @@ else # Bootstrap system
     sudo dnf install python3-pip ansible
 
     msg "Ensuring dotfiles are linked..."
-    ~/dotfiles/link.py
+    ~/dotfiles/scripts/dotfiles-link
 
     msg "Running Ansible playbook..."
     ~/dotfiles/scripts/sap
