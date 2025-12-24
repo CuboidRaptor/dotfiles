@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/jason/dotfiles/scripts/dconfd
+Exec=dconfd
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
 Name[en_CA]=dconfd
-Comment[en_CA]=No description
+Comment[en_CA]=Run dconf watcher daemon
 X-GNOME-Autostart-Delay=0
