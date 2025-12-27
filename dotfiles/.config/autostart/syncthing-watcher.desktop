@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=syncthing-watcher
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_CA]=Syncthing-Watcher
+Comment[en_CA]=Start syncthing conflict watcher
+X-GNOME-Autostart-Delay=15
