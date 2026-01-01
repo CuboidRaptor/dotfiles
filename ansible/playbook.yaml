@@ -123,6 +123,7 @@
           - fzf
           - fd-find
           - keyd # Copr
+          - fuse-sshfs
           - trash-cli
           - tldr
           - winetricks
