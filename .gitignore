@@ -5,4 +5,6 @@ test.sh
 
 # personal backup and script thing
 backup
+backup.ps1
 backup.tar.xz
+win_backup.tar.xz
