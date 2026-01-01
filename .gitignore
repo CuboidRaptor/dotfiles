@@ -6,3 +6,4 @@ test.sh
 # personal backup and script thing
 backup
 backup.tar.xz
+backup.ps1
