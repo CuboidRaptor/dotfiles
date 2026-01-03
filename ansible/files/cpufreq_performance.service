@@ -1,7 +1,0 @@
-[Service]
-Type=oneshot
-ExecStartPre=sleep 10
-ExecStart=cpupower frequency-set -g performance
-
-[Install]
-WantedBy=multi-user.target

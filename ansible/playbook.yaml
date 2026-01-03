@@ -195,7 +195,7 @@
     - name: Add user "{{ usern }}" to groups
       ansible.builtin.user:
         name: "{{ usern }}"
-        groups: keyd,audio,docker
+        groups: keyd,docker
         append: true
 
     - name: Creating keyd config directory
@@ -294,69 +294,16 @@
         src: slick-greeter.conf
         dest: /etc/lightdm/slick-greeter.conf
 
-    # performance optimisations for realtime audio and gaming/esync
+    # more questionably useful performance optimisations
     - name: Setting nice PAM limit
       community.general.pam_limits:
         domain: '*'
         limit_type: '-'
         limit_item: nice
         value: '-10'
-    - name: Setting memlock PAM limit
-      community.general.pam_limits:
-        domain: '@audio'
-        limit_type: '-'
-        limit_item: memlock
-        value: 'unlimited'
-    - name: Setting rtprio PAM limit
-      community.general.pam_limits:
-        domain: '@audio'
-        limit_type: '-'
-        limit_item: rtprio
-        value: '99'
     - name: Setting nofile PAM limit
       community.general.pam_limits:
         domain: '*'
         limit_type: '-'
         limit_item: nofile
         value: '524288'
-
-    - name: Creating udev rules directory
-      ansible.builtin.file:
-        path: /etc/udev/rules.d
-        state: directory
-    - name: Copying udev rules config
-      ansible.builtin.copy:
-        src: 9999-automated-udev.rules
-        dest: /etc/udev/rules.d/9999-automated-udev.rules
-
-    - name: Copying cpufreq_performance systemd service
-      ansible.builtin.copy:
-        src: cpufreq_performance.service
-        dest: /etc/systemd/system/cpufreq_performance.service
-      register: _cpufreq_copy
-    - name: Enabling cpufreq_performance systemd service
-      when: _cpufreq_copy.changed
-      ansible.builtin.systemd_service:
-        name: cpufreq_performance
-        enabled: true
-        state: started
-
-    - name: Ensuring threadirqs parameter is added to grub
-      ansible.builtin.replace:
-        path: /etc/default/grub
-        after: 'GRUB_CMDLINE_LINUX="'
-        before: '\n'
-        regexp: '(?<!threadirqs)"'
-        replace: ' threadirqs"'
-      register: _threadirqs_grub_add
-    - name: Removing duplicate threadirqs parameters from grub
-      ansible.builtin.replace:
-        path: /etc/default/grub
-        after: 'GRUB_CMDLINE_LINUX="'
-        before: '\n'
-        regexp: 'threadirqs '
-        replace: ''
-    - name: Updating grub config
-      when: _threadirqs_grub_add.changed
-      ansible.builtin.command:
-        cmd: grub2-mkconfig -o /etc/grub2.cfg
