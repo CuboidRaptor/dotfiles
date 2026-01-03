@@ -18,14 +18,13 @@ extra packages
             `choco install winfsp` for winfsp
 `yippee` again to update userspace stuff
 github auth with `gh auth login`
-celeste https://github.com/EverestAPI/Resources/wiki/common-crashes#systemcomponentmodelwin32exception-selinux-execheap-probe-failed-please-ensure-everest-has-this-permission-then-try-again
 sync stuff/settings
     vivaldi
     vs code
     vesktop
 Vivaldi stuff:
     sync
-    enable middle click autoscrroll
+    enable middle click autoscroll (linux)
         `cp "/usr/share/applications/vivaldi-stable.desktop" "./dotfiles/.local/share/applications/vivaldi-stable.desktop"`
         run this command from DOTFILES ROOT
         add `--enable-blink-features=MiddleClickAutoscroll` after all `/usr/bin/vivaldi-stable`
@@ -33,20 +32,4 @@ Vivaldi stuff:
         dl-librescore
         bypass-all-shortlinks-debloated
     search engines
-    xkcd-ntmin
-Browser/firefox stuff:
-    search engines
-    Violentmonkey
-        librescore
-        bypass all shortlinks debloated
-    uBO
-        enable cloud sync support
-        manually load/sync settings
-    return youtube dislike
-    the other stuff (xkcd-ntmin)
-other setup notes:
-    mark packages as explicitly installed:
-        `sudo dnf mark user`
-        `sudo pacman -D --asexplicit`
-    update firmware
-        `sudo fwupdmgr get-updates && sudo fwupdmgr upgrade`
+    other extensions
