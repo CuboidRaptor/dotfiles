@@ -23,7 +23,7 @@ PATHS = [
     ".config/nvim/",
     ".config/tmux/tmux.conf",
     ".config/SpeedCrunch/",
-    ".config/cinnamon/"
+    ".config/cinnamon/",
     ".config/sublime-text/Packages/User/",
     ".config/autostart/",
     ".config/flameshot/",
