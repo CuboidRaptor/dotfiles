@@ -18,7 +18,6 @@ PATHS = [
     ".zsh_aliases",
     ".environment",
     ".gitconfig",
-    ".ahk/",
 
     ".config/nvim/",
     ".config/tmux/tmux.conf",
