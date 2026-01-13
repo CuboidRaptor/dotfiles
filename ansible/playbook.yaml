@@ -170,7 +170,6 @@
       community.general.flatpak_remote:
         name: flathub
         flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-        method: user
       become_user: "{{ usern }}"
 
     - name: Install Flatpaks
@@ -182,7 +181,6 @@
           - io.github.everestapi.Olympus
           - com.github.Anuken.Mindustry
           - org.prismlauncher.PrismLauncher
-        method: user
       become_user: "{{ usern }}"
 
     - name: Install cargo packages
