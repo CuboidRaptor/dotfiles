@@ -266,27 +266,6 @@
         name: vm.page-cluster
         value: '0'
 
-    - name: Setting root partition noatime
-      ansible.posix.mount:
-        path: /
-        src: UUID={{ ansible_mounts | community.general.json_query('[?mount == `/`] | [0].uuid') }}
-        fstype: ext4
-        opts: defaults,noatime
-        passno: '1'
-        state: present
-    - name: Checking if home partition mount exists
-      ansible.builtin.set_fact:
-        home_mount_exists: "{{ (ansible_mounts | community.general.json_query('[?mount == `/home`]')) != [] }}"
-    - name: Setting home partition noatime
-      when: home_mount_exists
-      ansible.posix.mount:
-        path: /home
-        src: UUID={{ ansible_mounts | community.general.json_query('[?mount == `/home`] | [0].uuid') }}
-        fstype: ext4
-        opts: defaults,noatime
-        passno: '2'
-        state: present
-
     - name: Copying Slick Greeter config
       ansible.builtin.copy:
         src: slick-greeter.conf
