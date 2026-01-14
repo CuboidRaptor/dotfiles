@@ -248,7 +248,7 @@
     - name: Enabling Magic SysRq Key
       ansible.posix.sysctl:
         name: kernel.sysrq
-        value: '246'
+        value: '246' # https://docs.kernel.org/admin-guide/sysrq.html
 
     # these optimizations are from arch/pop! wiki
     - name: Setting vm.swappiness
