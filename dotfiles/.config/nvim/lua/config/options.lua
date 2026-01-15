@@ -18,7 +18,7 @@ vim.opt.sidescrolloff = 10
 vim.g.autoformat = false
 
 -- don't sync to system clipboard unless I do explicitly with "+
-vim.opt.clipboard = nil
+vim.opt.clipboard = ""
 
 -- set blinking insert cursor
 vim.opt.guicursor = "i:ver100-blinkwait800-blinkon400-blinkoff200"
