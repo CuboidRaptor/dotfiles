@@ -15,7 +15,7 @@ print(f"nvidia-smi driver version {driver_version}")
 
 version_regex = re.compile(r"version = \"(.*?)\"")
 
-with open(Path.home() / ".config/home-manager/nvidia.nix", "r") as f:
+with open(Path.home() / "dotfiles/home-manager/nvidia.nix", "r") as f:
     glnix_file = f.read()
 
 nix_driver_version = version_regex.search(glnix_file)
@@ -49,7 +49,7 @@ if driver_version != nix_driver_version:
   };
 }
 """
-    with open(Path.home() / ".config/home-manager/nvidia.nix", "w") as f:
+    with open(Path.home() / "dotfiles/home-manager/nvidia.nix", "w") as f:
         f.write(generated_glnix)
 
     print("Generated nvidia.nix")
