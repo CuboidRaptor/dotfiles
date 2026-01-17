@@ -111,6 +111,7 @@
           - nodejs-bash-language-server
           - dash
           - 'g++'
+          - nix
 
           # cmdline stuff
           - distrobox

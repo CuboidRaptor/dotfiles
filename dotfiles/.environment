@@ -9,3 +9,8 @@ export EDITOR="$VISUAL"
 
 export WINEESYNC=1
 export WINEFSYNC=1
+
+if [ -f ~/.nix-profile/etc/profile.d/hm-session-vars.sh ]
+then
+    source ~/.nix-profile/etc/profile.d/hm-session-vars.sh
+fi
