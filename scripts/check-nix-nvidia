@@ -9,16 +9,16 @@ import json
 
 from pathlib import Path
 
+NVIDIA_NIX_PATH = Path.home() / "dotfiles/home-manager/nvidia.nix"
+
 nvidia_smi_result = subprocess.run(["nvidia-smi", "--query-gpu=driver_version", "--format=csv,noheader"], stdout=subprocess.PIPE)
-driver_version = nvidia_smi_result.stdout.decode("utf-8").split("\n")[0]
+driver_version = nvidia_smi_result.stdout.decode("utf-8").split("\n")[0].strip()
 print(f"nvidia-smi driver version {driver_version}")
 
-version_regex = re.compile(r"version = \"(.*?)\"")
+with open(NVIDIA_NIX_PATH, "r") as f:
+    glnix_file_data = f.read()
 
-with open(Path.home() / "dotfiles/home-manager/nvidia.nix", "r") as f:
-    glnix_file = f.read()
-
-nix_driver_version = version_regex.search(glnix_file)
+nix_driver_version = re.search(r"version = \"(.*?)\"", glnix_file_data)
 assert nix_driver_version != None
 nix_driver_version = nix_driver_version.group(1)
 print(f"nvidia.nix driver version {nix_driver_version}")
@@ -40,7 +40,6 @@ if driver_version != nix_driver_version:
 {
   nixpkgs.config.nvidia.acceptLicense = true;
   targets.genericLinux.gpu = {
-    enable = true;
     nvidia = {
       enable = true;
       version = \"""" + driver_version + """\";
@@ -49,7 +48,7 @@ if driver_version != nix_driver_version:
   };
 }
 """
-    with open(Path.home() / "dotfiles/home-manager/nvidia.nix", "w") as f:
+    with open(NVIDIA_NIX_PATH, "w") as f:
         f.write(generated_glnix)
 
     print("Generated nvidia.nix")
