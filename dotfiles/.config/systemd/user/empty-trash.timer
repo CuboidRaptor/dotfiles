@@ -1,0 +1,10 @@
+[Unit]
+Description=Empty user trash
+
+[Timer]
+OnCalendar=weekly
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -27,6 +27,8 @@ PATHS = [
     ".config/autostart/",
     ".config/flameshot/",
     ".config/wezterm/",
+    ".config/systemd/user/empty-trash.service",
+    ".config/systemd/user/empty-trash.timer",
 
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/",
@@ -71,6 +73,12 @@ def main():
 
     for path in PATHS:
         slink(path)
+
+    print("Reloading systemd daemon")
+    subprocess.run(["systemctl", "--user", "daemon-reload"])
+    print("Enabling and starting empty-trash.timer systemd service timer")
+    subprocess.run(["systemctl", "--user", "enable", "empty-trash.timer"])
+    subprocess.run(["systemctl", "--user", "start", "empty-trash.timer"])
 
 if __name__ == "__main__":
     main()

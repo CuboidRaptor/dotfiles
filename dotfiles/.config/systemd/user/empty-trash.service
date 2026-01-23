@@ -1,0 +1,8 @@
+[Unit]
+Description=Empty user trash
+
+[Service]
+Environment=PATH=%h/.nix-profile/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+ExecStart=sh -c 'exec $$(which trash-empty) -f 60'
+Type=oneshot
+Nice=19 # this service is a low priority background job
