@@ -39,11 +39,12 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Flatpak apps..."
     sudo flatpak update
 
+    msg "Updating Nix apps..."
+    nix flake update --flake "path://$HOME/dotfiles/home-manager"
+    nh home switch
+
     msg "Updating Gear Lever AppImages..."
     flatpak run it.mijorus.gearlever --update --all
-
-    msg "Updating cargo packages..."
-    cargo install-update -a
 
     msg "Updating Neovim plugins..."
     nvim --headless "+Lazy! sync" +qa

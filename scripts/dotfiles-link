@@ -5,6 +5,7 @@
 import sys
 import shutil
 import os
+import subprocess
 
 from pathlib import Path
 
@@ -21,18 +22,19 @@ PATHS = [
 
     ".config/nvim/",
     ".config/tmux/tmux.conf",
-    ".config/SpeedCrunch/",
     ".config/cinnamon/",
     ".config/sublime-text/Packages/User/",
     ".config/autostart/",
-    ".config/flameshot/",
     ".config/wezterm/",
     ".config/systemd/user/empty-trash.service",
     ".config/systemd/user/empty-trash.timer",
+    ".config/systemd/user/kanata.service",
 
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/",
-    ".local/share/applications/vivaldi-stable.desktop"
+    ".local/share/applications/vivaldi-stable.desktop",
+
+    ".var/app/org.flameshot.Flameshot/config/flameshot/"
 ]
 
 def slink(name: str) -> None:
@@ -59,6 +61,11 @@ def symlink_to(src: Path, tgt: Path, target_is_directory: bool = False) -> None:
 
     print(f"Symlinked {src}")
 
+def systemd_enable_start(name):
+    print(f"Starting `{name}` systemd service/timer")
+    subprocess.run(["systemctl", "--user", "enable", name])
+    subprocess.run(["systemctl", "--user", "start", name])
+
 def main():
     print(f"DEBUG: Home target detected/set as {HOMETARGET}")
     if HOMETARGET.joinpath(".bashrc").is_symlink():
@@ -76,9 +83,8 @@ def main():
 
     print("Reloading systemd daemon")
     subprocess.run(["systemctl", "--user", "daemon-reload"])
-    print("Enabling and starting empty-trash.timer systemd service timer")
-    subprocess.run(["systemctl", "--user", "enable", "empty-trash.timer"])
-    subprocess.run(["systemctl", "--user", "start", "empty-trash.timer"])
+    systemd_enable_start("empty-trash.timer")
+    systemd_enable_start("kanata")
 
 if __name__ == "__main__":
     main()

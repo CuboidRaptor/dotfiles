@@ -367,7 +367,7 @@
             "code.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
-            "org.speedcrunch.SpeedCrunch.desktop"
+            "io.github.Qalculate.desktop:flatpak"
         ]
     },
     "__md5__": "9e7302e8001913ced95816fd420dc8e0"

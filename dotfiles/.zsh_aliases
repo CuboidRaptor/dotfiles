@@ -21,8 +21,6 @@ dreset () {
 # check for conflicts in obsidian/syncthing folder
 alias obcheck='fd -u "\\.sync-conflict-" ~/obsidian'
 
-alias hms='home-manager switch --flake "path://$HOME/dotfiles/home-manager"'
-
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
 

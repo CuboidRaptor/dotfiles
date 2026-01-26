@@ -64,11 +64,6 @@
         cmd: dnf config-manager addrepo --from-repofile=https://repo.librewolf.net/librewolf.repo
         creates: /etc/yum.repos.d/librewolf.repo
 
-    - name: Add CKAN repo
-      ansible.builtin.command:
-        cmd: dnf config-manager addrepo --from-repofile=https://ksp-ckan.s3-us-west-2.amazonaws.com/rpm/stable/ckan_stable.repo
-        creates: /etc/yum.repos.d/ckan_stable.repo
-
     - name: Add VS Code repo
       # extract the repo from microsoft installation instructions, then delete `autorefresh=1` (openSUSE option)
       ansible.builtin.command:
@@ -78,11 +73,6 @@
     - name: Enable Wezterm Copr repo
       community.general.copr:
         name: wezfurlong/wezterm-nightly
-        state: enabled
-
-    - name: Enable Bibata Cursor Copr repo
-      community.general.copr:
-        name: peterwu/rendezvous
         state: enabled
 
     - name: Enable keyd Copr repo
@@ -106,32 +96,15 @@
           # language stuff/deps
           - python3-tkinter
           - python3-bpython
-          - rust
-          - cargo
           - nodejs-bash-language-server
-          - dash
           - 'g++'
           - nix
 
           # cmdline stuff
           - distrobox
-          - fastfetch
-          - git
-          - gh
-          - zsh
-          - tmux
-          - neovim
-          - fzf
-          - fd-find
           - keyd # Copr
-          - fuse-sshfs
-          - trash-cli
-          - tldr
-          - winetricks
           - fuse
           - fuse-libs
-          - cascadia-fonts-all
-          - yt-dlp
 
           # apps
           - vivaldi-stable # 3rd-Party Repo
@@ -144,28 +117,19 @@
           - steam
           - okular
           - kolourpaint
-          - gimp
-          - shotcut
-          - audacity
           - seahorse
-          - speedcrunch
           - gparted
-          - pavucontrol
-          - gpick
-          - dconf-editor
-          - flameshot
           - '@virtualization'
           - timeshift
-          - qdirstat
 
           # Game stuff
           - lutris
           - gamemode
-          - ckan # 3rd-Party Repo
 
           # theming
+          - cascadia-fonts-all
+          - breeze-cursor-theme
           - papirus-icon-theme
-          - bibata-cursor-themes # Copr
 
     - name: Add Flathub Flatpak repo
       community.general.flatpak_remote:
@@ -177,45 +141,59 @@
         name:
           - com.github.tchx84.Flatseal
           - md.obsidian.Obsidian
+          - org.gimp.GIMP
+          - org.shotcut.Shotcut
+          - org.audacityteam.Audacity
+          - io.github.Qalculate
+          - org.pulseaudio.pavucontrol
+          - ca.desrt.dconf-editor
+          - org.flameshot.Flameshot
           - it.mijorus.gearlever
           - io.github.everestapi.Olympus
           - com.github.Anuken.Mindustry
           - org.prismlauncher.PrismLauncher
 
-    - name: Install cargo packages
-      community.general.cargo:
-        name:
-          - eza
-          - cargo-update
-      become_user: "{{ usern }}"
-
+    - name: Create uinput group
+      # uinput/input groups are necessary to run Kanata (installed through nix)
+      ansible.builtin.group:
+        name: uinput
     - name: Add user "{{ usern }}" to groups
       ansible.builtin.user:
         name: "{{ usern }}"
-        groups: keyd,docker
+        groups: keyd,docker,input,uinput
         append: true
 
-    - name: Creating keyd config directory
-      ansible.builtin.file: 
-        path: /etc/keyd
+    - name: Creating udev rules directory
+      ansible.builtin.file:
+        path: /etc/udev/rules.d
         state: directory
-    - name: Copying keyd config
+    - name: Copying KMonad udev rule config
+      # Also necessary for Kanata
       ansible.builtin.copy:
-        src: keyd.conf
-        dest: /etc/keyd/default.conf
-      register: _keyd_copy
-    - name: Ensuring keyd systemd service is enabled and started
-      when: _keyd_copy.changed
-      ansible.builtin.systemd_service:
-        name: keyd
-        enabled: true
-        state: started
-    - name: Reloading keyd config
-      when: _keyd_copy.changed
-      ansible.builtin.command:
-        cmd: keyd reload
-      register: _keyd_reload
-      changed_when: _keyd_reload.stdout != ''
+        src: 9999-automated-kmonad-udev.rules
+        dest: /etc/udev/rules.d/9999-automated-kmonad-udev.rules
+
+    # - name: Creating keyd config directory
+    #   ansible.builtin.file: 
+    #     path: /etc/keyd
+    #     state: directory
+    # - name: Copying keyd config
+    #   ansible.builtin.copy:
+    #     src: keyd.conf
+    #     dest: /etc/keyd/default.conf
+    #   register: _keyd_copy
+    # - name: Ensuring keyd systemd service is enabled and started
+    #   when: _keyd_copy.changed
+    #   ansible.builtin.systemd_service:
+    #     name: keyd
+    #     enabled: true
+    #     state: started
+    # - name: Reloading keyd config
+    #   when: _keyd_copy.changed
+    #   ansible.builtin.command:
+    #     cmd: keyd reload
+    #   register: _keyd_reload
+    #   changed_when: _keyd_reload.stdout != ''
 
     - name: Creating zram-generator config directory
       ansible.builtin.file: 

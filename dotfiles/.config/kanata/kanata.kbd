@@ -1,0 +1,38 @@
+(defcfg
+  ;; This line isn't needed unless config gets more complex
+  ;; process-unmapped-keys (all-except lctl ralt)
+)
+
+(defsrc
+  caps
+  a r d s
+  pgup pgdn home end
+)
+
+;; linux machine has a goofy keyboard so I remap pgup/pgdn because I use home and end more
+(platform (linux)
+  (deflayer default
+    @misc
+    _ _ _ _
+    home end pgup pgdn
+  )
+)
+(platform (win winiov2 wintercept macos)
+  (deflayer default
+    @misc
+    _ _ _ _
+    _ _ _ _
+  )
+)
+
+(deflayer misc
+  _
+  caps f5 @ddm @search
+  _ _ _ _
+)
+
+(defalias
+  misc (layer-while-held misc)
+  ddm (macro up 20 C-a 20 bspc 20 enter enter) ;; Delete last discord message
+  search (macro (clipboard-save 0) 20 C-c 20 C-t 1000 C-v 20 enter (clipboard-restore 0))
+)

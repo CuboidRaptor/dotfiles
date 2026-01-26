@@ -21,12 +21,45 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  # generic linux support for stuff, e.g. gpu
   targets.genericLinux.enable = true;
-  # generic gpu support
-  targets.genericLinux.gpu.enable = true;
+
+  fonts.fontconfig.enable = true;
+
+  programs.nh = {
+    enable = true;
+    homeFlake = "path:///home/jason/dotfiles/home-manager";
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 15d --keep 3 --optimise";
+    };
+  };
 
   home.packages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
+    dash
+
+    # cmdline stuff
+    fastfetch
+    git
+    gh
+    zsh
+    tmux
+    neovim
+    eza
+    fzf
+    fd
+    xsel
+    trash-cli
+    inotify-tools # syncthing-watcher dep
+    tree-sitter # nvim dep
+    tldr
+    winetricks
+    yt-dlp
+    kanata
+    gpick
+
+    ckan
   ];
 
   # Let Home Manager install and manage itself.
