@@ -167,33 +167,11 @@
       ansible.builtin.file:
         path: /etc/udev/rules.d
         state: directory
-    - name: Copying KMonad udev rule config
+    - name: Copying Kanata udev rule config
       # Also necessary for Kanata
       ansible.builtin.copy:
-        src: 9999-automated-kmonad-udev.rules
-        dest: /etc/udev/rules.d/9999-automated-kmonad-udev.rules
-
-    # - name: Creating keyd config directory
-    #   ansible.builtin.file: 
-    #     path: /etc/keyd
-    #     state: directory
-    # - name: Copying keyd config
-    #   ansible.builtin.copy:
-    #     src: keyd.conf
-    #     dest: /etc/keyd/default.conf
-    #   register: _keyd_copy
-    # - name: Ensuring keyd systemd service is enabled and started
-    #   when: _keyd_copy.changed
-    #   ansible.builtin.systemd_service:
-    #     name: keyd
-    #     enabled: true
-    #     state: started
-    # - name: Reloading keyd config
-    #   when: _keyd_copy.changed
-    #   ansible.builtin.command:
-    #     cmd: keyd reload
-    #   register: _keyd_reload
-    #   changed_when: _keyd_reload.stdout != ''
+        src: 9999-automated-uinput-udev.rules
+        dest: /etc/udev/rules.d/9999-automated-uinput-udev.rules
 
     - name: Creating zram-generator config directory
       ansible.builtin.file: 
