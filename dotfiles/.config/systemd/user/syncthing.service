@@ -1,0 +1,12 @@
+[Unit]
+Description=Run Syncthing
+
+[Service]
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+ExecStart=sh -c 'exec $$(which syncthing) --no-browser'
+Type=simple
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

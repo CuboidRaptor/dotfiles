@@ -29,6 +29,7 @@ PATHS = [
     ".config/systemd/user/empty-trash.service",
     ".config/systemd/user/empty-trash.timer",
     ".config/systemd/user/kanata.service",
+    ".config/systemd/user/syncthing.service",
 
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/",
@@ -85,6 +86,7 @@ def main():
     subprocess.run(["systemctl", "--user", "daemon-reload"])
     systemd_enable_start("empty-trash.timer")
     systemd_enable_start("kanata")
+    systemd_enable_start("syncthing")
 
 if __name__ == "__main__":
     main()
