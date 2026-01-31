@@ -1,7 +1,9 @@
+# this service is from https://github.com/jtroo/kanata/blob/main/docs/setup-linux.md 
+# and https://github.com/jtroo/kanata/discussions/130#discussioncomment-10227272 (but modified)
+
 [Unit]
 Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
-# this service is from https://github.com/jtroo/kanata/blob/main/docs/setup-linux.md (but modified)
 
 [Service]
 # add nix home-manager binary path to PATH
@@ -25,4 +27,4 @@ PrivateNetwork=true
 IPAddressDeny=any
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
