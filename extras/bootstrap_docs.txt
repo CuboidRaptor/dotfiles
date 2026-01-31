@@ -1,4 +1,4 @@
-`sudo dnf upgrade`
+`sudo dnf upgrade --refresh` (then reboot)
 `yippee -b` (ansible/dotfiles/distrobox bootstrapping)
 `dreset` for cinnamon options
 configure timeshift

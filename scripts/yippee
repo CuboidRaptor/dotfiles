@@ -56,9 +56,6 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     ~/.tmux/plugins/tpm/bin/update_plugins all
 else # Bootstrap system
     # dotfiles MUST be in ~/dotfiles for this to work properly
-    msg "Updating system packages..."
-    sudo dnf upgrade --refresh
-
     msg "Installing Ansible dependencies..."
     sudo dnf install python3-pip ansible
 
