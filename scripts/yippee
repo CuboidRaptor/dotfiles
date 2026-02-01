@@ -34,17 +34,17 @@ function msg {
 
 if [ "$bootstrap_flag" = false ] ; then # Regular update 
     msg "Updating system packages..."
-    sudo dnf upgrade --refresh
+    sudo dnf upgrade --refresh -y
 
     msg "Updating Flatpak apps..."
-    sudo flatpak update
+    flatpak update -y
 
     msg "Updating Nix apps..."
     nix flake update --flake "path://$HOME/dotfiles/home-manager"
     nh home switch
 
     msg "Updating Gear Lever AppImages..."
-    flatpak run it.mijorus.gearlever --update --all
+    flatpak run it.mijorus.gearlever --update --all -y
 
     msg "Updating Neovim plugins..."
     nvim --headless "+Lazy! sync" +qa
