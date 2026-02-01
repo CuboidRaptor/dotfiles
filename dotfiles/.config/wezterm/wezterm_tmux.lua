@@ -53,6 +53,11 @@ function module.apply_to_config(config)
         { key = "0", mods = "SHIFT|CTRL", action = act.ResetFontSize },
         { key = "[", mods = "LEADER", action = act.ActivateCopyMode },
         { key = '!', mods = 'LEADER|SHIFT', action = wezterm.action_callback(convert_pane_to_tab) },
+
+        -- tmux-sensible keybinds
+        { key = "p", mods = "LEADER|CTRL", action = act.ActivateTabRelative(-1) },
+        { key = "n", mods = "LEADER|CTRL", action = act.ActivateTabRelative(1) },
+        { key = config.leader.key, mods = "LEADER", action = act.ActivateLastTab }
     }
 end
 
