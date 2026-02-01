@@ -21,7 +21,7 @@ PATHS = [
     ".gitconfig",
 
     ".config/nvim/",
-    ".config/tmux/tmux.conf",
+    ".config/tmux/",
     ".config/cinnamon/",
     ".config/sublime-text/Packages/User/",
     ".config/autostart/",

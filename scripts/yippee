@@ -51,9 +51,6 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
 
     msg "Updating Zsh plugins..."
     zsh -c "source ~/.local/share/znaprepos/znap/znap.zsh && znap pull"
-
-    msg "Updating tmux plugins..."
-    ~/.tmux/plugins/tpm/bin/update_plugins all
 else # Bootstrap system
     # dotfiles MUST be in ~/dotfiles for this to work properly
     msg "Installing Ansible dependencies..."
