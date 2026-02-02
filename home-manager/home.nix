@@ -40,7 +40,6 @@
     dash
 
     # cmdline stuff
-    fastfetch
     git
     gh
     zsh

@@ -105,6 +105,7 @@
           - keyd # Copr
           - fuse
           - fuse-libs
+          - fastfetch
 
           # apps
           - vivaldi-stable # 3rd-Party Repo
