@@ -75,11 +75,6 @@
         name: wezfurlong/wezterm-nightly
         state: enabled
 
-    - name: Enable keyd Copr repo
-      community.general.copr:
-        name: alternateved/keyd
-        state: enabled
-
     - name: Install NVIDIA drivers
       ansible.builtin.dnf:
         name:
@@ -102,7 +97,6 @@
 
           # cmdline stuff
           - distrobox
-          - keyd # Copr
           - fuse
           - fuse-libs
           - fastfetch
