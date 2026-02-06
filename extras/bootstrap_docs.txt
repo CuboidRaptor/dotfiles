@@ -8,6 +8,8 @@ extra packages
     gearlever
         musescore
         librescore
+            https://github.com/LibreScore/app-librescore
+            LibreScore.AppImage
     rpm files
         vesktop (auto-update)
     virt-manager ('@virtualization' group in fedora)
