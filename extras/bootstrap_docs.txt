@@ -9,7 +9,7 @@ extra packages
         musescore
         librescore
     rpm files
-        vesktop
+        vesktop (auto-update)
     virt-manager ('@virtualization' group in fedora)
         https://www.tomshardware.com/how-to/install-windows-11-without-microsoft-account
             (shift+F10 cmd, `start ms-cxh:localonly`)
