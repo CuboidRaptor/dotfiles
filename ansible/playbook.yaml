@@ -116,6 +116,7 @@
           - gparted
           - '@virtualization'
           - timeshift
+          - winetricks
 
           # Game stuff
           - lutris

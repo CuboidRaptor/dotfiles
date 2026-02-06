@@ -53,7 +53,6 @@
     inotify-tools # syncthing-watcher dep
     tree-sitter # nvim dep
     tldr
-    winetricks
     yt-dlp
     kanata
     gpick
