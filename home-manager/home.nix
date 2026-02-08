@@ -8,10 +8,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  imports = [
-    ./nvidia.nix
-  ];
-
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -56,8 +52,6 @@
     yt-dlp
     kanata
     gpick
-
-    ckan
   ];
 
   # Let Home Manager install and manage itself.
