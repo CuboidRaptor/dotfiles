@@ -120,7 +120,6 @@
 
           # Game stuff
           - lutris
-          - gamemode
 
           # theming
           - cascadia-fonts-all
