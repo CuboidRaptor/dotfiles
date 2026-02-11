@@ -8,10 +8,10 @@
 	email = fanjas112358@gmail.com
 [credential "https://github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/home/jason/.nix-profile/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/usr/bin/gh auth git-credential
+	helper = !/home/jason/.nix-profile/bin/gh auth git-credential
 [maintenance]
 	repo = /home/jason/.local/share/znaprepos/znap
 	repo = /home/jason/.local/share/znaprepos/sindresorhus/pure
