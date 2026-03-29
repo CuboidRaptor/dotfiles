@@ -18,15 +18,20 @@ znap prompt sindresorhus/pure
 
 znap source zsh-users/zsh-syntax-highlighting
 
-setopt MENU_COMPLETE # this is needed for zsh-autosuggestions for some reason
-compinit # run this explicitly so setting $_comp_options works
-_comp_options+=(globdots)
-znap source zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_STRATEGY=("completion" "history")
-
 # emacs bindings, because vim bindings are cursed and break things (I swear I'm a real vim user)
-# this needs to be set before fzf init because zsh auto-loads viins bindings and breaks my shit or smth
+# this needs to be set before fzf/zsh-autocomplete init because zsh auto-loads viins bindings and breaks my shit or smth
 bindkey -e
+
+znap source marlonrichert/zsh-autocomplete
+zstyle ':autocomplete:*' insert-unambiguous yes # this inserts partial common prefix completions
+zstyle ':autocomplete:*' list-lines 4
+setopt GLOBDOTS
+
+# disable zsh-autocomplete history searching
+bindkey '\e[A' up-line-or-history
+bindkey '\eOA' up-line-or-history
+bindkey '\e[B' down-line-or-history
+bindkey '\eOB' down-line-or-history
 
 # fzf stuff and shell integration
 znap eval "fzf" "fzf --zsh"
@@ -41,14 +46,6 @@ custom-fzf-cd-recursively-widget () {
 }
 zle -N custom-fzf-cd-recursively-widget
 bindkey "^[f" custom-fzf-cd-recursively-widget # bind it to alt+f
-
-# the underscore is needed for some reason (smh zsh)
-_custom-autosuggest-widget () {
-    zle autosuggest-accept
-    zle autosuggest-fetch
-}
-zle -N _custom-autosuggest-widget
-bindkey '^I' _custom-autosuggest-widget
 
 # make keybinds consistent with bash, because I feel like it
 bindkey "^U" backward-kill-line
