@@ -18,9 +18,6 @@ dreset () {
     )
 }
 
-# check for conflicts in obsidian/syncthing folder
-alias obcheck='fd -u "\\.sync-conflict-" ~/obsidian'
-
 # neofetch!
 alias neofetch="fastfetch -c neofetch"
 

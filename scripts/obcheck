@@ -1,0 +1,79 @@
+#!/usr/bin/env dash
+
+# run as desktop notification daemon otherwise interactively merge
+daemon_flag=false
+while getopts "d" flag ; do
+    case "$flag" in
+        d) # Run daemon
+            daemon_flag=true
+            ;;
+        ?)
+            printf "Unrecognized option. Use \`-b\` to bootstrap. Use none to update."
+            exit 1
+            ;;
+    esac
+done
+
+# check for conflicts (on start for daemon)
+found_conflicts="$(fd -u "\\.sync-conflict-\\d+-\\d+-.{7}(\\.|$)" ~/obsidian --exclude ".stversions")"
+
+if [ "$daemon_flag" = true ] ; then
+    [ -n "$found_conflicts" ] && \
+        notify-send "WARNING: Sync conflict(s) detected in ~/obsidian." "$found_conflicts"
+
+    inotifywait -mre create ~/obsidian | while read -r dirname events basename;
+    do
+        case "$dirname" in
+            /*)
+                case "$basename" in
+                    *".sync-conflict-"*)
+                        notify-send "WARNING: Sync conflict detected in ~/obsidian." "$dirname$basename"
+                        ;;
+                esac
+                ;;
+        esac
+        
+    done
+else
+    if [ -z "$found_conflicts" ] ; then
+        printf "No conflicts detected\n"
+        exit 0
+    fi
+
+    printf "Found conflicts:\n%s\n" "$found_conflicts"
+
+    # giant var thing finds suitable temp directory
+    EMPTY_FILE="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}/syncthing-conflict-empty-merge-file"
+
+    touch "$EMPTY_FILE"
+    printf "%s\n" "$found_conflicts" | while IFS= read -r line
+    do
+        # don't attempt to merge binary files
+        case "$(file -b --mime "$line")" in
+            text*) ;;
+            *)
+                printf "File %s detected as non-text, skipping...\n" "$line"
+                continue
+                ;;
+        esac
+
+        # remove .sync-conflict-... from filename to get main one
+        main_file="$(printf "%s" "$line" \
+            | sed -E "s/\\.sync-conflict-[[:digit:]]+-[[:digit:]]+-.{7}(\\.|$)/\\1/")"
+        if git merge-file "$main_file" "$EMPTY_FILE" "$line" ; then
+            printf "\`git merge-file\` returned 0, skipping interactive merge...\n"
+        else
+            "$VISUAL" "$main_file" 
+        fi
+
+        if command -v trash-put >/dev/null 2>&1 ; then
+            printf "Trashing %s...\n" "$line"
+            trash-put "$line"
+        else
+            printf "Deleting %s...\n" "$line"
+            rm "$line"
+        fi
+    done
+    rm "$EMPTY_FILE"
+fi
+

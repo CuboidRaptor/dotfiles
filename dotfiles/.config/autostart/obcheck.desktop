@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Exec=syncthing-watcher
+Exec=obcheck -d
 X-GNOME-Autostart-enabled=true
 NoDisplay=false
 Hidden=false
-Name[en_CA]=Syncthing-Watcher
-Comment[en_CA]=Start syncthing conflict watcher
+Name[en_CA]=obcheck.desktop
+Comment[en_CA]=Start obsidian syncthing conflict watcher
 X-GNOME-Autostart-Delay=15
