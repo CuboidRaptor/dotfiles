@@ -12,7 +12,7 @@ do
         /*)
             case "$basename" in
                 *".sync-conflict-"*)
-                    notify-send "WARNING: Sync conflict detected in ~/obsidian." "$dirname/$basename"
+                    notify-send "WARNING: Sync conflict detected in ~/obsidian." "$dirname$basename"
                     ;;
             esac
             ;;
