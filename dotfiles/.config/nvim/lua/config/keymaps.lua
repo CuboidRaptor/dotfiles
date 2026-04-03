@@ -37,6 +37,9 @@ map("n", leader .. "h", "a#!/usr/bin/env ", { remap = true, desc = "Env Shebang 
 
 map("n", leader .. "w", ":SudaWrite", { remap = true, desc = "Save with Sudo" })
 
+map("n", leader .. "c", "/^=======<Enter>", { remap = true, desc = "Find Merge Conflicts" })
+map("i", leader .. "c", "<Esc>/^=======<Enter>", { remap = true, desc = "Find Merge Conflicts" })
+
 -- Telescope bindings
 map("n", leader .. "b",
     function() telescope.buffers({ sort_mru = true, path_display = { "filename_first", "truncate" } }) end,
