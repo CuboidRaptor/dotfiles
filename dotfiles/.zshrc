@@ -25,6 +25,7 @@ bindkey -e
 znap source marlonrichert/zsh-autocomplete
 zstyle ':autocomplete:*' insert-unambiguous yes # this inserts partial common prefix completions
 zstyle ':completion:*:*' matcher-list 'm:{[:lower:]-}={[:upper:]_}' '+r:|[.]=**'
+bindkey -M menuselect '\e' send-break # make esc break out of menu
 zstyle ':autocomplete:*' list-lines 4
 setopt GLOBDOTS
 
