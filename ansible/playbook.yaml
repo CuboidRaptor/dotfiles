@@ -140,7 +140,7 @@
           - org.shotcut.Shotcut
           - org.audacityteam.Audacity
           - io.github.Qalculate
-          - org.pulseaudio.pavucontrol
+          - com.saivert.pwvucontrol
           - ca.desrt.dconf-editor
           - org.flameshot.Flameshot
           - it.mijorus.gearlever
