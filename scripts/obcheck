@@ -14,8 +14,42 @@ while getopts "d" flag ; do
     esac
 done
 
+merge_file () {
+    # $1 is name of conflict file (including .sync-conflict-...) to be resolved
+    # don't attempt to merge binary files
+    case "$(file -b --mime "$1")" in
+        text*) ;;
+        *)
+            printf "File %s detected as non-text, skipping...\n" "$1"
+            return 1
+            ;;
+    esac
+
+    # remove .sync-conflict-... from filename to get main one
+    main_file="$(printf "%s" "$1" \
+        | sed -E "s/\\.sync-conflict-[[:digit:]]+-[[:digit:]]+-.{7}(\\.|$)/\\1/")"
+    if git merge-file "$main_file" "$EMPTY_FILE" "$1" ; then
+        printf "\`git merge-file\` returned 0, skipping interactive merge...\n"
+    else
+        printf "Opening %s in editor...\n" "$main_file"
+        "$VISUAL" "$main_file" 
+    fi
+
+    printf "" # first character of next printf doesn't print unless this is here idk why
+        # something something terminal buffering I guess
+    if command -v trash-put >/dev/null 2>&1 ; then
+        printf "Trashing %s...\n" "$1"
+        trash-put "$1"
+    else
+        printf "Deleting %s...\n" "$1"
+        rm "$1"
+    fi
+}
+
 # check for conflicts (on start for daemon)
 found_conflicts="$(fd -u "\\.sync-conflict-\\d+-\\d+-.{7}(\\.|$)" ~/obsidian --exclude ".stversions")"
+# giant var thing finds suitable temp directory
+EMPTY_FILE="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}/syncthing-conflict-empty-merge-file"
 
 if [ "$daemon_flag" = true ] ; then
     [ -n "$found_conflicts" ] && \
@@ -42,39 +76,10 @@ else
 
     printf "Found conflicts:\n%s\n" "$found_conflicts"
 
-    # giant var thing finds suitable temp directory
-    EMPTY_FILE="${XDG_RUNTIME_DIR:-${TMPDIR:-${TMP:-${TEMP:-/tmp}}}}/syncthing-conflict-empty-merge-file"
-
     touch "$EMPTY_FILE"
     printf "%s\n" "$found_conflicts" | while IFS= read -r line
     do
-        # don't attempt to merge binary files
-        case "$(file -b --mime "$line")" in
-            text*) ;;
-            *)
-                printf "File %s detected as non-text, skipping...\n" "$line"
-                continue
-                ;;
-        esac
-
-        # remove .sync-conflict-... from filename to get main one
-        main_file="$(printf "%s" "$line" \
-            | sed -E "s/\\.sync-conflict-[[:digit:]]+-[[:digit:]]+-.{7}(\\.|$)/\\1/")"
-        if git merge-file "$main_file" "$EMPTY_FILE" "$line" ; then
-            printf "\`git merge-file\` returned 0, skipping interactive merge...\n"
-        else
-            "$VISUAL" "$main_file" 
-        fi
-
-        printf "" # first character of next printf doesn't print unless this is here idk why
-            # something something terminal buffering I guess
-        if command -v trash-put >/dev/null 2>&1 ; then
-            printf "Trashing %s...\n" "$line"
-            trash-put "$line"
-        else
-            printf "Deleting %s...\n" "$line"
-            rm "$line"
-        fi
+        merge_file "$line" </dev/null # strip stdin or else the while loop breaks everything
     done
     rm "$EMPTY_FILE"
 fi
