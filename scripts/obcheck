@@ -35,8 +35,6 @@ merge_file () {
         "$VISUAL" "$main_file" 
     fi
 
-    printf "" # first character of next printf doesn't print unless this is here idk why
-        # something something terminal buffering I guess
     if command -v trash-put >/dev/null 2>&1 ; then
         printf "Trashing %s...\n" "$1"
         trash-put "$1"
