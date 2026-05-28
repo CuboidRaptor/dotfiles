@@ -91,6 +91,7 @@
           # language stuff/deps
           - python3-tkinter
           - python3-bpython
+          - python3-virtualenv
           - nodejs-bash-language-server
           - 'g++'
           - nix
