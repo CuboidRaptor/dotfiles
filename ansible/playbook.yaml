@@ -95,6 +95,7 @@
           - nodejs-bash-language-server
           - 'g++'
           - nix
+          - mono-devel
 
           # cmdline stuff
           - distrobox
