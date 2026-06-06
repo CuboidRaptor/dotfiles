@@ -1,6 +1,8 @@
 - name: Default playbook
   hosts: all
   become: true
+  vars:
+    swap_file_path: /swapfile
   tasks:
     - name: Set Fedora Release Version Number Variable
       ansible.builtin.command:
@@ -170,14 +172,43 @@
         src: 9999-automated-uinput-udev.rules
         dest: /etc/udev/rules.d/9999-automated-uinput-udev.rules
 
-    - name: Creating zram-generator config directory
-      ansible.builtin.file: 
-        path: /etc/systemd/zram-generator.conf.d
-        state: directory
-    - name: Copying zram-generator config
+    - name: Disabling zram
       ansible.builtin.copy:
-        src: 9999-automated-zram-generator.conf
-        dest: /etc/systemd/zram-generator.conf.d/9999-automated-zram-generator.conf
+        dest: /etc/systemd/zram-generator.conf
+        content: ""
+    - name: Enabling zswap
+      ansible.builtin.command:
+        argv: ["grubby", "--update-kernel=ALL", "--args", "zswap.enabled=1 zswap.max_pool_percent=40 zswap.compressor=lz4"]
+      changed_when: false # im tired
+      
+    - name: Create swap file
+      # potentially breaks btrfs/other filesystems
+      ansible.builtin.command:
+        cmd: dd if=/dev/zero of={{ swap_file_path }} bs=1024 count=16384k
+        creates: "{{ swap_file_path }}"
+      register: swap_file_create
+    - name: Change swap file permissions
+      ansible.builtin.file:
+        path: "{{ swap_file_path }}"
+        owner: root
+        group: root
+        mode: "0600"
+    - name: Make swapfile
+      when: swap_file_create is changed
+      ansible.builtin.command:
+        cmd: mkswap {{ swap_file_path }}
+      register: mkswap_result
+    - name: Enable swap file
+      when: mkswap_result is changed
+      ansible.builtin.command:
+        cmd: swapon {{ swap_file_path }}
+    - name: Add swap file to fstab
+      ansible.builtin.mount:
+        name: none
+        src: "{{ swap_file_path }}"
+        fstype: swap
+        opts: sw
+        state: present
 
     - name: Creating wireplumber config directory
       ansible.builtin.file: 
