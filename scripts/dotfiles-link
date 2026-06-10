@@ -30,6 +30,8 @@ PATHS = [
     ".config/systemd/user/empty-trash.timer",
     ".config/systemd/user/kanata.service",
     ".config/systemd/user/syncthing.service",
+    ".config/systemd/user/nix-clean.service",
+    ".config/systemd/user/nix-clean.timer",
 
     ".local/share/nemo/actions/",
     ".local/share/flatpak/overrides/",
@@ -87,6 +89,7 @@ def main():
     systemd_enable_start("empty-trash.timer")
     systemd_enable_start("kanata")
     systemd_enable_start("syncthing")
+    systemd_enable_start("nix-clean.timer")
 
 if __name__ == "__main__":
     main()

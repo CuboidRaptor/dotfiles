@@ -1,0 +1,11 @@
+[Unit]
+Description=Clean and optimise nix store
+
+[Timer]
+OnCalendar=weekly
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+

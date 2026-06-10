@@ -1,0 +1,11 @@
+[Unit]
+Description=Clean and optimise nix store
+
+[Service]
+Environment=PATH=%h/.nix-profile/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+# these run in series, not parallel
+ExecStart=sh -c 'exec $$(which nix-collect-garbage) --delete-older-than 30d'
+ExecStart=sh -c 'exec $$(which nix) store optimise'
+Type=oneshot
+# this service is a low priority background job
+Nice=19

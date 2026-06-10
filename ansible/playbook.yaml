@@ -97,13 +97,31 @@
           - nodejs-bash-language-server
           - 'g++'
           - nix
+          - dash
           - mono-devel
+          - rust
+          - cargo
 
           # cmdline stuff
           - distrobox
           - fuse
           - fuse-libs
           - fastfetch
+          - git
+          - gh
+          - zsh
+          - tmux
+          - neovim
+          - eza
+          - fzf
+          - fd-find
+          - xsel
+          - trash-cli
+          - inotify-tools
+          - libtree-sitter
+          - tldr
+          - yt-dlp
+          - gpick
 
           # apps
           - vivaldi-stable # 3rd-Party Repo
@@ -151,6 +169,13 @@
           - io.github.everestapi.Olympus
           - com.github.Anuken.Mindustry
           - org.prismlauncher.PrismLauncher
+
+    - name: Install Cargo packages
+      become: yes
+      become_user: "{{ usern }}"
+      community.general.cargo:
+        name:
+          - kanata
 
     - name: Create uinput group
       # uinput/input groups are necessary to run Kanata (installed through nix)

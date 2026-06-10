@@ -39,10 +39,6 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Flatpak apps..."
     flatpak update -y
 
-    msg "Updating Nix apps..."
-    nix flake update --flake "path://$HOME/dotfiles/home-manager"
-    nh home switch
-
     msg "Updating Gear Lever AppImages..."
     flatpak run it.mijorus.gearlever --update --all -y
 
@@ -66,9 +62,6 @@ else # Bootstrap system
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
     sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
     sudo dnf install @sound-and-video
-
-    msg "Installing Home Manager..."
-    nix run home-manager/master -- switch --flake "path://$HOME/dotfiles/home-manager"
 fi
 
 msg "Writing to yippee history file..."
