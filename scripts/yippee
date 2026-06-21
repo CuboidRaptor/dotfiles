@@ -36,6 +36,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating system packages..."
     sudo dnf upgrade --refresh -y
 
+    msg "Waiting for akmods to finish building..."
+    sudo akmods --force
+
     msg "Updating Flatpak apps..."
     flatpak update -y
 
@@ -58,6 +61,9 @@ else # Bootstrap system
     msg "Running Ansible playbook..."
     ~/dotfiles/scripts/sap
 
+    msg "Waiting for akmods to finish building..."
+    sudo akmods --force
+
     msg "Setting up multimedia and codecs..."
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
     sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
@@ -66,9 +72,6 @@ fi
 
 msg "Writing to yippee history file..."
 date >> ~/.local/share/.yippee_history
-
-msg "Waiting for akmods to finish building..."
-sudo akmods --force
 
 notify-send "Yippee: Finished updating/bootstrapping." "Automatically rebooting in 30 seconds."
 read -p "Press Enter to reboot. (auto-rebooting in 30 seconds) " -r -t 30 || true
