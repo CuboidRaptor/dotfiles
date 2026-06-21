@@ -42,6 +42,9 @@ if [ "$bootstrap_flag" = false ] ; then # Regular update
     msg "Updating Flatpak apps..."
     flatpak update -y
 
+    msg "Pinning nixpkgs..."
+    nix registry pin nixpkgs
+
     msg "Updating Gear Lever AppImages..."
     flatpak run it.mijorus.gearlever --update --all -y
 
@@ -63,6 +66,9 @@ else # Bootstrap system
 
     msg "Waiting for akmods to finish building..."
     sudo akmods --force
+
+    msg "Pinning nixpkgs..."
+    nix registry pin nixpkgs
 
     msg "Setting up multimedia and codecs..."
     sudo dnf swap ffmpeg-free ffmpeg --allowerasing
