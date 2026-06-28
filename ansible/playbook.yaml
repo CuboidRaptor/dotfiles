@@ -184,7 +184,7 @@
     - name: Add user "{{ usern }}" to groups
       ansible.builtin.user:
         name: "{{ usern }}"
-        groups: keyd,docker,input,uinput
+        groups: docker,input,uinput
         append: true
 
     - name: Creating udev rules directory
