@@ -80,8 +80,8 @@
     - name: Install NVIDIA drivers
       ansible.builtin.dnf:
         name:
-          - akmod-nvidia
-          - xorg-x11-drv-nvidia-cuda
+          - akmod-nvidia-580xx
+          - xorg-x11-drv-nvidia-580xx-cuda
 
     - name: Install packages
       ansible.builtin.dnf:
