@@ -194,6 +194,12 @@
         name:
           - kanata
 
+    - name: Enable and start nix daemon
+      ansible.builtin.systemd_service:
+        name: nix-daemon
+        state: started
+        enabled: true
+
     - name: Create uinput group
       # uinput/input groups are necessary to run Kanata (installed through nix)
       ansible.builtin.group:
