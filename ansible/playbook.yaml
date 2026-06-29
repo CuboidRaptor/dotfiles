@@ -81,6 +81,23 @@
         name:
           - akmod-nvidia-580xx
           - xorg-x11-drv-nvidia-580xx-cuda
+          - libva-nvidia-driver
+
+    - name: Replace ffmpeg-free with ffmpeg
+      ansible.builtin.command:
+        cmd: dnf swap ffmpeg-free ffmpeg --allowerasing -y
+      register: ffmpeg_swap
+      changed_when: "'Nothing to do' not in ffmpeg_swap.stdout"
+    - name: Install multimedia group
+      ansible.builtin.dnf:
+        name: "@multimedia"
+        exclude: PackageKit-gstreamer-plugin
+        install_weak_deps: false
+        state: present
+    - name: Install sound-and-video group
+      ansible.builtin.dnf:
+        name: "@sound-and-video"
+        state: present
 
     - name: Install packages
       ansible.builtin.dnf:

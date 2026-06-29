@@ -69,11 +69,6 @@ else # Bootstrap system
 
     msg "Pinning nixpkgs..."
     nix registry pin nixpkgs
-
-    msg "Setting up multimedia and codecs..."
-    sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-    sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-    sudo dnf install @sound-and-video
 fi
 
 msg "Writing to yippee history file..."
