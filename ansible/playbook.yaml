@@ -1,8 +1,7 @@
 - name: Default playbook
   hosts: all
   become: true
-  vars:
-    swap_file_path: /swapfile
+  # NOTE: this playbook probably only works with latest Fedora version + btrfs
   tasks:
     - name: Set Fedora Release Version Number Variable
       ansible.builtin.command:
@@ -206,31 +205,50 @@
         argv: ["grubby", "--update-kernel=ALL", "--args", "zswap.enabled=1 zswap.max_pool_percent=40 zswap.compressor=lz4"]
       changed_when: false # im tired
       
-    - name: Create swap file
-      # potentially breaks btrfs/other filesystems
+    - name: Create btrfs swap subvolume
+      community.general.btrfs_subvolume:
+        name: /swap
+        automount: true
+    - name: Find btrfs device uuid
       ansible.builtin.command:
-        cmd: dd if=/dev/zero of={{ swap_file_path }} bs=1024 count=16384k
-        creates: "{{ swap_file_path }}"
-      register: swap_file_create
-    - name: Change swap file permissions
-      ansible.builtin.file:
-        path: "{{ swap_file_path }}"
-        owner: root
-        group: root
-        mode: "0600"
-    - name: Make swapfile
-      when: swap_file_create is changed
+        cmd: findmnt -no UUID /
+      register: root_uuid
+      changed_when: false
+    - name: Set btrfs device fact
+      ansible.builtin.set_fact:
+        btrfs_device: "{{ root_uuid.stdout }}"
+    - name: Add swap subvolume to fstab
+      ansible.posix.mount:
+        path: /swap
+        src: UUID={{ btrfs_device }}
+        fstype: btrfs
+        opts: subvol=swap,noatime
+        state: mounted
+    - name: Make btrfs swapfile
       ansible.builtin.command:
-        cmd: mkswap {{ swap_file_path }}
-      register: mkswap_result
+        cmd: btrfs filesystem mkswapfile --size 16g --uuid clear /swap/swapfile
+        creates: /swap/swapfile
+      register: swap_file_created
+    - name: Restore SELinux context recursively on /swap
+      ansible.builtin.command:
+        cmd: restorecon -v /swap
+      when: ansible_facts["selinux"].status == "enabled"
+      register: restorecon_result
+      changed_when: "'Relabeled' in restorecon_result.stdout"
+    - name: Add persistent SELinux file context rule for swapfile
+      community.general.sefcontext:
+        target: /swap/swapfile
+        setype: swapfile_t
+        state: present
+      when: ansible_facts["selinux"].status == "enabled"
     - name: Enable swap file
-      when: mkswap_result is changed
+      when: swap_file_created is changed
       ansible.builtin.command:
-        cmd: swapon {{ swap_file_path }}
+        cmd: swapon /swap/swapfile
     - name: Add swap file to fstab
       ansible.builtin.mount:
         name: none
-        src: "{{ swap_file_path }}"
+        src: /swap/swapfile
         fstype: swap
         opts: sw
         state: present
