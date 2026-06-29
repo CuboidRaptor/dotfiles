@@ -253,6 +253,7 @@
         opts: sw
         state: present
 
+    # this fixes an audio issue
     - name: Creating wireplumber config directory
       ansible.builtin.file: 
         path: /etc/wireplumber/wireplumber.conf.d
@@ -262,6 +263,7 @@
         src: 9999-automated-wireplumber.conf
         dest: /etc/wireplumber/wireplumber.conf.d/9999-automated-wireplumber.conf
 
+    # this fixes a wifi issue
     - name: Creating NetworkManager config directory
       ansible.builtin.file: 
         path: /etc/NetworkManager/conf.d
