@@ -21,11 +21,8 @@ alias neofetch="fastfetch -c neofetch"
 
 # better alternatives
 # (remember that if `x` is aliased to `y`, `\x` will still use the original x (i.e. \ls))
-alias l="eza -a --icons=auto --group-directories-first"
-alias lr="eza -a --icons=auto --sort newest"
-
-# add color to ls
-alias ls="ls --color=auto"
+alias ls="eza -a --icons=auto --group-directories-first"
+alias lsr="eza -a --icons=auto --sort newest"
 
 # Retrack files that may have been ignored in `.gitignore`
 alias retrack="git rm -r --cached . && git add ."
