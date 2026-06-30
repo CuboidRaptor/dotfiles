@@ -5,7 +5,7 @@ alias dli="dnf list --installed"
 alias dlim="dnf repoquery --userinstalled"
 
 # last time system was upgraded
-alias lasty="cat ~/.local/share/.yippee_history | tail -n 3"
+alias lastupd="cat ~/.local/share/updscr_history | tail -n 5"
 
 # Reset changes to dconf in dotfiles repo and then write those to database
 dreset () {
