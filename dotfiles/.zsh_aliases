@@ -1,6 +1,4 @@
 # dnf aliases, I'm lazy
-alias sdi="sudo dnf install"
-alias sdr="sudo dnf remove"
 alias dli="dnf list --installed"
 alias dlim="dnf repoquery --userinstalled"
 
