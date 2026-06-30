@@ -1,9 +1,10 @@
 `sudo dnf upgrade --refresh` (then reboot)
-`yippee -b` (ansible/dotfiles/distrobox bootstrapping)
+`sudo dnf install python3-pip ansible` (ansible deps)
+`~/dotfiles/scripts/dotfiles-link`
 `dreset` for cinnamon options
-configure timeshift
-set hostname
-    `sudo hostnamectl set-hostname --static <name>`
+`~/dotfiles/scripts/sap` (run ansible playbook)
+`nix registry pin nixpkgs` (pin nixpkgs to specific, most recent rev)
+`sudo hostnamectl set-hostname --static dregsdesk` (set hostname)
 extra packages
     gearlever
         musescore
