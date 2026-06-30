@@ -109,7 +109,7 @@
         "type": "switch",
         "default": false,
         "description": "Use a custom icon and label",
-        "value": true
+        "value": false
     },
     "menu-icon": {
         "type": "iconfilechooser",
