@@ -340,6 +340,16 @@
         limit_item: nofile
         value: '524288'
 
+    - name: Enable and start snapper timer
+      ansible.builtin.systemd_service:
+        name: snapper-timeline.timer
+        state: started
+        enabled: true
+    - name: Enable and start snapper cleanup timer
+      ansible.builtin.systemd_service:
+        name: snapper-cleanup.timer
+        state: started
+        enabled: true
     - name: Create snapper root config
       ansible.builtin.command:
         cmd: snapper -c root create-config /
