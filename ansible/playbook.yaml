@@ -292,6 +292,12 @@
         src: slick-greeter.conf
         dest: /etc/lightdm/slick-greeter.conf
 
+    - name: Disabling remote package search for incorrect commands
+      ansible.builtin.lineinfile:
+        path: /etc/PackageKit/CommandNotFound.conf
+        regexp: "^SoftwareSourceSearch="
+        line: SoftwareSourceSearch=false
+
     # more questionably useful performance optimisations
     - name: Setting nice PAM limit
       community.general.pam_limits:
