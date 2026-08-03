@@ -312,24 +312,3 @@
         limit_type: '-'
         limit_item: nofile
         value: '524288'
-
-    - name: Enable and start snapper timer
-      ansible.builtin.systemd_service:
-        name: snapper-timeline.timer
-        state: started
-        enabled: true
-    - name: Enable and start snapper cleanup timer
-      ansible.builtin.systemd_service:
-        name: snapper-cleanup.timer
-        state: started
-        enabled: true
-    - name: Create snapper root config
-      ansible.builtin.command:
-        cmd: snapper -c root create-config /
-      register: snapper_create_root
-      changed_when: "'subvolume already covered' not in snapper_create_root.stdout"
-    - name: Create snapper home config
-      ansible.builtin.command:
-        cmd: snapper -c home create-config /home
-      register: snapper_create_home
-      changed_when: "'subvolume already covered' not in snapper_create_home.stdout"
