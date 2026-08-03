@@ -4,9 +4,11 @@ function fisher-configure
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
     fisher update # set plugin installation states to `fish_plugins` content
     tide configure --auto --style=Rainbow --prompt_colors='16 colors' --show_time=No \
-        --rainbow_prompt_separators=Slanted --powerline_prompt_heads=Sharp --powerline_prompt_tails=Slanted \
+        --rainbow_prompt_separators=Round --powerline_prompt_heads=Round --powerline_prompt_tails=Flat \
         --powerline_prompt_style='Two lines, character' --prompt_connection=Disconnected \
         --powerline_right_prompt_frame=No --prompt_spacing=Sparse --icons='Few icons' --transient=No
+    set -U tide_left_prompt_prefix "░▒▓"
+    #tide configure --auto --style=Lean --prompt_colors='16 colors' --show_time=No --lean_prompt_height='One line' --prompt_spacing=Sparse --icons='Few icons' --transient=No
     clear && exec fish
 end
 
