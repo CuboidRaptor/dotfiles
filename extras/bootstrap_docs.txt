@@ -5,6 +5,7 @@
 `~/dotfiles/scripts/sap` (run ansible playbook)
 `nix registry pin nixpkgs` (pin nixpkgs to specific, most recent rev)
 `sudo hostnamectl set-hostname dregsdesk` (set hostname)
+`~.dotfiles/scripts/updscr` to update software
 extra packages
     gearlever
         musescore
@@ -19,7 +20,6 @@ extra packages
             or google more recent instructions
         https://www.debugpoint.com/kvm-share-folder-windows-guest/
             `choco install winfsp` for winfsp
-`yippee` again to update userspace stuff
 github auth with `gh auth login`
 sync stuff/settings
     vivaldi
