@@ -18,7 +18,9 @@ PATHS = [
     ".environment",
     ".gitconfig",
 
-    ".config/fish/",
+    ".config/fish/config.fish",
+    ".config/fish/abbrs.fish",
+    ".config/fish/fish_plugins",
     ".config/nvim/",
     ".config/tmux/",
     ".config/cinnamon/",
