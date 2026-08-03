@@ -7,6 +7,13 @@ $HOME/bin"
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
+if command -v nvim &>/dev/null
+then
+    # set nvim as manpager if it exists (e.g. distrobox)
+    export MANPAGER="nvim +Man!"
+    export MANWIDTH=100
+fi
+
 export WINEESYNC=1
 export WINEFSYNC=1
 

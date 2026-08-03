@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local wezterm_tmux = require("wezterm_tmux")
 local config = wezterm.config_builder()
 
-config.default_prog = { "zsh" }
+config.default_prog = { "fish" }
 
 config.prefer_to_spawn_tabs = true
 

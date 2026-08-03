@@ -126,6 +126,7 @@
           - git
           - gh
           - zsh
+          - fish
           - tmux
           - neovim
           - eza
