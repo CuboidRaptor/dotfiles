@@ -162,7 +162,7 @@
           - lutris
 
           # theming
-          - cascadia-fonts-all
+          - source-foundry-hack-fonts
           - breeze-cursor-theme
           - papirus-icon-theme
 

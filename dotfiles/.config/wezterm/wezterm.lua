@@ -23,8 +23,7 @@ config.color_scheme = scheme_name
 config.switch_to_last_active_tab_when_closing_tab = true
 
 config.font = wezterm.font_with_fallback {
-    "Cascadia Code NF",
-    "monospace",
+    "Hack",
 }
 config.font_size = 12
 
