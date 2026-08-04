@@ -10,7 +10,7 @@ if status is-interactive
 
     # Reset changes to dconf in dotfiles repo and then write those to database
     # oneliner ult lol
-    abbr --add dreset "pushd ~/dotfiles/dconf && git checkout -- ./ && dconf load /org/cinnamon/ < cinnamon.dconf.ini && dconf load /org/nemo/ < nemo.dconf.ini && dconf load /org/gtk/ < gtk.dconf.ini ; popd"
+    abbr --add dreset "pushd ~/dotfiles/dconf && git checkout -- ./ && dconf load /org/cinnamon/ < cinnamon.dconf.ini && dconf load /org/nemo/ < nemo.dconf.ini && dconf load /org/gtk/ < gtk.dconf.ini && dconf load /org/gnome/desktop/ < gnome-desktop.dconf.ini ; popd"
 
     # neofetch!
     abbr --add neofetch "fastfetch -c neofetch"

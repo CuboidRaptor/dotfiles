@@ -2,10 +2,11 @@
 
 dconfdump() {
     (
-        cd ~/dotfiles/dconf || exit
+        cd ~/dotfiles/dconf || return 1
         dconf dump /org/cinnamon/ > cinnamon.dconf.ini
         dconf dump /org/nemo/ > nemo.dconf.ini
         dconf dump /org/gtk/ > gtk.dconf.ini
+        dconf dump /org/gnome/desktop/ > gnome-desktop.dconf.ini
     )
 }
 
