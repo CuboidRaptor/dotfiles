@@ -26,7 +26,5 @@ if status is-interactive
 
     bind ctrl-shift-Z redo
 
-    if [ -f "$__fish_config_dir/abbrs.fish" ]
-        source "$__fish_config_dir/abbrs.fish"
-    end
+    source "$__fish_config_dir/abbrs.fish"
 end
