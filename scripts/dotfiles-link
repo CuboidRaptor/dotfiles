@@ -14,13 +14,12 @@ DOTFILEPATH: Path = HOMETARGET.joinpath("dotfiles/dotfiles") # path to root of d
 #HOMETARGET = HOMETARGET.joinpath("dotfiles/test")
 PATHS = [
     ".bashrc",
+    ".zshrc",
+    ".zsh_aliases",
     ".profile",
     ".environment",
     ".gitconfig",
 
-    ".config/fish/config.fish",
-    ".config/fish/abbrs.fish",
-    ".config/fish/fish_plugins",
     ".config/nvim/",
     ".config/tmux/",
     ".config/cinnamon/",

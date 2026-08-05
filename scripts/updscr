@@ -36,8 +36,8 @@ flatpak run it.mijorus.gearlever --update --all -y
 msg "Updating Neovim plugins..."
 nvim --headless "+Lazy! sync" +qa
 
-msg "Updating Fish plugins..."
-fish -c "fisher update"
+msg "Updating Zsh plugins..."
+zsh -c 'source ~/.local/share/znaprepos/znap/znap.zsh && znap pull'
 
 msg "Writing to updscr history file..."
 date >> ~/.local/share/updscr_history

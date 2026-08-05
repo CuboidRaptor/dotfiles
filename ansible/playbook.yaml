@@ -125,7 +125,7 @@
           - fastfetch
           - git
           - gh
-          - fish
+          - zsh
           - tmux
           - neovim
           - eza
