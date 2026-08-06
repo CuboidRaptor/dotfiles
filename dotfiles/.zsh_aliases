@@ -1,9 +1,12 @@
+#!/usr/bin/env zsh
 # dnf aliases, I'm lazy
 alias dli="dnf list --installed"
 alias dlim="dnf repoquery --userinstalled"
 
 # last time system was upgraded
 alias lastupd="cat ~/.local/share/updscr_history | tail -n 5"
+
+alias sap="sudo ansible-playbook --connection=local --inventory=127.0.0.1, ~/dotfiles/ansible/playbook.yaml -v"
 
 # Reset changes to dconf in dotfiles repo and then write those to database
 dreset () {

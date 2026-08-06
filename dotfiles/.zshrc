@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Download Znap, if it's not there yet.
 [[ -r ~/.local/share/znaprepos/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
@@ -5,16 +6,8 @@
 source ~/.local/share/znaprepos/znap/znap.zsh  # Start Znap
 
 # znap plugins
-zstyle ":prompt:pure:prompt:success" color green
-# set terminal colors
-zstyle ":prompt:pure:git:branch" color white
-zstyle ":prompt:pure:git:action" color white
-zstyle ":prompt:pure:git:dirty" color magenta
-zstyle ":prompt:pure:host" color white
-zstyle ":prompt:pure:prompt:continuation" color white
-zstyle ":prompt:pure:user" color white
-zstyle ":prompt:pure:virtualenv" color white
-znap prompt sindresorhus/pure
+
+znap eval starship "starship init zsh"
 
 znap source zsh-users/zsh-syntax-highlighting
 
@@ -36,7 +29,7 @@ bindkey '\e[B' down-line-or-history
 bindkey '\eOB' down-line-or-history
 
 # fzf stuff and shell integration
-znap eval "fzf" "fzf --zsh"
+znap eval fzf "fzf --zsh"
 # set some fzf bindings and other options
 export FZF_DEFAULT_OPTS="--no-height -i --style full --multi"
 # this terrifying command finds directories and directory symlinks recursively, but prioritises

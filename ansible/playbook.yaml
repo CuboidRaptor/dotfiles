@@ -195,6 +195,7 @@
       community.general.cargo:
         name:
           - kanata
+          - starship
 
     - name: Enable and start nix daemon
       ansible.builtin.systemd_service:
