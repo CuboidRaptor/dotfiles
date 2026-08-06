@@ -30,11 +30,5 @@ alias lsr="eza -a --icons=auto --sort newest"
 # Retrack files that may have been ignored in `.gitignore`
 alias retrack="git rm -r --cached . && git add ."
 
-# show sizes in MB
-alias free="free -m"
-
-# strip metadata from image
-alias imgstrip="mogrify -strip"
-
 # make fd show hiddens and ignore .git and node_modules
 alias fd="fd -u --exclude .git --exclude node_modules"
