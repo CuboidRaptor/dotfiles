@@ -39,6 +39,11 @@ nvim --headless "+Lazy! sync" +qa
 msg "Updating Zsh plugins..."
 zsh -c 'source ~/.local/share/znaprepos/znap/znap.zsh && znap pull'
 
+msg "Updating Nerd Font symbol fonts..."
+temp_filename="$(mktemp)"
+curl -JL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.tar.xz" -o "$temp_filename"
+tar -xvf "$temp_filename" -C ~/.local/share/fonts SymbolsNerdFont-Regular.ttf SymbolsNerdFontMono-Regular.ttf
+
 msg "Writing to updscr history file..."
 date >> ~/.local/share/updscr_history
 
