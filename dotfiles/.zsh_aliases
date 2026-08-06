@@ -16,6 +16,7 @@ dreset () {
         dconf load /org/cinnamon/ < cinnamon.dconf.ini
         dconf load /org/nemo/ < nemo.dconf.ini
         dconf load /org/gtk/ < gtk.dconf.ini
+        dconf load /org/gnome/desktop/ < gnome-desktop.dconf.ini
     )
 }
 
