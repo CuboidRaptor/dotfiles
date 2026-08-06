@@ -3,7 +3,6 @@
 `~/dotfiles/scripts/dotfiles-link`
 `dreset` for cinnamon options
 `~/dotfiles/scripts/sap` (run ansible playbook)
-`nix registry pin nixpkgs` (pin nixpkgs to specific, most recent rev)
 `sudo hostnamectl set-hostname dregsdesk` (set hostname)
 `~.dotfiles/scripts/updscr` to update software
 extra packages
