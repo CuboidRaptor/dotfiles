@@ -42,6 +42,9 @@ export FZF_ALT_C_COMMAND="fd -u -t d --min-depth 1 --max-depth 1 \
 # make keybinds consistent with bash, because I feel like it
 bindkey "^U" backward-kill-line
 
+# alt+q also allows editing multiline commands that have already been stored
+bindkey "\eq" push-line-or-edit
+
 # fix home, end, and ctrl+arrow keys
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
