@@ -26,19 +26,27 @@
         src: 9999-automated-dnf5.conf
         dest: /etc/dnf/libdnf5.conf.d/9999-automated-dnf5.conf
 
+    - name: Check RPM Fusion installation state
+      ansible.builtin.command:
+        cmd: "dnf repolist | grep rpmfusion"
+      register: rpmf_repo_status
+      changed_when: false
     - name: Download RPM Fusion GPG keys
+      when: rpmf_repo_status.rc != 0
       ansible.builtin.dnf:
         name: distribution-gpg-keys
     - name: Add RPM Fusion Free GPG key
+      when: rpmf_repo_status.rc != 0
       ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-free-fedora-{{ fedora_release_number }}
     - name: Add RPM Fusion Nonfree GPG key
+      when: rpmf_repo_status.rc != 0
       ansible.builtin.rpm_key:
         key: /usr/share/distribution-gpg-keys/rpmfusion/RPM-GPG-KEY-rpmfusion-nonfree-fedora-{{ fedora_release_number }}
     - name: Add RPM Fusion repo packages
+      when: rpmf_repo_status.rc != 0
       ansible.builtin.dnf:
         name:
-          # this does redownload them every time this playbook is run but it's like 10 kB idgaf
           - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_release_number }}.noarch.rpm
           - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_release_number }}.noarch.rpm
 
