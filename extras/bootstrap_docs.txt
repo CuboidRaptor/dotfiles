@@ -31,3 +31,4 @@ Vivaldi stuff:
         bypass-all-shortlinks-debloated
     search engines
     other extensions
+qalculate-gtk: Mode > Rational Number Form > Exact Decimal Fractions
