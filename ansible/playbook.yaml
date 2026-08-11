@@ -279,6 +279,7 @@
         value: '246' # https://docs.kernel.org/admin-guide/sysrq.html
 
     # these optimizations are from arch/pop! wiki
+    # https://wiki.archlinux.org/title/Zram#Tips_and_tricks
     - name: Setting vm.swappiness
       ansible.posix.sysctl:
         name: vm.swappiness
