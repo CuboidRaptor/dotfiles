@@ -144,7 +144,6 @@
           - inotify-tools
           - libtree-sitter
           - tldr
-          - yt-dlp
           - gpick
           - earlyoom
 
