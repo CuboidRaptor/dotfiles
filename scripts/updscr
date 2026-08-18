@@ -27,6 +27,9 @@ sudo akmods --force
 msg "Updating Flatpak apps..."
 flatpak update -y
 
+msg "Updating cargo packages..."
+cargo install-update -a
+
 # msg "Pinning nixpkgs..."
 # nix registry pin nixpkgs
 
