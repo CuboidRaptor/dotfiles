@@ -18,6 +18,9 @@ function msg {
     printf "\033[1m\033[7m$main_string\033[0m\n" "$@"
 }
 
+msg "Updating device firmware..."
+sudo fwupdmgr update
+
 msg "Updating system packages..."
 sudo dnf upgrade --refresh -y
 
