@@ -27,12 +27,12 @@
 
 (deflayer misc
   _
-  caps f5 @ddm @search
+  caps f5 @ddm @mediapause
   _ _ _ _
 )
 
 (defalias
   misc (layer-while-held misc)
   ddm (macro up 20 C-a 20 bspc 20 enter enter) ;; Delete last discord message
-  search (macro (clipboard-save 0) 20 C-c 20 C-t 1000 C-v 20 enter (clipboard-restore 0))
+  mediapause MediaPlayPause
 )
