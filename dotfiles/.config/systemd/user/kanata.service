@@ -27,4 +27,4 @@ PrivateNetwork=true
 IPAddressDeny=any
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
