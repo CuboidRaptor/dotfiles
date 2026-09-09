@@ -29,6 +29,7 @@ sudo akmods --force
 
 msg "Updating Flatpak apps..."
 flatpak update -y
+sudo touch /var/flatpak-nvidia-fix-trigger
 
 msg "Updating cargo packages..."
 cargo install-update -a

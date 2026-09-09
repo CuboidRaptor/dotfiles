@@ -1,0 +1,15 @@
+[Unit]
+Description=Fix Flatpak Nvidia runtimes
+After=network-online.target flatpak-system-helper.service
+Wants=network-online.target
+ConditionPathExists=/usr/bin/flatpak
+# updscr creates this trigger file
+ConditionPathExists=/var/flatpak-nvidia-fix-trigger
+
+[Service]
+Type=oneshot
+ExecStart=sh -c 'rm /var/flatpak-nvidia-fix-trigger && exec $$(which flatpak) upgrade -y'
+
+[Install]
+WantedBy=multi-user.target
+

@@ -273,6 +273,20 @@
         src: 9999-automated-wifi-powersave-off.conf
         dest: /etc/NetworkManager/conf.d/9999-automated-wifi-powersave-off.conf
 
+    # this fixes a flatpak/nvidia issue
+    - name: Creating systemd service folder
+      ansible.builtin.file: 
+        path: /etc/systemd/system
+        state: directory
+    - name: Copying Flatpak Nvidia fix service
+      ansible.builtin.copy:
+        src: flatpak-nvidia-fix.service
+        dest: /etc/systemd/system/flatpak-nvidia-fix.service
+    - name: Enabling Flatpak Nvidia fix service
+      ansible.builtin.systemd_service:
+        name: flatpak-nvidia-fix
+        enabled: true
+
     - name: Enabling Magic SysRq Key
       ansible.posix.sysctl:
         name: kernel.sysrq
