@@ -285,6 +285,7 @@
     - name: Enabling Flatpak Nvidia fix service
       ansible.builtin.systemd_service:
         name: flatpak-nvidia-fix
+        daemon_reload: true
         enabled: true
 
     - name: Enabling Magic SysRq Key
