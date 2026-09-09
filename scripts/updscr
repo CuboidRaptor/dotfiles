@@ -34,8 +34,8 @@ sudo touch /var/flatpak-nvidia-fix-trigger
 msg "Updating cargo packages..."
 cargo install-update -a
 
-# msg "Pinning nixpkgs..."
-# nix registry pin nixpkgs
+msg "Pinning nixpkgs..."
+nix registry pin nixpkgs
 
 msg "Updating Gear Lever AppImages..."
 flatpak run it.mijorus.gearlever --update --all -y
