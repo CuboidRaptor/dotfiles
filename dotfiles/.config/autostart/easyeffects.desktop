@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=flatpak run com.github.wwmm.easyeffects --hide-window
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[en_CA]=easyeffects.desktop
+Comment[en_CA]=Start obsidian syncthing conflict watcher
+X-GNOME-Autostart-Delay=5

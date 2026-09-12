@@ -192,6 +192,7 @@
           - org.flameshot.Flameshot
           - it.mijorus.gearlever
           - org.fedoraproject.MediaWriter
+          - com.github.wwmm.easyeffects
           - io.github.everestapi.Olympus
           - com.github.Anuken.Mindustry
           - org.prismlauncher.PrismLauncher
