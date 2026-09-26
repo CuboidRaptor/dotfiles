@@ -376,7 +376,7 @@
             "code.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
-            "io.github.Qalculate.desktop:flatpak"
+            "io.github.Qalculate.qalculate-qt.desktop:flatpak"
         ]
     },
     "__md5__": "ab8205f4115440aaf9f5e91f24673d08"

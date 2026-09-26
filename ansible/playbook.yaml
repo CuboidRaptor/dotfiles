@@ -186,7 +186,7 @@
           - org.gimp.GIMP
           - org.shotcut.Shotcut
           - org.audacityteam.Audacity
-          - io.github.Qalculate
+          - io.github.Qalculate.qalculate-qt
           - com.saivert.pwvucontrol
           - ca.desrt.dconf-editor
           - org.flameshot.Flameshot
