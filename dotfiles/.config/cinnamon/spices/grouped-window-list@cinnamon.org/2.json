@@ -373,7 +373,7 @@
             "md.obsidian.Obsidian.desktop:flatpak",
             "vesktop.desktop",
             "sublime_text.desktop",
-            "code.desktop",
+            "com.microsoft.VSCode.desktop",
             "cinnamon-settings.desktop",
             "net.lutris.Lutris.desktop",
             "io.github.Qalculate.qalculate-qt.desktop:flatpak"
