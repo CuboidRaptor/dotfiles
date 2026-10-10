@@ -186,6 +186,7 @@
           - org.gimp.GIMP
           - org.shotcut.Shotcut
           - org.audacityteam.Audacity
+          - org.kde.krita
           - io.github.Qalculate.qalculate-qt
           - com.saivert.pwvucontrol
           - ca.desrt.dconf-editor
