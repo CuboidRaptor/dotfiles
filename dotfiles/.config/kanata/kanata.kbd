@@ -5,7 +5,7 @@
 
 (defsrc
   caps
-  a r d s
+  a r d s q w
   pgup pgdn home end
 )
 
@@ -13,21 +13,21 @@
 (platform (linux)
   (deflayer default
     @misc
-    _ _ _ _
+    _ _ _ _ _ _
     home end pgup pgdn
   )
 )
 (platform (win winiov2 wintercept macos)
   (deflayer default
     @misc
-    _ _ _ _
+    _ _ _ _ _ _
     _ _ _ _
   )
 )
 
 (deflayer misc
   _
-  caps f5 @ddm @mediapause
+  caps f5 @ddm @mediapause vold volu
   _ _ _ _
 )
 
